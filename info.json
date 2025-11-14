@@ -4,7 +4,7 @@
   "title": "King Jo's Entity Master",
   "author": "TheKingJo",
   "contact": "",
-  "homepage": "https://steamcommunity.com/id/thekingjo/",
+  "homepage": "https://github.com/TheKingJo/King-Jo-s-Entity-Master---Factorio-Mod",
   "description": "Manages all of my entities so I only need to update this and not the sub mods.",
   "factorio_version":"2.0",
   "dependencies": ["base",
