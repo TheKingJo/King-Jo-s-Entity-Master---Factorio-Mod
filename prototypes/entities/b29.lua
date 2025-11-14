@@ -117,6 +117,7 @@ data:extend({
         utils.layerMaker(modname, "", "b29",               2290, {1,3}, {2,2}, 32, 1, offset({0,0})),
         utils.layerMaker(modname, "", "b29_rotor",  {1290,1000}, {3,1}, {3,4}, 32, 1, offset({-50, -105})),
         utils.layerMaker(modname, "shadow", "b29",         2290, {1,3}, {2,2}, 32, 2, offset({0,0})),
+        utils.layerMaker(modname, "shadow", "b29_rotor",{1450,910},{3,1},{3,4},32, 2, offset({0,0})),
         --utils.layerMaker(modname, "shadow", "b29_rotor",  2290, {3,1}, {3,4}, 32, 2),
       },
     },
