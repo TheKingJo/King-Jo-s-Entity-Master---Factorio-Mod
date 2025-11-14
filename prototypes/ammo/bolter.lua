@@ -20,7 +20,7 @@ if not data.raw["ammo"]["kj_bolt"] then
 				{type = "item", name = "plastic-bar", amount = 2},
 				{type = "item", name = "explosives", amount = 2}
 			},
-			results = {{type = "item", name = "kj_bolt", amount = 2}},
+			results = {{type = "item", name = "kj_bolt", amount = 1}},
 		},
 
 		{
@@ -53,8 +53,8 @@ if not data.raw["ammo"]["kj_bolt"] then
 				},
 			},
 			magazine_size = 10,
-			subgroup = "kj_fuels",
-			order = "a",
+			subgroup = "ammo",
+			order = "2[military]-40k-0",
 			stack_size = 100
 		},
 
@@ -179,11 +179,14 @@ if not data.raw["ammo"]["kj_bolt"] then
 	)
 
 	local max = 1
-	if settings.startup["kj_40klemanrussammo_cost_setting_multiplicator"] ~= nil then
-		max = math.max(1, settings.startup["kj_40klemanrussammo_cost_setting_multiplicator"].value)
-	end
 	if settings.startup["kj_40kbanebladeammo_cost_setting_multiplicator"] ~= nil then
 		max = math.max(max, settings.startup["kj_40kbanebladeammo_cost_setting_multiplicator"].value)
+	end
+	if settings.startup["kj_40kdreadnoughtammo_cost_setting_multiplicator"] ~= nil then
+		max = math.max(max, settings.startup["kj_40kdreadnoughtammo_cost_setting_multiplicator"].value)
+	end
+	if settings.startup["kj_40klemanrussammo_cost_setting_multiplicator"] ~= nil then
+		max = math.max(1, settings.startup["kj_40klemanrussammo_cost_setting_multiplicator"].value)
 	end
 	if settings.startup["kj_40kpredatorammo_cost_setting_multiplicator"] ~= nil then
 		max = math.max(max, settings.startup["kj_40kpredatorammo_cost_setting_multiplicator"].value)

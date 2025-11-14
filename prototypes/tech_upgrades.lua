@@ -12,6 +12,12 @@ local techUpdates = {
     },
 
     {
+        modname = "kj_40kdreadnought",
+        modifiers = {0.9, 1.3, 1, 0.8, 1.5},
+        ammo_category = "kj_dreadnought_cannon",
+    },
+
+    {
         modname = "kj_40klemanruss",
         modifiers = {0.9, 1.3, 1, 0.8, 1.5},
         ammo_category = "kj_lemanruss",

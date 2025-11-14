@@ -1,6 +1,6 @@
 local tables = require("tables")
 local aaiTanks = {}
-local categoryTrigger = 2000
+local categoryTrigger = 20
 
 local modsCount = 0
 for modname, mod in pairs(tables.supportedMods) do
@@ -23,6 +23,9 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 	})
 
 	require("prototypes.categories")(tables.categoriesUpdates)
+	if data.raw["ammo"]["kj_bolt"] ~= nil then
+		data.raw["ammo"]["kj_bolt"].subgroup = tables.categoriesUpdates["kj_40kbaneblade"].name
+	end
 
 	if mods["kj_2a6"] then
 		data.raw["item-subgroup"]["kj_tanks"].group = "kj_vehicles"
@@ -38,6 +41,12 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 		data.raw["item-with-entity-data"]["kj_40kbaneblade"].subgroup = tables.categoriesUpdates["kj_40kbaneblade"].name
 		data.raw["ammo"]["kj_baneblade_normal"].subgroup = tables.categoriesUpdates["kj_40kbaneblade"].name
 		data.raw["ammo"]["kj_baneblade_artillery"].subgroup = tables.categoriesUpdates["kj_40kbaneblade"].name
+	end
+
+	if mods["kj_40kdreadnought"] then
+		data.raw["item-subgroup"]["kj_wh40k"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_40kdreadnought"].subgroup = tables.categoriesUpdates["kj_40kdreadnought"].name
+		data.raw["ammo"]["kj_40kdreadnought_normal"].subgroup = tables.categoriesUpdates["kj_40kdreadnought"].name
 	end
 
 	if mods["kj_40klemanruss"] then
@@ -223,6 +232,32 @@ if mods["kj_40kbaneblade"] then
 		guns = {"kj_baneblade", "kj_baneblade_bolter"},
 		multiplier = 0.75,
 	}
+end
+
+if mods["kj_40kdreadnought"] then
+	if mods["space-exploration"] then
+		data.raw["technology"]["kj_40kdreadnought"].unit =
+		{
+			count = 750,
+			ingredients =
+			{
+				{"automation-science-pack", 1},
+				{"logistic-science-pack", 1},
+				{"chemical-science-pack", 1},
+				{"military-science-pack", 1},
+				{"utility-science-pack", 1},
+				{"se-rocket-science-pack", 1},
+			},
+			time = 40
+		}
+		data.raw["technology"]["kj_40kdreadnought"].prerequisites = {"military-4", "se-rocket-science-pack", "kj_gasoline"}
+		
+		if mods["kj_40kpredator"] then
+			table.insert(data.raw["technology"]["kj_40kdreadnought"].prerequisites, "kj_40kpredator")
+		else
+			table.insert(data.raw["technology"]["kj_40kdreadnought"].prerequisites, "tank")
+		end
+	end
 end
 
 if mods["kj_40klemanruss"] then

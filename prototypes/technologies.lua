@@ -22,6 +22,13 @@ local technologies = {
 	},
 
 	{
+		modname = "kj_40kdreadnought",
+		recipes = {"kj_40kdreadnought", "kj_40kdreadnought_normal"},
+		prerequisites = {"military-4", "kj_gasoline"},
+		unit = {750,40,1,1,1,1,0,1,0}
+	},
+
+	{
 		modname = "kj_40klemanruss",
 		recipes = {"kj_40klemanruss", "kj_lemanruss_normal"},
 		prerequisites = {},

@@ -40,6 +40,22 @@ if mods["kj_40kbaneblade"] then
 	end
 end
 
+if mods["kj_40kdreadnought"] then
+	if mods["kj_40kpredator"] then
+		table.insert(data.raw["technology"]["kj_40kdreadnought"].prerequisites, "kj_40kpredator")
+	else
+		table.insert(data.raw["technology"]["kj_40kdreadnought"].prerequisites, "tank")
+	end
+
+	if mods["Wh40k_Armoury_fork"] or mods["Wh40k_Armoury"] then
+		data.raw["gun"]["kj_bolter"].attack_parameters["ammo_category"] = "bolt100"
+		table.insert(data.raw["technology"]["kj_40kdreadnought"].prerequisites, "basic-bolter")
+
+	else
+		table.insert(data.raw["technology"]["kj_40kdreadnought"].effects, {type = "unlock-recipe", recipe = "kj_bolt"})
+	end
+end
+
 if mods["kj_40klemanruss"] then
 	if mods["kj_40kpredator"] then
 		table.insert(data.raw["technology"]["kj_40klemanruss"].prerequisites, "kj_40kpredator")

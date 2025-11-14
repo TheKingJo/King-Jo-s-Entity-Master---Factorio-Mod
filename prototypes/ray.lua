@@ -18,10 +18,10 @@ waterVariantCannon.attack_parameters.projectile_center = {0, -1}
 local waterVariant = table.deepcopy(data.raw["car"]["kj_ray"])
 waterVariant.name = "kj_ray_water"
 waterVariant.hidden = true
-waterVariant.turret_animation.layers[1] = utils.layerMaker(modname, "", "ray", 	   2000, {1,2,64}, {1,4}, 16, 3, nil, nil, nil, nil, 1)
-waterVariant.turret_animation.layers[2] = utils.layerMaker(modname, "", "ray_water", 2000, {2,1,64}, {2,4}, 16, 1, nil, nil, nil, nil, 1)
-waterVariant.turret_animation.layers[3] = utils.layerMaker(modname, "", "ray_top",   2000, {2,1,64}, {2,4}, 16, 1, nil, nil, nil, nil, 1)
-waterVariant.turret_animation.layers[4] = utils.layerMaker(modname, "", "ray_top",   2000, {2,1,64}, {2,4}, 16, 2, {3, -2.5}, nil, nil, nil, 1)
+waterVariant.turret_animation.layers[1] = utils.layerMaker(modname, "", "ray", 	   2000, {1,2,64}, {1,4}, 16, 3, nil, 0.5, nil, nil, 1)
+waterVariant.turret_animation.layers[2] = utils.layerMaker(modname, "", "ray_water", 2000, {2,1,64}, {2,4}, 16, 1, nil, 0.5, nil, nil, 1)
+waterVariant.turret_animation.layers[3] = utils.layerMaker(modname, "", "ray_top",   2000, {2,1,64}, {2,4}, 16, 1, nil, 0.5, nil, nil, 1)
+waterVariant.turret_animation.layers[4] = utils.layerMaker(modname, "", "ray_top",   2000, {2,1,64}, {2,4}, 16, 2, {3, -2.5}, 0.5, nil, nil, 1)
 waterVariant.turret_animation.layers[5] = nil
 waterVariant.guns = {waterVariantCannon.name, waterVariantMG.name, waterVariantRocket.name}
 
