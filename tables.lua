@@ -43,6 +43,7 @@ tables.supportedMods = {
 }
 
 tables.balancedModsRecipe = {
+	kj_ray = {true, true},
 	kj_warrig = true,
 
 	kj_phalanx = true,

@@ -1642,8 +1642,7 @@ if mods["kj_ray"] then
 
     local highestNumber = 0
     for _,layer in pairs(data.raw["collision-layer"]) do
-        if layer.order ~= nil then
-            log(highestNumber.." - Ray Col Layer  "..layer.name.."  order: "..layer.order)
+        if tonumber(layer.order) ~= nil then
             highestNumber = math.max(highestNumber, tonumber(layer.order))
         end
     end

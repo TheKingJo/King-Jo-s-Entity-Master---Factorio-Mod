@@ -10,6 +10,26 @@ data:extend({
 	},
 })
 
+if mods["kj_ray"] then
+	data:extend({
+		{
+			type = "int-setting",
+			name = "kj_ray_walking_volume",
+			setting_type = "startup",
+			default_value = 50,
+			minimum_value = 0,
+			maximum_value = 100,
+			order = "ac"
+		},
+		{
+			type = "bool-setting",
+			name = "kj_ray_walking",
+			setting_type = "startup",
+			default_value = true,
+			order = "ac"
+		},
+	})
+end
 
 if mods["kj_medieval_warfare"] or mods["kj_phalanx"] or mods["kj_vierling"] then
 	data:extend({
