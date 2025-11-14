@@ -84,7 +84,7 @@ tables.recipeChanges = {
 	
 	{modname = "kj_rex", entries = {
 			{recipe = "kj_rex", setting = "kj_rex_cost_setting_multiplicator"},
-			{recipe = "kj_ray_small", setting = "kj_rexammo_cost_setting_multiplicator"},
+			{recipe = "kj_rex_normal", setting = "kj_rexammo_cost_setting_multiplicator"},
 		}
 	},
 	
