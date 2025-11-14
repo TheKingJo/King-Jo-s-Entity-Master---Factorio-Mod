@@ -14,7 +14,7 @@ data:extend({
 		name = "kj_laser_normal",
 		enabled = false,
 		energy_required = 300,
-		category = "smelting",
+		category = "advanced-crafting",
 		ingredients = {
 			{type = "item", name = "stone", amount = 500},
 		},
