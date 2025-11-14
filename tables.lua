@@ -363,9 +363,9 @@ tables.categoriesUpdates = {
 	kj_maustank = 		{modname = "kj_maustank",       name = "kj_tanks",			order = "d", group = "logistics", type = "item-subgroup"},
 	kj_pak = 			{modname = "kj_pak",            name = "kj_tanks",			order = "d", group = "logistics", type = "item-subgroup"},
 	kj_panzer4 = 		{modname = "kj_panzer4",        name = "kj_tanks",			order = "d", group = "logistics", type = "item-subgroup"},
-	kj_rex = 			{modname = "kj_rattetank",      name = "kj_fantasy",		order = "d", group = "logistics", type = "item-subgroup"},
-	kj_rattetank = 		{modname = "kj_ray",            name = "kj_tanks",			order = "f", group = "logistics", type = "item-subgroup"},
-	kj_ray = 			{modname = "kj_rex",            name = "kj_fantasy",		order = "f", group = "logistics", type = "item-subgroup"},
+	kj_rex = 			{modname = "kj_rex",      		name = "kj_fantasy",		order = "d", group = "logistics", type = "item-subgroup"},
+	kj_rattetank = 		{modname = "kj_rattetank",      name = "kj_tanks",			order = "f", group = "logistics", type = "item-subgroup"},
+	kj_ray = 			{modname = "kj_ray",            name = "kj_fantasy",		order = "f", group = "logistics", type = "item-subgroup"},
 	kj_swspeeder = 		{modname = "kj_swspeeder",      name = "kj_star_wars",  	order = "c", group = "logistics", type = "item-subgroup"},
 	kj_wirbelwind = 	{modname = "kj_wirbelwind",     name = "kj_tanks",			order = "d", group = "logistics", type = "item-subgroup"},
 
