@@ -273,10 +273,11 @@ data:extend({
 		{
 			type = "electric",
 			buffer_capacity = "3001kJ",
-			input_flow_limit = "9600kW",
+			input_flow_limit = "3000kW",
 			drain = "50kW",
 			usage_priority = "primary-input"
 		},
+		energy_per_shot = "1MJ",
 
 		rotation_speed = 0.0025,
 		preparing_speed = 0.03,
