@@ -1,0 +1,12 @@
+{
+  "name": "kj_vehicles",
+  "version": "2.0.0",
+  "title": "King Jo's Vehicle Master",
+  "author": "TheKingJo",
+  "contact": "",
+  "homepage": "https://steamcommunity.com/id/thekingjo/",
+  "description": "Manages all of my land driven vehicles so I only need to update this and not the sub mods.",
+  "factorio_version":"2.0",
+  "dependencies": ["base",
+	"kj_fuel >= 2.0.0"]
+}

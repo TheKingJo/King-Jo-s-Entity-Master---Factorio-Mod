@@ -1,0 +1,428 @@
+local ammoDmg = require("tables").ammoDmg.kj_pak
+local items = require("tables").items
+local modname = "kj_pak"
+
+local fire = table.deepcopy(data.raw["fire"]["fire-flame"])
+fire.name = "incend-flame"
+fire.damage_per_tick = {amount = 2, type = "fire"}
+fire.initial_lifetime = 60 * 3
+fire.maximum_lifetime = 1800
+fire.hidden = true
+data:extend({fire})
+
+data:extend({
+	{
+		type = "explosion",
+		name = "kj_pak_shot",
+		flags = {"not-on-map"},
+		hidden = true,
+		subgroup = "explosions",
+		animations =
+		{
+			filename = "__base__/graphics/entity/artillery-cannon-muzzle-flash/muzzle-flash.png",
+			line_length = 7,
+			width = 276,
+			height = 382,
+			frame_count = 21,
+			scale = 0.1,
+			shift = {0, 0},
+			animation_speed = 2,
+		},
+		rotate = true,
+		height = 0,
+		correct_rotation = true,
+		light = {intensity = 1, size = 5, color = {r=1.0, g=1.0, b=1.0}},
+		smoke = "smoke-fast",
+		smoke_count = 1,
+		smoke_slow_down_factor = 1
+	},
+
+	{
+		type = "ammo",
+		name = "kj_pak_penetration",
+		icon = "__kj_pak__/graphics/equipment/ap_cannon_shell.png",
+		icon_size = 256,
+		ammo_category = "kj_pak",
+		ammo_type =
+		{
+			target_type = "direction",
+			action =
+			{
+				type = "direct",
+				action_delivery =
+				{
+					type = "projectile",
+					projectile = "kj_pak_penetration_projectile",
+					starting_speed = 1.5,
+					direction_deviation = 0.1,
+					range_deviation = 0.1,
+					max_range = 50,
+					min_range = 8,
+					source_effects =
+					{
+						type = "create-explosion",
+						entity_name = "kj_pak_shot"
+					}
+				}
+			}
+		},
+		subgroup = "ammo",
+		order = items[modname.."2"].order.."-a[AP]",
+		stack_size = 30
+	},
+	{
+		type = "ammo",
+		name = "kj_pak_highexplosive",
+		icon = "__kj_pak__/graphics/equipment/he_cannon_shell.png",
+		icon_size = 256,
+		ammo_category = "kj_pak",
+		ammo_type =
+		{
+			target_type = "direction",
+			consumption_modifier = 2,
+			action =
+			{
+				type = "direct",
+				action_delivery =
+				{
+					type = "projectile",
+					projectile = "kj_pak_highexplosive_projectile",
+					starting_speed = 2,
+					direction_deviation = 0.1,
+					range_deviation = 0.1,
+					max_range = 50,
+					min_range = 8,
+					source_effects =
+					{
+						type = "create-explosion",
+						entity_name = "kj_pak_shot"
+					}
+				}
+			}
+		},
+		subgroup = "ammo",
+		order = items[modname.."2"].order.."-b[HE]",
+		stack_size = 30
+	},
+	{
+		type = "ammo",
+		name = "kj_pak_incendiary",
+		icon = "__kj_pak__/graphics/equipment/hei_cannon_shell.png",
+		icon_size = 256,
+		ammo_category = "kj_pak",
+		ammo_type =
+		{
+			target_type = "direction",
+			consumption_modifier = 2,
+			action =
+			{
+				type = "direct",
+				action_delivery =
+				{
+					type = "projectile",
+					projectile = "kj_pak_incendiary_projectile",
+					starting_speed = 2,
+					direction_deviation = 0.1,
+					range_deviation = 0.1,
+					max_range = 50,
+					min_range = 8,
+					source_effects =
+					{
+						type = "create-explosion",
+						entity_name = "kj_pak_shot"
+					}
+				}
+			}
+		},
+		subgroup = "ammo",
+		order = items[modname.."2"].order.."-c[HEI]",
+		stack_size = 30
+	},
+
+	{
+		type = "projectile",
+		name = "kj_pak_penetration_projectile",
+		flags = {"not-on-map"},
+		force_condition = "not-same",
+		hidden = true,
+		height = 0,
+		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
+		acceleration = 0,
+		piercing_damage = ammoDmg.APDW,
+		action =
+		{
+			type = "direct",
+			action_delivery =
+			{
+				type = "instant",
+				target_effects =
+				{
+					{
+						type = "damage",
+						damage = {amount = ammoDmg.APAP , type = "physical"}
+					},
+					{
+						type = "damage",
+						damage = {amount = ammoDmg.APHE , type = "explosion"}
+					},
+					{
+						type = "create-entity",
+						entity_name = "explosion"
+					}
+				}
+			}
+		},
+		final_action =
+		{
+			type = "direct",
+			action_delivery =
+			{
+				type = "instant",
+				target_effects =
+				{
+					{
+						type = "create-entity",
+						entity_name = "small-scorchmark-tintable",
+						check_buildability = true
+					}
+				}
+			}
+		},
+		animation =
+		{
+			filename = "__base__/graphics/entity/artillery-projectile/shell.png",
+			frame_count = 1,
+			width = 64,
+			height = 64,
+			scale = 0.5,
+			priority = "high"
+		}
+	},
+
+	{
+		type = "projectile",
+		name = "kj_pak_highexplosive_projectile",
+		flags = {"not-on-map"},
+		force_condition = "not-same",
+		hidden = true,
+		height = 0,
+		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
+		acceleration = 0,
+		piercing_damage = ammoDmg.HEDW,
+		action =
+		{
+			type = "direct",
+			action_delivery =
+			{
+				type = "instant",
+				target_effects =
+				{
+					{
+						type = "damage",
+						damage = {amount = ammoDmg.APHE , type = "physical"}
+					},
+					{
+						type = "create-entity",
+						entity_name = "medium-explosion"
+					},
+				}
+			}
+		},
+		final_action =
+		{
+			type = "direct",
+			action_delivery =
+			{
+				type = "instant",
+				target_effects =
+				{
+					{
+						type = "create-entity",
+						entity_name = "massive-explosion"
+					},
+					{
+						type = "nested-result",
+						action =
+						{
+							type = "area",
+							radius = 4,
+							action_delivery =
+							{
+								type = "instant",
+								target_effects =
+								{
+									{
+										type = "damage",
+										damage = {amount = ammoDmg.HEHE, type = "explosion"}
+									},
+									{
+										type = "create-entity",
+										entity_name = "medium-explosion"
+									}
+								}
+							}
+						}
+					},
+					{
+						type = "create-entity",
+						entity_name = "medium-scorchmark-tintable",
+						check_buildability = true
+					},
+					{
+						type = "invoke-tile-trigger",
+						repeat_count = 1,
+					},
+					{
+						type = "destroy-decoratives",
+						from_render_layer = "decorative",
+						to_render_layer = "object",
+						include_soft_decoratives = true, -- soft decoratives are decoratives with grows_through_rail_path = true
+						include_decals = false,
+						invoke_decorative_trigger = true,
+						decoratives_with_trigger_only = false, -- if true, destroys only decoratives that have trigger_effect set
+						radius = 3.25
+					}
+				}
+			}
+		},
+		animation =
+		{
+			filename = "__base__/graphics/entity/artillery-projectile/shell.png",
+			frame_count = 1,
+			width = 64,
+			height = 64,
+			scale = 0.5,
+			priority = "high"
+		}
+	},
+	{
+		type = "projectile",
+		name = "kj_pak_incendiary_projectile",
+		flags = {"not-on-map"},
+		force_condition = "not-same",
+		hidden = true,
+		height = 0,
+		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
+		acceleration = 0,
+		piercing_damage = ammoDmg.APHEDW,
+		action =
+		{
+			type = "direct",
+			action_delivery =
+			{
+				type = "instant",
+				target_effects =
+				{
+					{
+						type = "damage",
+						damage = {amount = ammoDmg.APHEHE , type = "explosion"}
+					},
+					{
+						type = "create-entity",
+						entity_name = "explosion"
+					},
+				},
+			},
+		},
+		final_action =
+		{
+			type = "direct",
+			action_delivery =
+			{
+				type = "instant",
+				target_effects =
+				{
+					{
+						type = "create-entity",
+						entity_name = "small-scorchmark-tintable",
+						check_buildability = true
+					},
+					{
+						type = "create-entity",
+						entity_name = "medium-explosion"
+					},
+					{
+						type = "nested-result",
+						show_in_tooltip = true,
+						action =
+						{
+							type = "area",
+							target_entities = false,
+							trigger_from_target = true,
+							repeat_count = 10,			
+							radius = 3,
+							action_delivery =
+							{
+								type = "projectile",
+								projectile = "incend_projectile",
+								starting_speed = 0.5
+							},
+						},
+					},
+				}
+			}
+		},
+		animation =
+		{
+			filename = "__base__/graphics/entity/artillery-projectile/shell.png",
+			frame_count = 1,
+			width = 64,
+			height = 64,
+			scale = 0.5,
+			priority = "high"
+		}
+	},
+	{
+		type = "projectile",
+		name = "incend_projectile",
+		flags = {"not-on-map"},
+		force_condition = "not-same",
+		hidden = true,
+		height = 0,
+		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
+		acceleration = 0,
+		piercing_damage = ammoDmg.APHEDW,
+		action =
+		{
+			{
+				type = "direct",
+				action_delivery =
+				{
+					type = "instant",
+					target_effects =
+					{
+						{
+							type = "create-entity",
+							show_in_tooltip = true,
+							entity_name = "incend-flame"
+						},
+						{
+							type = "damage",
+							damage = {amount = ammoDmg.APHEAP , type = "physical"}
+						},
+						{
+							type = "damage",
+							damage = {amount = ammoDmg.APHEHE , type = "explosion"}
+						},
+					}
+				}
+			},
+		},
+		animation =
+		{
+			filename = "__core__/graphics/empty.png",
+			frame_count = 1,
+			width = 1,
+			height = 1,
+			priority = "high"
+		},
+		shadow =
+		{
+			filename = "__core__/graphics/empty.png",
+			frame_count = 1,
+			width = 1,
+			height = 1,
+			priority = "high"
+		}
+	},
+})
