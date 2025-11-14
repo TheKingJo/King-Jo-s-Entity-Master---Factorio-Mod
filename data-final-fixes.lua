@@ -484,9 +484,9 @@ if mods["kj_cybertruck"] then
 end
 
 if mods["kj_pak"] then
-	data.raw["ammo"]["kj_pak_he"].ammo_type.action.action_delivery.max_range = settings.startup["kj_pak_range"].value
-	data.raw["ammo"]["kj_pak_ap"].ammo_type.action.action_delivery.max_range = settings.startup["kj_pak_range"].value
-	data.raw["ammo"]["kj_pak_inc"].ammo_type.action.action_delivery.max_range = settings.startup["kj_pak_range"].value
+	--data.raw["ammo"]["kj_pak_he"].ammo_type.action.action_delivery.max_range = settings.startup["kj_pak_range"].value
+	--data.raw["ammo"]["kj_pak_ap"].ammo_type.action.action_delivery.max_range = settings.startup["kj_pak_range"].value
+	--data.raw["ammo"]["kj_pak_inc"].ammo_type.action.action_delivery.max_range = settings.startup["kj_pak_range"].value
 
 	data.raw["gun"]["kj_pak_gun"].attack_parameters.range = settings.startup["kj_pak_range"].value
 	data.raw["ammo-turret"]["kj_pak_turret"].attack_parameters.range = settings.startup["kj_pak_range"].value

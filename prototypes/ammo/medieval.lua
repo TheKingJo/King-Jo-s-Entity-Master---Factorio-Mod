@@ -18,7 +18,7 @@ data:extend({
 					type = "projectile",
 					projectile = "kj_ballista_normal_projectile",
 					starting_speed = 1,
-					max_range = 50,
+					--max_range = 50,
 					source_effects =
 					{
 						type = "create-explosion",

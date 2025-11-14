@@ -54,7 +54,7 @@ data:extend({
 					starting_speed = 1.5,
 					direction_deviation = 0.1,
 					range_deviation = 0.1,
-					max_range = 50,
+					--max_range = 50,
 					min_range = 8,
 					source_effects =
 					{
@@ -85,7 +85,7 @@ data:extend({
 					starting_speed = 2,
 					direction_deviation = 0.1,
 					range_deviation = 0.1,
-					max_range = 50,
+					--max_range = 50,
 					min_range = 8,
 					source_effects =
 					{
@@ -116,7 +116,7 @@ data:extend({
 					starting_speed = 2,
 					direction_deviation = 0.1,
 					range_deviation = 0.1,
-					max_range = 50,
+					--max_range = 50,
 					min_range = 8,
 					source_effects =
 					{
