@@ -99,13 +99,8 @@ data:extend({
 				target_effects =
 				{
 					{
-						type = "destroy-cliffs",
-						radius = 3,
-						explosion = "explosion"
-					},
-					{
 						type = "create-entity",
-						entity_name = "medium-explosion"
+						entity_name = "big-explosion"
 					},
 					{
 						type = "nested-result",

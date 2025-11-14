@@ -38,23 +38,23 @@ data:extend({
     {
       layers =
       {
-        utils.layerMaker(modname, "", "2a6", 1000, {1, 2}, {8, 8}, 2, 3, nil),
+        utils.layerMaker(modname, "", "2a6", 960, {1, 2}, {8, 8}, 2, 3, nil),
 	    },
 	  },
     animation =
     {
       layers =
       {
-        utils.layerMaker(modname, "", "2a6", 1000, {2, 1}, {2, 8}, 16, 1, nil),
-        utils.layerMaker(modname, "", "2a6", 1000, {1, 2}, {8, 8},  2, 2, nil),
+        utils.layerMaker(modname, "", "2a6", 960, {2, 1}, {2, 8}, 16, 1, nil),
+        utils.layerMaker(modname, "", "2a6", 960, {1, 2}, {8, 8},  2, 2, nil),
       }
     },
 	  turret_animation =
     {
       layers =
       {
-        utils.layerMaker(modname, "", "2a6", 1000, {1, 1}, {8, 8}, 2, 4, nil),
-        utils.layerMaker(modname, "", "2a6", 1000, {1, 1}, {8, 8}, 2, 5, nil),
+        utils.layerMaker(modname, "", "2a6", 960, {1, 1}, {8, 8}, 2, 4, nil),
+        utils.layerMaker(modname, "", "2a6", 960, {1, 1}, {8, 8}, 2, 5, nil),
       }
     },
     working_sound =

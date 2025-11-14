@@ -1,5 +1,4 @@
 local tables = require("tables")
-local utils = require("utils")
 
 data:extend({
 	{
@@ -30,8 +29,6 @@ data:extend({
 		type = "recipe",
 		name = "kj_75kwk40_ap",
 		enabled = false,
-		energy_required = 15,
-		ingredients = utils.ammoRecipe("kj_75kwk40_ap"),
 		results = {{type = "item", name = "kj_75kwk40_ap", amount = 1}}
 	},
 
@@ -39,8 +36,6 @@ data:extend({
 		type = "recipe",
 		name = "kj_75kwk40_he",
 		enabled = false,
-		energy_required = 15,
-		ingredients = utils.ammoRecipe("kj_75kwk40_he"),
 		results = {{type = "item", name = "kj_75kwk40_he", amount = 1}}
 	},
 
@@ -48,8 +43,6 @@ data:extend({
 		type = "recipe",
 		name = "kj_75kwk40_aphe",
 		enabled = false,
-		energy_required = 15,
-		ingredients = utils.ammoRecipe("kj_75kwk40_aphe"),
 		results = {{type = "item", name = "kj_75kwk40_aphe", amount = 1}}
 	},
 })

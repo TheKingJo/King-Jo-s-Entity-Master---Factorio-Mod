@@ -2,16 +2,9 @@ local tables = require("tables")
 local technologies = {
 	{
 		modname = "kj_2a6",
-		recipes = {"kj_2a6", "kj_rh120_ap", "kj_mg3_hand"},
+		recipes = {"kj_2a6", "kj_rh120_ap", "kj_rh120_he", "kj_rh120_aphe", "kj_rh120_can", "kj_mg3_hand"},
 		prerequisites = {"kj_gasoline"},
-		unit = {1000,30,1,1,1,1,0,0,0}
-	},
-	{
-		modname = "kj_2a6",
-		name = "kj_2a6_ammo",
-		recipes = {"kj_rh120_he", "kj_rh120_aphe", "kj_rh120_can"},
-		prerequisites = {"kj_2a6"},
-		unit = {1000,30,1,1,1,1,0,0,0}
+		unit = {1500,30,1,1,1,1,0,0,0}
 	},
 
 	{
@@ -44,16 +37,9 @@ local technologies = {
 
 	{
 		modname = "kj_maustank",
-		recipes = {"kj_maustank", "kj_120kwk_ap", "kj_mg42_hand"},
+		recipes = {"kj_maustank", "kj_120kwk_ap", "kj_120kwk_he", "kj_120kwk_aphe", "kj_mg42_hand"},
 		prerequisites = {"kj_gasoline"},
-		unit = {1000,30,1,1,1,1,0,0,0}
-	},
-	{
-		modname = "kj_maustank",
-		name = "kj_maustank_ammo",
-		recipes = {"kj_maustank", "kj_120kwk_he", "kj_120kwk_aphe"},
-		prerequisites = {"kj_maustank"},
-		unit = {1000,30,1,1,1,1,0,0,0}
+		unit = {1500,30,1,1,1,1,0,0,0}
 	},
 
 	{
@@ -65,43 +51,29 @@ local technologies = {
 
 	{
 		modname = "kj_panzer4",
-		recipes = {"kj_panzer4", "kj_75kwk40_ap", "kj_mg34_hand"},
+		recipes = {"kj_panzer4", "kj_75kwk40_ap", "kj_75kwk40_he", "kj_75kwk40_aphe", "kj_mg34_hand"},
 		prerequisites = {"tank", "kj_gasoline"},
-		unit = {500,30,1,1,1,1,0,0,0}
-	},
-	{
-		modname = "kj_panzer4",
-		name = "kj_panzer4_ammo",
-		recipes = {"kj_75kwk40_he", "kj_75kwk40_aphe"},
-		prerequisites = {"kj_panzer4"},
-		unit = {200,30,1,1,1,1,0,0,0}
+		unit = {700,30,1,1,1,1,0,0,0}
 	},
 
 	{
 		modname = "kj_rattetank",
-		recipes = {"kj_rattetank", "kj_280SKC34_ap"},
-		prerequisites = {"kj_gasoline"},
-		unit = {500,30,10,10,10,10,10,10,1}
-	},
-	{
-		modname = "kj_rattetank",
-		name = "kj_rattetank_ammo",
-		recipes = {"kj_280SKC34_he", "kj_280SKC34_inc"},
-		prerequisites = {"kj_rattetank"},
-		unit = {500,30,10,10,10,10,10,10,1}
+		recipes = {"kj_rattetank", "kj_280SKC34_ap", "kj_280SKC34_he", "kj_280SKC34_inc"},
+		prerequisites = {"kj_gasoline", "space-science-pack"},
+		unit = {2000,60,1,1,1,1,1,1,1}
 	},
 
 	{
 		modname = "kj_ray",
 		recipes = {"kj_ray", "kj_ray_small", "kj_ray_normal", "kj_ray_normal_small"},
-		prerequisites = {"military-4", "kj_gasoline"},
-		unit = {50,40,10,10,10,10,10,10,1}
+		prerequisites = {"military-4", "kj_gasoline", "space-science-pack"},
+		unit = {2000,60,1,1,1,1,1,1,1}
 	},
 	{
 		modname = "kj_rex",
 		recipes = {"kj_rex", "kj_rex_normal"},
-		prerequisites = {"military-4", "kj_gasoline"},
-		unit = {50,40,10,10,10,10,10,10,1}
+		prerequisites = {"military-4", "kj_gasoline", "space-science-pack"},
+		unit = {2000,60,1,1,1,1,1,1,1}
 	},
 	{
 		modname = "kj_swspeeder",

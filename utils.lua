@@ -8,11 +8,16 @@ function functions.ammoRecipe(name)
     local recipe = require("tables").ammoRecipe
     local ingredients = {
         {type = "item", name = "steel-plate", amount = recipe.steel[name]},
-        {type = "item", name = "plastic-bar", amount = recipe.plastic[name]},
         {type = "item", name = "explosives",  amount = recipe.explosive[name]}
     }
+    if recipe.plastic[name] ~= nil then
+        table.insert(ingredients, {type = "item", name = "plastic-bar",  amount = recipe.plastic[name]})
+    end
     if recipe.sulfur[name] ~= nil then
         table.insert(ingredients, {type = "item", name = "sulfur",  amount = recipe.sulfur[name]})
+    end
+    if recipe.copper[name] ~= nil then
+        table.insert(ingredients, {type = "item", name = "copper-plate",  amount = recipe.copper[name]})
     end
     return ingredients
 end

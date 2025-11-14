@@ -5,8 +5,7 @@ local modname = "kj_pak"
 local fire = table.deepcopy(data.raw["fire"]["fire-flame"])
 fire.name = "incend-flame"
 fire.damage_per_tick = {amount = 2, type = "fire"}
-fire.initial_lifetime = 60 * 3
-fire.maximum_lifetime = 1800
+fire.initial_lifetime = 60 * 10
 fire.hidden = true
 data:extend({fire})
 
@@ -294,7 +293,7 @@ data:extend({
 		height = 0,
 		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
 		acceleration = 0,
-		piercing_damage = ammoData.APHEDW,
+		piercing_damage = ammoData.HEIDW,
 		action =
 		{
 			type = "direct",
@@ -305,7 +304,7 @@ data:extend({
 				{
 					{
 						type = "damage",
-						damage = {amount = ammoData.APHEHE , type = "explosion"}
+						damage = {amount = ammoData.HEIAP , type = "physical"}
 					},
 					{
 						type = "create-entity",
@@ -316,39 +315,57 @@ data:extend({
 		},
 		final_action =
 		{
-			type = "direct",
-			action_delivery =
 			{
-				type = "instant",
-				target_effects =
+				type = "area",
+				radius = 4,
+				action_delivery =
 				{
+					type = "instant",
+					target_effects =
 					{
-						type = "create-entity",
-						entity_name = "small-scorchmark-tintable",
-						check_buildability = true
-					},
-					{
-						type = "create-entity",
-						entity_name = "medium-explosion"
-					},
-					{
-						type = "nested-result",
-						show_in_tooltip = true,
-						action =
 						{
-							type = "area",
-							target_entities = false,
-							trigger_from_target = true,
-							repeat_count = 10,			
-							radius = 3,
-							action_delivery =
+							type = "create-sticker",
+							sticker = "fire-sticker",
+							show_in_tooltip = true
+						},
+					}
+				}
+			},
+			{
+				type = "direct",
+				action_delivery =
+				{
+					type = "instant",
+					target_effects =
+					{
+						{
+							type = "create-entity",
+							entity_name = "small-scorchmark-tintable",
+							check_buildability = true
+						},
+						{
+							type = "create-entity",
+							entity_name = "medium-explosion"
+						},
+						{
+							type = "nested-result",
+							show_in_tooltip = true,
+							action =
 							{
-								type = "projectile",
-								projectile = "incend_projectile",
-								starting_speed = 0.5
+								type = "area",
+								target_entities = false,
+								trigger_from_target = true,
+								repeat_count = 10,
+								radius = 4,
+								action_delivery =
+								{
+									type = "projectile",
+									projectile = "kj_pak_fire_projectile",
+									starting_speed = 0.5
+								},
 							},
 						},
-					},
+					}
 				}
 			}
 		},
@@ -364,14 +381,14 @@ data:extend({
 	},
 	{
 		type = "projectile",
-		name = "incend_projectile",
+		name = "kj_pak_fire_projectile",
 		flags = {"not-on-map"},
 		force_condition = "not-same",
 		hidden = true,
 		height = 0,
 		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
 		acceleration = 0,
-		piercing_damage = ammoData.APHEDW,
+		piercing_damage = ammoData.HEIFDW,
 		action =
 		{
 			{
@@ -382,17 +399,17 @@ data:extend({
 					target_effects =
 					{
 						{
-							type = "create-entity",
+							type = "create-fire",
 							show_in_tooltip = true,
 							entity_name = "incend-flame"
 						},
 						{
 							type = "damage",
-							damage = {amount = ammoData.APHEAP , type = "physical"}
+							damage = {amount = ammoData.HEIFAP , type = "physical"}
 						},
 						{
 							type = "damage",
-							damage = {amount = ammoData.APHEHE , type = "explosion"}
+							damage = {amount = ammoData.HEIFHE , type = "explosion"}
 						},
 					}
 				}

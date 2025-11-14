@@ -1,5 +1,7 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
+local utils = require("utils")
 local ammos = require("tables").ammos
+local recipes = require("tables").ammoRecipe
 
 for name, _ in pairs(ammos.stackSize) do
     local ammo = data.raw["ammo"][name]
@@ -26,5 +28,13 @@ for name, _ in pairs(ammos.stackSize) do
             ammo.pick_sound = item_sounds.ammo_large_inventory_pickup
             ammo.drop_sound = item_sounds.ammo_large_inventory_move
         end
+    end
+end
+
+for name, _ in pairs(recipes.steel) do
+    local recipe = data.raw["recipe"][name]
+    if recipe ~= nil then
+        recipe.energy_required = recipes.time[name]
+        recipe.ingredients = utils.ammoRecipe(name)
     end
 end

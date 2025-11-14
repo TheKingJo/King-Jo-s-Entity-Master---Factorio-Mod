@@ -99,7 +99,7 @@ data:extend({
 		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
 		acceleration = 0,
 		height = 0,
-		piercing_damage = ammoData.APDW,
+		piercing_damage = ammoData.HEDW,
 		action =
 		{
 			type = "direct",
@@ -110,7 +110,7 @@ data:extend({
 				{
 					{
 						type = "damage",
-						damage = {amount = ammoData.APAP , type = "physical"}
+						damage = {amount = ammoData.HEAP , type = "physical"}
 					},
 					{
 						type = "create-entity",
@@ -141,7 +141,7 @@ data:extend({
 						action =
 						{
 							type = "area",
-							radius = 5,
+							radius = 6,
 							action_delivery =
 							{
 								type = "instant",
@@ -149,7 +149,7 @@ data:extend({
 								{
 									{
 										type = "damage",
-										damage = {amount = ammoData.APHE, type = "explosion"}
+										damage = {amount = ammoData.HEHE, type = "explosion"}
 									},
 									{
 										type = "create-entity",
@@ -200,7 +200,7 @@ data:extend({
 		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
 		acceleration = 0,
 		height = 0,
-		piercing_damage = ammoData.APHEDW,
+		piercing_damage = ammoData.ADW,
 		direction_only = true,
 		action =
 		{
@@ -212,11 +212,7 @@ data:extend({
 				{
 					{
 						type = "damage",
-						damage = {amount = ammoData.APHEAP , type = "physical"}
-					},
-					{
-						type = "damage",
-						damage = {amount = ammoData.APHEHE , type = "explosion"}
+						damage = {amount = 100 , type = "physical"}
 					},
 					{
 						type = "create-entity",
@@ -255,11 +251,11 @@ data:extend({
 								{
 									{
 										type = "damage",
-										damage = {amount = 500 , type = "physical"}
+										damage = {amount = ammoData.AAP , type = "physical"}
 									},
 									{
 										type = "damage",
-										damage = {amount = 500 , type = "explosion"}
+										damage = {amount = ammoData.AHE , type = "explosion"}
 									}
 								}
 							}

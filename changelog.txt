@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.23
+Date: 23.02.2025
+  Changes:
+    - Rex, Ray, Leman Russ ammo no longer destroy cliffs
+    - Ammo recipes balanced
+    - Ammo damages balanced
+    - Predator shooting speed bonus reduced
+    - military vehicles techs adjusted
+    - additional ammo for military vehicles put in same tech as vehicle
+---------------------------------------------------------------------------------------------------
 Version: 2.0.22
 Date: 21.02.2025
   Changes:

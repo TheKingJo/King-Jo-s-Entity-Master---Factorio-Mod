@@ -74,84 +74,84 @@ data:extend({
 		piercing_damage = ammoData.HEDW,
 		action =
 		{
-		  type = "direct",
-		  action_delivery =
-		  {
-			type = "instant",
-			target_effects =
+			type = "direct",
+			action_delivery =
 			{
-			  {
-				type = "damage",
-				damage = {amount = ammoData.HEAP , type = "physical"}
-			  },
-			  {
-				type = "create-entity",
-				entity_name = "explosion"
-			  },
+				type = "instant",
+				target_effects =
 				{
-					type = "destroy-cliffs",
-					radius = 3,
-					explosion = "explosion"
-				},
+					{
+						type = "damage",
+						damage = {amount = ammoData.HEAP , type = "physical"}
+					},
+					{
+						type = "create-entity",
+						entity_name = "explosion"
+					},
+					{
+						type = "destroy-cliffs",
+						radius = 3,
+						explosion = "explosion"
+					},
+				}
 			}
-		  }
 		},
 		final_action =
 		{
-		  type = "direct",
-		  action_delivery =
-		  {
-			type = "instant",
-			target_effects =
+			type = "direct",
+			action_delivery =
 			{
-			  {
-				type = "create-entity",
-				entity_name = "massive-explosion"
-			  },
-			  {
-				type = "nested-result",
-				action =
+				type = "instant",
+				target_effects =
 				{
-				  type = "area",
-				  radius = 5,
-				  action_delivery =
-				  {
-					type = "instant",
-					target_effects =
 					{
-					  {
-						type = "damage",
-						damage = {amount = ammoData.HEHE, type = "explosion"}
-					  },
-					  {
 						type = "create-entity",
-						entity_name = "medium-explosion"
-					  }
+						entity_name = "massive-explosion"
+					},
+					{
+						type = "nested-result",
+						action =
+						{
+							type = "area",
+							radius = 5,
+							action_delivery =
+							{
+								type = "instant",
+								target_effects =
+								{
+									{
+										type = "damage",
+										damage = {amount = ammoData.HEHE, type = "explosion"}
+									},
+									{
+										type = "create-entity",
+										entity_name = "medium-explosion"
+									}
+								}
+							}
+						}
+					},
+					{
+						type = "create-entity",
+						entity_name = "medium-scorchmark-tintable",
+						check_buildability = true
+					},
+					{
+						type = "invoke-tile-trigger",
+						repeat_count = 1,
+					},
+					{
+						type = "destroy-decoratives",
+						from_render_layer = "decorative",
+						to_render_layer = "object",
+						include_soft_decoratives = true, -- soft decoratives are decoratives with grows_through_rail_path = true
+						include_decals = false,
+						invoke_decorative_trigger = true,
+						decoratives_with_trigger_only = false, -- if true, destroys only decoratives that have trigger_effect set
+						radius = 3.25 -- large radius for demostrative purposes
 					}
-				  }
 				}
-			  },
-			  {
-				type = "create-entity",
-				entity_name = "medium-scorchmark-tintable",
-				check_buildability = true
-			  },
-			  {
-				type = "invoke-tile-trigger",
-				repeat_count = 1,
-			  },
-			  {
-				type = "destroy-decoratives",
-				from_render_layer = "decorative",
-				to_render_layer = "object",
-				include_soft_decoratives = true, -- soft decoratives are decoratives with grows_through_rail_path = true
-				include_decals = false,
-				invoke_decorative_trigger = true,
-				decoratives_with_trigger_only = false, -- if true, destroys only decoratives that have trigger_effect set
-				radius = 3.25 -- large radius for demostrative purposes
-			  }
 			}
-		  }
 		},
 		animation =
 		{

@@ -139,7 +139,6 @@ if mods["kj_2a6"] then
 	end
 
 	data.raw["technology"]["kj_2a6"].unit.count = multiplier * data.raw["technology"]["kj_2a6"].unit.count
-	data.raw["technology"]["kj_2a6_ammo"].unit.count = multiplier * data.raw["technology"]["kj_2a6_ammo"].unit.count
 
 	table.insert(data.raw["technology"]["kj_2a6"].prerequisites, prerequisites_mod)
 end
@@ -213,7 +212,6 @@ end
 if mods["kj_maustank"] then
 	if mods["kj_panzer4"] then
 		table.insert(data.raw["car"]["kj_maustank"].guns, "kj_75kwk40")
-		table.insert(data.raw["technology"]["kj_maustank_ammo"].prerequisites, "kj_panzer4_ammo")
 		prerequisites_mod = "kj_panzer4"
 	else
 		prerequisites_mod = "tank"
@@ -225,8 +223,6 @@ end
 if mods["kj_rattetank"] then
 	if mods["kj_maustank"] then
 		prerequisites_mod = "kj_maustank"
-
-		table.insert(data.raw["technology"]["kj_rattetank_ammo"].prerequisites, "kj_maustank_ammo")
 	else
 		prerequisites_mod = "tank"
 	end

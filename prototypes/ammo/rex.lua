@@ -102,11 +102,6 @@ data:extend({
 							decoratives_with_trigger_only = false, -- if true, destroys only decoratives that have trigger_effect set
 							radius = 3.25
 						},
-						{
-							type = "destroy-cliffs",
-							radius = 3,
-							explosion = "explosion",
-						},
 					},
 				}
 			}

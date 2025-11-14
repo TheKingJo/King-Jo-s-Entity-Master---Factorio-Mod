@@ -94,7 +94,7 @@ data:extend({
 				}
 			}
 		},
-		order = items[modname].order.."-b[HE]",
+		order = items[modname].order.."-c[APHE]",
 	},
 
 	{
@@ -197,7 +197,7 @@ data:extend({
 						action =
 						{
 							type = "area",
-							radius = 4,
+							radius = 4.5,
 							action_delivery =
 							{
 								type = "instant",
@@ -292,7 +292,7 @@ data:extend({
 						action =
 						{
 							type = "area",
-							radius = 4,
+							radius = 4.5,
 							action_delivery =
 							{
 								type = "instant",

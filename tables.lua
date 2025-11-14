@@ -477,128 +477,174 @@ tables.items = {
 }
 
 tables.ammoRecipe = {
-	steel = {
-		kj_rh120_ap = 6,
-		kj_rh120_he = 4,
-		kj_rh120_aphe = 7,
-		kj_rh120_can = 10,
+	time = {
+		kj_rh120_ap = 12,
+		kj_rh120_he = 12,
+		kj_rh120_aphe = 12,
+		kj_rh120_can = 12,
 
-		kj_baneblade_normal = 5,
+		kj_120kwk_ap = 12,
+		kj_120kwk_he = 12,
+		kj_120kwk_aphe = 12,
 
-		kj_40kdreadnought_normal = 3,
+		kj_280SKC34_ap = 25,
+		kj_280SKC34_he = 24,
+		kj_280SKC34_inc = 20,
 
-		kj_lemanruss_normal = 4,
+		kj_40kdreadnought_normal = 12,
+		kj_baneblade_artillery = 9,
 
-		kj_120kwk_ap = 4,
-		kj_120kwk_he = 3,
-		kj_120kwk_aphe = 4,
+		kj_75kwk40_ap = 8,
+		kj_75kwk40_he = 8,
+		kj_75kwk40_aphe = 8,
 
-		kj_pak_ap = 4,
-		kj_pak_he = 3,
-		kj_pak_inc = 4,
+		kj_apds_normal_single = 1.5,
 
-		kj_75kwk40_ap = 4,
-		kj_75kwk40_he = 3,
-		kj_75kwk40_aphe = 4,
+		kj_baneblade_normal = 18,
 
-		kj_predator_normal = 3,
+		kj_lemanruss_normal = 15,
 
-		kj_280SKC34_ap = 14,
-		kj_280SKC34_he = 10,
-		kj_280SKC34_inc = 10,
+		kj_pak_ap = 10,
+		kj_pak_he = 9,
+		kj_pak_inc = 9,
 
-		kj_ray_normal = 3,
-		kj_ray_normal_small = 1,
+		kj_predator_normal = 9,
 
-		kj_rex_normal = 3,
+		kj_ray_normal = 45,
+		kj_ray_normal_small = 15,
 
-		kj_2cmfv_normal_vierling = 2,
+		kj_rex_normal = 45,
 
-		kj_2cmfv_normal = 2,
+		kj_2cmfv_normal = 4,
+		kj_2cmfv_normal_vierling = 4,
 	},
-	plastic = {
+	steel = {
 		kj_rh120_ap = 4,
 		kj_rh120_he = 4,
-		kj_rh120_aphe = 5,
-		kj_rh120_can = 3,
+		kj_rh120_can = 6,
 
-		kj_baneblade_normal = 4,
+		kj_baneblade_normal = 7,
+		kj_baneblade_artillery = 3,
 
-		kj_40kdreadnought_normal = 3,
+		kj_40kdreadnought_normal = 4,
 
-		kj_lemanruss_normal = 3,
+		kj_lemanruss_normal = 6,
 
-		kj_120kwk_ap = 3,
-		kj_120kwk_he = 3,
-		kj_120kwk_aphe = 3,
+		kj_120kwk_ap = 4,
+		kj_120kwk_he = 4,
+		kj_120kwk_aphe = 4,
 
 		kj_pak_ap = 3,
 		kj_pak_he = 3,
-		kj_pak_inc = 4,
+		kj_pak_inc = 2,
 
 		kj_75kwk40_ap = 2,
 		kj_75kwk40_he = 2,
-		kj_75kwk40_aphe = 2,
+		kj_75kwk40_aphe = 3,
 
 		kj_predator_normal = 3,
 
 		kj_280SKC34_ap = 10,
-		kj_280SKC34_he = 10,
-		kj_280SKC34_inc = 10,
+		kj_280SKC34_he = 8,
+		kj_280SKC34_inc = 4,
 
-		kj_ray_normal = 3,
-		kj_ray_normal_small = 1,
+		kj_ray_normal = 20,
+		kj_ray_normal_small = 7,
 
-		kj_rex_normal = 3,
-
-		kj_2cmfv_normal_vierling = 2,
-
-		kj_2cmfv_normal = 2,
-	},
-	explosive = {
-		kj_rh120_ap = 12,
-		kj_rh120_he = 12,
-		kj_rh120_aphe = 18,
-		kj_rh120_can = 5,
-
-		kj_baneblade_normal = 14,
-
-		kj_40kdreadnought_normal = 8,
-
-		kj_lemanruss_normal = 12,
-
-		kj_120kwk_ap = 8,
-		kj_120kwk_he = 10,
-		kj_120kwk_aphe = 10,
-
-		kj_pak_ap = 8,
-		kj_pak_he = 10,
-		kj_pak_inc = 6,
-
-		kj_75kwk40_ap = 3,
-		kj_75kwk40_he = 4,
-		kj_75kwk40_aphe = 4,
-
-		kj_predator_normal = 6,
-
-		kj_280SKC34_ap = 15,
-		kj_280SKC34_he = 20,
-		kj_280SKC34_inc = 12,
-
-		kj_ray_normal = 8,
-		kj_ray_normal_small = 3,
-
-		kj_rex_normal = 8,
+		kj_rex_normal = 20,
 
 		kj_2cmfv_normal_vierling = 1,
+		kj_2cmfv_normal = 1,
+
+		kj_apds_normal_single = 3,
+	},
+	plastic = {
+		kj_rh120_ap = 4,
+		kj_rh120_he = 4,
+		kj_rh120_can = 3,
+
+		kj_baneblade_normal = 7,
+		kj_baneblade_artillery = 3,
+
+		kj_40kdreadnought_normal = 4,
+
+		kj_lemanruss_normal = 6,
+
+		kj_120kwk_ap = 4,
+		kj_120kwk_he = 4,
+		kj_120kwk_aphe = 4,
+
+		kj_pak_ap = 3,
+		kj_pak_he = 3,
+		kj_pak_inc = 2,
+
+		kj_75kwk40_ap = 2,
+		kj_75kwk40_he = 2,
+		kj_75kwk40_aphe = 3,
+
+		kj_predator_normal = 3,
+
+		kj_280SKC34_ap = 10,
+		kj_280SKC34_he = 8,
+		kj_280SKC34_inc = 4,
+
+		kj_ray_normal = 20,
+		kj_ray_normal_small = 7,
+
+		kj_rex_normal = 20,
 
 		kj_2cmfv_normal = 1,
+		kj_2cmfv_normal_vierling = 1,
+	},
+	explosive = {
+		kj_rh120_ap = 3,
+		kj_rh120_he = 4,
+		kj_rh120_can = 3,
+
+		kj_baneblade_normal = 5,
+		kj_baneblade_artillery = 3,
+
+		kj_40kdreadnought_normal = 4,
+
+		kj_lemanruss_normal = 4,
+
+		kj_120kwk_ap = 3,
+		kj_120kwk_he = 4,
+		kj_120kwk_aphe = 4,
+
+		kj_pak_ap = 2,
+		kj_pak_he = 3,
+		kj_pak_inc = 2,
+
+		kj_75kwk40_ap = 2,
+		kj_75kwk40_he = 3,
+		kj_75kwk40_aphe = 3,
+
+		kj_predator_normal = 3,
+
+		kj_280SKC34_ap = 5,
+		kj_280SKC34_he = 8,
+		kj_280SKC34_inc = 4,
+
+		kj_ray_normal = 5,
+		kj_ray_normal_small = 2,
+
+		kj_rex_normal = 5,
+
+		kj_2cmfv_normal = 2,
+		kj_2cmfv_normal_vierling = 2,
+
+		kj_apds_normal_single = 1,
 	},
 	sulfur = {
-		kj_pak_inc = 5,
 		kj_280SKC34_inc = 8,
-	}
+		kj_pak_inc = 3,
+	},
+	copper = {
+		kj_apds_normal_single = 1,
+	},
 }
+
 tables.recipes = {
 	kj_2a6 = {
 		{type = "item", name = "advanced-circuit", 		amount = 70},
@@ -996,105 +1042,108 @@ tables.ammos = {
 
 tables.ammoData = {
 	kj_2a6 = {
-		APAP = 1100,
-		APHE = 550,
-		APDW = 2000,
+		APDW = 2250,
+		APAP = 1800,
+		APHE = 300,
 
-		HEAP = 825,
-		HEHE = 743,
-		HEDW = 500,
+		HEDW = 250,
+		HEAP = 400,
+		HEHE = 550,
 
-		APHEAP = 660,
-		APHEHE = 594,
-		APHEDW = 1250,
+		APHEDW = 350,
+		APHEAP = 650,
+		APHEHE = 600,
 
 		CANAP = 200,
 		CANDW = 300,
 	},
 	kj_40kbaneblade = {
-		APAP = 900,
-		APHE = 810,
-		APDW = 375,
+		HEDW = 350,
+		HEAP = 600,
+		HEHE = 700,
 
-		APHEAP = 100,
-		APHEHE = 100,
-		APHEDW = 600,
+		ADW = 600,
+		AAP = 500,
+		AHE = 500,
 	},
 	kj_40kdreadnought = {
-		HEAP = 450,
-		HEHE = 405,
-		HEDW = 225,
+		HEDW = 250,
+		HEAP = 400,
+		HEHE = 550,
 	},
 	kj_40klemanruss = {
-		HEAP = 600,
-		HEHE = 540,
 		HEDW = 325,
+		HEAP = 500,
+		HEHE = 600,
 	},
 	kj_40kpredator = {
-		HEAP = 375,
-		HEHE = 338,
-		HEDW = 200,
+		HEDW = 225,
+		HEAP = 300,
+		HEHE = 500,
 	},
 	kj_maustank = {
-		APAP = 750,
-		APHE = 375,
-		APDW = 1100,
+		APDW = 2250,
+		APAP = 1800,
+		APHE = 300,
 
-		HEAP = 563,
-		HEHE = 506,
-		HEDW = 275,
+		HEDW = 250,
+		HEAP = 400,
+		HEHE = 550,
 
-		APHEAP = 450,
-		APHEHE = 405,
-		APHEDW = 688,
+		APHEDW = 350,
+		APHEAP = 650,
+		APHEHE = 600,
 	},
 	kj_pak = {
-		APAP = 900,
-		APHE = 450,
-		APDW = 1300,
+		APDW = 1500,
+		APAP = 1500,
+		APHE = 200,
 
-		HEAP = 675,
-		HEHE = 300,
-		HEDW = 325,
+		HEDW = 200,
+		HEAP = 250,
+		HEHE = 450,
 
-		APHEAP = 480,
-		APHEHE = 432,
-		APHEDW = 400,
+		HEIDW = 300,
+		HEIAP = 280,
+		HEIFDW = 100,
+		HEIFAP = 100,
+		HEIFHE = 100,
 	},
 	kj_panzer4 = {
-		APAP = 480,
-		APHE = 240,
-		APDW = 700,
+		APDW = 1500,
+		APAP = 1200,
+		APHE = 200,
 
-		HEAP = 360,
-		HEHE = 324,
-		HEDW = 175,
+		HEDW = 150,
+		HEAP = 200,
+		HEHE = 450,
 
-		APHEAP = 288,
-		APHEHE = 259,
-		APHEDW = 438,
+		APHEDW = 250,
+		APHEAP = 450,
+		APHEHE = 450,
+	},
+	kj_rattetank = {
+		APDW = 5000,
+		APAP = 5000,
+		APHE = 500,
+
+		HEDW = 1000,
+		HEAP = 1000,
+		HEHE = 1000,
+
+		HEIDW = 1000,
+		HEIAP = 500,
+		HEIFDW = 200,
+		HEIFAP = 200,
+		HEIFHE = 200,
 	},
 	kj_ray = {
 		APAP = 2000,
 		APHE = 500,
 	},
-	kj_rattetank = {
-		APAP = 2000,
-		APHE = 1000,
-		APDW = 3000,
-
-		HEAP = 1500,
-		HEHE = 1350,
-		HEDW = 1500,
-
-		APHEAP = 1200,
-		APHEHE = 1080,
-		APHEDW = 1125,
-	},
 	kj_rex = {
 		APAP = 2000,
 		APHE = 500,
-		APDW = 4000,
 	},
 	kj_wirbelwind = {
 		NF = 35,
