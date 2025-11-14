@@ -22,6 +22,7 @@ tables.supportedMods = {
 	kj_fordmustang = 	{name = "mustang", 		car = true,		weight = 1,		order = "1[civil]-b"},
 	kj_gigahorse = 		{name = "gigahorse", 	car = true,		weight = 1,		order = "1[civil]-e"},
 	kj_utilitarian = 	{name = "utilitarian", 	car = true,		weight = 1,		order = "1[civil]-h"},
+	kj_warrig = 		{name = "warrig", 		car = true,		weight = 5,		order = "1[civil]-i"},
 
 	kj_40kbunker = 		{name = "bunker",		car = true,		weight = 2,		order = "3[military-turrets]-n-2"},
 	kj_phalanx = 		{name = "phalanx", 		car = false,	weight = 3,		order = "3[military-turrets]-aa-2"},
@@ -208,6 +209,15 @@ tables.recipeChanges = {
 		},
 	},
 
+	{modname = "kj_warrig", entries = {
+			{recipe = "kj_warrig", setting = "kj_warrig_cost_setting_multiplicator"},
+			{recipe = "kj_warrig_train", setting = "kj_warrig_cost_setting_multiplicator"},
+			{recipe = "kj_warrig_wagon", setting = "kj_warrig_cost_setting_multiplicator"},
+			{recipe = "kj_warrig_wagon_fluid", setting = "kj_warrig_cost_setting_multiplicator"},
+			{recipe = "kj_warrig_rails", setting = "kj_warrig_cost_setting_multiplicator"},
+		},
+	},
+
 
 
 }
@@ -261,6 +271,7 @@ tables.categoriesUpdates = {
 	kj_fordmustang = 	{modname = "kj_gigahorse",		name = "kj_trucks",     	order = "b", group = "logistics", type = "item-subgroup"},
 	kj_gigahorse = 		{modname = "kj_fordmustang",	name = "kj_civils",         order = "a", group = "logistics", type = "item-subgroup"},
 	kj_utilitarian = 	{modname = "kj_utilitarian",	name = "kj_trucks",     	order = "b", group = "logistics", type = "item-subgroup"},
+	kj_warrig = 		{modname = "kj_warrig",			name = "kj_trucks",     	order = "b", group = "logistics", type = "item-subgroup"},
 
 	kj_40kbunker = 		{modname = "kj_40kbunker",		name = "kj_turrets",     	order = "g", group = "logistics", type = "item-subgroup"},
 	kj_phalanx = 		{modname = "kj_phalanx",		name = "kj_turrets",     	order = "g", group = "logistics", type = "item-subgroup"},
@@ -293,6 +304,10 @@ tables.items = {
 	kj_fordmustang = 	{modname = "kj_fordmustang",                            order = "1[civil]-b"},
 	kj_gigahorse = 		{modname = "kj_gigahorse",		                        order = "1[civil]-e"},
 	kj_utilitarian = 	{modname = "kj_utilitarian",		                    order = "1[civil]-h"},
+	kj_warrig = 		{modname = "kj_warrig",		                    		order = "1[civil]-i0"},
+	kj_warrig2 = 		{modname = "kj_warrig",		  name = "kj_warrig_train", order = "1[civil]-i1", icon = "train"},
+	kj_warrig3 = 		{modname = "kj_warrig",       name = "kj_warrig_wagon", order = "1[civil]-i2", icon = "wagon"},
+	kj_warrig4 = 		{modname = "kj_warrig", name = "kj_warrig_wagon_fluid", order = "1[civil]-i3", icon = "wagon_fluid"},
 
 	kj_40kbunker = 		{modname = "kj_40kbunker",		                    	order = "3[military-turrets]-n-2-1"},
 	kj_40kbunker2 =		{modname = "kj_40kbunker", name = "kj_40kbunker_turret",order = "3[military-turrets]-n-2-2"},
@@ -438,6 +453,19 @@ tables.recipes = {
 		{type = "item", name = "engine-unit", 			amount = 30},
 		{type = "item", name = "iron-gear-wheel", 		amount = 30},
 		{type = "item", name = "steel-plate", 			amount = 40},
+	},
+	kj_warrig = {
+		{type = "item", name = "engine-unit", 		amount = 50},
+		{type = "item", name = "iron-gear-wheel", 	amount = 30},
+		{type = "item", name = "iron-plate", 		amount = 40},
+		{type = "item", name = "iron-stick", 		amount = 15},
+		{type = "item", name = "steel-plate", 		amount = 30},
+	},
+	kj_warrig_wagon = {
+		{type = "item", name = "iron-gear-wheel", 	amount = 20},
+		{type = "item", name = "iron-plate",		amount = 50},
+		{type = "item", name = "iron-stick", 		amount = 10},
+		{type = "item", name = "steel-plate", 		amount = 30},
 	},
 
 	kj_40kbunker = {
@@ -610,6 +638,7 @@ tables.entityData = {
 		kj_fordmustang =  1000,
 		kj_gigahorse = 	  2000,
 		kj_utilitarian =  2000,
+		kj_warrig =  	  2000,
 
 		kj_40kbunker = 20000,
 		kj_phalanx =  	1000,
@@ -639,6 +668,7 @@ tables.entityData = {
 		kj_fordmustang =	{false, false, 5},
 		kj_gigahorse = 		{true, false, 1},
 		kj_utilitarian =	{true, true, 3},
+		kj_warrig =			{true, true, 1},
 
 		kj_40kbunker = 		{true, true, 0.04},
 	},
@@ -665,6 +695,7 @@ tables.entityData = {
 		kj_fordmustang =   "650kW",
 		kj_gigahorse = 	  "1000kW",
 		kj_utilitarian =   "600kW",
+		kj_warrig =   	  "1500kW",
 
 		kj_40kbunker = 	  	"10kW",
 	},
@@ -691,6 +722,7 @@ tables.entityData = {
 		kj_fordmustang =   "390kW",
 		kj_gigahorse = 	   "700kW",
 		kj_utilitarian =   "600kW",
+		kj_warrig =   	  "1400kW",
 
 		kj_40kbunker = 	  	"10kW",
 	},
@@ -717,6 +749,7 @@ tables.entityData = {
 		kj_fordmustang =     1500,
 		kj_gigahorse = 	     5000,
 		kj_utilitarian =    10000,
+		kj_warrig =    		13000,
 
 		kj_40kbunker = 	   230000,
 	},
@@ -743,6 +776,7 @@ tables.entityData = {
 		kj_fordmustang =	{ 40, 0.013, 5},
 		kj_gigahorse = 		{ 40, 0.008, 1},
 		kj_utilitarian =	{150, 0.01 , 1},
+		kj_warrig =			{ 70, 0.007, 1},
 
 		kj_40kbunker = 		{ 10, 0.000, 1},
 	},
@@ -769,6 +803,7 @@ tables.entityData = {
 		kj_fordmustang =	{{ 15, 60}, { 15, 40}, { 50, 50}, { 15, 15}, {  5, 20}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_gigahorse = 		{{ 15, 55}, { 20, 40}, { 35, 35}, { 15, 25}, { 20, 25}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_utilitarian =	{{ 15, 80}, { 15, 40}, { 50, 70}, { 15, 30}, { 10, 30}, {  0,  0}, {  0,  0}, {  0,  0}},
+		kj_warrig =			{{ 15, 60}, { 20, 50}, { 60, 80}, { 15, 30}, { 25, 30}, {  0,  0}, {  0,  0}, {  0,  0}},
 
 		kj_40kbunker =		{{ 50,100}, { 30, 75}, {100, 95}, { 50, 70}, { 40, 70}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_phalanx =		{{ 20, 65}, { 15, 30}, { 10, 40}, {  0, 15}, {  5, 30}, {  5, 40}, {  5, 40}, {  5, 95}},
@@ -798,6 +833,7 @@ tables.entityData = {
 		kj_fordmustang =	{0.002,   1, 0.1, 1},
 		kj_gigahorse = 		{0.002,   1, 0.2, 1},
 		kj_utilitarian =	{0.002,   1, 0.1, 1},
+		kj_warrig =			{0.002, 0.1, 0.05, 1},
 
 		kj_40kbunker = 		{1	  , 0.5, 0.1, 1},
 	},

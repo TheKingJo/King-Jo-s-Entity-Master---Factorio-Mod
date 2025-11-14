@@ -61,48 +61,6 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 		data.raw["ammo"]["kj_predator_normal"].subgroup = tables.categoriesUpdates["kj_40kpredator"].name
 	end
 
-	if mods["kj_aventador"] then
-		data.raw["item-subgroup"]["kj_civils"].group = "kj_vehicles"
-		data.raw["item-with-entity-data"]["kj_aventador"].subgroup = "kj_civils"
-	end
-
-	if mods["kj_bulldozer"] then
-		data.raw["item-subgroup"]["kj_trucks"].group = "kj_vehicles"
-		data.raw["item-with-entity-data"]["kj_bulldozer"].subgroup = "kj_trucks"
-	end
-
-	if mods["kj_cybertruck"] then
-		data.raw["item-subgroup"]["kj_civils"].group = "kj_vehicles"
-		data.raw["item-with-entity-data"]["kj_cybertruck"].subgroup = "kj_civils"
-		data.raw["item"]["kj_el_charge"].subgroup = "kj_civils"
-		data.raw["item"]["kj_el_charge_used"].subgroup = "kj_civils"
-
-		data.raw["recipe"]["kj_el_charge"].subgroup = "kj_civils"
-		data.raw["recipe"]["kj_el_charge_recycle_1"].subgroup = "kj_civils"
-		data.raw["recipe"]["kj_el_charge_recycle_2"].subgroup = "kj_civils"
-		data.raw["recipe"]["kj_el_charge_recycle_3"].subgroup = "kj_civils"
-	end
-
-	if mods["kj_delorean"] then
-		data.raw["item-subgroup"]["kj_civils"].group = "kj_vehicles"
-		data.raw["item-with-entity-data"]["kj_delorean"].subgroup = "kj_civils"
-	end
-
-	if mods["kj_firetruck"] then
-		data.raw["item-subgroup"]["kj_trucks"].group = "kj_vehicles"
-		data.raw["item-with-entity-data"]["kj_firetruck"].subgroup = "kj_trucks"
-	end
-
-	if mods["kj_fordmustang"] then
-		data.raw["item-subgroup"]["kj_civils"].group = "kj_vehicles"
-		data.raw["item-with-entity-data"]["kj_fordmustang"].subgroup = "kj_civils"
-	end
-
-	if mods["kj_gigahorse"] then
-		data.raw["item-subgroup"]["kj_trucks"].group = "kj_vehicles"
-		data.raw["item-with-entity-data"]["kj_gigahorse"].subgroup = "kj_trucks"
-	end
-
 	if mods["kj_maustank"] then
 		data.raw["item-subgroup"]["kj_tanks"].group = "kj_vehicles"
 		data.raw["item-with-entity-data"]["kj_maustank"].subgroup = tables.categoriesUpdates["kj_maustank"].name
@@ -156,15 +114,66 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 		data.raw["item-with-entity-data"]["kj_swspeeder"].subgroup = "kj_star_wars"
 	end
 
+	if mods["kj_wirbelwind"] then
+		data.raw["item-subgroup"]["kj_tanks"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_wirbelwind"].subgroup = tables.categoriesUpdates["kj_wirbelwind"].name
+		data.raw["ammo"]["kj_2cmfv_normal"].subgroup = tables.categoriesUpdates["kj_wirbelwind"].name
+	end
+
+	if mods["kj_aventador"] then
+		data.raw["item-subgroup"]["kj_civils"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_aventador"].subgroup = "kj_civils"
+	end
+
+	if mods["kj_bulldozer"] then
+		data.raw["item-subgroup"]["kj_trucks"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_bulldozer"].subgroup = "kj_trucks"
+	end
+
+	if mods["kj_cybertruck"] then
+		data.raw["item-subgroup"]["kj_civils"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_cybertruck"].subgroup = "kj_civils"
+		data.raw["item"]["kj_el_charge"].subgroup = "kj_civils"
+		data.raw["item"]["kj_el_charge_used"].subgroup = "kj_civils"
+
+		data.raw["recipe"]["kj_el_charge"].subgroup = "kj_civils"
+		data.raw["recipe"]["kj_el_charge_recycle_1"].subgroup = "kj_civils"
+		data.raw["recipe"]["kj_el_charge_recycle_2"].subgroup = "kj_civils"
+		data.raw["recipe"]["kj_el_charge_recycle_3"].subgroup = "kj_civils"
+	end
+
+	if mods["kj_delorean"] then
+		data.raw["item-subgroup"]["kj_civils"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_delorean"].subgroup = "kj_civils"
+	end
+
+	if mods["kj_firetruck"] then
+		data.raw["item-subgroup"]["kj_trucks"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_firetruck"].subgroup = "kj_trucks"
+	end
+
+	if mods["kj_fordmustang"] then
+		data.raw["item-subgroup"]["kj_civils"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_fordmustang"].subgroup = "kj_civils"
+	end
+
+	if mods["kj_gigahorse"] then
+		data.raw["item-subgroup"]["kj_trucks"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_gigahorse"].subgroup = "kj_trucks"
+	end
+
 	if mods["kj_utilitarian"] then
 		data.raw["item-subgroup"]["kj_trucks"].group = "kj_vehicles"
 		data.raw["item-with-entity-data"]["kj_utilitarian"].subgroup = "kj_trucks"
 	end
 
-	if mods["kj_wirbelwind"] then
-		data.raw["item-subgroup"]["kj_tanks"].group = "kj_vehicles"
-		data.raw["item-with-entity-data"]["kj_wirbelwind"].subgroup = tables.categoriesUpdates["kj_wirbelwind"].name
-		data.raw["ammo"]["kj_2cmfv_normal"].subgroup = tables.categoriesUpdates["kj_wirbelwind"].name
+	if mods["kj_warrig"] then
+		data.raw["item-subgroup"]["kj_trucks"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_warrig"].subgroup = "kj_trucks"
+		data.raw["item-with-entity-data"]["kj_warrig_train"].subgroup = "kj_trucks"
+		data.raw["item-with-entity-data"]["kj_warrig_wagon"].subgroup = "kj_trucks"
+		data.raw["item-with-entity-data"]["kj_warrig_wagon_fluid"].subgroup = "kj_trucks"
+		data.raw["rail-planner"]["kj_warrig_rails"].subgroup = "kj_trucks"
 	end
 
 	if mods["kj_40kbunker"] then
@@ -409,6 +418,28 @@ if mods["kj_rex"] then
 			time = 40
 		}
 		data.raw["technology"]["kj_rex"].prerequisites = {"military-4", "se-rocket-science-pack", "kj_gasoline"}
+	end
+end
+
+if mods["kj_warrig"] then
+	if  data.raw["straight-rail"]["straight-rail"].fast_replaceable_group == nil then
+		data.raw["straight-rail"]["straight-rail"].fast_replaceable_group = "straight-rail"
+		data.raw["half-diagonal-rail"]["half-diagonal-rail"].fast_replaceable_group = "half-diagonal-rail"
+		data.raw["curved-rail-a"]["curved-rail-a"].fast_replaceable_group = "curved-rail-a"
+		data.raw["curved-rail-b"]["curved-rail-b"].fast_replaceable_group = "curved-rail-b"
+
+		data.raw["straight-rail"]["kj_warrig_rail_straight"].fast_replaceable_group = "straight-rail"
+		data.raw["half-diagonal-rail"]["kj_warrig_rail_half_diagonal"].fast_replaceable_group = "half-diagonal-rail"
+		data.raw["curved-rail-a"]["kj_warrig_rail_curved_rail_a"].fast_replaceable_group = "curved-rail-a"
+		data.raw["curved-rail-b"]["kj_warrig_rail_curved_rail_b"].fast_replaceable_group = "curved-rail-b"
+	else
+		data.raw["straight-rail"]["kj_warrig_rail_straight"].fast_replaceable_group = data.raw["straight-rail"]["straight-rail"].fast_replaceable_group
+		data.raw["curved-rail"]["kj_warrig_rail_curved"].fast_replaceable_group = data.raw["curved-rail"]["curved-rail"].fast_replaceable_group
+
+		data.raw["straight-rail"]["kj_warrig_rail_straight"].fast_replaceable_group 			= data.raw["straight-rail"]["straight-rail"].fast_replaceable_group
+		data.raw["half-diagonal-rail"]["kj_warrig_rail_half_diagonal"].fast_replaceable_group 	= data.raw["half-diagonal-rail"]["half-diagonal-rail"].fast_replaceable_group
+		data.raw["curved-rail-a"]["kj_warrig_rail_curved_rail_a"].fast_replaceable_group 		= data.raw["curved-rail-a"]["curved-rail-a"].fast_replaceable_group
+		data.raw["curved-rail-b"]["kj_warrig_rail_curved_rail_b"].fast_replaceable_group 		= data.raw["curved-rail-a"]["curved-rail-b"].fast_replaceable_group
 	end
 end
 

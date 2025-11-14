@@ -29,3 +29,8 @@ require("prototypes.entities")
 if mods["kj_ray"] then
 	require("prototypes.ray")
 end
+
+--Additional Edits
+if mods["kj_warrig"] then
+	require("prototypes.warrig")
+end

@@ -20,6 +20,7 @@ local movement_triggers = {
 	gigahorse  	= table.deepcopy(vanilla_mt.car),
 	mustang  	= table.deepcopy(vanilla_mt.car),
 	utilitarian	= table.deepcopy(vanilla_mt.car),
+	warrig		= table.deepcopy(vanilla_mt.car),
 }
 
 tires = {
@@ -217,6 +218,14 @@ tires = {
 		{1.5, 1},
 		{1.5,-2.5},
 		{1.5,-1},
+	},
+	warrig = {
+		{ 1, 2.5},
+		{ 1,-2},
+		{ 1,-3},
+		{-1, 2.5},
+		{-1,-2},
+		{-1,-3},
 	},
 }
 for name, vehicle in pairs(movement_triggers) do

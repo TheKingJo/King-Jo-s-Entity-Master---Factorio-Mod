@@ -76,6 +76,18 @@ if mods["kj_vierling"] then
 	})
 end
 
+if mods["kj_warrig"] then
+	data:extend({
+		{
+			type = "int-setting",
+			name = "kj_warrig_cost_setting_multiplicator",
+			setting_type = "startup",
+			default_value = 1,
+			order = "kj_warrig_cost_setting_multiplicator",
+		},
+	})
+end
+
 local function settingMaker(name)
 	data:extend({
 		{

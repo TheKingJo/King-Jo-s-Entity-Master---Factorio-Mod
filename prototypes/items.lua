@@ -1947,6 +1947,41 @@ if mods["kj_gigahorse"] then
     })
 end
 
+if mods["kj_warrig"] then
+    local trivial_smoke = require("__base__/prototypes/entity/smoke-animations.lua").trivial_smoke
+
+    data:extend({
+        trivial_smoke {
+            name = "kj_warrig_smoke",
+            color = {r = 0.01, g = 0.01, b = 0.01, a = 1},
+            duration = 180,
+            spread_duration = 180,
+            fade_away_duration = 180,
+            start_scale = 0.1,
+            end_scale = 1.0,
+        },
+
+        {
+            type = "rail-planner",
+            name = "kj_warrig_rails",
+            icon = "__kj_warrig__/graphics/road.png",
+            icon_size = 128,
+            subgroup = "transport",
+            order = "1[civil]-i4",
+            place_result = "kj_warrig_rail_straight",
+            stack_size = 100,
+            rails =
+            {
+              "kj_warrig_rail_straight",
+              "kj_warrig_rail_half_diagonal",
+              "kj_warrig_rail_curved_rail_a",
+              "kj_warrig_rail_curved_rail_b",
+            },
+            --rails = {"kj_warrig_rail_straight", "kj_warrig_rail_curved"},
+        },
+    })
+end
+
 if mods["kj_40kbunker"] then
     data:extend({
         {

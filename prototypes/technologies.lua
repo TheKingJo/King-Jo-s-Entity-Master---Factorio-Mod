@@ -165,6 +165,12 @@ local technologies = {
 		prerequisites = {"automobilism", "kj_gasoline"},
 		unit = {200,20,1,1,0,1,0,0,0}
 	},
+	{
+		modname = "kj_warrig",
+		recipes = {"kj_warrig", "kj_warrig_train", "kj_warrig_wagon", "kj_warrig_wagon_fluid", "kj_warrig_rails"},
+		prerequisites = {"automobilism", "kj_gasoline", "railway"},
+		unit = {250,20,1,1,0,1,0,0,0}
+	},
 
 	{
 		modname = "kj_40kbunker",
