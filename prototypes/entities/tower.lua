@@ -82,7 +82,8 @@ data:extend({
 				{
 					layers =
 					{
-						util.empty_animation(1),
+						utils.layerMaker(modname, "", "tower", 1800, {1,1,4}, {1,1}, 4, 1),
+						utils.layerMaker(modname, "", "tower", 1800, {1,1,4}, {1,1}, 4, 2),
 					}
 				},
 			},
@@ -91,8 +92,7 @@ data:extend({
 		{
 			layers =
 			{
-				utils.layerMaker(modname, "", "tower", 1800, {1,1,4}, {1,1}, 4, 1),
-				utils.layerMaker(modname, "", "tower", 1800, {1,1,4}, {1,1}, 4, 2),
+				util.empty_animation(1),
 			},
 		},
 		attack_parameters =
@@ -105,6 +105,7 @@ data:extend({
 			projectile_creation_distance = 1.5,
 			projectile_center = {0, -6},
 			range = 67,
+			min_range = 4,
 			sound = sounds.heavy_gunshot,
 			shell_particle =
 			{
