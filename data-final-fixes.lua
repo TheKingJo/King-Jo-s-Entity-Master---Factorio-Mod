@@ -321,7 +321,7 @@ local function establishAA()
 			if data.raw["car"][name] ~= nil then
 				if data.raw["car"][name].trigger_target_mask ~= nil then
 					table.insert(data.raw["car"][name.."-airborne"].trigger_target_mask, "air-unit")
-					log("Added trigger_target_mask to plane "..mod.."-airborne.")
+					log("Added trigger_target_mask to plane "..name.."-airborne.")
 
 				else
 					data.raw["car"][name.."-airborne"].trigger_target_mask = {"air-unit"}
