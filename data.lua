@@ -14,7 +14,7 @@ require("prototypes.tech_upgrades")
 for modname, mod in pairs(tables.supportedMods) do
 	if mods[modname] then
 		log("Mod "..modname.." exists.")
-		for _,folder in pairs(folders) do
+		for _, folder in pairs(folders) do
 			require("prototypes."..folder.."."..mod.name)
 		end
 	else

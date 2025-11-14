@@ -75,6 +75,18 @@ local techUpdates = {
         modifiers = {0.2, 0.2, 0.2, 0.2, 0.2},
         ammo_category = "kj_2cmfv",
     },
+
+    {
+        modname = "kj_vierling",
+        modifiers = {0.2, 0.2, 0.2, 0.2, 0.2},
+        ammo_category = "kj_2cmfv_vierling",
+    },
+
+    {
+        modname = "kj_phalanx",
+        modifiers = {0.2, 0.2, 0.2, 0.2, 0.2},
+        ammo_category = "kj_apds_phalanx",
+    },
 }
 
 local techs = {

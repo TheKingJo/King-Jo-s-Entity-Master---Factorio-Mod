@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.5
+Date: 24.11.2024
+  Changes:
+    - added support for vierling, phalanx, watchtower, bunker
+  Fixes:
+    - dreadnought using correct damages now
+---------------------------------------------------------------------------------------------------
 Version: 2.0.4
 Date: 21.11.2024
   Changes:

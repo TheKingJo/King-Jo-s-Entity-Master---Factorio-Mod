@@ -53,7 +53,7 @@ data:extend({
     },
     light_animation =
     {
-      layers = 
+      layers =
       {
         utils.layerMaker(modname, "", "baneblade", 1000, {1,2}, {8,8}, 2, 3),
       },

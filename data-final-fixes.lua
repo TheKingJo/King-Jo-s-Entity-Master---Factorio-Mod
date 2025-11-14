@@ -166,6 +166,52 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 		data.raw["item-with-entity-data"]["kj_wirbelwind"].subgroup = tables.categoriesUpdates["kj_wirbelwind"].name
 		data.raw["ammo"]["kj_2cmfv_normal"].subgroup = tables.categoriesUpdates["kj_wirbelwind"].name
 	end
+
+	if mods["kj_40kbunker"] then
+		data.raw["item-subgroup"]["kj_turrets"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_40kbunker"].subgroup = tables.categoriesUpdates["kj_40kbunker"].name
+		data.raw["item-with-entity-data"]["kj_40kbunker_turret"].subgroup = tables.categoriesUpdates["kj_40kbunker"].name
+	end
+
+	if mods["kj_phalanx"] then
+		data.raw["item-subgroup"]["kj_turrets"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_phalanx"].subgroup = tables.categoriesUpdates["kj_phalanx"].name
+		data.raw["ammo"]["kj_apds_normal"].subgroup = tables.categoriesUpdates["kj_phalanx"].name
+
+		data.raw["item-with-entity-data"]["kj_phalanx"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
+		data.raw["item-with-entity-data"]["kj_phalanx"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
+
+		if data.raw["item-with-entity-data"]["kj_phalanx_nonAA"] ~= nil then
+			data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].subgroup = tables.categoriesUpdates["kj_phalanx"].name
+
+			data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
+			data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
+		end
+	end
+
+	if mods["kj_tower"] then
+		data.raw["item-subgroup"]["kj_turrets"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_tower"].subgroup = tables.categoriesUpdates["kj_tower"].name
+
+		data.raw["item-with-entity-data"]["kj_tower"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
+		data.raw["item-with-entity-data"]["kj_tower"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
+	end
+
+	if mods["kj_vierling"] then
+		data.raw["item-subgroup"]["kj_turrets"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_vierling"].subgroup = tables.categoriesUpdates["kj_vierling"].name
+		data.raw["ammo"]["kj_2cmfv_normal_vierling"].subgroup = tables.categoriesUpdates["kj_vierling"].name
+
+		data.raw["item-with-entity-data"]["kj_vierling"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
+		data.raw["item-with-entity-data"]["kj_vierling"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
+
+		if data.raw["item-with-entity-data"]["kj_vierling_nonAA"] ~= nil then
+			data.raw["item-with-entity-data"]["kj_vierling_nonAA"].subgroup = tables.categoriesUpdates["kj_vierling"].name
+
+			data.raw["item-with-entity-data"]["kj_vierling_nonAA"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
+			data.raw["item-with-entity-data"]["kj_vierling_nonAA"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
+		end
+	end
 end
 
 if mods["kj_2a6"] then
@@ -355,6 +401,85 @@ if mods["kj_rex"] then
 			time = 40
 		}
 		data.raw["technology"]["kj_rex"].prerequisites = {"military-4", "se-rocket-science-pack", "kj_gasoline"}
+	end
+end
+
+if mods["kj_40kbunker"] then
+	data.raw["car"]["kj_40kbunker"].sound_no_fuel = nil
+
+	if mods["space-exploration"] then
+		data.raw["technology"][modName].unit = 
+		{
+			count = 600,
+			ingredients =
+			{
+				{"automation-science-pack", 1},
+				{"logistic-science-pack", 1},
+				{"military-science-pack", 1},
+			},
+			time = 40
+		}
+		data.raw["technology"][modName].prerequisites = {"military-3"}
+	end
+
+
+	if mods["aai-programmable-vehicles"] then
+		log("AAI-P-V Mod found. Correcting the recipes.")
+	
+		data.raw["recipe"][modName.."-kj_40kbunker_gun"].hidden = true
+		
+		for i,effect in ipairs(data.raw["technology"][modName].effects) do
+			if effect.type == "unlock-recipe" then
+				if effect.recipe == "kj_40kbunker-kj_40kbunker_gun" --[[or effect.recipe == modName.."-kj_40kbunker_gun-reverse"]] then
+					log("Recipe "..effect.recipe.." found. Deleting.")
+					data.raw["technology"][modName].effects[i] = nil
+				end
+			end
+		end
+	end
+end
+
+if mods["kj_vierling"] then
+	--Assigning Planes trigger_target_mask
+	for _, mod in ipairs(tables.airborneMods) do
+		if mods[mod] then
+			if data.raw["car"][mod] ~= nil then		--If plane exists
+				if data.raw["car"][mod].trigger_target_mask ~= nil then		--If masks not empty
+					table.insert(data.raw["car"][mod.."-airborne"].trigger_target_mask, "air-unit")
+					log("Vierling added trigger_target_mask to plane "..mod.."-airborne.")
+
+				else
+					data.raw["car"][mod.."-airborne"].trigger_target_mask = {"air-unit"}
+					log("Vierling assigned trigger_target_mask to plane "..mod.."-airborne.")
+				end
+			else
+				log("Vierling trying to assign trigger_target_mask to plane "..mod.." failed.")
+			end
+		end
+	end
+end
+
+if mods["kj_phalanx"] then
+	if mods["kj_vierling"] then
+		table.insert(data.raw["technology"]["kj_phalanx"].prerequisites, "kj_vierling")
+	end
+	
+	--Assigning Planes trigger_target_mask
+	for _, mod in ipairs(tables.airborneMods) do
+		if mods[mod] then
+			if data.raw["car"][mod] ~= nil then		--If plane exists
+				if data.raw["car"][mod].trigger_target_mask ~= nil then		--If masks not empty
+					table.insert(data.raw["car"][mod.."-airborne"].trigger_target_mask, "air-unit")
+					log("Phalanx added trigger_target_mask to plane "..mod.."-airborne.")
+					
+				else
+					data.raw["car"][mod.."-airborne"].trigger_target_mask = {"air-unit"}
+					log("Phalanx assigned trigger_target_mask to plane "..mod.."-airborne.")
+				end
+			else
+				log("Phalanx trying to assign trigger_target_mask to plane "..mod.." failed.")
+			end
+		end
 	end
 end
 

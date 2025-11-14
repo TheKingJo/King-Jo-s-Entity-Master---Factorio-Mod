@@ -165,6 +165,36 @@ local technologies = {
 		prerequisites = {"automobilism", "kj_gasoline"},
 		unit = {200,20,1,1,0,1,0,0,0}
 	},
+
+	{
+		modname = "kj_40kbunker",
+		recipes = {"kj_40kbunker", "kj_40kbunker_turret"},
+		prerequisites = {"military-3"},
+		unit = {600,40,1,1,0,1,0,0,0}
+	},
+
+	{
+		modname = "kj_phalanx",
+		size = 256,
+		recipes = {"kj_phalanx", "kj_apds_normal"},
+		prerequisites = {"military-4"},
+		unit = {200,30,1,1,1,1,0,1,0}
+	},
+
+	{
+		modname = "kj_tower",
+		recipes = {"kj_tower"},
+		prerequisites = {"military-3"},
+		unit = {150,30,1,1,1,0,0,0,0}
+	},
+
+	{
+		modname = "kj_vierling",
+		recipes = {"kj_vierling", "kj_2cmfv_normal_vierling"},
+		prerequisites = {"military-3"},
+		unit = {200,30,1,1,1,1,0,0,0}
+	},
+
 }
 
 local sciencePacks = {

@@ -1,5 +1,5 @@
 
-local ammoDmg = require("tables").ammoDmg.kj_2a6
+local ammoDmg = require("tables").ammoDmg.kj_40kdreadnought
 local items = require("tables").items
 local modname = "kj_40kdreadnought"
 require("bolter")

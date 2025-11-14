@@ -1,34 +1,8 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
---local tables = require("tables")
+local sounds = require ("__base__/prototypes/entity/sounds.lua")
+local tables = require("tables")
 
-local items = {
-	{modname = "kj_2a6"									  , order = "2[military]-p5"},
-	{modname = "kj_40kbaneblade"	                      , order = "2[military]-40k-3"},
-	{modname = "kj_40kdreadnought"	                      , order = "2[military]-40k-4"},
-	{modname = "kj_40klemanruss"	                      , order = "2[military]-40k-2"},
-	{modname = "kj_40kpredator"                           , order = "2[military]-40k-1"},
-	{modname = "kj_maustank"		                      , order = "2[military]-p4"},
-	{modname = "kj_pak"				                      , order = "2[military]-p1a"},
-	{modname = "kj_pak", 			name = "kj_pak_turret", order = "2[military]-p1b"},
-	{modname = "kj_panzer4"			                      , order = "2[military]-p2"},
-	{modname = "kj_rex"				                      , order = "2[military]-r"},
-	{modname = "kj_rattetank"		                      , order = "2[military]-p6"},
-	{modname = "kj_ray"				                      , order = "2[military]-r-n[normal]"},
-	{modname = "kj_ray", 			name = "kj_ray_small" , order = "2[military]-r-s[small]",	icon = "icon_small"},
-	{modname = "kj_swspeeder"		                      , order = "2[military]-s"},
-	{modname = "kj_wirbelwind"		                      , order = "2[military]-p3"},
-	
-	{modname = "kj_aventador"		                      , order = "1[civil]-d"},
-	{modname = "kj_bulldozer"		                      , order = "1[civil]-f"},
-	{modname = "kj_cybertruck"		                      , order = "1[civil]-c0"},
-	{modname = "kj_delorean"		                      , order = "1[civil]-a"},
-	{modname = "kj_firetruck"		                      , order = "1[civil]-g"},
-	{modname = "kj_fordmustang"                           , order = "1[civil]-b"},
-	{modname = "kj_gigahorse"		                      , order = "1[civil]-e"},
-	{modname = "kj_utilitarian"		                      , order = "1[civil]-h"},
-}
-
-for _, item in pairs(items) do
+for _, item in pairs(tables.items) do
     if mods[item.modname] then
         local name = item.name or item.modname
 
@@ -280,6 +254,7 @@ if mods["kj_40kbaneblade"] then
         },
     })
 end
+
 if mods["kj_40kdreadnought"] then
 
     local boltersounds =
@@ -1972,3 +1947,28 @@ if mods["kj_gigahorse"] then
     })
 end
 
+if mods["kj_40kbunker"] then
+    data:extend({
+        {
+            type = "gun",
+            name = "kj_40kbunker_gun",
+            icon = "__kj_40kbunker__/graphics/icon.png",
+            icon_size = 128,
+            hidden = true,
+            subgroup = "gun",
+            order = "z[maustank]-a[cannon]",
+            attack_parameters =
+            {
+                type = "projectile",
+                ammo_category = "bullet",
+                cooldown = 4,
+                movement_slow_down_factor = 0.7,
+                projectile_creation_distance = 4.4,
+                projectile_center = {0, 0},
+                range = 25,
+                sound = sounds.heavy_gunshot,
+            },
+            stack_size = 5
+        },
+    })
+end

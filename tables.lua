@@ -1,27 +1,43 @@
 local tables = {}
 tables.supportedMods = {
-	kj_2a6 = 			{name = "2a6", 			weight = 5,		order = "2[military]-p5"},
-	kj_40kbaneblade = 	{name = "baneblade", 	weight = 3,		order = "2[military]-40k-3"},
-	kj_40kdreadnought =	{name = "dreadnought", 	weight = 2,		order = "2[military]-40k-4"},
-	kj_40klemanruss = 	{name = "lemanruss", 	weight = 2,		order = "2[military]-40k-2"},
-	kj_40kpredator = 	{name = "predator", 	weight = 2,		order = "2[military]-40k-1"},
-	kj_maustank = 		{name = "maustank", 	weight = 4,		order = "2[military]-p4"},
-	kj_pak = 			{name = "pak", 			weight = 5,		order = "2[military]-p1"},
-	kj_panzer4 = 		{name = "panzer4", 		weight = 4,		order = "2[military]-p2"},
-	kj_rex = 			{name = "rex", 			weight = 2,		order = "2[military]-ra"},
-	kj_rattetank = 		{name = "ratte", 		weight = 4,		order = "2[military]-p6"},
-	kj_ray = 			{name = "ray", 			weight = 4,		order = "2[military]-re"},
-	kj_swspeeder = 		{name = "swspeeder", 	weight = 1,		order = "2[military]-s"},
-	kj_wirbelwind = 	{name = "wirbelwind", 	weight = 2,		order = "2[military]-p3"},
+	kj_2a6 = 			{name = "2a6", 			car = true,		weight = 5,		order = "2[military]-p5"},
+	kj_40kbaneblade = 	{name = "baneblade", 	car = true,		weight = 3,		order = "2[military]-40k-3"},
+	kj_40kdreadnought =	{name = "dreadnought", 	car = true,		weight = 2,		order = "2[military]-40k-4"},
+	kj_40klemanruss = 	{name = "lemanruss", 	car = true,		weight = 2,		order = "2[military]-40k-2"},
+	kj_40kpredator = 	{name = "predator", 	car = true,		weight = 2,		order = "2[military]-40k-1"},
+	kj_maustank = 		{name = "maustank", 	car = true,		weight = 4,		order = "2[military]-p4"},
+	kj_pak = 			{name = "pak", 			car = true,		weight = 5,		order = "2[military]-p1"},
+	kj_panzer4 = 		{name = "panzer4", 		car = true,		weight = 4,		order = "2[military]-p2"},
+	kj_rex = 			{name = "rex", 			car = true,		weight = 2,		order = "2[military]-ra"},
+	kj_rattetank = 		{name = "ratte", 		car = true,		weight = 4,		order = "2[military]-p6"},
+	kj_ray = 			{name = "ray", 			car = true,		weight = 4,		order = "2[military]-re"},
+	kj_swspeeder = 		{name = "swspeeder", 	car = true,		weight = 1,		order = "2[military]-s"},
+	kj_wirbelwind = 	{name = "wirbelwind", 	car = true,		weight = 2,		order = "2[military]-p3"},
 
-	kj_aventador = 		{name = "aventador", 	weight = 1,		order = "1[civil]-d"},
-	kj_bulldozer = 		{name = "bulldozer", 	weight = 1,		order = "1[civil]-f"},
-	kj_cybertruck = 	{name = "cybertruck", 	weight = 5,		order = "1[civil]-c0"},
-	kj_delorean = 		{name = "delorean", 	weight = 1,		order = "1[civil]-a"},
-	kj_firetruck = 		{name = "firetruck", 	weight = 1,		order = "1[civil]-g"},
-	kj_fordmustang = 	{name = "mustang", 		weight = 1,		order = "1[civil]-b"},
-	kj_gigahorse = 		{name = "gigahorse", 	weight = 1,		order = "1[civil]-e"},
-	kj_utilitarian = 	{name = "utilitarian", 	weight = 1,		order = "1[civil]-h"},
+	kj_aventador = 		{name = "aventador", 	car = true,		weight = 1,		order = "1[civil]-d"},
+	kj_bulldozer = 		{name = "bulldozer", 	car = true,		weight = 1,		order = "1[civil]-f"},
+	kj_cybertruck = 	{name = "cybertruck", 	car = true,		weight = 5,		order = "1[civil]-c0"},
+	kj_delorean = 		{name = "delorean", 	car = true,		weight = 1,		order = "1[civil]-a"},
+	kj_firetruck = 		{name = "firetruck", 	car = true,		weight = 1,		order = "1[civil]-g"},
+	kj_fordmustang = 	{name = "mustang", 		car = true,		weight = 1,		order = "1[civil]-b"},
+	kj_gigahorse = 		{name = "gigahorse", 	car = true,		weight = 1,		order = "1[civil]-e"},
+	kj_utilitarian = 	{name = "utilitarian", 	car = true,		weight = 1,		order = "1[civil]-h"},
+
+	kj_40kbunker = 		{name = "bunker",		car = true,		weight = 2,		order = "3[military-turrets]-n-2"},
+	kj_phalanx = 		{name = "phalanx", 		car = false,	weight = 3,		order = "3[military-turrets]-aa-2"},
+	kj_tower = 			{name = "tower", 		car = false,	weight = 1,		order = "3[military-turrets]-n-1"},
+	kj_vierling = 		{name = "vierling", 	car = false,	weight = 3,		order = "3[military-turrets]-aa-1"},
+}
+
+tables.airborneMods = {
+	"kj_b17",
+	"kj_b2",
+	"kj_bf109",
+	"kj_ho229",
+	"kj_ju52",
+	"kj_ju87",
+	"kj_jug38",
+	"kj_xb35"
 }
 
 tables.recipeChanges = {
@@ -127,6 +143,29 @@ tables.recipeChanges = {
 	{modname = "kj_fordmustang", recipe = "kj_fordmustang", setting = "kj_fordmustang_cost_setting_multiplicator"},
 	{modname = "kj_gigahorse", recipe = "kj_gigahorse", setting = "kj_gigahorse_cost_setting_multiplicator"},
 	{modname = "kj_utilitarian", recipe = "kj_utilitarian", setting = "kj_utilitarian_cost_setting_multiplicator"},
+
+	{modname = "kj_40kbunker", entries = {
+			{recipe = "kj_40kbunker", setting = "kj_40kbunker_cost_setting_multiplicator"},
+			{recipe = "kj_40kbunker_turret", setting = "kj_40kbunker_cost_setting_multiplicator"},
+		},
+	},
+
+	{modname = "kj_phalanx", entries = {
+			{recipe = "kj_phalanx", setting = "kj_phalanx_cost_setting_multiplicator"},
+			{recipe = "kj_apds_normal", setting = "kj_phalanx_cost_setting_multiplicator"},
+		},
+	},
+
+	{modname = "kj_tower", recipe = "kj_tower", setting = "kj_tower_cost_setting_multiplicator"},
+
+	{modname = "kj_vierling", entries = {
+			{recipe = "kj_vierling", setting = "kj_vierling_cost_setting_multiplicator"},
+			{recipe = "kj_2cmfv_normal_vierling", setting = "kj_vierling_cost_setting_multiplicator"},
+		},
+	},
+
+
+
 }
 
 tables.categories = {
@@ -149,7 +188,10 @@ tables.categories = {
 	{modname = "kj_swspeeder",                                       order = "kj-s",        type = "ammo-category", icon = "cannon", hidden = true},
 	{modname = "kj_wirbelwind",     name = "kj_2cmfv",               order = "kj-p3",       type = "ammo-category", icon = "bullet"},
 
-	{modname = "kj_bulldozer",                                       order = "kj-a",   type = "ammo-category", hidden = true},
+	{modname = "kj_bulldozer",                                       order = "kj-a",   		type = "ammo-category", hidden = true},
+
+	{modname = "kj_phalanx",     	name = "kj_apds_phalanx",		 order = "kj-t2",       type = "ammo-category", icon = "bullet"},
+	{modname = "kj_vierling",     	name = "kj_2cmfv_vierling",		 order = "kj-t1",       type = "ammo-category", icon = "bullet"},
 }
 
 tables.categoriesUpdates = {
@@ -175,6 +217,11 @@ tables.categoriesUpdates = {
 	kj_fordmustang = 	{modname = "kj_gigahorse",		name = "kj_trucks",     	order = "b", group = "logistics", type = "item-subgroup"},
 	kj_gigahorse = 		{modname = "kj_fordmustang",	name = "kj_civils",         order = "a", group = "logistics", type = "item-subgroup"},
 	kj_utilitarian = 	{modname = "kj_utilitarian",	name = "kj_trucks",     	order = "b", group = "logistics", type = "item-subgroup"},
+
+	kj_40kbunker = 		{modname = "kj_40kbunker",		name = "kj_turrets",     	order = "g", group = "logistics", type = "item-subgroup"},
+	kj_phalanx = 		{modname = "kj_phalanx",		name = "kj_turrets",     	order = "g", group = "logistics", type = "item-subgroup"},
+	kj_tower = 			{modname = "kj_tower",			name = "kj_turrets",     	order = "g", group = "logistics", type = "item-subgroup"},
+	kj_vierling = 		{modname = "kj_vierling",		name = "kj_turrets",     	order = "g", group = "logistics", type = "item-subgroup"},
 }
 
 tables.items = {
@@ -202,6 +249,12 @@ tables.items = {
 	kj_fordmustang = 	{modname = "kj_fordmustang",                            order = "1[civil]-b"},
 	kj_gigahorse = 		{modname = "kj_gigahorse",		                        order = "1[civil]-e"},
 	kj_utilitarian = 	{modname = "kj_utilitarian",		                    order = "1[civil]-h"},
+
+	kj_40kbunker = 		{modname = "kj_40kbunker",		                    	order = "3[military-turrets]-n-2-1"},
+	kj_40kbunker2 =		{modname = "kj_40kbunker", name = "kj_40kbunker_turret",order = "3[military-turrets]-n-2-2"},
+	kj_phalanx = 		{modname = "kj_phalanx",		                    	order = "3[military-turrets]-aa-2"},
+	kj_tower = 			{modname = "kj_tower",		                    		order = "3[military-turrets]-n-1"},
+	kj_vierling = 		{modname = "kj_vierling",		                    	order = "3[military-turrets]-aa-1"},
 }
 
 tables.recipes = {
@@ -342,6 +395,33 @@ tables.recipes = {
 		{type = "item", name = "iron-gear-wheel", 		amount = 30},
 		{type = "item", name = "steel-plate", 			amount = 40},
 	},
+
+	kj_40kbunker = {
+		{type = "item", name = "concrete", 			amount = 600},
+		{type = "item", name = "small-lamp", 		amount = 5},
+		{type = "item", name = "steel-plate", 		amount = 400},
+		{type = "item", name = "submachine-gun", 	amount = 1},
+	},
+	kj_phalanx = {
+		{type = "item", name = "iron-gear-wheel", 	amount = 20},
+		{type = "item", name = "steel-plate", 		amount = 40},
+		{type = "item", name = "submachine-gun", 	amount = 6},
+		{type = "item", name = "electric-engine-unit", amount = 10},
+		{type = "item", name = "processing-unit", 	amount = 10},
+		{type = "item", name = "radar", 			amount = 1},
+	},
+	kj_tower = {
+		{type = "item", name = "concrete", 			amount = 30},
+		{type = "item", name = "small-lamp", 		amount = 1},
+		{type = "item", name = "steel-plate", 		amount = 50},
+		{type = "item", name = "submachine-gun", 	amount = 1},
+		{type = "item", name = "wood", 				amount = 10},
+	},
+	kj_vierling = {
+		{type = "item", name = "iron-gear-wheel", 	amount = 20},
+		{type = "item", name = "steel-plate", 		amount = 50},
+		{type = "item", name = "submachine-gun", 	amount = 4},
+	},
 }
 
 tables.ammoDmg = {
@@ -451,7 +531,15 @@ tables.ammoDmg = {
 		NP = 24,
 		NE = 30,
 	},
-
+	kj_phalanx = {
+		NF = 10,
+		NP = 15,
+	},
+	kj_vierling = {
+		NF = 20,
+		NP = 24,
+		NE = 30,
+	},
 }
 
 tables.entityData = {
@@ -478,6 +566,11 @@ tables.entityData = {
 		kj_fordmustang =  1000,
 		kj_gigahorse = 	  2000,
 		kj_utilitarian =  2000,
+
+		kj_40kbunker = 20000,
+		kj_phalanx =  	1000,
+		kj_tower =  	2000,
+		kj_vierling =  	1000,
 	},
 	impactInfos = {
 		kj_2a6 = 		 	{true, true, 0.1},
@@ -502,6 +595,8 @@ tables.entityData = {
 		kj_fordmustang =	{false, false, 5},
 		kj_gigahorse = 		{true, false, 1},
 		kj_utilitarian =	{true, true, 3},
+
+		kj_40kbunker = 		{true, true, 0.04},
 	},
 	braking_power = {
 		kj_2a6 = 		  "3000kW",
@@ -526,6 +621,8 @@ tables.entityData = {
 		kj_fordmustang =   "650kW",
 		kj_gigahorse = 	  "1000kW",
 		kj_utilitarian =   "600kW",
+
+		kj_40kbunker = 	  	"10kW",
 	},
 	consumption = {
 		kj_2a6 = 		  "1600kW",
@@ -550,6 +647,8 @@ tables.entityData = {
 		kj_fordmustang =   "390kW",
 		kj_gigahorse = 	   "700kW",
 		kj_utilitarian =   "600kW",
+
+		kj_40kbunker = 	  	"10kW",
 	},
 	weight = {
 		kj_2a6 = 		    62000,
@@ -574,6 +673,8 @@ tables.entityData = {
 		kj_fordmustang =     1500,
 		kj_gigahorse = 	     5000,
 		kj_utilitarian =    10000,
+
+		kj_40kbunker = 	   230000,
 	},
 	invRotTur = {
 		kj_2a6 = 		 	{20, 0.004 , 0.11 / 60},
@@ -598,6 +699,8 @@ tables.entityData = {
 		kj_fordmustang =	{ 40, 0.013, 5},
 		kj_gigahorse = 		{ 40, 0.008, 1},
 		kj_utilitarian =	{150, 0.01 , 1},
+
+		kj_40kbunker = 		{ 10, 0.000, 1},
 	},
 	resistances = {         --  fire     physical    impact   explosion     acid     electric    laser      poison
 		kj_2a6 = 		 	{{ 60, 65}, { 40, 70}, { 30, 70}, { 50, 65}, { 20, 60}, {  0,  0}, {  0,  0}, {  0,  0}},
@@ -622,6 +725,11 @@ tables.entityData = {
 		kj_fordmustang =	{{ 15, 60}, { 15, 40}, { 50, 50}, { 15, 15}, {  5, 20}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_gigahorse = 		{{ 15, 55}, { 20, 40}, { 35, 35}, { 15, 25}, { 20, 25}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_utilitarian =	{{ 15, 80}, { 15, 40}, { 50, 70}, { 15, 30}, { 10, 30}, {  0,  0}, {  0,  0}, {  0,  0}},
+
+		kj_40kbunker =		{{ 50,100}, { 30, 75}, {100, 95}, { 50, 70}, { 40, 70}, {  0,  0}, {  0,  0}, {  0,  0}},
+		kj_phalanx =		{{ 20, 65}, { 15, 30}, { 10, 40}, {  0, 15}, {  5, 30}, {  5, 40}, {  5, 40}, {  5, 95}},
+		kj_tower =			{{ 50,100}, { 15, 75}, { 50, 50}, { 40, 20}, { 15, 30}, {  0,  0}, {  0,  0}, {  0,  0}},
+		kj_vierling =		{{ 20, 70}, { 15, 30}, { 10, 50}, {  0, 20}, {  5, 30}, {  5, 40}, {  5, 40}, {  5, 95}},
 	},
 	friTerSpdEff = {
 		kj_2a6 = 		 	{0.002, 0.2, 0.1, 1},
@@ -646,6 +754,8 @@ tables.entityData = {
 		kj_fordmustang =	{0.002,   1, 0.1, 1},
 		kj_gigahorse = 		{0.002,   1, 0.2, 1},
 		kj_utilitarian =	{0.002,   1, 0.1, 1},
+
+		kj_40kbunker = 		{1	  , 0.5, 0.1, 1},
 	},
 }
 return tables

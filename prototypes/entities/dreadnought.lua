@@ -11,7 +11,7 @@ data:extend({
 		collision_box = {{-1.5, -1.5}, {1.5, 1.5}},
 		selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
 		sticker_box = {{-1, -1}, {1, 1}},
-		drawing_box_vertical_extension = 2,
+		drawing_box_vertical_extension = 3,
 		stop_trigger = utils.brakes("tank"),
 		tank_driving = true,
 		turret_return_timeout = 0,
