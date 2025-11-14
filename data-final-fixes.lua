@@ -211,6 +211,16 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 		data.raw["item-with-entity-data"]["kj_40kbunker_turret"].subgroup = tables.categoriesUpdates["kj_40kbunker"].name
 	end
 
+	if mods["kj_medieval_warfare"] then
+		data.raw["item-subgroup"]["kj_turrets"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_ballista"].subgroup = tables.categoriesUpdates["kj_medieval_warfare"].name
+		data.raw["ammo"]["kj_ballista_normal"].subgroup = tables.categoriesUpdates["kj_medieval_warfare"].name
+
+		if data.raw["item-with-entity-data"]["kj_ballista_nonAA"] ~= nil then
+			data.raw["item-with-entity-data"]["kj_ballista_nonAA"].subgroup = tables.categoriesUpdates["kj_medieval_warfare"].name
+		end
+	end
+
 	if mods["kj_phalanx"] then
 		data.raw["item-subgroup"]["kj_turrets"].group = "kj_vehicles"
 		data.raw["item-with-entity-data"]["kj_phalanx"].subgroup = tables.categoriesUpdates["kj_phalanx"].name
@@ -306,10 +316,10 @@ end
 
 local function establishAA()
 	--Assigning Planes trigger_target_mask
-	for name, _ in ipairs(tables.airborneMods) do
+	for name, _ in pairs(tables.airborneMods) do
 		if mods[name] then
-			if data.raw["car"][name] ~= nil then		--If plane exists
-				if data.raw["car"][name].trigger_target_mask ~= nil then		--If masks not empty
+			if data.raw["car"][name] ~= nil then
+				if data.raw["car"][name].trigger_target_mask ~= nil then
 					table.insert(data.raw["car"][name.."-airborne"].trigger_target_mask, "air-unit")
 					log("Added trigger_target_mask to plane "..mod.."-airborne.")
 
@@ -571,18 +581,12 @@ if mods["kj_40kbunker"] then
 	end
 end
 
-if mods["kj_vierling"] then
+if mods["kj_medieval_warfare"] then
 	establishAA()
 
-	data.raw["item-with-entity-data"]["kj_vierling"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
-	data.raw["item-with-entity-data"]["kj_vierling"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
-	data.raw["item-with-entity-data"]["kj_vierling"].inventory_move_sound = data.raw["item"]["gun-turret"].inventory_move_sound
-
-	if data.raw["item-with-entity-data"]["kj_vierling_nonAA"] ~= nil then
-		data.raw["item-with-entity-data"]["kj_vierling_nonAA"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
-		data.raw["item-with-entity-data"]["kj_vierling_nonAA"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
-		data.raw["item-with-entity-data"]["kj_vierling_nonAA"].inventory_move_sound = data.raw["item"]["gun-turret"].inventory_move_sound
-	end
+	data.raw["item-with-entity-data"]["kj_ballista"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
+	data.raw["item-with-entity-data"]["kj_ballista"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
+	data.raw["item-with-entity-data"]["kj_ballista"].inventory_move_sound = data.raw["item"]["gun-turret"].inventory_move_sound
 end
 
 if mods["kj_phalanx"] then
@@ -600,6 +604,20 @@ if mods["kj_phalanx"] then
 		data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
 		data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
 		data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].inventory_move_sound = data.raw["item"]["gun-turret"].inventory_move_sound
+	end
+end
+
+if mods["kj_vierling"] then
+	establishAA()
+
+	data.raw["item-with-entity-data"]["kj_vierling"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
+	data.raw["item-with-entity-data"]["kj_vierling"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
+	data.raw["item-with-entity-data"]["kj_vierling"].inventory_move_sound = data.raw["item"]["gun-turret"].inventory_move_sound
+
+	if data.raw["item-with-entity-data"]["kj_vierling_nonAA"] ~= nil then
+		data.raw["item-with-entity-data"]["kj_vierling_nonAA"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
+		data.raw["item-with-entity-data"]["kj_vierling_nonAA"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
+		data.raw["item-with-entity-data"]["kj_vierling_nonAA"].inventory_move_sound = data.raw["item"]["gun-turret"].inventory_move_sound
 	end
 end
 
@@ -701,9 +719,7 @@ for name, mod in pairs(tables.balancedMods) do
 			propertyChanger(name, name)
 		else
 			for _, entity in pairs(mod) do
-				if entity.type == nil then
-					propertyChanger(name, entity.name, entity.type)
-				end
+				propertyChanger(name, entity.name, entity.type)
 			end
 		end
 	end

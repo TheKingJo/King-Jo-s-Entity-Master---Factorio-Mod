@@ -11,7 +11,7 @@ data:extend({
 })
 
 
-if mods["kj_phalanx"] or mods["kj_vierling"] then
+if mods["kj_medieval_warfare"] or mods["kj_phalanx"] or mods["kj_vierling"] then
 	data:extend({
 		{
 			type = "bool-setting",
@@ -116,7 +116,7 @@ local function settingMaker(name)
 			default_value = 100,
 			minimum_value = 1,
 			maximum_value = 100,
-			localised_name = {"", {"entity-name."..name}, {"mod-setting-name.hp_modifier"}},
+			localised_name = {"", {"item-name."..name}, {"mod-setting-name.hp_modifier"}},
 			localised_description = {"", {"mod-setting-description.hp_modifier"}},
 			order = name.."_hp_modifier",
 		}
@@ -131,7 +131,7 @@ local function settingMaker(name)
 			default_value = 100,
 			minimum_value = 0,
 			maximum_value = 100,
-			localised_name = {"", {"entity-name."..name}, {"mod-setting-name.resistance_modifier"}},
+			localised_name = {"", {"item-name."..name}, {"mod-setting-name.resistance_modifier"}},
 			localised_description = {"", {"mod-setting-description.resistance_modifier"}},
 			order = name.."_resistance_modifier",
 		}

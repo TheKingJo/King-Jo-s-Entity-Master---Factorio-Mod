@@ -54,7 +54,7 @@ local function establishAA()
 		end
 	end
 
-
+	--[[
 	for name, character in pairs(data.raw["character"]) do
 		if character.trigger_target_mask ~= nil then
 			table.insert(data.raw["character"][name].trigger_target_mask, "air-unit")
@@ -62,6 +62,7 @@ local function establishAA()
 			data.raw["character"][name].trigger_target_mask = {"air-unit", "ground-unit", "common"}
 		end
 	end
+	]]
 
 
 	--[[
@@ -80,7 +81,8 @@ local function establishAA()
 	local subStringList = {
 		"erm_terran_exp/aeri",
 		"erm_terran_exp/scie",
-		"erm_vanilla/constru"
+		"erm_vanilla/constru",
+		"enemy--construction",
 	}
 
 	if mods["erm_marspeople"] then
@@ -258,6 +260,65 @@ if mods["kj_vierling"] then
 	end
 end
 
+if mods["kj_medieval_warfare"] then
+	establishAA()
+
+	local done = false
+	if data.raw["technology"]["gun-turret"] ~= nil then
+		table.insert(data.raw["technology"]["gun-turret"].effects, {type = "unlock-recipe", recipe = "kj_ballista"})
+		table.insert(data.raw["technology"]["gun-turret"].effects, {type = "unlock-recipe", recipe = "kj_ballista_normal"})
+		done = true
+	else
+		for _, tech in pairs(data.raw["technology"]) do
+			if tech.effects ~= nil then
+				for _, effect in pairs(tech.effects) do
+					if effect.type == "unlock-recipe" and effect.recipe ~= nil and effect.recipe == "gun-turret" then
+						table.insert(tech.effects, {type = "unlock-recipe", recipe = "kj_ballista"})
+						table.insert(tech.effects, {type = "unlock-recipe", recipe = "kj_ballista_normal"})
+						done = true
+						break
+					end
+				end
+			end
+			if done == true then
+				break
+			end
+		end
+	end
+	if done == false then
+		data:extend({
+            {
+                type = "technology",
+                name = "kj_ballista",
+                icon = "__kj_medieval_warfare__/graphics/icon.png",
+                icon_size = 128,
+                effects = {
+					{type = "unlock-recipe", recipe = "kj_ballista"},
+					{type = "unlock-recipe", recipe = "kj_ballista_normal"}
+				},
+                prerequisites = {"automation-science-pack"},
+                unit = {
+					count = 10,
+					time = 10,
+					ingredients = {
+						{"automation-science-pack", 10},
+					}
+				},
+            },
+		})
+	end
+
+	for i = 1, 5 do
+		if data.raw['technology']['physical-projectile-damage-'..i] ~= nil then
+			table.insert(data.raw['technology']['physical-projectile-damage-'..i]['effects'], {type = "ammo-damage", ammo_category = "kj_ballista_normal", modifier = 0.2})
+		end
+		if data.raw['technology']['weapon-shooting-speed-'..i] ~= nil then
+			table.insert(data.raw['technology']['weapon-shooting-speed-'..i]['effects'], {type = "gun-speed", ammo_category = "kj_ballista_normal", modifier = 0.2})
+		end
+	end
+	data.raw["ammo-turret"]["kj_ballista"].attack_target_mask = {"air-unit", "flying"}
+end
+
 if mods["kj_phalanx"] then
 	establishAA()
 
@@ -287,6 +348,12 @@ for name, entry in pairs(tables.techRequisites) do
 end
 
 local function changeRecipe(recipe, setting)
+	local name = recipe
+
+	if setting == nil then
+		setting = name.."_cost_setting_multiplicator"
+	end
+	log("setting: "..setting)
 	if data.raw["recipe"][recipe] ~= nil then
 		for _, ingredient in ipairs(data.raw["recipe"][recipe].ingredients) do
 			if ingredient ~= nil and ingredient.amount ~= nil then
@@ -305,10 +372,8 @@ for _, change in pairs(tables.recipeChanges) do
 				changeRecipe(entry.recipe, entry.setting)
 			end
 		else
-			--log("Recipe: "..change.recipe)
 			local name = change.modname
 			local setting = change.modname.."_cost_setting_multiplicator"
-			
 			if change.recipe ~= nil then
 				name = change.recipe
 			end

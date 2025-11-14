@@ -1,11 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.10
+Date: 12.01.2025
+  Changes:
+    - added support for pre industrial warfare
+  Fixes:
+    - B-29 rotor animation now in right direction
+    - planes now receive trigger_target_mask to be targetable by AA guns
+    - character is no longer air unit or flying since cars can be targeted by default now
+    - war rig non car variants get correct ammo/health applied now
+---------------------------------------------------------------------------------------------------
 Version: 2.0.9
-Date: 07.01.2024
+Date: 07.01.2025
   Changes:
     - added support for B-29
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.8
-Date: 07.01.2024
+Date: 07.01.2025
   Changes:
     - added support for all of my planes. a couple parameters of them have changed
 ---------------------------------------------------------------------------------------------------

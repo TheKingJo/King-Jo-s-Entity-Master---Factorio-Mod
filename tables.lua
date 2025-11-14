@@ -25,9 +25,10 @@ tables.supportedMods = {
 	kj_warrig = 		{name = "warrig", 		car = true,		weight = 5,		order = "1[civil]-i"},
 
 	kj_40kbunker = 		{name = "bunker",		car = true,		weight = 2,		order = "3[military-turrets]-n-2"},
-	kj_phalanx = 		{name = "phalanx", 		car = false,	weight = 3,		order = "3[military-turrets]-aa-2"},
+	kj_phalanx = 		{name = "phalanx", 		car = false,	weight = 3,		order = "3[military-turrets]-aa-3"},
+	kj_medieval_warfare={name = "medieval",		car = false,	weight = 2,		order = "3[military-turrets]-aa-1"},
 	kj_tower = 			{name = "tower", 		car = false,	weight = 1,		order = "3[military-turrets]-n-1"},
-	kj_vierling = 		{name = "vierling", 	car = false,	weight = 3,		order = "3[military-turrets]-aa-1"},
+	kj_vierling = 		{name = "vierling", 	car = false,	weight = 3,		order = "3[military-turrets]-aa-2"},
 
 	kj_747 = 			{name = "747", 		car = true,		weight = 1,		order = "4[aviation]-t-3"},
 	kj_b17 = 			{name = "b17", 		car = true,		weight = 1,		order = "4[aviation]-b-2"},
@@ -45,6 +46,7 @@ tables.balancedModsRecipe = {
 	kj_warrig = true,
 
 	kj_phalanx = true,
+	kj_medieval_warfare = {true, true},
 	kj_vierling = true,
 
 	kj_747 = true,
@@ -100,6 +102,7 @@ tables.balancedMods = {
 
 	kj_40kbunker = 	{{name = "kj_40kbunker"}, {name = "kj_40kbunker_turret"}},
 	kj_phalanx = 	{{name = "kj_phalanx"}, {name = "kj_phalanx_nonAA", setting = "kj_phalanx_nonAA"}},
+	kj_medieval_warfare =	{{name = "kj_ballista"}, {name = "kj_ballista_nonAA", setting = "kj_ballista_nonAA"}},
 	kj_tower = 		true,
 	kj_vierling = 	{{name = "kj_vierling"}, {name = "kj_vierling_nonAA", setting = "kj_vierling_nonAA"}},
 }
@@ -178,7 +181,7 @@ tables.recipeChanges = {
 			{recipe = "test", setting = "test"},
 		}
 	},
-	
+
 	{modname = "kj_2a6", entries = {
 			{recipe = "kj_2a6", setting = "kj_2a6_cost_setting_multiplicator"},
 			{recipe = "kj_rh120_penetration", setting = "kj_2a6ammo_cost_setting_multiplicator"},
@@ -187,7 +190,7 @@ tables.recipeChanges = {
 			{recipe = "kj_rh120_canister", setting = "kj_2a6ammo_cost_setting_multiplicator"},
 		}
 	},
-	
+
 	{modname = "kj_40kdreadnought", entries = {
 			{recipe = "kj_40kdreadnought", setting = "kj_40kdreadnought_cost_setting_multiplicator"},
 			{recipe = "kj_40kdreadnought_normal", setting = "kj_40kdreadnoughtammo_cost_setting_multiplicator"},
@@ -199,19 +202,19 @@ tables.recipeChanges = {
 			{recipe = "kj_lemanruss_normal", setting = "kj_40klemanrussammo_cost_setting_multiplicator"},
 		}
 	},
-	
+
 	{modname = "kj_40klemanruss", entries = {
 			{recipe = "kj_40klemanruss", setting = "kj_40klemanruss_cost_setting_multiplicator"},
 			{recipe = "kj_lemanruss_normal", setting = "kj_40klemanrussammo_cost_setting_multiplicator"},
 		}
 	},
-	
+
 	{modname = "kj_40kpredator", entries = {
 			{recipe = "kj_40kpredator", setting = "kj_40kpredator_cost_setting_multiplicator"},
 			{recipe = "kj_predator_normal", setting = "kj_40kpredatorammo_cost_setting_multiplicator"},
 		}
 	},
-	
+
 	{modname = "kj_maustank", entries = {
 			{recipe = "kj_maustank", setting = "kj_maustank_cost_setting_multiplicator"},
 			{recipe = "kj_120kwk_penetration", setting = "kj_maustankammo_cost_setting_multiplicator"},
@@ -219,7 +222,7 @@ tables.recipeChanges = {
 			{recipe = "kj_120kwk_penetration_highexplosive", setting = "kj_maustankammo_cost_setting_multiplicator"},
 		}
 	},
-	
+
 	{modname = "kj_pak", entries = {
 			{recipe = "kj_pak", setting = "kj_pak_cost_setting_multiplicator"},
 			{recipe = "kj_pak_turret", setting = "kj_pak_cost_setting_multiplicator"},
@@ -228,7 +231,7 @@ tables.recipeChanges = {
 			{recipe = "kj_pak_incendiary", setting = "kj_pakammo_cost_setting_multiplicator"},
 		}
 	},
-	
+
 	{modname = "kj_panzer4", entries = {
 			{recipe = "kj_panzer4", setting = "kj_panzer4_cost_setting_multiplicator"},
 			{recipe = "kj_75kwk40_penetration", setting = "kj_panzer4ammo_cost_setting_multiplicator"},
@@ -236,13 +239,13 @@ tables.recipeChanges = {
 			{recipe = "kj_75kwk40_penetration_highexplosive", setting = "kj_panzer4ammo_cost_setting_multiplicator"},
 		}
 	},
-	
+
 	{modname = "kj_rex", entries = {
 			{recipe = "kj_rex", setting = "kj_rex_cost_setting_multiplicator"},
 			{recipe = "kj_rex_normal", setting = "kj_rexammo_cost_setting_multiplicator"},
 		}
 	},
-	
+
 	{modname = "kj_rattetank", entries = {
 			{recipe = "kj_rattetank", setting = "kj_rattetank_cost_setting_multiplicator"},
 			{recipe = "kj_280SKC34_penetration", setting = "kj_rattetankammunition_cost_setting_multiplicator"},
@@ -250,16 +253,16 @@ tables.recipeChanges = {
 			{recipe = "kj_280SKC34_incendiary", setting = "kj_rattetankammunition_cost_setting_multiplicator"},
 		}
 	},
-	
+
 	{modname = "kj_ray", entries = {
 			{recipe = "kj_ray", setting = "kj_ray_cost_setting_multiplicator"},
 			{recipe = "kj_ray_small", setting = "kj_ray_cost_setting_multiplicator"},
 			{recipe = "kj_ray_normal", setting = "kj_rayammo_cost_setting_multiplicator"},
 		}
 	},
-	
+
 	{modname = "kj_swspeeder"},
-	
+
 	{modname = "kj_wirbelwind", entries = {
 			{recipe = "kj_wirbelwind", setting = "kj_wirbelwind_cost_setting_multiplicator"},
 			{recipe = "kj_75kwk40_penetration", setting = "kj_wirbelwindammo_cost_setting_multiplicator"},
@@ -267,7 +270,7 @@ tables.recipeChanges = {
 			{recipe = "kj_75kwk40_penetration_highexplosive", setting = "kj_wirbelwindammo_cost_setting_multiplicator"},
 		}
 	},
-	
+
 	{modname = "kj_aventador"},
 	{modname = "kj_bulldozer"},
 	{modname = "kj_cybertruck"},
@@ -286,6 +289,11 @@ tables.recipeChanges = {
 	{modname = "kj_phalanx", entries = {
 			{recipe = "kj_phalanx", setting = "kj_phalanx_cost_setting_multiplicator"},
 			{recipe = "kj_apds_normal", setting = "kj_phalanx_cost_setting_multiplicator"},
+		},
+	},
+	{modname = "kj_medieval_warfare", entries = {
+			{recipe = "kj_ballista", setting = "kj_medieval_warfare_cost_setting_multiplicator"},
+			{recipe = "kj_ballista_normal", setting = "kj_medieval_warfareammo_cost_setting_multiplicator"},
 		},
 	},
 
@@ -340,8 +348,9 @@ tables.categories = {
 
 	{modname = "kj_bulldozer",                                       order = "kj-a",   		type = "ammo-category", hidden = true},
 
-	{modname = "kj_phalanx",     	name = "kj_apds_phalanx",		order = "kj-t2",       type = "ammo-category", icon = "unique"},
-	{modname = "kj_vierling",     	name = "kj_2cmfv_vierling",		order = "kj-t1",       type = "ammo-category", icon = "unique"},
+	{modname = "kj_medieval_warfare",     name = "kj_ballista_normal",	order = "kj-t1",       type = "ammo-category", icon = "unique"},
+	{modname = "kj_phalanx",     	name = "kj_apds_phalanx",		order = "kj-t3",       type = "ammo-category", icon = "unique"},
+	{modname = "kj_vierling",     	name = "kj_2cmfv_vierling",		order = "kj-t2",       type = "ammo-category", icon = "unique"},
 }
 
 tables.categoriesUpdates = {
@@ -370,6 +379,7 @@ tables.categoriesUpdates = {
 	kj_warrig = 		{modname = "kj_warrig",			name = "kj_trucks",     	order = "b", group = "logistics", type = "item-subgroup"},
 
 	kj_40kbunker = 		{modname = "kj_40kbunker",		name = "kj_turrets",     	order = "g", group = "logistics", type = "item-subgroup"},
+	kj_medieval_warfare = 	{modname = "kj_medieval_warfare",		name = "kj_turrets",     	order = "g", group = "logistics", type = "item-subgroup"},
 	kj_phalanx = 		{modname = "kj_phalanx",		name = "kj_turrets",     	order = "g", group = "logistics", type = "item-subgroup"},
 	kj_tower = 			{modname = "kj_tower",			name = "kj_turrets",     	order = "g", group = "logistics", type = "item-subgroup"},
 	kj_vierling = 		{modname = "kj_vierling",		name = "kj_turrets",     	order = "g", group = "logistics", type = "item-subgroup"},
@@ -387,51 +397,52 @@ tables.categoriesUpdates = {
 }
 
 tables.items = {
-	kj_2a6 = 			{modname = "kj_2a6"},
-	kj_40kbaneblade = 	{modname = "kj_40kbaneblade"},
-	kj_40kdreadnought = {modname = "kj_40kdreadnought"},
-	kj_40klemanruss = 	{modname = "kj_40klemanruss"},
-	kj_40kpredator = 	{modname = "kj_40kpredator"},
-	kj_maustank = 		{modname = "kj_maustank"},
-	kj_pak = 			{modname = "kj_pak",				                    order = "2[military]-p1a"},
-	kj_pak2 = 			{modname = "kj_pak", 			name = "kj_pak_turret", order = "2[military]-p1b"},
-	kj_panzer4 = 		{modname = "kj_panzer4"},
-	kj_rex = 			{modname = "kj_rex",				                    order = "2[military]-r"},
-	kj_rattetank = 		{modname = "kj_rattetank"},
-	kj_ray = 			{modname = "kj_ray",				                    order = "2[military]-r-n[normal]"},
+	kj_2a6 = 			{},
+	kj_40kbaneblade = 	{},
+	kj_40kdreadnought = {},
+	kj_40klemanruss = 	{},
+	kj_40kpredator = 	{},
+	kj_maustank = 		{},
+	kj_pak = 			{														order = "2[military]-p1a"},
+	kj_pak2 = 			{modname = "kj_pak", 			name = "kj_pak_turret", order = "2[military]-p1b",		subgroup = "turret"},
+	kj_panzer4 = 		{},
+	kj_rex = 			{														order = "2[military]-r"},
+	kj_rattetank = 		{},
+	kj_ray = 			{														order = "2[military]-r-n[normal]"},
 	kj_ray2 = 			{modname = "kj_ray", 			name = "kj_ray_small",  order = "2[military]-r-s[small]",	icon = "icon_small"},
-	kj_swspeeder = 		{modname = "kj_swspeeder"},
-	kj_wirbelwind = 	{modname = "kj_wirbelwind"},
+	kj_swspeeder = 		{},
+	kj_wirbelwind = 	{},
 
-	kj_aventador = 		{modname = "kj_aventador"},
-	kj_bulldozer = 		{modname = "kj_bulldozer"},
-	kj_cybertruck = 	{modname = "kj_cybertruck"},
-	kj_delorean = 		{modname = "kj_delorean"},
-	kj_firetruck = 		{modname = "kj_firetruck"},
-	kj_fordmustang = 	{modname = "kj_fordmustang"},
-	kj_gigahorse = 		{modname = "kj_gigahorse"},
-	kj_utilitarian = 	{modname = "kj_utilitarian"},
-	kj_warrig = 		{modname = "kj_warrig",		                    		order = "1[civil]-i0"},
+	kj_aventador = 		{},
+	kj_bulldozer = 		{},
+	kj_cybertruck = 	{},
+	kj_delorean = 		{},
+	kj_firetruck = 		{},
+	kj_fordmustang = 	{},
+	kj_gigahorse = 		{},
+	kj_utilitarian = 	{},
+	kj_warrig = 		{							                    		order = "1[civil]-i0"},
 	kj_warrig2 = 		{modname = "kj_warrig",		  name = "kj_warrig_train", order = "1[civil]-i1", icon = "train"},
 	kj_warrig3 = 		{modname = "kj_warrig",       name = "kj_warrig_wagon", order = "1[civil]-i2", icon = "wagon"},
 	kj_warrig4 = 		{modname = "kj_warrig", name = "kj_warrig_wagon_fluid", order = "1[civil]-i3", icon = "wagon_fluid"},
 
-	kj_40kbunker = 		{modname = "kj_40kbunker",		                    	order = "3[military-turrets]-n-2-1"},
-	kj_40kbunker2 =		{modname = "kj_40kbunker", name = "kj_40kbunker_turret",order = "3[military-turrets]-n-2-2"},
-	kj_phalanx = 		{modname = "kj_phalanx",		                    	order = "3[military-turrets]-aa-2"},
-	kj_tower = 			{modname = "kj_tower",		                    		order = "3[military-turrets]-n-1"},
-	kj_vierling = 		{modname = "kj_vierling",		                    	order = "3[military-turrets]-aa-1"},
+	kj_40kbunker = 		{								                    	order = "3[military-turrets]-n-2-1"},
+	kj_40kbunker2 =		{modname = "kj_40kbunker", name = "kj_40kbunker_turret",order = "3[military-turrets]-n-2-2",	subgroup = "turret"},
+	kj_phalanx = 		{								                    	order = "3[military-turrets]-aa-3",		subgroup = "turret"},
+	kj_medieval_warfare =		{							name = "kj_ballista",		order = "3[military-turrets]-aa-1",		subgroup = "turret"},
+	kj_tower = 			{							                    		order = "3[military-turrets]-n-1",		subgroup = "turret"},
+	kj_vierling = 		{modname = "kj_vierling",		                    	order = "3[military-turrets]-aa-2",		subgroup = "turret"},
 
-	kj_747 = 			{modname = "kj_747"},
-	kj_b17 = 			{modname = "kj_b17"},
-	kj_b2 = 			{modname = "kj_b2"},
-	kj_b29 = 			{modname = "kj_b29"},
-	kj_bf109 = 			{modname = "kj_bf109"},
-	kj_ho229 = 			{modname = "kj_ho229"},
-	kj_ju52 = 			{modname = "kj_ju52"},
-	kj_ju87 = 			{modname = "kj_ju87"},
-	kj_jug38 = 			{modname = "kj_jug38"},
-	kj_xb35 = 			{modname = "kj_xb35"},
+	kj_747 = 			{},
+	kj_b17 = 			{},
+	kj_b2 = 			{},
+	kj_b29 = 			{},
+	kj_bf109 = 			{},
+	kj_ho229 = 			{},
+	kj_ju52 = 			{},
+	kj_ju87 = 			{},
+	kj_jug38 = 			{},
+	kj_xb35 = 			{},
 }
 
 tables.recipes = {
@@ -600,6 +611,10 @@ tables.recipes = {
 		{type = "item", name = "processing-unit", 	amount = 10},
 		{type = "item", name = "radar", 			amount = 1},
 	},
+	kj_ballista = {
+		{type = "item", name = "iron-plate", 	amount = 10},
+		{type = "item", name = "wood", 			amount = 30},
+	},
 	kj_tower = {
 		{type = "item", name = "concrete", 			amount = 30},
 		{type = "item", name = "small-lamp", 		amount = 1},
@@ -612,6 +627,7 @@ tables.recipes = {
 		{type = "item", name = "steel-plate", 		amount = 50},
 		{type = "item", name = "submachine-gun", 	amount = 4},
 	},
+	
 	kj_747 = {
 		{type = "item", name = "advanced-circuit", 	amount = 40},
 		{type = "item", name = "engine-unit", 		amount = 20},
@@ -802,6 +818,10 @@ tables.ammoDmg = {
 		NF = 10,
 		NP = 15,
 	},
+	kj_ballista = {
+		NP = 50,
+		NF = 50,
+	},
 	kj_vierling = {
 		NF = 20,
 		NP = 24,
@@ -872,6 +892,7 @@ tables.entityData = {
 		kj_warrig =  	  2000,
 
 		kj_40kbunker = 20000,
+		kj_ballista =  	 350,
 		kj_phalanx =  	1000,
 		kj_tower =  	2000,
 		kj_vierling =  	1000,
@@ -1103,6 +1124,7 @@ tables.entityData = {
 		kj_warrig =			{{ 15, 60}, { 20, 50}, { 60, 80}, { 15, 30}, { 25, 30}, {  0,  0}, {  0,  0}, {  0,  0}},
 
 		kj_40kbunker =		{{ 50,100}, { 30, 75}, {100, 95}, { 50, 70}, { 40, 70}, {  0,  0}, {  0,  0}, {  0,  0}},
+		kj_ballista =		{{  0,  0}, {  5,  0}, { 10, 10}, {  0,  0}, {  0,  0}, {  0,  0}, {  0,  0}, {  5, 95}},
 		kj_phalanx =		{{ 20, 65}, { 15, 30}, { 10, 40}, {  0, 15}, {  5, 30}, {  5, 40}, {  5, 40}, {  5, 95}},
 		kj_tower =			{{ 50,100}, { 15, 75}, { 50, 50}, { 40, 20}, { 15, 30}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_vierling =		{{ 20, 70}, { 15, 30}, { 10, 50}, {  0, 20}, {  5, 30}, {  5, 40}, {  5, 40}, {  5, 95}},

@@ -3,18 +3,19 @@ local trivial_smoke = require("__base__/prototypes/entity/smoke-animations.lua")
 local sounds = require ("__base__/prototypes/entity/sounds.lua")
 local tables = require("tables")
 
-for _, item in pairs(tables.items) do
-    if mods[item.modname] then
-        local name = item.name or item.modname
+for mod, item in pairs(tables.items) do
+    mod = item.modname or mod
+    if mods[mod] then
+        local name = item.name or mod
 
         data:extend({
             {
                 type = "item-with-entity-data",
                 name = name,
-                icon = "__"..item.modname.."__/graphics/"..(item.icon or "icon")..".png",
+                icon = "__"..mod.."__/graphics/"..(item.icon or "icon")..".png",
                 icon_size = 128,
                 subgroup = item.subgroup or "transport",
-                order = item.order or tables.supportedMods[item.modname].order,
+                order = item.order or tables.supportedMods[name].order,
                 inventory_move_sound = item_sounds.vehicle_inventory_move,
                 pick_sound = item_sounds.vehicle_inventory_pickup,
                 drop_sound = item_sounds.vehicle_inventory_move,
