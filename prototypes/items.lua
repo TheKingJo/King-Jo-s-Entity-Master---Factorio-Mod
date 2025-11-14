@@ -205,7 +205,7 @@ if mods["kj_40kbaneblade"] then
         {
             type = "custom-input",
             name = "kj_40kbaneblade_fire",
-            key_sequence = "V",
+            key_sequence = "SHIFT + V",
             consuming = "game-only"
         },
 
