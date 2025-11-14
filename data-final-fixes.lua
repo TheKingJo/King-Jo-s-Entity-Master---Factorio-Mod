@@ -557,19 +557,17 @@ end
 
 if mods["kj_warrig"] then
 	if  data.raw["straight-rail"]["straight-rail"].fast_replaceable_group == nil then
+		--Vanilla Rails
 		data.raw["straight-rail"]["straight-rail"].fast_replaceable_group = "straight-rail"
 		data.raw["half-diagonal-rail"]["half-diagonal-rail"].fast_replaceable_group = "half-diagonal-rail"
 		data.raw["curved-rail-a"]["curved-rail-a"].fast_replaceable_group = "curved-rail-a"
 		data.raw["curved-rail-b"]["curved-rail-b"].fast_replaceable_group = "curved-rail-b"
-
+		--Warrig Rails
 		data.raw["straight-rail"]["kj_warrig_rail_straight"].fast_replaceable_group = "straight-rail"
 		data.raw["half-diagonal-rail"]["kj_warrig_rail_half_diagonal"].fast_replaceable_group = "half-diagonal-rail"
 		data.raw["curved-rail-a"]["kj_warrig_rail_curved_rail_a"].fast_replaceable_group = "curved-rail-a"
 		data.raw["curved-rail-b"]["kj_warrig_rail_curved_rail_b"].fast_replaceable_group = "curved-rail-b"
 	else
-		data.raw["straight-rail"]["kj_warrig_rail_straight"].fast_replaceable_group = data.raw["straight-rail"]["straight-rail"].fast_replaceable_group
-		data.raw["curved-rail"]["kj_warrig_rail_curved"].fast_replaceable_group = data.raw["curved-rail"]["curved-rail"].fast_replaceable_group
-
 		data.raw["straight-rail"]["kj_warrig_rail_straight"].fast_replaceable_group 			= data.raw["straight-rail"]["straight-rail"].fast_replaceable_group
 		data.raw["half-diagonal-rail"]["kj_warrig_rail_half_diagonal"].fast_replaceable_group 	= data.raw["half-diagonal-rail"]["half-diagonal-rail"].fast_replaceable_group
 		data.raw["curved-rail-a"]["kj_warrig_rail_curved_rail_a"].fast_replaceable_group 		= data.raw["curved-rail-a"]["curved-rail-a"].fast_replaceable_group
