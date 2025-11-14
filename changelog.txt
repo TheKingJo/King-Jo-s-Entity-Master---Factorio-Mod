@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.26
+Date: 02.04.2025
+  Changes:
+    - removed some log messages
+  Fixes:
+    - error related to 40k bunker and turret version referencing to same ingredients and other mods making concrete a fluid
+---------------------------------------------------------------------------------------------------
 Version: 2.0.25
 Date: 22.03.2025
   Fixes:

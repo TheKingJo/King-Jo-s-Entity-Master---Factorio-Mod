@@ -15,6 +15,7 @@ for modname, mod in pairs(tables.supportedMods) do
 	if mods[modname] then
 		log("Mod "..modname.." exists.")
 		for _, folder in pairs(folders) do
+			log("Loading "..folder.." of mod")
 			require("prototypes."..folder.."."..mod.name)
 		end
 	else

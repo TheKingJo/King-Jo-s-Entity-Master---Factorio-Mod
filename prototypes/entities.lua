@@ -4,9 +4,9 @@ local movement_triggers = require("movement_triggers")
 
 for name, mod in pairs(tables.supportedMods) do
     if mod.car == true then
-        log("Updating car data "..name)
+        --log("Updating car data "..name)
         if data.raw["car"][name] ~= nil then
-            log("Car existing")
+            log(name.." existing")
 
             local car = data.raw["car"][name]
             car.icon = "__"..name.."__".."/graphics/icon.png"

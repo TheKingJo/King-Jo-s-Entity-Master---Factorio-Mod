@@ -375,8 +375,9 @@ local function changeRecipe(recipe, setting)
 		setting = name.."_cost_setting_multiplicator"
 	end
 	log("setting: "..setting)
-	if data.raw["recipe"][recipe] ~= nil then
-		for _, ingredient in ipairs(data.raw["recipe"][recipe].ingredients) do
+	local recipeEnt = data.raw["recipe"][recipe]
+	if recipeEnt ~= nil then
+		for _, ingredient in ipairs(recipeEnt.ingredients) do
 			if ingredient ~= nil and ingredient.amount ~= nil then
 				ingredient.amount = ingredient.amount * settings.startup[setting].value
 			end

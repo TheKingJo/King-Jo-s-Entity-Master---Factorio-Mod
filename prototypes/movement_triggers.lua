@@ -229,7 +229,7 @@ tires = {
 	},
 }
 for name, vehicle in pairs(movement_triggers) do
-	log("Track particles for "..name)
+	--log("Track particles for "..name)
 	for _, trigger in pairs(vehicle) do
 		if trigger.actions ~= nil then
 			for _, action in pairs(trigger.actions) do
