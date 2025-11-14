@@ -178,7 +178,7 @@ if not data.raw["ammo"]["kj_bolt"] then
 		}
 	)
 
-	local max
+	local max = 1
 	if settings.startup["kj_40klemanrussammo_cost_setting_multiplicator"] ~= nil then
 		max = math.max(1, settings.startup["kj_40klemanrussammo_cost_setting_multiplicator"].value)
 	end
