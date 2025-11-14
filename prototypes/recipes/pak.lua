@@ -1,4 +1,5 @@
 local tables = require("tables")
+local utils = require("utils")
 
 data:extend({
 	{
@@ -29,12 +30,7 @@ data:extend({
 		name = "kj_pak_ap",
 		enabled = false,
 		energy_required = 15,
-		ingredients =
-		{
-			{type = "item", name = "steel-plate", amount = 4},
-			{type = "item", name = "plastic-bar", amount = 3},
-			{type = "item", name = "explosives", amount = 8}
-		},
+		ingredients = utils.ammoRecipe("kj_pak_ap"),
 		results = {{type = "item", name = "kj_pak_ap", amount = 1}}
 	},
 
@@ -43,12 +39,7 @@ data:extend({
 		name = "kj_pak_he",
 		enabled = false,
 		energy_required = 15,
-		ingredients =
-		{
-			{type = "item", name = "steel-plate", amount = 3},
-			{type = "item", name = "plastic-bar", amount = 3},
-			{type = "item", name = "explosives", amount = 10}
-		},
+		ingredients = utils.ammoRecipe("kj_pak_he"),
 		results = {{type = "item", name = "kj_pak_he", amount = 1}}
 	},
 
@@ -57,13 +48,7 @@ data:extend({
 		name = "kj_pak_inc",
 		enabled = false,
 		energy_required = 15,
-		ingredients =
-		{
-			{type = "item", name = "steel-plate", amount = 4},
-			{type = "item", name = "plastic-bar", amount = 4},
-			{type = "item", name = "explosives", amount = 6},
-			{type = "item", name = "sulfur", amount = 5}
-		},
+		ingredients = utils.ammoRecipe("kj_pak_inc"),
 		results = {{type = "item", name = "kj_pak_inc", amount = 1}}
 	},
 })

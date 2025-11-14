@@ -1,4 +1,5 @@
 local tables = require("tables")
+local utils = require("utils")
 
 data:extend({
 	{
@@ -15,12 +16,7 @@ data:extend({
 		name = "kj_280SKC34_ap",
 		enabled = false,
 		energy_required = 15,
-		ingredients =
-		{
-			{type = "item", name = "steel-plate", amount = 14},
-			{type = "item", name = "plastic-bar", amount = 10},
-			{type = "item", name = "explosives", amount = 15},
-		},
+		ingredients = utils.ammoRecipe("kj_280SKC34_ap"),
 		results = {{type = "item", name = "kj_280SKC34_ap", amount = 1}},
 	},
 
@@ -29,12 +25,7 @@ data:extend({
 		name = "kj_280SKC34_he",
 		enabled = false,
 		energy_required = 15,
-		ingredients =
-		{
-			{type = "item", name = "steel-plate", amount = 10},
-			{type = "item", name = "plastic-bar", amount = 10},
-			{type = "item", name = "explosives", amount = 20},
-		},
+		ingredients = utils.ammoRecipe("kj_280SKC34_he"),
 		results = {{type = "item", name = "kj_280SKC34_he", amount = 1}},
 	},
 
@@ -43,13 +34,7 @@ data:extend({
 		name = "kj_280SKC34_inc",
 		enabled = false,
 		energy_required = 15,
-		ingredients =
-		{
-			{type = "item", name = "steel-plate", amount = 10},
-			{type = "item", name = "plastic-bar", amount = 10},
-			{type = "item", name = "explosives", amount = 12},
-			{type = "item", name = "sulfur", amount = 8},
-		},
+		ingredients = utils.ammoRecipe("kj_280SKC34_inc"),
 		results = {{type = "item", name = "kj_280SKC34_inc", amount = 1}},
 	},
 })

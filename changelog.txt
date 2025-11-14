@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.22
+Date: 21.02.2025
+  Changes:
+    - first step for reworked ammo recipes and damages
+  Fixes:
+    - error related to not having ho 229 mod enabled but tech requisiting it
+---------------------------------------------------------------------------------------------------
 Version: 2.0.21
 Date: 20.02.2025
   Fixes:

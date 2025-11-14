@@ -476,6 +476,129 @@ tables.items = {
 	kj_xb35 = 			{weight = 2000},
 }
 
+tables.ammoRecipe = {
+	steel = {
+		kj_rh120_ap = 6,
+		kj_rh120_he = 4,
+		kj_rh120_aphe = 7,
+		kj_rh120_can = 10,
+
+		kj_baneblade_normal = 5,
+
+		kj_40kdreadnought_normal = 3,
+
+		kj_lemanruss_normal = 4,
+
+		kj_120kwk_ap = 4,
+		kj_120kwk_he = 3,
+		kj_120kwk_aphe = 4,
+
+		kj_pak_ap = 4,
+		kj_pak_he = 3,
+		kj_pak_inc = 4,
+
+		kj_75kwk40_ap = 4,
+		kj_75kwk40_he = 3,
+		kj_75kwk40_aphe = 4,
+
+		kj_predator_normal = 3,
+
+		kj_280SKC34_ap = 14,
+		kj_280SKC34_he = 10,
+		kj_280SKC34_inc = 10,
+
+		kj_ray_normal = 3,
+		kj_ray_normal_small = 1,
+
+		kj_rex_normal = 3,
+
+		kj_2cmfv_normal_vierling = 2,
+
+		kj_2cmfv_normal = 2,
+	},
+	plastic = {
+		kj_rh120_ap = 4,
+		kj_rh120_he = 4,
+		kj_rh120_aphe = 5,
+		kj_rh120_can = 3,
+
+		kj_baneblade_normal = 4,
+
+		kj_40kdreadnought_normal = 3,
+
+		kj_lemanruss_normal = 3,
+
+		kj_120kwk_ap = 3,
+		kj_120kwk_he = 3,
+		kj_120kwk_aphe = 3,
+
+		kj_pak_ap = 3,
+		kj_pak_he = 3,
+		kj_pak_inc = 4,
+
+		kj_75kwk40_ap = 2,
+		kj_75kwk40_he = 2,
+		kj_75kwk40_aphe = 2,
+
+		kj_predator_normal = 3,
+
+		kj_280SKC34_ap = 10,
+		kj_280SKC34_he = 10,
+		kj_280SKC34_inc = 10,
+
+		kj_ray_normal = 3,
+		kj_ray_normal_small = 1,
+
+		kj_rex_normal = 3,
+
+		kj_2cmfv_normal_vierling = 2,
+
+		kj_2cmfv_normal = 2,
+	},
+	explosive = {
+		kj_rh120_ap = 12,
+		kj_rh120_he = 12,
+		kj_rh120_aphe = 18,
+		kj_rh120_can = 5,
+
+		kj_baneblade_normal = 14,
+
+		kj_40kdreadnought_normal = 8,
+
+		kj_lemanruss_normal = 12,
+
+		kj_120kwk_ap = 8,
+		kj_120kwk_he = 10,
+		kj_120kwk_aphe = 10,
+
+		kj_pak_ap = 8,
+		kj_pak_he = 10,
+		kj_pak_inc = 6,
+
+		kj_75kwk40_ap = 3,
+		kj_75kwk40_he = 4,
+		kj_75kwk40_aphe = 4,
+
+		kj_predator_normal = 6,
+
+		kj_280SKC34_ap = 15,
+		kj_280SKC34_he = 20,
+		kj_280SKC34_inc = 12,
+
+		kj_ray_normal = 8,
+		kj_ray_normal_small = 3,
+
+		kj_rex_normal = 8,
+
+		kj_2cmfv_normal_vierling = 1,
+
+		kj_2cmfv_normal = 1,
+	},
+	sulfur = {
+		kj_pak_inc = 5,
+		kj_280SKC34_inc = 8,
+	}
+}
 tables.recipes = {
 	kj_2a6 = {
 		{type = "item", name = "advanced-circuit", 		amount = 70},

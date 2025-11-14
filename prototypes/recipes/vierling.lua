@@ -1,4 +1,6 @@
 local tables = require("tables")
+local utils = require("utils")
+
 data:extend({
 	{
 		type = "recipe",
@@ -14,12 +16,7 @@ data:extend({
 		name = "kj_2cmfv_normal_vierling",
 		enabled = false,
 		energy_required = 3,
-		ingredients =
-		{
-			{type = "item", name = "steel-plate", amount = 2},
-			{type = "item", name = "plastic-bar", amount = 2},
-			{type = "item", name = "explosives", amount = 1}
-		},
+		ingredients = utils.ammoRecipe("kj_2cmfv_normal_vierling"),
 		results = {{type = "item", name = "kj_2cmfv_normal_vierling", amount = 1}},
 	},
 })

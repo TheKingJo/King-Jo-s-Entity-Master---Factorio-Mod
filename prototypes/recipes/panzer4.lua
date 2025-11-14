@@ -1,4 +1,5 @@
 local tables = require("tables")
+local utils = require("utils")
 
 data:extend({
 	{
@@ -24,46 +25,31 @@ data:extend({
 		},
 		results = {{type = "item", name = "kj_mg34_hand", amount = 1}}
 	},
-	
+
 	{
 		type = "recipe",
 		name = "kj_75kwk40_ap",
 		enabled = false,
 		energy_required = 15,
-		ingredients =
-		{
-			{type = "item", name = "steel-plate", amount = 4},
-			{type = "item", name = "plastic-bar", amount = 2},
-			{type = "item", name = "explosives", amount = 3}
-		},
+		ingredients = utils.ammoRecipe("kj_75kwk40_ap"),
 		results = {{type = "item", name = "kj_75kwk40_ap", amount = 1}}
 	},
-	
+
 	{
 		type = "recipe",
 		name = "kj_75kwk40_he",
 		enabled = false,
 		energy_required = 15,
-		ingredients =
-		{
-			{type = "item", name = "steel-plate", amount = 3},
-			{type = "item", name = "plastic-bar", amount = 2},
-			{type = "item", name = "explosives", amount = 4}
-		},
+		ingredients = utils.ammoRecipe("kj_75kwk40_he"),
 		results = {{type = "item", name = "kj_75kwk40_he", amount = 1}}
-	}, 
-	
+	},
+
 	{
 		type = "recipe",
 		name = "kj_75kwk40_aphe",
 		enabled = false,
 		energy_required = 15,
-		ingredients =
-		{
-			{type = "item", name = "steel-plate", amount = 4},
-			{type = "item", name = "plastic-bar", amount = 2},
-			{type = "item", name = "explosives", amount = 4}
-		},
+		ingredients = utils.ammoRecipe("kj_75kwk40_aphe"),
 		results = {{type = "item", name = "kj_75kwk40_aphe", amount = 1}}
 	},
 })

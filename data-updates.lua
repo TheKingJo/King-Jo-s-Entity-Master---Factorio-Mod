@@ -341,7 +341,9 @@ for name, entry in pairs(tables.techRequisites) do
 
 				if entry.additional ~= nil then
 					for _, add in pairs(entry.additional) do
-						table.insert(data.raw["technology"][name].prerequisites, add)
+						if data.raw["technology"][add] ~= nil then
+							table.insert(data.raw["technology"][name].prerequisites, add)
+						end
 					end
 				end
 				break

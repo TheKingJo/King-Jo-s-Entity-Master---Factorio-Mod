@@ -4,6 +4,19 @@ local function mathSign(x)
     return x > 0 and 1 or x < 0 and -1 or 0
 end
 
+function functions.ammoRecipe(name)
+    local recipe = require("tables").ammoRecipe
+    local ingredients = {
+        {type = "item", name = "steel-plate", amount = recipe.steel[name]},
+        {type = "item", name = "plastic-bar", amount = recipe.plastic[name]},
+        {type = "item", name = "explosives",  amount = recipe.explosive[name]}
+    }
+    if recipe.sulfur[name] ~= nil then
+        table.insert(ingredients, {type = "item", name = "sulfur",  amount = recipe.sulfur[name]})
+    end
+    return ingredients
+end
+
 function functions.brakes(brakes)
     local sounds = {
         car = {
