@@ -1,6 +1,6 @@
 local tables = require("tables")
 local aaiTanks = {}
-local categoryTrigger = 20
+local categoryTrigger = 2000
 
 local modsCount = 0
 for modname, mod in pairs(tables.supportedMods) do

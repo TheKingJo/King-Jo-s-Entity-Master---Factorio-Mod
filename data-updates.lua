@@ -97,10 +97,14 @@ end
 
 
 local function changeRecipe(recipe, setting)
-	for _,ingredient in ipairs(data.raw["recipe"][recipe].ingredients) do
-		if ingredient ~= nil and ingredient.amount ~= nil then
-			ingredient.amount = ingredient.amount * settings.startup[setting].value
+	if data.raw["recipe"][recipe] ~= nil then
+		for _, ingredient in ipairs(data.raw["recipe"][recipe].ingredients) do
+			if ingredient ~= nil and ingredient.amount ~= nil then
+				ingredient.amount = ingredient.amount * settings.startup[setting].value
+			end
 		end
+	else
+		error('Recipe "'..recipe..'" not found! Pls notify the mod author!')
 	end
 end
 
