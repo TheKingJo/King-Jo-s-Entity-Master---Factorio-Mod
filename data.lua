@@ -24,6 +24,7 @@ end
 
 require("prototypes.entities")
 require("prototypes.planes")
+require("prototypes.ammos")
 
 
 --Additional Edits

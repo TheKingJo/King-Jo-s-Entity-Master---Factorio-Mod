@@ -20,7 +20,8 @@ for mod, item in pairs(tables.items) do
                 pick_sound = item_sounds.vehicle_inventory_pickup,
                 drop_sound = item_sounds.vehicle_inventory_move,
                 place_result = name,
-                stack_size = 1,
+                stack_size = item.stackSize or 1,
+                weight = (item.weight or 1000) * 1000,
             },
         })
     end
@@ -1894,6 +1895,7 @@ if mods["kj_cybertruck"] then
             fuel_value = "100MJ",
             fuel_acceleration_multiplier = 1.9,
             fuel_category = "kj_el_car_fuel",
+            weight = 100 * 1000,
         },
         {
             type = "item",
@@ -1942,6 +1944,7 @@ if mods["kj_warrig"] then
             order = "1[civil]-i4",
             place_result = "kj_warrig_rail_straight",
             stack_size = 100,
+            weight = 10*1000,
             rails =
             {
               "kj_warrig_rail_straight",

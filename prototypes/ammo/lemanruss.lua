@@ -1,4 +1,4 @@
-local ammoDmg = require("tables").ammoDmg.kj_40klemanruss
+local ammoData = require("tables").ammoData.kj_40klemanruss
 require("bolter")
 local items = require("tables").items
 local modname = "kj_40klemanruss"
@@ -34,7 +34,6 @@ data:extend({
 		type = "ammo",
 		name = "kj_lemanruss_normal",
 		icon = "__kj_40klemanruss__/graphics/equipment/he_cannon_shell.png",
-		icon_size = 256,
 		ammo_category = "kj_lemanruss",
 		ammo_type =
 		{
@@ -59,9 +58,7 @@ data:extend({
 				}
 			}
 		},
-		subgroup = "ammo",
 		order = items[modname].order.."-a[normal]",
-		stack_size = 100
 	},
 
 	{
@@ -73,7 +70,7 @@ data:extend({
 		height = 0,
 		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
 		acceleration = 0,
-		piercing_damage = ammoDmg.HEDW,
+		piercing_damage = ammoData.HEDW,
 		action =
 		{
 			type = "direct",
@@ -84,7 +81,7 @@ data:extend({
 				{
 					{
 						type = "damage",
-						damage = {amount = ammoDmg.HEAP , type = "physical"}
+						damage = {amount = ammoData.HEAP , type = "physical"}
 					},
 					{
 						type = "create-entity",
@@ -123,7 +120,7 @@ data:extend({
 								{
 									{
 										type = "damage",
-										damage = {amount = ammoDmg.HEHE, type = "explosion"}
+										damage = {amount = ammoData.HEHE, type = "explosion"}
 									},
 									{
 										type = "create-entity",

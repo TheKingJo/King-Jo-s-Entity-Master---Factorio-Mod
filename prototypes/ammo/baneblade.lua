@@ -1,4 +1,4 @@
-local ammoDmg = require("tables").ammoDmg.kj_40kbaneblade
+local ammoData = require("tables").ammoData.kj_40kbaneblade
 require("bolter")
 local items = require("tables").items
 local modname = "kj_40kbaneblade"
@@ -33,7 +33,6 @@ data:extend({
 		type = "ammo",
 		name = "kj_baneblade_normal",
 		icon = "__kj_40kbaneblade__/graphics/equipment/he_cannon_shell.png",
-		icon_size = 256,
 		ammo_category = "kj_baneblade",
 		ammo_type =
 		{
@@ -58,16 +57,12 @@ data:extend({
 				}
 			}
 		},
-		subgroup = "ammo",
 		order = items[modname].order.."-a[normal]",
-		stack_size = 100
 	},
-
 	{
 		type = "ammo",
 		name = "kj_baneblade_artillery",
 		icon = "__kj_40kbaneblade__/graphics/equipment/artillery-shell.png",
-		icon_size = 256,
 		ammo_category = "kj_baneblade_artillery",
 		ammo_type =
 		{
@@ -92,9 +87,7 @@ data:extend({
 				}
 			}
 		},
-		subgroup = "ammo",
 		order = items[modname].order.."-b[artillery]",
-		stack_size = 5
 	},
 
 	{
@@ -106,7 +99,7 @@ data:extend({
 		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
 		acceleration = 0,
 		height = 0,
-		piercing_damage = ammoDmg.HEDW,
+		piercing_damage = ammoData.APDW,
 		action =
 		{
 			type = "direct",
@@ -117,7 +110,7 @@ data:extend({
 				{
 					{
 						type = "damage",
-						damage = {amount = ammoDmg.APHE , type = "physical"}
+						damage = {amount = ammoData.APAP , type = "physical"}
 					},
 					{
 						type = "create-entity",
@@ -156,7 +149,7 @@ data:extend({
 								{
 									{
 										type = "damage",
-										damage = {amount = ammoDmg.HEHE, type = "explosion"}
+										damage = {amount = ammoData.APHE, type = "explosion"}
 									},
 									{
 										type = "create-entity",
@@ -198,7 +191,6 @@ data:extend({
 		  priority = "high"
 		}
 	},
-
 	{
 		type = "projectile",
 		name = "kj_baneblade_artillery",
@@ -208,7 +200,7 @@ data:extend({
 		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
 		acceleration = 0,
 		height = 0,
-		piercing_damage = ammoDmg.APHEDW,
+		piercing_damage = ammoData.APHEDW,
 		direction_only = true,
 		action =
 		{
@@ -220,11 +212,11 @@ data:extend({
 				{
 					{
 						type = "damage",
-						damage = {amount = ammoDmg.APHEAP , type = "physical"}
+						damage = {amount = ammoData.APHEAP , type = "physical"}
 					},
 					{
 						type = "damage",
-						damage = {amount = ammoDmg.APHEHE , type = "explosion"}
+						damage = {amount = ammoData.APHEHE , type = "explosion"}
 					},
 					{
 						type = "create-entity",

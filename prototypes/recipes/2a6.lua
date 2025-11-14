@@ -12,7 +12,7 @@ data:extend({
 
 	{
 		type = "recipe",
-		name = "kj_rh120_penetration",
+		name = "kj_rh120_ap",
 		enabled = false,
 		energy_required = 15,
 		ingredients =
@@ -21,12 +21,12 @@ data:extend({
 			{type = "item", name = "plastic-bar", amount = 4},
 			{type = "item", name = "explosives", amount = 12}
 		},
-		results = {{type = "item", name = "kj_rh120_penetration", amount = 1}},
+		results = {{type = "item", name = "kj_rh120_ap", amount = 1}},
 	},
 
 	{
 		type = "recipe",
-		name = "kj_rh120_highexplosive",
+		name = "kj_rh120_he",
 		enabled = false,
 		energy_required = 15,
 		ingredients =
@@ -35,12 +35,12 @@ data:extend({
 			{type = "item", name = "plastic-bar", amount = 4},
 			{type = "item", name = "explosives", amount = 15}
 		},
-		results = {{type = "item", name = "kj_rh120_highexplosive", amount = 1}},
+		results = {{type = "item", name = "kj_rh120_he", amount = 1}},
 	},
 
 	{
 		type = "recipe",
-		name = "kj_rh120_penetration_highexplosive",
+		name = "kj_rh120_aphe",
 		enabled = false,
 		energy_required = 20,
 		ingredients =
@@ -49,12 +49,12 @@ data:extend({
 			{type = "item", name = "plastic-bar", amount = 5},
 			{type = "item", name = "explosives", amount = 18}
 		},
-		results = {{type = "item", name = "kj_rh120_penetration_highexplosive", amount = 1}},
+		results = {{type = "item", name = "kj_rh120_aphe", amount = 1}},
 	},
 
 	{
 		type = "recipe",
-		name = "kj_rh120_canister",
+		name = "kj_rh120_can",
 		enabled = false,
 		energy_required = 20,
 		ingredients =
@@ -63,7 +63,7 @@ data:extend({
 			{type = "item", name = "plastic-bar", amount = 3},
 			{type = "item", name = "explosives", amount = 5}
 		},
-		results = {{type = "item", name = "kj_rh120_canister", amount = 1}},
+		results = {{type = "item", name = "kj_rh120_can", amount = 1}},
 	},
 
 	{

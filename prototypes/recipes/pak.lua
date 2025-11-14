@@ -26,7 +26,7 @@ data:extend({
 
 	{
 		type = "recipe",
-		name = "kj_pak_penetration",
+		name = "kj_pak_ap",
 		enabled = false,
 		energy_required = 15,
 		ingredients =
@@ -35,12 +35,12 @@ data:extend({
 			{type = "item", name = "plastic-bar", amount = 3},
 			{type = "item", name = "explosives", amount = 8}
 		},
-		results = {{type = "item", name = "kj_pak_penetration", amount = 1}}
+		results = {{type = "item", name = "kj_pak_ap", amount = 1}}
 	},
 
 	{
 		type = "recipe",
-		name = "kj_pak_highexplosive",
+		name = "kj_pak_he",
 		enabled = false,
 		energy_required = 15,
 		ingredients =
@@ -49,12 +49,12 @@ data:extend({
 			{type = "item", name = "plastic-bar", amount = 3},
 			{type = "item", name = "explosives", amount = 10}
 		},
-		results = {{type = "item", name = "kj_pak_highexplosive", amount = 1}}
+		results = {{type = "item", name = "kj_pak_he", amount = 1}}
 	},
 
 	{
 		type = "recipe",
-		name = "kj_pak_incendiary",
+		name = "kj_pak_inc",
 		enabled = false,
 		energy_required = 15,
 		ingredients =
@@ -64,6 +64,6 @@ data:extend({
 			{type = "item", name = "explosives", amount = 6},
 			{type = "item", name = "sulfur", amount = 5}
 		},
-		results = {{type = "item", name = "kj_pak_incendiary", amount = 1}}
+		results = {{type = "item", name = "kj_pak_inc", amount = 1}}
 	},
 })

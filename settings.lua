@@ -10,6 +10,118 @@ data:extend({
 	},
 })
 
+if mods["kj_tower"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "kj_tower_collision_box",
+			setting_type = "startup",
+			default_value = false,
+			order = "kj_tower_collision_box",
+		},
+	})
+end
+
+if mods["kj_swspeeder"] then
+	data:extend({
+		{
+			type = "int-setting",
+			name = "kj_swspeeder_blaster_strength",
+			setting_type = "startup",
+			default_value = 1,
+			order = "kj_swspeeder_blaster_strength",
+		},
+	})
+end
+
+if mods["kj_40kbaneblade"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "kj_40kbaneblade_stickers",
+			setting_type = "runtime-global",
+			default_value = true, 
+			order = "kj_40kbaneblade_stickers",
+		},
+	})
+end
+
+if mods["kj_rattetank"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "kj_rattetank_hr",
+			setting_type = "startup",
+			default_value = true,
+			order = "kj_rattetank_hr"
+		},
+	})
+end
+
+if mods["kj_rex"] then
+	data:extend({
+		{
+			type = "int-setting",
+			name = "kj_rex_walking_volume",
+			setting_type = "startup",
+			default_value = 50,
+			minimum_value = 0,
+			maximum_value = 100,
+			order = "kj_rex_walking_volume"
+		},
+		{
+			type = "bool-setting",
+			name = "kj_rex_walking",
+			setting_type = "startup",
+			default_value = true,
+			order = "kj_rex_walking"
+		},
+	})
+end
+
+if mods["kj_40kdreadnought"] then
+	data:extend({
+		{
+			type = "int-setting",
+			name = "kj_40kdreadnought_walking_volume",
+			setting_type = "startup",
+			default_value = 50,
+			minimum_value = 0,
+			maximum_value = 100,
+			order = "kj_40kdreadnought_walking_volume"
+		},
+		{
+			type = "int-setting",
+			name = "kj_40kdreadnought_voiceline_volume",
+			setting_type = "startup",
+			default_value = 70,
+			minimum_value = 0,
+			maximum_value = 100,
+			order = "kj_40kdreadnought_voiceline_volume"
+		},
+		{
+			type = "bool-setting",
+			name = "kj_40kdreadnought_walking",
+			setting_type = "runtime-global",
+			default_value = true,
+			order = "kj_40kdreadnought_walking"
+		},
+	})
+end
+
+if mods["kj_pak"] then
+	data:extend({
+		{
+			type = "int-setting",
+			name = "kj_pak_range",
+			setting_type = "startup",
+			default_value = 50,
+			minimum_value = 10,
+			maximum_value = 150,
+		},
+	})
+end
+
 if mods["kj_ray"] then
 	data:extend({
 		{
@@ -27,6 +139,19 @@ if mods["kj_ray"] then
 			setting_type = "startup",
 			default_value = true,
 			order = "ac"
+		},
+	})
+end
+
+if mods["kj_laser"] then
+	data:extend({
+		{
+			type = "string-setting",
+			name = "kj_laser_angle",
+			setting_type = "startup",
+			default_value = "5",
+			allowed_values = {"5", "6", "7", "8", "9", "10"},
+			order = "kj_laser_angle",
 		},
 	})
 end

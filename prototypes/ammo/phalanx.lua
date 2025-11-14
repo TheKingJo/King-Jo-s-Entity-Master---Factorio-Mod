@@ -1,4 +1,4 @@
-local ammoDmg = require("tables").ammoDmg.kj_phalanx
+local ammoData = require("tables").ammoData.kj_phalanx
 local items = require("tables").items
 local modname = "kj_phalanx"
 
@@ -9,7 +9,6 @@ data:extend({
 		type = "ammo",
 		name = "kj_apds_normal",
 		icon = "__kj_phalanx__/graphics/ammo.png",
-		icon_size = 128,
 		ammo_category = "kj_apds_phalanx",
 		ammo_type =
 		{
@@ -44,11 +43,11 @@ data:extend({
 
 								{
 									type = "damage",
-									damage = { amount = ammoDmg.NF , type = "flak"}
+									damage = { amount = ammoData.NF , type = "flak"}
 								},
 								{
 									type = "damage",
-									damage = { amount = ammoDmg.NP , type = "physical"}
+									damage = { amount = ammoData.NP , type = "physical"}
 								},
 							}
 						}
@@ -56,17 +55,13 @@ data:extend({
 				}
 			}
 		},
-		magazine_size = 1550,
-		subgroup = "ammo",
 		order = items[modname].order.."-a[normal]",
-		stack_size = 1,
 	},
 
 	{
 		type = "ammo",
 		name = "kj_apds_normal_single",
 		icon = "__kj_phalanx__/graphics/ammo_single.png",
-		icon_size = 256,
 		ammo_category = "kj_apds_phalanx",
 		ammo_type =
 		{
@@ -101,11 +96,11 @@ data:extend({
 
 								{
 									type = "damage",
-									damage = { amount = ammoDmg.NF , type = "flak"}
+									damage = { amount = ammoData.NF , type = "flak"}
 								},
 								{
 									type = "damage",
-									damage = { amount = ammoDmg.NP , type = "physical"}
+									damage = { amount = ammoData.NP , type = "physical"}
 								},
 							}
 						}
@@ -113,9 +108,6 @@ data:extend({
 				}
 			}
 		},
-		magazine_size = 1,
-		subgroup = "ammo",
 		order = items[modname].order.."-b[single]",
-		stack_size = 500,
 	},
 })

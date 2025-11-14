@@ -27,7 +27,7 @@ data:extend({
 	
 	{
 		type = "recipe",
-		name = "kj_75kwk40_penetration",
+		name = "kj_75kwk40_ap",
 		enabled = false,
 		energy_required = 15,
 		ingredients =
@@ -36,12 +36,12 @@ data:extend({
 			{type = "item", name = "plastic-bar", amount = 2},
 			{type = "item", name = "explosives", amount = 3}
 		},
-		results = {{type = "item", name = "kj_75kwk40_penetration", amount = 1}}
+		results = {{type = "item", name = "kj_75kwk40_ap", amount = 1}}
 	},
 	
 	{
 		type = "recipe",
-		name = "kj_75kwk40_highexplosive",
+		name = "kj_75kwk40_he",
 		enabled = false,
 		energy_required = 15,
 		ingredients =
@@ -50,12 +50,12 @@ data:extend({
 			{type = "item", name = "plastic-bar", amount = 2},
 			{type = "item", name = "explosives", amount = 4}
 		},
-		results = {{type = "item", name = "kj_75kwk40_highexplosive", amount = 1}}
+		results = {{type = "item", name = "kj_75kwk40_he", amount = 1}}
 	}, 
 	
 	{
 		type = "recipe",
-		name = "kj_75kwk40_penetration_highexplosive",
+		name = "kj_75kwk40_aphe",
 		enabled = false,
 		energy_required = 15,
 		ingredients =
@@ -64,6 +64,6 @@ data:extend({
 			{type = "item", name = "plastic-bar", amount = 2},
 			{type = "item", name = "explosives", amount = 4}
 		},
-		results = {{type = "item", name = "kj_75kwk40_penetration_highexplosive", amount = 1}}
+		results = {{type = "item", name = "kj_75kwk40_aphe", amount = 1}}
 	},
 })

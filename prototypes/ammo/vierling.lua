@@ -1,4 +1,4 @@
-local ammoDmg = require("tables").ammoDmg.kj_vierling
+local ammoData = require("tables").ammoData.kj_vierling
 local items = require("tables").items
 local modname = "kj_vierling"
 
@@ -31,7 +31,6 @@ data:extend({
 		type = "ammo",
 		name = "kj_2cmfv_normal_vierling",
 		icon = "__kj_vierling__/graphics/ammo.png",
-		icon_size = 80,
 		ammo_category = "kj_2cmfv_vierling",
 		ammo_type =
 		{
@@ -67,15 +66,15 @@ data:extend({
 
 								{
 									type = "damage",
-									damage = { amount = ammoDmg.NF , type = "flak"}
+									damage = { amount = ammoData.NF , type = "flak"}
 								},
 								{
 									type = "damage",
-									damage = { amount = ammoDmg.NE , type = "explosion"}
+									damage = { amount = ammoData.NE , type = "explosion"}
 								},
 								{
 									type = "damage",
-									damage = { amount = ammoDmg.NP , type = "physical"}
+									damage = { amount = ammoData.NP , type = "physical"}
 								},
 							}
 						}
@@ -83,9 +82,6 @@ data:extend({
 				}
 		  }
 		},
-		magazine_size = 5,
-		subgroup = "ammo",
 		order = items[modname].order.."-a[normal]",
-		stack_size = 200
 	},
 })

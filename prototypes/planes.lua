@@ -281,6 +281,7 @@ local ammoData = {
 		},
 		time = 8,
 		size = 50,
+		weight = tables.ammoData.planes.AWeight,
 		min = 3,
 		max = 10,
 		order = "4[aviation]-b-0-1",
@@ -302,7 +303,7 @@ local ammoData = {
 						action =
 						{
 							type = "area",
-							radius = tables.ammoDmg.planes.AR,
+							radius = tables.ammoData.planes.AR,
 							action_delivery =
 							{
 								type = "instant",
@@ -310,11 +311,11 @@ local ammoData = {
 								{
 									{
 										type = "damage",
-										damage = {amount = tables.ammoDmg.planes.ADE, type = "explosion"}
+										damage = {amount = tables.ammoData.planes.ADE, type = "explosion"}
 									},
 									{
 										type = "damage",
-										damage = {amount = tables.ammoDmg.planes.ADP , type = "physical"}
+										damage = {amount = tables.ammoData.planes.ADP , type = "physical"}
 									},
 									{
 										type = "create-entity",
@@ -341,7 +342,7 @@ local ammoData = {
 						include_decals = false,
 						invoke_decorative_trigger = true,
 						decoratives_with_trigger_only = false, -- if true, destroys only decoratives that have trigger_effect set
-						radius = tables.ammoDmg.planes.AR -- large radius for demostrative purposes
+						radius = tables.ammoData.planes.AR -- large radius for demostrative purposes
 					}
 				}
 			}
@@ -356,6 +357,7 @@ local ammoData = {
 		},
 		time = 25,
 		size = 250,
+		weight = tables.ammoData.planes.BWeight,
 		min = 3,
 		max = 12,
 		order = "4[aviation]-b-0-2",
@@ -377,7 +379,7 @@ local ammoData = {
 						action =
 						{
 							type = "area",
-							radius = tables.ammoDmg.planes.BR,
+							radius = tables.ammoData.planes.BR,
 							action_delivery =
 							{
 								type = "instant",
@@ -385,11 +387,11 @@ local ammoData = {
 								{
 									{
 										type = "damage",
-										damage = {amount = tables.ammoDmg.planes.BDE, type = "explosion"}
+										damage = {amount = tables.ammoData.planes.BDE, type = "explosion"}
 									},
 									{
 										type = "damage",
-										damage = {amount = tables.ammoDmg.planes.BDP , type = "physical"}
+										damage = {amount = tables.ammoData.planes.BDP , type = "physical"}
 									},
 									{
 										type = "create-entity",
@@ -416,7 +418,7 @@ local ammoData = {
 						include_decals = false,
 						invoke_decorative_trigger = true,
 						decoratives_with_trigger_only = false, -- if true, destroys only decoratives that have trigger_effect set
-						radius = tables.ammoDmg.planes.BR -- large radius for demostrative purposes
+						radius = tables.ammoData.planes.BR -- large radius for demostrative purposes
 					}
 				}
 			}
@@ -431,6 +433,7 @@ local ammoData = {
 		},
 		time = 38,
 		size = 500,
+		weight = tables.ammoData.planes.CWeight,
 		min = 3,
 		max = 15,
 		order = "4[aviation]-b-0-3",
@@ -449,7 +452,7 @@ local ammoData = {
 					},
 					{
 						type = "destroy-cliffs",
-						radius = tables.ammoDmg.planes.CR/2,
+						radius = tables.ammoData.planes.CR/2,
 						explosion = "explosion"
 					},
 					{
@@ -457,7 +460,7 @@ local ammoData = {
 						action =
 						{
 							type = "area",
-							radius = tables.ammoDmg.planes.CR,
+							radius = tables.ammoData.planes.CR,
 							action_delivery =
 							{
 								type = "instant",
@@ -465,11 +468,11 @@ local ammoData = {
 								{
 									{
 										type = "damage",
-										damage = {amount = tables.ammoDmg.planes.CDE, type = "explosion"}
+										damage = {amount = tables.ammoData.planes.CDE, type = "explosion"}
 									},
 									{
 										type = "damage",
-										damage = {amount = tables.ammoDmg.planes.CDP , type = "physical"}
+										damage = {amount = tables.ammoData.planes.CDP , type = "physical"}
 									},
 									{
 										type = "create-entity",
@@ -496,7 +499,7 @@ local ammoData = {
 						include_decals = false,
 						invoke_decorative_trigger = true,
 						decoratives_with_trigger_only = false, -- if true, destroys only decoratives that have trigger_effect set
-						radius = tables.ammoDmg.planes.CR -- large radius for demostrative purposes
+						radius = tables.ammoData.planes.CR -- large radius for demostrative purposes
 					}
 				}
 			}
@@ -511,6 +514,7 @@ local ammoData = {
 		},
 		time = 60,
 		size = 1000,
+		weight = tables.ammoData.planes.DWeight,
 		min = 3,
 		max = 20,
 		order = "4[aviation]-b-0-4",
@@ -529,7 +533,7 @@ local ammoData = {
 					},
 					{
 						type = "destroy-cliffs",
-						radius = tables.ammoDmg.planes.DR/2,
+						radius = tables.ammoData.planes.DR/2,
 						explosion = "explosion"
 					},
 					{
@@ -537,7 +541,7 @@ local ammoData = {
 						action =
 						{
 							type = "area",
-							radius = tables.ammoDmg.planes.DR,
+							radius = tables.ammoData.planes.DR,
 							action_delivery =
 							{
 								type = "instant",
@@ -545,11 +549,11 @@ local ammoData = {
 								{
 									{
 										type = "damage",
-										damage = {amount = tables.ammoDmg.planes.DDE, type = "explosion"}
+										damage = {amount = tables.ammoData.planes.DDE, type = "explosion"}
 									},
 									{
 										type = "damage",
-										damage = {amount = tables.ammoDmg.planes.DDP , type = "physical"}
+										damage = {amount = tables.ammoData.planes.DDP , type = "physical"}
 									},
 									{
 										type = "create-entity",
@@ -576,7 +580,7 @@ local ammoData = {
 						include_decals = false,
 						invoke_decorative_trigger = true,
 						decoratives_with_trigger_only = false, -- if true, destroys only decoratives that have trigger_effect set
-						radius = tables.ammoDmg.planes.DR -- large radius for demostrative purposes
+						radius = tables.ammoData.planes.DR -- large radius for demostrative purposes
 					}
 				}
 			}
@@ -587,6 +591,7 @@ local ammoData = {
 		ingredients = data.raw["recipe"]["atomic-bomb"].ingredients,
 		time = 68,
 		size = "atom",
+		weight = tables.ammoData.planes.DWeight,
 		min = 3,
 		max = 20,
 		order = "4[aviation]-b-0-6",
@@ -600,6 +605,7 @@ local ammoData = {
 			{type = "item", name = "piercing-rounds-magazine",  amount = 1},
 		},
 		time = 3,
+		weight = tables.ammoData.planes.EWeight,
 		order = "4[aviation]-a-1",
 		magazine_size = 10,
 		target_effects = {
@@ -611,11 +617,11 @@ local ammoData = {
 			},
 			{
 				type = "damage",
-				damage = { amount = tables.ammoDmg.planes.EP, type = "physical"}
+				damage = { amount = tables.ammoData.planes.EP, type = "physical"}
 			},
 			{
 				type = "damage",
-				damage = { amount = tables.ammoDmg.planes.EF, type = "flak"}
+				damage = { amount = tables.ammoData.planes.EF, type = "flak"}
 			}
 		},
 	},
@@ -628,6 +634,7 @@ local ammoData = {
 			{type = "item", name = "steel-plate", amount = 1},
 		},
 		time = 9,
+		weight = tables.ammoData.planes.FWeight,
 		order = "4[aviation]-a-2",
 		magazine_size = 5,
 		target_effects = {
@@ -639,11 +646,11 @@ local ammoData = {
 			},
 			{
 				type = "damage",
-				damage = { amount = tables.ammoDmg.planes.FP, type = "physical"}
+				damage = { amount = tables.ammoData.planes.FP, type = "physical"}
 			},
 			{
 				type = "damage",
-				damage = { amount = tables.ammoDmg.planes.FF, type = "flak"}
+				damage = { amount = tables.ammoData.planes.FF, type = "flak"}
 			}
 		},
 	},
@@ -657,6 +664,7 @@ local ammoData = {
 		},
 		time = 120,
 		size = "napalm",
+		weight = tables.ammoData.planes.GWeight,
 		min = 3,
 		max = 20,
 		order = "4[aviation]-b-0-5",
@@ -684,15 +692,15 @@ local ammoData = {
 								{
 									{
 										type = "damage",
-										damage = {amount = tables.ammoDmg.planes.GP, type = "physical"}
+										damage = {amount = tables.ammoData.planes.GP, type = "physical"}
 									},
 									{
 										type = "damage",
-										damage = {amount = tables.ammoDmg.planes.GE , type = "explosion"}
+										damage = {amount = tables.ammoData.planes.GE , type = "explosion"}
 									},
 									{
 										type = "damage",
-										damage = {amount = tables.ammoDmg.planes.GF , type = "fire"}
+										damage = {amount = tables.ammoData.planes.GF , type = "fire"}
 									},
 									{
 										type = "create-entity",
@@ -881,6 +889,7 @@ local function ammoMG(order)
 			pick_sound = data.raw["ammo"]["firearm-magazine"].pick_sound,
 			drop_sound = data.raw["ammo"]["firearm-magazine"].drop_sound,
 			stack_size = 100,
+			weight = ammoData[order].weight * 1000,
 			magazine_size = ammoData[order].magazine_size,
 		},
 	})
@@ -967,6 +976,7 @@ local function ammo(order)
 			pick_sound = data.raw["ammo"]["cannon-shell"].pick_sound,
 			drop_sound = data.raw["ammo"]["cannon-shell"].drop_sound,
 			magazine_size = 1,
+			weight = ammoData[order].weight * 1000,
 			reload_time = 15,
 		},
 		{

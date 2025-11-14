@@ -1,4 +1,4 @@
-local ammoDmg = require("tables").ammoDmg.kj_ballista
+local ammoData = require("tables").ammoData.kj_ballista
 local items = require("tables").items
 local modname = "kj_medieval_warfare"
 
@@ -27,10 +27,7 @@ data:extend({
 				}
 			}
 		},
-		subgroup = "ammo",
 		order = items[modname].order.."-a",
-		magazine_size = 5,
-		stack_size = 10
 	},
 
 
@@ -53,11 +50,11 @@ data:extend({
 				{
 					{
 						type = "damage",
-						damage = {amount = ammoDmg.NP , type = "physical"}
+						damage = {amount = ammoData.NP , type = "physical"}
 					},
 					{
 						type = "damage",
-						damage = {amount = ammoDmg.NF , type = "flak"}
+						damage = {amount = ammoData.NF , type = "flak"}
 					},
 					{
 						type = "create-entity",

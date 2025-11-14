@@ -27,7 +27,6 @@ if not data.raw["ammo"]["kj_bolt"] then
 			type = "ammo",
 			name = "kj_bolt",
 			icon = "__kj_vehicles__/graphics/bolt.png",
-			icon_size = 128,
 			ammo_category = "kj_bolter",
 			ammo_type =
 			{
@@ -52,10 +51,7 @@ if not data.raw["ammo"]["kj_bolt"] then
 					},
 				},
 			},
-			magazine_size = 10,
-			subgroup = "ammo",
 			order = "2[military]-40k-0",
-			stack_size = 100
 		},
 
 		{
@@ -70,65 +66,65 @@ if not data.raw["ammo"]["kj_bolt"] then
 			piercing_damage = 550,
 			action =
 			{
-			  type = "direct",
-			  action_delivery =
-			  {
-				type = "instant",
-				target_effects =
+				type = "direct",
+				action_delivery =
 				{
-				  {
-				  type = "damage",
-				  damage = {amount = 40, type = "physical"}
-				  },
-				  {
-				   type = "push-back",
-				   distance = 2,
-				  }
+					type = "instant",
+					target_effects =
+					{
+						{
+							type = "damage",
+							damage = {amount = 40, type = "physical"}
+						},
+						{
+							type = "push-back",
+							distance = 2,
+						}
+					}
 				}
-			  }
 			},
 			final_action =
 			{
-			  type = "direct",
-			  action_delivery =
-			  {
-				type = "instant",
-				target_effects =
+				type = "direct",
+				action_delivery =
 				{
-				  {
-					type = "create-entity",
-					entity_name = "explosion"
-				  },
-				  {
-					type = "nested-result",
-					action =
+					type = "instant",
+					target_effects =
 					{
-					  type = "area",
-					  radius = 3,
-					  action_delivery =
-					  {
-						type = "instant",
-						target_effects =
 						{
-						  {
-							type = "damage",
-							damage = {amount = 100, type = "explosion"}
-						  },
-						  {
-						   type = "push-back",
-						   distance = 2,
-						  },
-						}
-					  }
+							type = "create-entity",
+							entity_name = "explosion"
+						},
+						{
+							type = "nested-result",
+							action =
+							{
+								type = "area",
+								radius = 3,
+								action_delivery =
+								{
+									type = "instant",
+									target_effects =
+									{
+										{
+											type = "damage",
+											damage = {amount = 100, type = "explosion"}
+										},
+										{
+											type = "push-back",
+											distance = 2,
+										},
+									}
+								}
+							}
+						},
+						{
+							type = "create-entity",
+							entity_name = "small-scorchmark-tintable",
+							check_buildability = true
+						},
 					}
-				  },
-				  {
-					type = "create-entity",
-					entity_name = "small-scorchmark-tintable",
-					check_buildability = true
-				  },
 				}
-			  }
 			},
 			animation =
 			{

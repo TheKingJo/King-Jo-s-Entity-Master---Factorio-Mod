@@ -1,4 +1,4 @@
-local ammoDmg = require("tables").ammoDmg.kj_rex
+local ammoData = require("tables").ammoData.kj_rex
 local items = require("tables").items
 local modname = "kj_rex"
 
@@ -16,6 +16,8 @@ data:extend({
 		  {
 			filename = "__kj_rex__/graphics/laser-cannon-beam-piercing.png",
 			priority = "extra-high",
+			draw_as_glow = true,
+			blend_mode = "additive",
 			width = 187,
 			height = 1,
 			frame_count = 6,
@@ -30,7 +32,6 @@ data:extend({
 		type = "ammo",
 		name = "kj_rex_normal",
 		icon = "__kj_rex__/graphics/equipment/railgun_ammo.png",
-		icon_size = 256,
 		ammo_category = "kj_rex_cannon",
 		ammo_type =
 		{
@@ -68,11 +69,11 @@ data:extend({
 									{
 										{
 											type = "damage",
-											damage = {amount = ammoDmg.APAP, type = "physical"}
+											damage = {amount = ammoData.APAP, type = "physical"}
 										},
 										{
 											type = "damage",
-											damage = {amount = ammoDmg.APHE, type = "laser"}
+											damage = {amount = ammoData.APHE, type = "laser"}
 										},
 										{
 											type = "create-entity",
@@ -110,9 +111,7 @@ data:extend({
 				}
 			}
 		},
-		subgroup = "ammo",
 		order = items[modname].order.."-a[normal]",
-		stack_size = 100
 	},
 
 	{
@@ -124,7 +123,7 @@ data:extend({
 		height = 0,
 		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
 		acceleration = 0,
-		piercing_damage = ammoDmg.APDW,
+		piercing_damage = ammoData.APDW,
 		action =
 		{
 			type = "direct",
@@ -135,7 +134,7 @@ data:extend({
 				{
 					{
 						type = "damage",
-						damage = {amount = ammoDmg.APAP , type = "physical"}
+						damage = {amount = ammoData.APAP , type = "physical"}
 					},
 					{
 						type = "create-entity",
@@ -174,11 +173,11 @@ data:extend({
 								{
 									{
 										type = "damage",
-										damage = {amount = ammoDmg.APAP, type = "physical"}
+										damage = {amount = ammoData.APAP, type = "physical"}
 									},
 									{
 										type = "damage",
-										damage = {amount = ammoDmg.APHE, type = "explosion"}
+										damage = {amount = ammoData.APHE, type = "explosion"}
 									},
 									{
 										type = "create-entity",

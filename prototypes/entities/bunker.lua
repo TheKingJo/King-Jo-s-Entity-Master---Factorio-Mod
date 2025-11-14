@@ -22,10 +22,8 @@ data:extend({
 
 		energy_source =
 		{
-			type = "burner",
-			fuel_categories = {"chemical"},
+			type = "void",
 			render_no_power_icon = false,
-			fuel_inventory_size = 1,
 		},
 		light =
 		{

@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.19
+Date: 01.02.2025
+  Changes:
+    - added support for my new laser turret
+    - phalanx drum ammo now has 1500 instead of 1550 bullets
+    - changed weight and stack size of some entitie items and ammmos
+    - changed speeder recipe
+    - changed pak and bunker energy source to void
+  Fixes:
+    - rex railgun animation is now glow
+---------------------------------------------------------------------------------------------------
 Version: 2.0.18
 Date: 04.02.2025
   Changes:
@@ -7,7 +18,7 @@ Date: 04.02.2025
 Version: 2.0.17
 Date: 31.01.2025
   Fixes:
-    - error that came with having only ratte / ray enabled and the mod category option on
+    - error that came with having only ratte / ray / rex enabled and the mod category option on
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.16
 Date: 21.01.2025

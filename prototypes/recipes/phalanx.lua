@@ -19,7 +19,7 @@ data:extend({
 		localised_description = {"", {"recipe-description.kj_apds_normal"}},
 		ingredients =
 		{
-			{type = "item", name = "kj_apds_normal_single", amount = 1550},
+			{type = "item", name = "kj_apds_normal_single", amount = 1500},
 		},
 		results = {{type = "item", name = "kj_apds_normal", amount = 1}},
 	},

@@ -1,4 +1,4 @@
-local ammoDmg = require("tables").ammoDmg.kj_rattetank
+local ammoData = require("tables").ammoData.kj_rattetank
 local items = require("tables").items
 local modname = "kj_rattetank"
 --[[
@@ -369,9 +369,8 @@ data:extend({
 
 	{
 		type = "ammo",
-		name = "kj_280SKC34_penetration",
+		name = "kj_280SKC34_ap",
 		icon = "__kj_rattetank__/graphics/equipment/ap_cannon_shell.png",
-		icon_size = 256,
 		ammo_category = "kj_280SKC34",
 		ammo_type =
 		{
@@ -397,15 +396,12 @@ data:extend({
 				}
 			}
 		},
-		subgroup = "ammo",
 		order = items[modname].order.."-a[AP]",
-		stack_size = 50
 	},
 	{
 		type = "ammo",
-		name = "kj_280SKC34_highexplosive",
+		name = "kj_280SKC34_he",
 		icon = "__kj_rattetank__/graphics/equipment/he_cannon_shell.png",
-		icon_size = 256,
 		ammo_category = "kj_280SKC34",
 		ammo_type =
 		{
@@ -431,15 +427,12 @@ data:extend({
 				}
 			}
 		},
-		subgroup = "ammo",
 		order = items[modname].order.."-b[HE]",
-		stack_size = 50
 	},
 	{
 		type = "ammo",
-		name = "kj_280SKC34_incendiary",
+		name = "kj_280SKC34_inc",
 		icon = "__kj_rattetank__/graphics/equipment/hei_cannon_shell.png",
-		icon_size = 256,
 		ammo_category = "kj_280SKC34",
 		ammo_type =
 		{
@@ -465,9 +458,7 @@ data:extend({
 				}
 			}
 		},
-		subgroup = "ammo",
 		order = items[modname].order.."-c[HEI]",
-		stack_size = 50
 	},
 
 	{
@@ -479,7 +470,7 @@ data:extend({
 		height = 0,
 		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
 		acceleration = 0,
-		piercing_damage = ammoDmg.APDW,
+		piercing_damage = ammoData.APDW,
 		action =
 		{
 			type = "direct",
@@ -490,11 +481,11 @@ data:extend({
 				{
 					{
 						type = "damage",
-						damage = {amount = ammoDmg.APAP , type = "physical"}
+						damage = {amount = ammoData.APAP , type = "physical"}
 					},
 					{
 						type = "damage",
-						damage = {amount = ammoDmg.APHE , type = "explosion"}
+						damage = {amount = ammoData.APHE , type = "explosion"}
 					},
 					{
 						type = "create-entity",
@@ -537,7 +528,7 @@ data:extend({
 		height = 0,
 		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
 		acceleration = 0,
-		piercing_damage = ammoDmg.HEDW,
+		piercing_damage = ammoData.HEDW,
 		action =
 		{
 			type = "direct",
@@ -548,7 +539,7 @@ data:extend({
 				{
 					{
 						type = "damage",
-						damage = {amount = ammoDmg.HEAP , type = "physical"}
+						damage = {amount = ammoData.HEAP , type = "physical"}
 					},
 					{
 						type = "create-entity",
@@ -587,7 +578,7 @@ data:extend({
 								{
 									{
 										type = "damage",
-										damage = {amount = ammoDmg.HEHE, type = "explosion"}
+										damage = {amount = ammoData.HEHE, type = "explosion"}
 									},
 									{
 										type = "create-entity",
@@ -637,7 +628,7 @@ data:extend({
 		height = 0,
 		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
 		acceleration = 0,
-		piercing_damage = ammoDmg.APHEDW,
+		piercing_damage = ammoData.APHEDW,
 		action =
 		{
 			type = "direct",
@@ -648,7 +639,7 @@ data:extend({
 				{
 					{
 						type = "damage",
-						damage = {amount = ammoDmg.APHEAP , type = "physical"}
+						damage = {amount = ammoData.APHEAP , type = "physical"}
 					},
 					{
 						type = "create-entity",
@@ -713,7 +704,7 @@ data:extend({
 		height = 0,
 		collision_box = {{-0.3, -1.1}, {0.3, 1.1}},
 		acceleration = 0,
-		piercing_damage = ammoDmg.APHEDW,
+		piercing_damage = ammoData.APHEDW,
 		action =
 		{
 			{
@@ -730,11 +721,11 @@ data:extend({
 						},
 						{
 							type = "damage",
-							damage = {amount = ammoDmg.APHEAP , type = "physical"}
+							damage = {amount = ammoData.APHEAP , type = "physical"}
 						},
 						{
 							type = "damage",
-							damage = {amount = ammoDmg.APHEHE , type = "explosion"}
+							damage = {amount = ammoData.APHEHE , type = "explosion"}
 						},
 					}
 				}

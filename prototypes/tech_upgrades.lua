@@ -95,6 +95,39 @@ local techUpdates = {
     },
 }
 
+local laserTechs = {
+    "laser-weapons-damage-5",
+    "laser-weapons-damage-6",
+    "laser-weapons-damage-7",
+    "laser-shooting-speed-5",
+    "laser-shooting-speed-6",
+    "laser-shooting-speed-7",
+    "ammo-damage",
+    "ammo-damage",
+    "ammo-damage",
+    "gun-speed",
+    "gun-speed",
+    "gun-speed",
+}
+
+if mods["kj_laser"] then
+    local tech = {
+        modifiers = {0.2, 0.2, 0.2, 0.1, 0.2, 0.2},
+        ammo_category = "kj_laser",
+    }
+
+    for i, unit in ipairs(tech.modifiers) do
+        if unit > 0 then
+            table.insert(data.raw["technology"][laserTechs[i]].effects, {
+                type = laserTechs[i + 6],
+                ammo_category = tech.ammo_category,
+                modifier = unit,
+            })
+            log("Adding to "..laserTechs[i].." "..unit.." "..tech.ammo_category)
+        end
+    end
+end
+
 local techs = {
     "physical-projectile-damage-5",
     "physical-projectile-damage-6",

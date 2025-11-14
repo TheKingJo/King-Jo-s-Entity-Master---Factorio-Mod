@@ -1,13 +1,13 @@
-local ammoData = require("tables").ammoData.kj_2a6
+local ammoData = require("tables").ammoData.kj_maustank
 local items = require("tables").items
-local modname = "kj_2a6"
+local modname = "kj_maustank"
 
 data:extend({
 	{
 		type = "ammo",
-		name = "kj_rh120_ap",
-		icon = "__kj_2a6__/graphics/equipment/ap_cannon_shell.png",
-		ammo_category = "kj_rh120",
+		name = "kj_120kwk_ap",
+		icon = "__kj_maustank__/graphics/equipment/ap_cannon_shell.png",
+		ammo_category = "kj_128kwk",
 		ammo_type =
 		{
 			target_type = "direction",
@@ -17,7 +17,7 @@ data:extend({
 				action_delivery =
 				{
 					type = "projectile",
-					projectile = "kj_rh120_penetration_projectile",
+					projectile = "kj_120kwk_penetration_projectile",
 					starting_speed = 1.5,
 					direction_deviation = 0.1,
 					range_deviation = 0.1,
@@ -35,9 +35,9 @@ data:extend({
 	},
 	{
 		type = "ammo",
-		name = "kj_rh120_he",
-		icon = "__kj_2a6__/graphics/equipment/he_cannon_shell.png",
-		ammo_category = "kj_rh120",
+		name = "kj_120kwk_he",
+		icon = "__kj_maustank__/graphics/equipment/he_cannon_shell.png",
+		ammo_category = "kj_128kwk",
 		ammo_type =
 		{
 			target_type = "direction",
@@ -47,7 +47,7 @@ data:extend({
 				action_delivery =
 				{
 					type = "projectile",
-					projectile = "kj_rh120_highexplosive_projectile",
+					projectile = "kj_120kwk_highexplosive_projectile",
 					starting_speed = 1.5,
 					direction_deviation = 0.1,
 					range_deviation = 0.1,
@@ -65,9 +65,9 @@ data:extend({
 	},
 	{
 		type = "ammo",
-		name = "kj_rh120_aphe",
-		icon = "__kj_2a6__/graphics/equipment/aphe_cannon_shell.png",
-		ammo_category = "kj_rh120",
+		name = "kj_120kwk_aphe",
+		icon = "__kj_maustank__/graphics/equipment/aphe_cannon_shell.png",
+		ammo_category = "kj_128kwk",
 		ammo_type =
 		{
 			target_type = "direction",
@@ -77,7 +77,7 @@ data:extend({
 				action_delivery =
 				{
 					type = "projectile",
-					projectile = "kj_rh120_penetration_highexplosive_projectile",
+					projectile = "kj_120kwk_penetration_highexplosive_projectile",
 					starting_speed = 1.5,
 					direction_deviation = 0.1,
 					range_deviation = 0.1,
@@ -93,53 +93,10 @@ data:extend({
 		},
 		order = items[modname].order.."-c[APHE]",
 	},
-	{
-		type = "ammo",
-		name = "kj_rh120_can",
-		icon = "__kj_2a6__/graphics/equipment/can_cannon_shell.png",
-		ammo_category = "kj_rh120",
-		ammo_type =
-		{
-			target_type = "direction",
-			clamp_position = true,
-			action =
-			{
-				{
-					type = "direct",
-					action_delivery =
-					{
-						type = "instant",
-						source_effects =
-						{
-							{
-								type = "create-explosion",
-								entity_name = "explosion-gunshot"
-							}
-						}
-					}
-				},
-				{
-					type = "direct",
-					repeat_count = 24,
-					action_delivery =
-					{
-						type = "projectile",
-						projectile = "kj_canister_projectile",
-						starting_speed = 1,
-						starting_speed_deviation = 0.1,
-						direction_deviation = 0.2,
-						range_deviation = 0.2,
-						max_range = 25
-					}
-				}
-			}
-		},
-		order = items[modname].order.."-d[canister]",
-	},
 
 	{
 		type = "projectile",
-		name = "kj_rh120_penetration_projectile",
+		name = "kj_120kwk_penetration_projectile",
 		flags = {"not-on-map"},
 		force_condition = "not-same",
 		hidden = true,
@@ -198,7 +155,7 @@ data:extend({
 	},
 	{
 		type = "projectile",
-		name = "kj_rh120_highexplosive_projectile",
+		name = "kj_120kwk_highexplosive_projectile",
 		flags = {"not-on-map"},
 		force_condition = "not-same",
 		hidden = true,
@@ -298,7 +255,7 @@ data:extend({
 	},
 	{
 		type = "projectile",
-		name = "kj_rh120_penetration_highexplosive_projectile",
+		name = "kj_120kwk_penetration_highexplosive_projectile",
 		flags = {"not-on-map"},
 		force_condition = "not-same",
 		hidden = true,
@@ -322,6 +279,11 @@ data:extend({
 						type = "create-entity",
 						entity_name = "explosion"
 					},
+					{
+						type = "destroy-cliffs",
+						radius = 6,
+						explosion = "explosion"
+					},
 				}
 			}
 		},
@@ -333,11 +295,6 @@ data:extend({
 				type = "instant",
 				target_effects =
 				{
-					{
-						type = "destroy-cliffs",
-						radius = 6,
-						explosion = "explosion"
-					},
 					{
 						type = "create-entity",
 						entity_name = "massive-explosion"
@@ -389,45 +346,11 @@ data:extend({
 		},
 		animation =
 		{
-			filename = "__base__/graphics/entity/bullet/bullet.png",
-			frame_count = 1,
-			width = 3,
-			height = 50,
-			priority = "high"
-		}
-	},
-	{
-		type = "projectile",
-		name = "kj_canister_projectile",
-		flags = {"not-on-map"},
-		force_condition = "not-same",
-		hidden = true,
-		height = 0,
-		collision_box = {{-0.05, -0.25}, {0.05, 0.25}},
-		acceleration = 0,
-		direction_only = true,
-		piercing_damage = ammoData.CANDW,
-		action =
-		{
-			type = "direct",
-			action_delivery =
-			{
-				type = "instant",
-				target_effects =
-				{
-					type = "damage",
-					damage = {amount = ammoData.CANAP, type = "physical"}
-				}
-			}
-		},
-		animation =
-		{
-			filename = "__base__/graphics/entity/piercing-bullet/piercing-bullet.png",
-			draw_as_glow = true,
-			frame_count = 1,
-			width = 3,
-			height = 50,
-			priority = "high"
+		  filename = "__base__/graphics/entity/bullet/bullet.png",
+		  frame_count = 1,
+		  width = 3,
+		  height = 50,
+		  priority = "high"
 		}
 	},
 })

@@ -45,7 +45,7 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 			type = "item-group",
 			name = "kj_vehicles",
 			icon = "__kj_vehicles__/graphics/categories.png",
-			icon_size = 560,
+			icon_size = 128,
 			inventory_order = "x",
 			order = "kj_vehicles"
 		},
@@ -59,10 +59,10 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 	if mods["kj_2a6"] then
 		data.raw["item-subgroup"]["kj_tanks"].group = "kj_vehicles"
 		data.raw["item-with-entity-data"]["kj_2a6"].subgroup = tables.categoriesUpdates["kj_2a6"].name
-		data.raw["ammo"]["kj_rh120_penetration"].subgroup = tables.categoriesUpdates["kj_2a6"].name
-		data.raw["ammo"]["kj_rh120_highexplosive"].subgroup = tables.categoriesUpdates["kj_2a6"].name
-		data.raw["ammo"]["kj_rh120_penetration_highexplosive"].subgroup = tables.categoriesUpdates["kj_2a6"].name
-		data.raw["ammo"]["kj_rh120_canister"].subgroup = tables.categoriesUpdates["kj_2a6"].name
+		data.raw["ammo"]["kj_rh120_ap"].subgroup = tables.categoriesUpdates["kj_2a6"].name
+		data.raw["ammo"]["kj_rh120_he"].subgroup = tables.categoriesUpdates["kj_2a6"].name
+		data.raw["ammo"]["kj_rh120_aphe"].subgroup = tables.categoriesUpdates["kj_2a6"].name
+		data.raw["ammo"]["kj_rh120_can"].subgroup = tables.categoriesUpdates["kj_2a6"].name
 	end
 
 	if mods["kj_40kbaneblade"] then
@@ -93,9 +93,9 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 	if mods["kj_maustank"] then
 		data.raw["item-subgroup"]["kj_tanks"].group = "kj_vehicles"
 		data.raw["item-with-entity-data"]["kj_maustank"].subgroup = tables.categoriesUpdates["kj_maustank"].name
-		data.raw["ammo"]["kj_120kwk_penetration"].subgroup = tables.categoriesUpdates["kj_maustank"].name
-		data.raw["ammo"]["kj_120kwk_highexplosive"].subgroup = tables.categoriesUpdates["kj_maustank"].name
-		data.raw["ammo"]["kj_120kwk_penetration_highexplosive"].subgroup = tables.categoriesUpdates["kj_maustank"].name
+		data.raw["ammo"]["kj_120kwk_ap"].subgroup = tables.categoriesUpdates["kj_maustank"].name
+		data.raw["ammo"]["kj_120kwk_he"].subgroup = tables.categoriesUpdates["kj_maustank"].name
+		data.raw["ammo"]["kj_120kwk_aphe"].subgroup = tables.categoriesUpdates["kj_maustank"].name
 	end
 
 	if mods["kj_pak"] then
@@ -103,25 +103,25 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 		data.raw["item-with-entity-data"]["kj_pak"].subgroup = tables.categoriesUpdates["kj_pak"].name
 		data.raw["item-with-entity-data"]["kj_pak_turret"].subgroup = tables.categoriesUpdates["kj_pak"].name
 
-		data.raw["ammo"]["kj_pak_penetration"].subgroup = tables.categoriesUpdates["kj_pak"].name
-		data.raw["ammo"]["kj_pak_highexplosive"].subgroup = tables.categoriesUpdates["kj_pak"].name
-		data.raw["ammo"]["kj_pak_incendiary"].subgroup = tables.categoriesUpdates["kj_pak"].name
+		data.raw["ammo"]["kj_pak_ap"].subgroup = tables.categoriesUpdates["kj_pak"].name
+		data.raw["ammo"]["kj_pak_he"].subgroup = tables.categoriesUpdates["kj_pak"].name
+		data.raw["ammo"]["kj_pak_inc"].subgroup = tables.categoriesUpdates["kj_pak"].name
 	end
 
 	if mods["kj_panzer4"] then
 		data.raw["item-subgroup"]["kj_tanks"].group = "kj_vehicles"
 		data.raw["item-with-entity-data"]["kj_panzer4"].subgroup = tables.categoriesUpdates["kj_panzer4"].name
-		data.raw["ammo"]["kj_75kwk40_penetration"].subgroup = tables.categoriesUpdates["kj_panzer4"].name
-		data.raw["ammo"]["kj_75kwk40_highexplosive"].subgroup = tables.categoriesUpdates["kj_panzer4"].name
-		data.raw["ammo"]["kj_75kwk40_penetration_highexplosive"].subgroup = tables.categoriesUpdates["kj_panzer4"].name
+		data.raw["ammo"]["kj_75kwk40_ap"].subgroup = tables.categoriesUpdates["kj_panzer4"].name
+		data.raw["ammo"]["kj_75kwk40_he"].subgroup = tables.categoriesUpdates["kj_panzer4"].name
+		data.raw["ammo"]["kj_75kwk40_aphe"].subgroup = tables.categoriesUpdates["kj_panzer4"].name
 	end
 
 	if mods["kj_rattetank"] then
 		data.raw["item-subgroup"]["kj_tanks"].group = "kj_vehicles"
 		data.raw["item-with-entity-data"]["kj_rattetank"].subgroup = tables.categoriesUpdates["kj_rattetank"].name
-		data.raw["ammo"]["kj_280SKC34_incendiary"].subgroup = tables.categoriesUpdates["kj_rattetank"].name
-		data.raw["ammo"]["kj_280SKC34_penetration"].subgroup = tables.categoriesUpdates["kj_rattetank"].name
-		data.raw["ammo"]["kj_280SKC34_highexplosive"].subgroup = tables.categoriesUpdates["kj_rattetank"].name
+		data.raw["ammo"]["kj_280SKC34_inc"].subgroup = tables.categoriesUpdates["kj_rattetank"].name
+		data.raw["ammo"]["kj_280SKC34_ap"].subgroup = tables.categoriesUpdates["kj_rattetank"].name
+		data.raw["ammo"]["kj_280SKC34_he"].subgroup = tables.categoriesUpdates["kj_rattetank"].name
 	end
 
 	if mods["kj_ray"] then
@@ -139,8 +139,8 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 	end
 
 	if mods["kj_swspeeder"] then
-		data.raw["item-subgroup"]["kj_star_wars"].group = "kj_vehicles"
-		data.raw["item-with-entity-data"]["kj_swspeeder"].subgroup = "kj_star_wars"
+		data.raw["item-subgroup"]["kj_fantasy"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_swspeeder"].subgroup = tables.categoriesUpdates["kj_swspeeder"].name
 	end
 
 	if mods["kj_wirbelwind"] then
@@ -221,6 +221,11 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 		end
 	end
 
+	if mods["kj_laser"] then
+		data.raw["item-subgroup"]["kj_turrets"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_laser"].subgroup = tables.categoriesUpdates["kj_laser"].name
+	end
+
 	if mods["kj_phalanx"] then
 		data.raw["item-subgroup"]["kj_turrets"].group = "kj_vehicles"
 		data.raw["item-with-entity-data"]["kj_phalanx"].subgroup = tables.categoriesUpdates["kj_phalanx"].name
@@ -235,9 +240,6 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 	if mods["kj_tower"] then
 		data.raw["item-subgroup"]["kj_turrets"].group = "kj_vehicles"
 		data.raw["item-with-entity-data"]["kj_tower"].subgroup = tables.categoriesUpdates["kj_tower"].name
-
-		data.raw["item-with-entity-data"]["kj_tower"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
-		data.raw["item-with-entity-data"]["kj_tower"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
 	end
 
 	if mods["kj_vierling"] then
@@ -481,9 +483,9 @@ if mods["kj_cybertruck"] then
 end
 
 if mods["kj_pak"] then
-	data.raw["ammo"]["kj_pak_highexplosive"].ammo_type.action.action_delivery.max_range = settings.startup["kj_pak_range"].value
-	data.raw["ammo"]["kj_pak_penetration"].ammo_type.action.action_delivery.max_range = settings.startup["kj_pak_range"].value
-	data.raw["ammo"]["kj_pak_incendiary"].ammo_type.action.action_delivery.max_range = settings.startup["kj_pak_range"].value
+	data.raw["ammo"]["kj_pak_he"].ammo_type.action.action_delivery.max_range = settings.startup["kj_pak_range"].value
+	data.raw["ammo"]["kj_pak_ap"].ammo_type.action.action_delivery.max_range = settings.startup["kj_pak_range"].value
+	data.raw["ammo"]["kj_pak_inc"].ammo_type.action.action_delivery.max_range = settings.startup["kj_pak_range"].value
 
 	data.raw["gun"]["kj_pak_gun"].attack_parameters.range = settings.startup["kj_pak_range"].value
 	data.raw["ammo-turret"]["kj_pak_turret"].attack_parameters.range = settings.startup["kj_pak_range"].value
@@ -605,6 +607,19 @@ if mods["kj_40kbunker"] then
 			end
 		end
 	end
+end
+
+
+if mods["kj_tower"] then
+	data.raw["item-with-entity-data"]["kj_tower"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
+	data.raw["item-with-entity-data"]["kj_tower"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
+	data.raw["item-with-entity-data"]["kj_tower"].inventory_move_sound = data.raw["item"]["gun-turret"].inventory_move_sound
+end
+
+if mods["kj_laser"] then
+	data.raw["item-with-entity-data"]["kj_laser"].pick_sound = data.raw["item"]["laser-turret"].pick_sound
+	data.raw["item-with-entity-data"]["kj_laser"].drop_sound = data.raw["item"]["laser-turret"].drop_sound
+	data.raw["item-with-entity-data"]["kj_laser"].inventory_move_sound = data.raw["item"]["laser-turret"].inventory_move_sound
 end
 
 if mods["kj_medieval_warfare"] then

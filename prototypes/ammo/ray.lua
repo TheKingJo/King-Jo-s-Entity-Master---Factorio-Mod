@@ -1,4 +1,4 @@
-local ammoDmg = require("tables").ammoDmg.kj_ray
+local ammoData = require("tables").ammoData.kj_ray
 local items = require("tables").items
 local modname = "kj_ray"
 
@@ -167,7 +167,6 @@ data:extend({
 		type = "ammo",
 		name = "kj_ray_normal",
 		icon = "__kj_ray__/graphics/equipment/railgun_ammo.png",
-		icon_size = 256,
 		ammo_category = "kj_ray_cannon",
 		ammo_type =
 		{
@@ -205,11 +204,11 @@ data:extend({
 									{
 										{
 											type = "damage",
-											damage = {amount = ammoDmg.APAP, type = "physical"}
+											damage = {amount = ammoData.APAP, type = "physical"}
 										},
 										{
 											type = "damage",
-											damage = {amount = ammoDmg.APHE, type = "laser"}
+											damage = {amount = ammoData.APHE, type = "laser"}
 										},
 										{
 											type = "create-entity",
@@ -247,15 +246,12 @@ data:extend({
 				}
 			}
 		},
-		subgroup = "ammo",
 		order = items[modname].order.."-a[ammo]",
-		stack_size = 100
 	},
 	{
 		type = "ammo",
 		name = "kj_ray_ammo_small",
 		icon = "__kj_ray__/graphics/equipment/railgun_ammo_small.png",
-		icon_size = 256,
 		ammo_category = "kj_ray_cannon_small",
 		ammo_type =
 		{
@@ -293,11 +289,11 @@ data:extend({
 									{
 										{
 											type = "damage",
-											damage = {amount = ammoDmg.APAP * 0.333, type = "physical"}
+											damage = {amount = ammoData.APAP * 0.333, type = "physical"}
 										},
 										{
 											type = "damage",
-											damage = {amount = ammoDmg.APHE * 0.333, type = "laser"}
+											damage = {amount = ammoData.APHE * 0.333, type = "laser"}
 										},
 										{
 											type = "create-entity",
@@ -330,9 +326,7 @@ data:extend({
 				}
 			}
 		},
-		subgroup = "ammo",
 		order = items[modname.."2"].order.."-a[ammo]",
-		stack_size = 100
 	},
 
 	--[[{

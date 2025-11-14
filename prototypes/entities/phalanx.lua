@@ -328,7 +328,6 @@ data:extend({
 			draw_as_shadow = true,
 			scale = 0.5,
 		},
-		vehicle_impact_sound =  sounds.generic_impact,
 		attack_parameters =
 		{
 			type = "projectile",

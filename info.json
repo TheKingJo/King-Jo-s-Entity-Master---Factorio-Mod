@@ -1,6 +1,6 @@
 {
   "name": "kj_vehicles",
-  "version": "2.0.18",
+  "version": "2.0.19",
   "title": "King Jo's Entity Master",
   "author": "TheKingJo",
   "contact": "",
@@ -9,5 +9,5 @@
   "factorio_version":"2.0",
   "dependencies": ["base",
 	"? aai-programmable-vehicles >= 0.8.1",
-	"kj_fuel >= 2.0.0"]
+	"? space-age >= 2.0.32"]
 }

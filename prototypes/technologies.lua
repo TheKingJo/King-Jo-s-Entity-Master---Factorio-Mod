@@ -2,14 +2,14 @@ local tables = require("tables")
 local technologies = {
 	{
 		modname = "kj_2a6",
-		recipes = {"kj_2a6", "kj_rh120_penetration", "kj_mg3_hand"},
+		recipes = {"kj_2a6", "kj_rh120_ap", "kj_mg3_hand"},
 		prerequisites = {"kj_gasoline"},
 		unit = {1000,30,1,1,1,1,0,0,0}
 	},
 	{
 		modname = "kj_2a6",
 		name = "kj_2a6_ammo",
-		recipes = {"kj_rh120_highexplosive", "kj_rh120_penetration_highexplosive", "kj_rh120_canister"},
+		recipes = {"kj_rh120_he", "kj_rh120_aphe", "kj_rh120_can"},
 		prerequisites = {"kj_2a6"},
 		unit = {1000,30,1,1,1,1,0,0,0}
 	},
@@ -44,49 +44,49 @@ local technologies = {
 
 	{
 		modname = "kj_maustank",
-		recipes = {"kj_maustank", "kj_120kwk_penetration", "kj_mg42_hand"},
+		recipes = {"kj_maustank", "kj_120kwk_ap", "kj_mg42_hand"},
 		prerequisites = {"kj_gasoline"},
 		unit = {1000,30,1,1,1,1,0,0,0}
 	},
 	{
 		modname = "kj_maustank",
 		name = "kj_maustank_ammo",
-		recipes = {"kj_maustank", "kj_120kwk_highexplosive", "kj_120kwk_penetration_highexplosive"},
+		recipes = {"kj_maustank", "kj_120kwk_he", "kj_120kwk_aphe"},
 		prerequisites = {"kj_maustank"},
 		unit = {1000,30,1,1,1,1,0,0,0}
 	},
 
 	{
 		modname = "kj_pak",
-		recipes = {"kj_pak", "kj_pak_turret", "kj_pak_penetration", "kj_pak_highexplosive", "kj_pak_incendiary"},
+		recipes = {"kj_pak", "kj_pak_turret", "kj_pak_ap", "kj_pak_he", "kj_pak_inc"},
 		prerequisites = {"military-3"},
 		unit = {600,40,1,1,1,1,0,0,0}
 	},
 
 	{
 		modname = "kj_panzer4",
-		recipes = {"kj_panzer4", "kj_75kwk40_penetration", "kj_mg34_hand"},
+		recipes = {"kj_panzer4", "kj_75kwk40_ap", "kj_mg34_hand"},
 		prerequisites = {"tank", "kj_gasoline"},
 		unit = {500,30,1,1,1,1,0,0,0}
 	},
 	{
 		modname = "kj_panzer4",
 		name = "kj_panzer4_ammo",
-		recipes = {"kj_75kwk40_highexplosive", "kj_75kwk40_penetration_highexplosive"},
+		recipes = {"kj_75kwk40_he", "kj_75kwk40_aphe"},
 		prerequisites = {"kj_panzer4"},
 		unit = {200,30,1,1,1,1,0,0,0}
 	},
 
 	{
 		modname = "kj_rattetank",
-		recipes = {"kj_rattetank", "kj_280SKC34_penetration"},
+		recipes = {"kj_rattetank", "kj_280SKC34_ap"},
 		prerequisites = {"kj_gasoline"},
 		unit = {500,30,10,10,10,10,10,10,1}
 	},
 	{
 		modname = "kj_rattetank",
 		name = "kj_rattetank_ammo",
-		recipes = {"kj_280SKC34_highexplosive", "kj_280SKC34_incendiary"},
+		recipes = {"kj_280SKC34_he", "kj_280SKC34_inc"},
 		prerequisites = {"kj_rattetank"},
 		unit = {500,30,10,10,10,10,10,10,1}
 	},
@@ -185,6 +185,13 @@ local technologies = {
 		recipes = {"kj_phalanx", "kj_apds_normal", "kj_apds_normal_single"},
 		prerequisites = {"military-4"},
 		unit = {200,30,1,1,1,1,0,1,0}
+	},
+
+	{
+		modname = "kj_laser",
+		recipes = {"kj_laser"},
+		prerequisites = {"military-4", "laser-turret"},
+		unit = {300,30,1,1,1,1,0,1,0}
 	},
 
 	{

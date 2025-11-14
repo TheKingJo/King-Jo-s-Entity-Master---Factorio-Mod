@@ -44,12 +44,8 @@ data:extend({
 
     energy_source =
     {
-      type = "burner",
+      type = "void",
       render_no_power_icon = false,
-      fuel_inventory_size = 1,
-      effectivity = 1,
-      fuel_categories = {"kj_gas_can"},
-      burnt_inventory_size = 1,
     },
     animation = util.empty_animation(1),
 	  turret_animation =

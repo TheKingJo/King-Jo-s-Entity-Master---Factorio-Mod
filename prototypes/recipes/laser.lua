@@ -6,7 +6,7 @@ data:extend({
 		name = "kj_laser",
 		enabled = false,
 		energy_required = 30,
-		ingredients = tables.recipes["kj_phalanx"],
+		ingredients = tables.recipes["kj_laser"],
 		results = {{type = "item", name = "kj_laser", amount = 1}},
 	},
 })
