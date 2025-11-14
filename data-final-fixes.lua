@@ -417,13 +417,19 @@ if mods["kj_40kdreadnought"] then
 			time = 40
 		}
 		data.raw["technology"]["kj_40kdreadnought"].prerequisites = {"military-4", "se-rocket-science-pack", "kj_gasoline"}
-		
+
 		if mods["kj_40kpredator"] then
 			table.insert(data.raw["technology"]["kj_40kdreadnought"].prerequisites, "kj_40kpredator")
 		else
 			table.insert(data.raw["technology"]["kj_40kdreadnought"].prerequisites, "tank")
 		end
 	end
+
+	aaiTanks.dreadnought = {
+		entities = {"kj_40kdreadnought".."-"},
+		guns = {"kj_dreadnought_cannon", "kj_bolter"},
+		multiplier = 0.6,
+	}
 end
 
 if mods["kj_40klemanruss"] then
@@ -482,6 +488,14 @@ if mods["kj_pak"] then
 	data.raw["ammo-turret"]["kj_pak_turret"].attack_parameters.range = settings.startup["kj_pak_range"].value
 end
 
+if mods["kj_rattetank"] then
+	aaiTanks.rattetank = {
+		entities = {"kj_rattetank".."-"},
+		guns = {"kj_280SKC34"},
+		multiplier = 0.9,
+	}
+end
+
 if mods["kj_ray"] then
 	if mods["space-exploration"] then
 		data.raw["technology"]["kj_ray"].unit =
@@ -501,6 +515,17 @@ if mods["kj_ray"] then
 		}
 		data.raw["technology"]["kj_ray"].prerequisites = {"military-4", "se-rocket-science-pack", "kj_gasoline"}
 	end
+
+	aaiTanks.ray = {
+		entities = {"kj_ray".."-"},
+		guns = {"kj_ray_cannon", "kj_ray_mg", "kj_ray_rocket"},
+		multiplier = 0.22,
+	}
+	aaiTanks.raySmall = {
+		entities = {"kj_ray_small".."-"},
+		guns = {"kj_ray_cannon_small", "kj_ray_mg_small", "kj_ray_rocket_small"},
+		multiplier = 0.9,
+	}
 end
 
 if mods["kj_rex"] then
@@ -522,6 +547,12 @@ if mods["kj_rex"] then
 		}
 		data.raw["technology"]["kj_rex"].prerequisites = {"military-4", "se-rocket-science-pack", "kj_gasoline"}
 	end
+
+	aaiTanks.rex = {
+		entities = {"kj_rex".."-"},
+		guns = {"kj_rex_cannon", "kj_rex_mg", "kj_rex_rocket"},
+		multiplier = 0.22,
+	}
 end
 
 if mods["kj_warrig"] then
@@ -547,10 +578,8 @@ if mods["kj_warrig"] then
 end
 
 if mods["kj_40kbunker"] then
-	data.raw["car"]["kj_40kbunker"].sound_no_fuel = nil
-
 	if mods["space-exploration"] then
-		data.raw["technology"][modName].unit = 
+		data.raw["technology"]["kj_40kbunker"].unit =
 		{
 			count = 600,
 			ingredients =
@@ -561,21 +590,19 @@ if mods["kj_40kbunker"] then
 			},
 			time = 40
 		}
-		data.raw["technology"][modName].prerequisites = {"military-3"}
+		data.raw["technology"]["kj_40kbunker"].prerequisites = {"military-3"}
 	end
 
 
 	if mods["aai-programmable-vehicles"] then
 		log("AAI-P-V Mod found. Correcting the recipes.")
-	
-		data.raw["recipe"][modName.."-kj_40kbunker_gun"].hidden = true
-		
-		for i,effect in ipairs(data.raw["technology"][modName].effects) do
-			if effect.type == "unlock-recipe" then
-				if effect.recipe == "kj_40kbunker-kj_40kbunker_gun" --[[or effect.recipe == modName.."-kj_40kbunker_gun-reverse"]] then
-					log("Recipe "..effect.recipe.." found. Deleting.")
-					data.raw["technology"][modName].effects[i] = nil
-				end
+
+		data.raw["recipe"]["kj_40kbunker-kj_40kbunker_gun"].hidden = true
+
+		for _, effect in pairs(data.raw["technology"]["kj_40kbunker"].effects) do
+			if effect.type == "unlock-recipe" and effect.recipe == "kj_40kbunker-kj_40kbunker_gun" --[[or effect.recipe == modName.."-kj_40kbunker_gun-reverse"]] then
+				log("Recipe "..effect.recipe.." found. Deleting.")
+				effect = nil
 			end
 		end
 	end

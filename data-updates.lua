@@ -145,6 +145,10 @@ if mods["kj_2a6"] then
 	table.insert(data.raw["technology"]["kj_2a6"].prerequisites, prerequisites_mod)
 end
 
+if mods["kj_40kbunker"] then
+	data.raw["car"]["kj_40kbunker"].sound_no_fuel = nil
+end
+
 if mods["kj_40kbaneblade"] then
 	if mods["kj_40klemanruss"] then
 		table.insert(data.raw["technology"]["kj_40kbaneblade"].prerequisites, "kj_40klemanruss")

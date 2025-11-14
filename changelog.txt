@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.12
+Date: 17.01.2025
+  Changes:
+    - modname and thumbnail
+    - established AAI compatibility again
+  Fixes:
+    - some errors in connection with AAI and the wh40k bunker
+---------------------------------------------------------------------------------------------------
 Version: 2.0.11
 Date: 12.01.2025
   Fixes:

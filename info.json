@@ -1,12 +1,13 @@
 {
   "name": "kj_vehicles",
-  "version": "2.0.11",
-  "title": "King Jo's Vehicle Master",
+  "version": "2.0.12",
+  "title": "King Jo's Entity Master",
   "author": "TheKingJo",
   "contact": "",
   "homepage": "https://steamcommunity.com/id/thekingjo/",
-  "description": "Manages all of my land driven vehicles so I only need to update this and not the sub mods.",
+  "description": "Manages all of my entities so I only need to update this and not the sub mods.",
   "factorio_version":"2.0",
   "dependencies": ["base",
+	"? aai-programmable-vehicles >= 0.8.1",
 	"kj_fuel >= 2.0.0"]
 }
