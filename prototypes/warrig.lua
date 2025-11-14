@@ -789,7 +789,6 @@ data:extend({
 			fuel_categories = {"kj_gas_barrel"},
 			effectivity = 1.25,
 			fuel_inventory_size = 3,
-			burnt_inventory_size = 3,
 			smoke = data.raw["car"]["kj_warrig"].energy_source.smoke,
 		},
 		front_light =

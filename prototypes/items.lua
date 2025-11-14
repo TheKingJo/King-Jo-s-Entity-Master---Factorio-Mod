@@ -1357,6 +1357,7 @@ if mods["kj_rex"] then
     rexrocket.name = "kj_rex_rocket"
     rexrocket.order = "[basic-clips]-e[rexrocket]"
     rexrocket.flags = {}
+    rexrocket.hidden = true
     rexrocket.attack_parameters.range = 70
     rexrocket.attack_parameters.cooldown = 45
     rexrocket.attack_parameters.damage_modifier = 3

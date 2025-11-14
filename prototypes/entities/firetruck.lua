@@ -22,7 +22,6 @@ data:extend({
       fuel_categories = {"kj_gas_can"},
       effectivity = 1.5,
       fuel_inventory_size = 3,
-	    burnt_inventory_size = 3,
       smoke =
       {
         {

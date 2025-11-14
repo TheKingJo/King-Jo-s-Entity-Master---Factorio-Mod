@@ -123,7 +123,6 @@ smallVariant.energy_source = {
 	fuel_categories = {"kj_gas_barrel"},
 	effectivity = 1,
 	fuel_inventory_size = 1,
-	burnt_inventory_size = 1,
 	smoke = {
 		{
 			name = "kj_ray_splash",

@@ -51,7 +51,6 @@ data:extend({
       fuel_categories = {"kj_kerosine"},
       effectivity = 1,
       fuel_inventory_size = 3,
-	    burnt_inventory_size = 3,
       smoke =
       {
         {

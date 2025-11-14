@@ -25,7 +25,6 @@ data:extend({
       fuel_categories = {"kj_gas_can"},
       effectivity = 2,
       fuel_inventory_size = 3,
-  	  burnt_inventory_size = 2,
     },
     light =
     {

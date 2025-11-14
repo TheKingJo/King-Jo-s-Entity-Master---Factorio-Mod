@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.0
+Date: 28.06.2025
+  Changes:
+    - removed burnt fuel slots from all vehicles that use my fuels except energy cells
+    - hid rex rocket launcher
+---------------------------------------------------------------------------------------------------
 Version: 2.0.28
 Date: 28.06.2025
   Changes:
