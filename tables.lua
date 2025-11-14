@@ -29,6 +29,50 @@ tables.supportedMods = {
 	kj_vierling = 		{name = "vierling", 	car = false,	weight = 3,		order = "3[military-turrets]-aa-1"},
 }
 
+tables.balancedMods = {
+	kj_2a6 = 			true,
+	kj_40kbaneblade = 	true,
+	kj_40kdreadnought = true,
+	kj_40klemanruss = 	true,
+	kj_40kpredator = 	true,
+	kj_maustank = 		true,
+	kj_pak = 			{{name = "kj_pak"}, {name = "kj_pak_turret"}},
+	kj_panzer4 = 		true,
+	kj_rex = 			true,
+	kj_rattetank = 		true,
+	kj_ray = 			{{name = "kj_ray"}, {name = "kj_ray_water"}, {name = "kj_ray_small"}, {name = "kj_ray_water_small"}},
+	kj_swspeeder = 		true,
+	kj_wirbelwind = 	true,
+
+	kj_aventador = 		true,
+	kj_bulldozer = 		true,
+	kj_cybertruck = 	true,
+	kj_delorean = 		true,
+	kj_firetruck = 		true,
+	kj_fordmustang = 	true,
+	kj_utilitarian = 	true,
+	kj_gigahorse = 		true,
+	kj_warrig = 		{{name = "kj_warrig"},
+						{name = "kj_warrig_train", type = "locomotive"},
+						{name = "kj_warrig_wagon", type = "cargo-wagon"},
+						{name = "kj_warrig_wagon_fluid", type = "fluid-wagon"}},
+
+	kj_b17 = 		true,
+	kj_b2 = 		true,
+	kj_bf109 = 		true,
+	kj_ho229 = 		true,
+	kj_ju52 = 		true,
+	kj_ju87 = 		true,
+	kj_jug38 = 		true,
+	kj_xb35 = 		true,
+	kj_747 = 		true,
+
+	kj_40kbunker = 	{{name = "kj_40kbunker"}, {name = "kj_40kbunker_turret"}},
+	kj_phalanx = 	{{name = "kj_phalanx"}, {name = "kj_phalanx_nonAA", setting = "kj_phalanx_nonAA"}},
+	kj_tower = 		true,
+	kj_vierling = 	{{name = "kj_vierling"}, {name = "kj_vierling_nonAA", setting = "kj_vierling_nonAA"}},
+}
+
 tables.airborneMods = {
 	"kj_b17",
 	"kj_b2",
@@ -190,8 +234,8 @@ tables.categories = {
 
 	{modname = "kj_bulldozer",                                       order = "kj-a",   		type = "ammo-category", hidden = true},
 
-	{modname = "kj_phalanx",     	name = "kj_apds_phalanx",		 order = "kj-t2",       type = "ammo-category", icon = "bullet"},
-	{modname = "kj_vierling",     	name = "kj_2cmfv_vierling",		 order = "kj-t1",       type = "ammo-category", icon = "bullet"},
+	{modname = "kj_phalanx",     	name = "kj_apds_phalanx",		 order = "kj-t2",       type = "ammo-category", icon = "unique"},
+	{modname = "kj_vierling",     	name = "kj_2cmfv_vierling",		 order = "kj-t1",       type = "ammo-category", icon = "unique"},
 }
 
 tables.categoriesUpdates = {

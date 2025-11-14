@@ -30,6 +30,12 @@ local techUpdates = {
     },
 
     {
+        modname = "kj_2a6",
+        modifiers = {0.9, 1.3, 1, 0.5, 0.5},
+        ammo_category = "kj_rh120",
+    },
+
+    {
         modname = "kj_maustank",
         modifiers = {0.9, 1.3, 1, 0.8, 1.5},
         ammo_category = "kj_128kwk",

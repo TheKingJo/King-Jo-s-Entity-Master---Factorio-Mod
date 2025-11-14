@@ -178,14 +178,8 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 		data.raw["item-with-entity-data"]["kj_phalanx"].subgroup = tables.categoriesUpdates["kj_phalanx"].name
 		data.raw["ammo"]["kj_apds_normal"].subgroup = tables.categoriesUpdates["kj_phalanx"].name
 
-		data.raw["item-with-entity-data"]["kj_phalanx"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
-		data.raw["item-with-entity-data"]["kj_phalanx"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
-
 		if data.raw["item-with-entity-data"]["kj_phalanx_nonAA"] ~= nil then
 			data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].subgroup = tables.categoriesUpdates["kj_phalanx"].name
-
-			data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
-			data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
 		end
 	end
 
@@ -202,14 +196,28 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 		data.raw["item-with-entity-data"]["kj_vierling"].subgroup = tables.categoriesUpdates["kj_vierling"].name
 		data.raw["ammo"]["kj_2cmfv_normal_vierling"].subgroup = tables.categoriesUpdates["kj_vierling"].name
 
-		data.raw["item-with-entity-data"]["kj_vierling"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
-		data.raw["item-with-entity-data"]["kj_vierling"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
-
 		if data.raw["item-with-entity-data"]["kj_vierling_nonAA"] ~= nil then
 			data.raw["item-with-entity-data"]["kj_vierling_nonAA"].subgroup = tables.categoriesUpdates["kj_vierling"].name
+		end
+	end
+end
 
-			data.raw["item-with-entity-data"]["kj_vierling_nonAA"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
-			data.raw["item-with-entity-data"]["kj_vierling_nonAA"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
+local function establishAA()
+	--Assigning Planes trigger_target_mask
+	for _, mod in ipairs(tables.airborneMods) do
+		if mods[mod] then
+			if data.raw["car"][mod] ~= nil then		--If plane exists
+				if data.raw["car"][mod].trigger_target_mask ~= nil then		--If masks not empty
+					table.insert(data.raw["car"][mod.."-airborne"].trigger_target_mask, "air-unit")
+					log("Added trigger_target_mask to plane "..mod.."-airborne.")
+
+				else
+					data.raw["car"][mod.."-airborne"].trigger_target_mask = {"air-unit"}
+					log("Assigned trigger_target_mask to plane "..mod.."-airborne.")
+				end
+			else
+				log("Trying to assign trigger_target_mask to plane "..mod.." failed.")
+			end
 		end
 	end
 end
@@ -440,48 +448,105 @@ if mods["kj_40kbunker"] then
 end
 
 if mods["kj_vierling"] then
-	--Assigning Planes trigger_target_mask
-	for _, mod in ipairs(tables.airborneMods) do
-		if mods[mod] then
-			if data.raw["car"][mod] ~= nil then		--If plane exists
-				if data.raw["car"][mod].trigger_target_mask ~= nil then		--If masks not empty
-					table.insert(data.raw["car"][mod.."-airborne"].trigger_target_mask, "air-unit")
-					log("Vierling added trigger_target_mask to plane "..mod.."-airborne.")
+	establishAA()
 
-				else
-					data.raw["car"][mod.."-airborne"].trigger_target_mask = {"air-unit"}
-					log("Vierling assigned trigger_target_mask to plane "..mod.."-airborne.")
-				end
-			else
-				log("Vierling trying to assign trigger_target_mask to plane "..mod.." failed.")
-			end
-		end
+	data.raw["item-with-entity-data"]["kj_vierling"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
+	data.raw["item-with-entity-data"]["kj_vierling"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
+	data.raw["item-with-entity-data"]["kj_vierling"].inventory_move_sound = data.raw["item"]["gun-turret"].inventory_move_sound
+
+	if data.raw["item-with-entity-data"]["kj_vierling_nonAA"] ~= nil then
+		data.raw["item-with-entity-data"]["kj_vierling_nonAA"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
+		data.raw["item-with-entity-data"]["kj_vierling_nonAA"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
+		data.raw["item-with-entity-data"]["kj_vierling_nonAA"].inventory_move_sound = data.raw["item"]["gun-turret"].inventory_move_sound
 	end
 end
 
 if mods["kj_phalanx"] then
+	establishAA()
+
 	if mods["kj_vierling"] then
 		table.insert(data.raw["technology"]["kj_phalanx"].prerequisites, "kj_vierling")
 	end
-	
-	--Assigning Planes trigger_target_mask
-	for _, mod in ipairs(tables.airborneMods) do
-		if mods[mod] then
-			if data.raw["car"][mod] ~= nil then		--If plane exists
-				if data.raw["car"][mod].trigger_target_mask ~= nil then		--If masks not empty
-					table.insert(data.raw["car"][mod.."-airborne"].trigger_target_mask, "air-unit")
-					log("Phalanx added trigger_target_mask to plane "..mod.."-airborne.")
-					
-				else
-					data.raw["car"][mod.."-airborne"].trigger_target_mask = {"air-unit"}
-					log("Phalanx assigned trigger_target_mask to plane "..mod.."-airborne.")
+
+	data.raw["item-with-entity-data"]["kj_phalanx"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
+	data.raw["item-with-entity-data"]["kj_phalanx"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
+	data.raw["item-with-entity-data"]["kj_phalanx"].inventory_move_sound = data.raw["item"]["gun-turret"].inventory_move_sound
+
+	if data.raw["item-with-entity-data"]["kj_phalanx_nonAA"] ~= nil then
+		data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
+		data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
+		data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].inventory_move_sound = data.raw["item"]["gun-turret"].inventory_move_sound
+	end
+end
+
+
+local function healthChanger(entityName, type, setting)
+	local entity = data.raw[type][entityName]
+	if entity ~= nil then
+		entity.max_health = entity.max_health * (settings.startup[setting.."-hp_modifier"].value / 100)
+
+		--log("max_health of "..entityName.." changed.")
+	end
+end
+
+local function resistanceChanger(entityName, type, setting)
+	local entity = data.raw[type][entityName]
+	if entity ~= nil then
+		if entity.resistances ~= nil then
+			for _, res in pairs(entity.resistances) do
+				if res.decrease ~= nil then
+					res.decrease = res.decrease * (settings.startup[setting.."-resistance_modifier"].value / 100)
 				end
-			else
-				log("Phalanx trying to assign trigger_target_mask to plane "..mod.." failed.")
+				if res.percent ~= nil then
+					res.percent = res.percent * (settings.startup[setting.."-resistance_modifier"].value / 100)
+				end
+			end
+			--log("Resistances of "..entityName.." changed.")
+		end
+	end
+end
+
+local function propertyChanger(basename, name, type)
+	if data.raw["car"][name] ~= nil then
+		healthChanger(name, "car", basename)
+		resistanceChanger(name, "car", basename)
+	else
+		log("Problem occured when trying to assign correct max_health and resistance to "..name..". Car not found")
+	end
+
+	if data.raw["ammo-turret"][name] ~= nil then
+		healthChanger(name, "ammo-turret", basename)
+		resistanceChanger(name, "ammo-turret", basename)
+	else
+		log("Problem occured when trying to assign correct max_health and resistance to "..name..". Turret not found")
+	end
+
+	if type ~= nil then
+		if data.raw[type][name] ~= nil then
+			healthChanger(name, type, basename)
+			resistanceChanger(name, type, basename)
+		else
+			log("Problem occured when trying to assign correct max_health and resistance to "..name..". "..type.." not found")
+		end
+	end
+end
+
+for name, mod in pairs(tables.balancedMods) do
+	if mods[name] then
+		--log(name.." exists")
+
+		if mod == true then
+			propertyChanger(name, name)
+		else
+			for _, entity in pairs(mod) do
+				if entity.type == nil then
+					propertyChanger(name, entity.name, entity.type)
+				end
 			end
 		end
 	end
 end
+
 
 local tanks = {}
 for _, tank in pairs(aaiTanks) do

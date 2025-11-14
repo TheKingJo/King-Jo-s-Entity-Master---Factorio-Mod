@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.6
+Date: 26.11.2024
+  Changes:
+    - integrated my balancer mod functionalities
+    - transferred the settings of vierling and phalanx to this mod
+    - locale adjustments
+    - unique ammo category icon added for vierling and phalanx
+  Fixes:
+    - (re)added dreadnought german locale
+    - Leopard 2A6 ammo getting tech upgrades again
+---------------------------------------------------------------------------------------------------
 Version: 2.0.5
 Date: 24.11.2024
   Changes:

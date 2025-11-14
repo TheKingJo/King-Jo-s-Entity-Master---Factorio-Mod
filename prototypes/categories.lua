@@ -7,6 +7,8 @@ local function extendCategories(categs)
 
             if category.icon ~= nil then
                 local categ = category.icon
+                icon = ""
+
                 if categ == "cannon" then
                     icon = "cannon-shell"
                 elseif categ == "bullet"  then
@@ -17,6 +19,12 @@ local function extendCategories(categs)
                     icon = "laser"
                 end
                 icon = "__base__/graphics/icons/ammo-category/"..icon..".png"
+
+                if categ == "unique" then
+                    icon = "__"..category.modname.."__/graphics/ammo_category.png"
+                end
+
+                log("Icon: "..icon)
             end
 
             if category.type == "ammo-category" then

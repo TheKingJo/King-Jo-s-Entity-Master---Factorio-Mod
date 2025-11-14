@@ -30,7 +30,7 @@ data:extend({
 	{
 		type = "ammo",
 		name = "kj_2cmfv_normal_vierling",
-		icon = "__kj_vierling__/graphics/equipment/flak_muni.png",
+		icon = "__kj_vierling__/graphics/ammo.png",
 		icon_size = 80,
 		ammo_category = "kj_2cmfv_vierling",
 		ammo_type =
