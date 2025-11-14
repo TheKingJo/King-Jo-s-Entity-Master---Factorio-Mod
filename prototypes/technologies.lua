@@ -182,7 +182,7 @@ local technologies = {
 	{
 		modname = "kj_phalanx",
 		size = 256,
-		recipes = {"kj_phalanx", "kj_apds_normal"},
+		recipes = {"kj_phalanx", "kj_apds_normal", "kj_apds_normal_single"},
 		prerequisites = {"military-4"},
 		unit = {200,30,1,1,1,1,0,1,0}
 	},

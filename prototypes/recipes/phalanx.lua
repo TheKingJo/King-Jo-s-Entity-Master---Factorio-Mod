@@ -14,13 +14,29 @@ data:extend({
 		type = "recipe",
 		name = "kj_apds_normal",
 		enabled = false,
-		energy_required = 1140,
+		energy_required = 300,
+		localised_name = {"", {"recipe-name.kj_apds_normal"}},
+		localised_description = {"", {"recipe-description.kj_apds_normal"}},
 		ingredients =
 		{
-			{type = "item", name = "steel-plate", amount = 2325},
-			{type = "item", name = "copper-plate", amount = 775},
-			{type = "item", name = "explosives", amount = 775},
+			{type = "item", name = "kj_apds_normal_single", amount = 1550},
 		},
 		results = {{type = "item", name = "kj_apds_normal", amount = 1}},
+	},
+
+	{
+		type = "recipe",
+		name = "kj_apds_normal_single",
+		enabled = false,
+		energy_required = 1.5,
+		localised_name = {"", {"recipe-name.kj_apds_normal_single"}},
+		localised_description = {"", {"recipe-description.kj_apds_normal_single"}},
+		ingredients =
+		{
+			{type = "item", name = "steel-plate", amount = 3},
+			{type = "item", name = "copper-plate", amount = 1},
+			{type = "item", name = "explosives", amount = 1},
+		},
+		results = {{type = "item", name = "kj_apds_normal_single", amount = 2}},
 	},
 })

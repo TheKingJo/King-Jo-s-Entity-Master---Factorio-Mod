@@ -225,6 +225,7 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 		data.raw["item-subgroup"]["kj_turrets"].group = "kj_vehicles"
 		data.raw["item-with-entity-data"]["kj_phalanx"].subgroup = tables.categoriesUpdates["kj_phalanx"].name
 		data.raw["ammo"]["kj_apds_normal"].subgroup = tables.categoriesUpdates["kj_phalanx"].name
+		data.raw["ammo"]["kj_apds_normal_single"].subgroup = tables.categoriesUpdates["kj_phalanx"].name
 
 		if data.raw["item-with-entity-data"]["kj_phalanx_nonAA"] ~= nil then
 			data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].subgroup = tables.categoriesUpdates["kj_phalanx"].name
