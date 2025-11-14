@@ -9,4 +9,15 @@ data:extend({
 		ingredients = tables.recipes["kj_laser"],
 		results = {{type = "item", name = "kj_laser", amount = 1}},
 	},
+	{
+		type = "recipe",
+		name = "kj_laser_normal",
+		enabled = false,
+		energy_required = 300,
+		category = "smelting",
+		ingredients = {
+			{type = "item", name = "stone", amount = 500},
+		},
+		results = {{type = "item", name = "kj_laser_normal", amount = 1}},
+	},
 })

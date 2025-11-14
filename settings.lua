@@ -153,6 +153,13 @@ if mods["kj_laser"] then
 			allowed_values = {"5", "6", "7", "8", "9", "10"},
 			order = "kj_laser_angle",
 		},
+		{
+			type = "bool-setting",
+			name = "kj_laser_friendlyFire",
+			setting_type = "startup",
+			default_value = true,
+			order = "kj_laser_friendlyFire",
+		},
 	})
 end
 

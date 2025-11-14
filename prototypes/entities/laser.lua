@@ -201,242 +201,12 @@ local function turret_attacking(inputs)
 			},
 		}
 	}
-	if inputs.light == true then
-		--[[
-		table.insert(layers.layers, {
-			width = imgSize,
-			height = imgSize,
-			frame_count = 4,
-			axially_symmetrical = false,
-			draw_as_glow = true,
-			blend_mode = "additive",
-			direction_count = 128,
-			animation_speed = sp,
-			scale = 0.5,
-			stripes =
-			{
-				{
-					filename = modname.."/graphics/entity/laser_shooting_light_0.png",
-					width_in_frames = 4,
-					height_in_frames = 16
-				},
-				{
-					filename = modname.."/graphics/entity/laser_shooting_light_1.png",
-					width_in_frames = 4,
-					height_in_frames = 16
-				},
-				{
-					filename = modname.."/graphics/entity/laser_shooting_light_2.png",
-					width_in_frames = 4,
-					height_in_frames = 16
-				},
-				{
-					filename = modname.."/graphics/entity/laser_shooting_light_3.png",
-					width_in_frames = 4,
-					height_in_frames = 16
-				},
-				{
-					filename = modname.."/graphics/entity/laser_shooting_light_4.png",
-					width_in_frames = 4,
-					height_in_frames = 16
-				},
-				{
-					filename = modname.."/graphics/entity/laser_shooting_light_5.png",
-					width_in_frames = 4,
-					height_in_frames = 16
-				},
-				{
-					filename = modname.."/graphics/entity/laser_shooting_light_6.png",
-					width_in_frames = 4,
-					height_in_frames = 16
-				},
-				{
-					filename = modname.."/graphics/entity/laser_shooting_light_7.png",
-					width_in_frames = 4,
-					height_in_frames = 16
-				},
-			},
-		})]]
-	end
 	return layers
 end
 
 data:extend({
-	--[[
 	{
-		type = "beam",
-		name = "kj_laser_beam",
-		flags = {"not-on-map"},
-		hidden = true,
-		width = 3,
-		damage_interval = 20,
-		random_target_offset = true,
-		action_triggered_automatically = false,
-		working_sound =
-		{
-			sound =
-			{
-				category = "weapon",
-				filename = "__base__/sound/fight/laser-beam.ogg",
-				volume = 0.75,
-				modifiers = volume_multiplier("main-menu", 2.5)
-			},
-			max_sounds_per_type = 1
-		},
-		action =
-		{
-			type = "direct",
-			action_delivery =
-			{
-				type = "instant",
-				target_effects =
-				{
-					{
-						type = "damage",
-						damage = { amount = 1000, type = "laser"}
-					}
-				}
-			}
-		},
-		graphics_set =
-		{
-			beam =
-			{
-				head =
-				{
-					layers =
-					{
-						{
-							filename = "__base__/graphics/entity/laser-turret/laser-body.png",
-							flags = beam_non_light_flags,
-							line_length = 8,
-							width = 64,
-							height = 12,
-							frame_count = 8,
-							scale = 0.5,
-							animation_speed = 0.5,
-							blend_mode = laser_beam_blend_mode
-						},
-						{
-							filename = "__base__/graphics/entity/laser-turret/laser-body-light.png",
-							draw_as_light = true,
-							flags = {"light"},
-							line_length = 8,
-							width = 64,
-							height = 12,
-							frame_count = 8,
-							scale = 0.5,
-							animation_speed = 0.5
-						}
-					}
-				},
-				tail =
-				{
-					layers =
-					{
-						{
-							filename = "__base__/graphics/entity/laser-turret/laser-end.png",
-							flags = beam_non_light_flags,
-							width = 110,
-							height = 62,
-							frame_count = 8,
-							shift = util.by_pixel(11.5, 1),
-							scale = 0.5,
-							animation_speed = 0.5,
-							blend_mode = laser_beam_blend_mode
-						},
-						{
-							filename = "__base__/graphics/entity/laser-turret/laser-end-light.png",
-							draw_as_light = true,
-							flags = {"light"},
-							width = 110,
-							height = 62,
-							frame_count = 8,
-							shift = util.by_pixel(11.5, 1),
-							scale = 0.5,
-							animation_speed = 0.5
-						}
-					}
-				},
-				body =
-				{
-					{
-						layers =
-						{
-							{
-								filename = "__base__/graphics/entity/laser-turret/laser-body.png",
-								flags = beam_non_light_flags,
-								line_length = 8,
-								width = 64,
-								height = 12,
-								frame_count = 8,
-								scale = 0.5,
-								animation_speed = 0.5,
-								blend_mode = laser_beam_blend_mode
-							},
-							{
-								filename = "__base__/graphics/entity/laser-turret/laser-body-light.png",
-								draw_as_light = true,
-								flags = {"light"},
-								line_length = 8,
-								width = 64,
-								height = 12,
-								frame_count = 8,
-								scale = 0.5,
-								animation_speed = 0.5
-							}
-						}
-					}
-				},
-			},
-			ground =
-			{
-				head =
-				{
-					filename = "__base__/graphics/entity/laser-turret/laser-ground-light-head.png",
-					draw_as_light = true,
-					flags = {"light"},
-					line_length = 1,
-					width = 256,
-					height = 256,
-					repeat_count = 8,
-					scale = 0.5,
-					shift = util.by_pixel(-32, 0),
-					animation_speed = 0.5,
-					tint = {0.5, 0.05, 0.05}
-				},
-				tail =
-				{
-					filename = "__base__/graphics/entity/laser-turret/laser-ground-light-tail.png",
-					draw_as_light = true,
-					flags = {"light"},
-					line_length = 1,
-					width = 256,
-					height = 256,
-					repeat_count = 8,
-					scale = 0.5,
-					shift = util.by_pixel(32, 0),
-					animation_speed = 0.5,
-					tint = {0.5, 0.05, 0.05}
-				},
-				body =
-				{
-					filename = "__base__/graphics/entity/laser-turret/laser-ground-light-body.png",
-					draw_as_light = true,
-					flags = {"light"},
-					line_length = 1,
-					width = 64,
-					height = 256,
-					repeat_count = 8,
-					scale = 0.5,
-					animation_speed = 0.5,
-					tint = {0.5, 0.05, 0.05}
-				}
-			}
-		},
-	},]]
-	{
-		type = "electric-turret",
+		type = "ammo-turret",
 		name = "kj_laser",
 		icon = modname.."/graphics/icon.png",
 		icon_size = 128,
@@ -451,7 +221,7 @@ data:extend({
 		sticker_box   = {{-1.5, -1.5}, {1.5, 1.5}},
 		drawing_box_vertical_extension = 0,
 		turret_base_has_direction = true,
-		can_retarget_while_starting_attack = true,
+		can_retarget_while_starting_attack = false,
 		alert_when_attacking = true,
 		damaged_trigger_effect = hit_effects.entity(),
 
@@ -507,8 +277,6 @@ data:extend({
 			drain = "50kW",
 			usage_priority = "primary-input"
 		},
-	  	--energy_per_shot = "3MJ",
-		--heating_energy = "50kW",
 
 		rotation_speed = 0.0025,
 		preparing_speed = 0.03,
@@ -517,8 +285,8 @@ data:extend({
 		attacking_speed = 0.1,
 		ending_attack_speed = 0.1,
 
-		call_for_help_radius = 75,
-		prepare_range = 100,
+		call_for_help_radius = 80,
+		prepare_range = 80,
 
 		open_sound = {filename = "__base__/sound/artillery-open.ogg", volume = 0.7},
 		close_sound = {filename = "__base__/sound/artillery-close.ogg", volume = 0.7},
@@ -540,7 +308,6 @@ data:extend({
 			sound = {filename = modname.."/sounds/rotation.ogg", volume = 0.15}
 		},
 
-		--energy_glow_animation = laser_turret_shooting_glow(),
 		glow_light_intensity = 0.5,
 
 		folded_animation = {
@@ -639,6 +406,10 @@ data:extend({
 				},
 			},
 		},
+
+		automated_ammo_count = 1,
+		inventory_size = 1,
+
 		attack_parameters =
 		{
 			type = "projectile",
@@ -648,7 +419,7 @@ data:extend({
 			projectile_creation_distance = 2.5,
 			projectile_center = {0, 0},
 			apply_projection_to_projectile_creation_position = false,
-			min_range = 5,
+			min_range = 2.5,
 			range = 60,
 			turn_range = 1 / tonumber(setting),
       		sound =
@@ -656,67 +427,7 @@ data:extend({
 				variations = sound_variations(modname.."/sounds/shoot", 2, 1, {volume_multiplier("main-menu", 0.9)}),
 				aggregation = {max_count = 8, remove = true, count_already_playing = true, priority = "newest"}
 			},
-			ammo_type =
-			{
-				energy_consumption = "3000kJ",
-				action =
-				{
-					type = "line",
-					range = 60,
-					width = 3,
-					range_effects =
-					{
-						type = "create-explosion",
-						entity_name = "kj_laser_line"
-					},
-					action_delivery =
-					{
-						type = "instant",
-						target_effects =
-						{
-							{
-								type = "damage",
-								damage = {amount = 1000, type = "laser"},
-							},
-							{
-								type = "create-sticker",
-								sticker = "fire-sticker",
-								show_in_tooltip = false
-							},
-							{
-								type = "create-fire",
-								entity_name = "fire-flame",
-								initial_ground_flame_count = 1,
-								show_in_tooltip = false,
-							},
-						}
-					}
-				}
-			},
 		},
-	},
-	{
-		type = "explosion",
-		name = "kj_laser_line",
-		flags = {"not-on-map"},
-		hidden = true,
-		subgroup = "explosions",
-		rotate = true,
-		beam = true,
-		drawing_box_vertical_extension = 10,
-		animations =
-		{
-			{
-				filename = modname.."/graphics/beam.png",
-				priority = "extra-high",
-				draw_as_glow = true,
-				blend_mode = "additive",
-				width = 96,
-				height = 288,
-				frame_count = 8,
-			}
-		},
-		light = {intensity = 2, size = 10},
 	},
 })
 

@@ -189,7 +189,7 @@ local technologies = {
 
 	{
 		modname = "kj_laser",
-		recipes = {"kj_laser"},
+		recipes = {"kj_laser", "kj_laser_normal"},
 		prerequisites = {"military-4", "laser-turret"},
 		unit = {300,30,1,1,1,1,0,1,0}
 	},

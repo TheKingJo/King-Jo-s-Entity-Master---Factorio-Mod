@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.20
+Date: 10.02.2025
+  Changes:
+    - finalized support for laser cannon mod
+---------------------------------------------------------------------------------------------------
 Version: 2.0.19
-Date: 01.02.2025
+Date: 09.02.2025
   Changes:
     - added support for my new laser turret
     - phalanx drum ammo now has 1500 instead of 1550 bullets

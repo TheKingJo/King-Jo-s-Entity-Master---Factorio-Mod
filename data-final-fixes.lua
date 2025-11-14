@@ -224,6 +224,7 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 	if mods["kj_laser"] then
 		data.raw["item-subgroup"]["kj_turrets"].group = "kj_vehicles"
 		data.raw["item-with-entity-data"]["kj_laser"].subgroup = tables.categoriesUpdates["kj_laser"].name
+		data.raw["ammo"]["kj_laser_normal"].subgroup = tables.categoriesUpdates["kj_laser"].name
 	end
 
 	if mods["kj_phalanx"] then

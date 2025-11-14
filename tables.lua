@@ -744,6 +744,8 @@ tables.recipes = {
 
 tables.ammos = {
 	stackSize = {
+		kj_laser_normal = 1,
+
 		kj_bolt = 100,
 
 		kj_rh120_ap = 50,
@@ -790,6 +792,8 @@ tables.ammos = {
 		kj_2cmfv_normal = 200,
 	},
 	weight = {
+		kj_laser_normal = 100,
+
 		kj_bolt = 40,
 
 		kj_rh120_ap = 40,
@@ -836,6 +840,8 @@ tables.ammos = {
 		kj_2cmfv_normal = 20,
 	},
 	iconSize = {
+		kj_laser_normal = 128,
+
 		kj_bolt = 128,
 
 		kj_ballista_normal = 64,
@@ -846,6 +852,8 @@ tables.ammos = {
 		kj_2cmfv_normal = 80,
 	},
 	magSize = {
+		kj_laser_normal = 200000,
+
 		kj_bolt = 10,
 
 		kj_ballista_normal = 5,

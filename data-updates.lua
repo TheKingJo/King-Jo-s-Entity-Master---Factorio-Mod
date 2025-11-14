@@ -1,7 +1,6 @@
 local tables = require("tables")
 local prerequisites_mod = ""
 
-
 local function establishAA()
 	local settingTM = settings.startup["kj_AA_target_mask"].value
 	local settingERM = settings.startup["kj_AA_ermAA"].value
