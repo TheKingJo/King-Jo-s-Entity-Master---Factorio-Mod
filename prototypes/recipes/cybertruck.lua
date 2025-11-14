@@ -33,6 +33,7 @@ data:extend({
 		energy_required = 1290,
 		--subgroup = "transport",
 		--order = "z",
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 			{type = "item", name = "kj_el_charge_used", amount = 1},
@@ -49,6 +50,7 @@ data:extend({
 		energy_required = 645,
 		--subgroup = "transport",
 		--order = "z",
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 			{type = "item", name = "kj_el_charge_used", amount = 1},
@@ -65,6 +67,7 @@ data:extend({
 		energy_required = 257,
 		--subgroup = "transport",
 		--order = "z",
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 			{type = "item", name = "kj_el_charge_used", amount = 1},

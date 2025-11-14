@@ -122,7 +122,9 @@ function functions.spriteMaker(modname, folder, name, size, index, frameSizes, m
     }
 end
 
-function functions.layerMaker(modname, folder, name, size, counts, frameSizes, amount, mode, shift, speed, tint, runmode, scale)
+function functions.layerMaker(modname, folder, name, size, counts, frameSizes, amount, mode, shift, speed, tint, runmode, scale, runtimeTint, mask)
+    --modname, folder, name, size, {frame_count, repeat_count}, {width, height}, amount,
+    --(mode = normal/shadow/light/tower/tower_shadow/light), shift, speed, tint, runmode, scale, runtimetint, mask
     assert(type(modname) == "string", "Missing modname!")
     assert(type(folder) == "string", "Missing folder!")
     assert(type(name) == "string", "Missing name!")
@@ -139,12 +141,14 @@ function functions.layerMaker(modname, folder, name, size, counts, frameSizes, a
         assert(type(size[2]) == "number", "Missing height!")
     end
 
+    local flags = {}
+    local lght = false
     local shadow = false
     local folderPrefix = folder.."/"
     local glw = "normal"
     local glow = false
     local direction_count = counts[3] or 128
-    local suffix = {"", "_shadow", "_light", "_tower", "_tower_shadow"}
+    local suffix = {"", "_shadow", "_light", "_tower", "_tower_shadow", "", ""}
     local stripe = {}
     local width = size
     local height = size
@@ -157,11 +161,17 @@ function functions.layerMaker(modname, folder, name, size, counts, frameSizes, a
         folderPrefix = ""
     end
 
-    if mode == 3 then
+    if mode == 2 or mode == 5 then
+        shadow = true
+    elseif mode == 3 then
         glw = "additive"
         glow = true
-    elseif mode == 2 or mode == 5 then
-        shadow = true
+    elseif mode == 6 then --light
+        glw = "additive"
+        lght = true
+    end
+    if mask == true then
+        --flags = {"mask"}
     end
 
     if amount > 1 then
@@ -183,6 +193,7 @@ function functions.layerMaker(modname, folder, name, size, counts, frameSizes, a
     end
 
     return {
+        flags = flags,
         width = width,
         height = height,
         frame_count = counts[1],
@@ -191,6 +202,7 @@ function functions.layerMaker(modname, folder, name, size, counts, frameSizes, a
         direction_count = direction_count,
         draw_as_shadow = shadow,
         draw_as_glow = glow,
+        draw_as_light = lght,
         blend_mode = glw,
         tint = tint,
         shift = shift or {0, 0.5},
@@ -198,6 +210,7 @@ function functions.layerMaker(modname, folder, name, size, counts, frameSizes, a
 		max_advance = 1,
         scale = scale or 0.5,
         stripes = stripe,
+        apply_runtime_tint = runtimeTint or false,
     }
 end
 

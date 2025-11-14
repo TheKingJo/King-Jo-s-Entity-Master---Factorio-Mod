@@ -368,7 +368,7 @@ for name, entry in pairs(tables.techRequisites) do
 	end
 end
 
-local function changeRecipe(recipe, setting)
+local function changeRecipe(recipe, setting, optional)
 	local name = recipe
 
 	if setting == nil then
@@ -383,7 +383,9 @@ local function changeRecipe(recipe, setting)
 			end
 		end
 	else
-		error('Recipe "'..recipe..'" not found! Pls notify the mod author!')
+		if optional == nil then
+			error('Recipe "'..recipe..'" not found! Pls notify the mod author!')			
+		end
 	end
 end
 
@@ -391,7 +393,7 @@ for _, change in pairs(tables.recipeChanges) do
 	if mods[change.modname] then
 		if change.entries ~= nil then
 			for _, entry in pairs(change.entries) do
-				changeRecipe(entry.recipe, entry.setting)
+				changeRecipe(entry.recipe, entry.setting, entry.optional)
 			end
 		else
 			local name = change.modname
@@ -403,7 +405,7 @@ for _, change in pairs(tables.recipeChanges) do
 				setting = change.setting
 			end
 
-			changeRecipe(name, setting)
+			changeRecipe(name, setting, change.optional)
 		end
 	end
 end

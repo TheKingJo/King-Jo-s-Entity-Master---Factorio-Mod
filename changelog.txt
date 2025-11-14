@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.2
+Date: 18.09.2025
+  Changes:
+    - added support for the countach, dodge charger and plymouth fury
+    - hid cybertruck battery recharge recipes in hand crafting
+    - changed some vehicle tech costs
+    - moved road graphics from war rig to this mod
+  Fixes:
+    - Ford Mustang has idle sound again
+---------------------------------------------------------------------------------------------------
 Version: 2.1.1
 Date: 15.08.2025
   Fixes:

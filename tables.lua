@@ -14,15 +14,19 @@ tables.supportedMods = {
 	kj_swspeeder = 		{name = "swspeeder", 	car = true,		weight = 1,		order = "2[military]-s"},
 	kj_wirbelwind = 	{name = "wirbelwind", 	car = true,		weight = 2,		order = "2[military]-p3"},
 
-	kj_aventador = 		{name = "aventador", 	car = true,		weight = 1,		order = "1[civil]-d"},
-	kj_bulldozer = 		{name = "bulldozer", 	car = true,		weight = 1,		order = "1[civil]-f"},
-	kj_cybertruck = 	{name = "cybertruck", 	car = true,		weight = 5,		order = "1[civil]-c0"},
-	kj_delorean = 		{name = "delorean", 	car = true,		weight = 1,		order = "1[civil]-a"},
-	kj_firetruck = 		{name = "firetruck", 	car = true,		weight = 1,		order = "1[civil]-g"},
-	kj_fordmustang = 	{name = "mustang", 		car = true,		weight = 1,		order = "1[civil]-b"},
-	kj_gigahorse = 		{name = "gigahorse", 	car = true,		weight = 1,		order = "1[civil]-e"},
-	kj_utilitarian = 	{name = "utilitarian", 	car = true,		weight = 1,		order = "1[civil]-h"},
-	kj_warrig = 		{name = "warrig", 		car = true,		weight = 5,		order = "1[civil]-i"},
+	kj_aventador = 		{name = "aventador", 	car = true,		weight = 1,		order = "1[civil]-j"},--d
+	kj_bulldozer = 		{name = "bulldozer", 	car = true,		weight = 1,		order = "1[civil]-p"},--f
+	kj_countach = 		{name = "countach", 	car = true,		weight = 1,		order = "1[civil]-i"},
+	kj_cybertruck = 	{name = "cybertruck", 	car = true,		weight = 5,		order = "1[civil]-g0"},--c
+	kj_delorean = 		{name = "delorean", 	car = true,		weight = 1,		order = "1[civil]-a"},--a
+	kj_dodge = 			{name = "dodge", 		car = true,		weight = 1,		order = "1[civil]-e"},
+	kj_firetruck = 		{name = "firetruck", 	car = true,		weight = 1,		order = "1[civil]-s"},--g
+	kj_fordmustang = 	{name = "mustang", 		car = true,		weight = 1,		order = "1[civil]-d"},--b
+	kj_gigahorse = 		{name = "gigahorse", 	car = true,		weight = 1,		order = "1[civil]-m"},--e
+	kj_plymouth = 		{name = "plymouth", 	car = true,		weight = 1,		order = "1[civil]-c"},
+	kj_truck = 			{name = "truck", 		car = true,		weight = 3,		order = "1[civil]-x"},
+	kj_utilitarian = 	{name = "utilitarian", 	car = true,		weight = 1,		order = "1[civil]-v"},--h
+	kj_warrig = 		{name = "warrig", 		car = true,		weight = 5,		order = "1[civil]-y"},--i
 
 	kj_40kbunker = 		{name = "bunker",		car = true,		weight = 2,		order = "3[military-turrets]-n-2"},
 	kj_laser = 			{name = "laser", 		car = false,	weight = 1,		order = "3[military-turrets]-n-3"},
@@ -51,18 +55,22 @@ tables.balancedModsRecipe = {
 	kj_40kpredator = {true, true},
 	kj_aventador = true,
 	kj_bulldozer = true,
+	kj_countach = true,
 	kj_cybertruck = true,
 	kj_delorean = true,
+	kj_dodge = true,
 	kj_firetruck = true,
 	kj_fordmustang = true,
 	kj_gigahorse = true,
 	kj_maustank = {true, true},
 	kj_pak = {true, true},
 	kj_panzer4 = {true, true},
+	kj_plymouth = true,
 	kj_rattetank = {true, true},
 	kj_ray = {true, true},
 	kj_rex = {true, true},
 	kj_swspeeder = true,
+	kj_truck = true,
 	kj_utilitarian = true,
 	kj_warrig = true,
 	kj_wirbelwind = {true, true},
@@ -103,12 +111,17 @@ tables.balancedMods = {
 
 	kj_aventador = 		true,
 	kj_bulldozer = 		true,
+	kj_countach = 		true,
 	kj_cybertruck = 	true,
 	kj_delorean = 		true,
+	kj_dodge = 			true,
 	kj_firetruck = 		true,
 	kj_fordmustang = 	true,
-	kj_utilitarian = 	true,
 	kj_gigahorse = 		true,
+	kj_plymouth = 		true,
+	kj_truck = 			{{name = "kj_truck_train", type = "locomotive"},
+						{name = "kj_truck_wagon", type = "cargo-wagon"}},
+	kj_utilitarian = 	true,
 	kj_warrig = 		{{name = "kj_warrig"},
 						{name = "kj_warrig_train", type = "locomotive"},
 						{name = "kj_warrig_wagon", type = "cargo-wagon"},
@@ -199,6 +212,18 @@ tables.techRequisites = {
 			"kj_ju87"
 		},
 		multiplicator = 0.75,
+	},
+	kj_dodge = {
+		pres = {
+			"kj_plymouth"
+		},
+		multiplicator = 0.9,
+	},
+	kj_aventador = {
+		pres = {
+			"kj_countach"
+		},
+		multiplicator = 0.9,
 	},
 }
 
@@ -299,11 +324,14 @@ tables.recipeChanges = {
 
 	{modname = "kj_aventador"},
 	{modname = "kj_bulldozer"},
+	{modname = "kj_countach"},
 	{modname = "kj_cybertruck"},
 	{modname = "kj_delorean"},
+	{modname = "kj_dodge"},
 	{modname = "kj_firetruck"},
 	{modname = "kj_fordmustang"},
 	{modname = "kj_gigahorse"},
+	{modname = "kj_plymouth"},
 	{modname = "kj_utilitarian"},
 
 	{modname = "kj_40kbunker", entries = {
@@ -338,7 +366,12 @@ tables.recipeChanges = {
 			{recipe = "kj_warrig_train", setting = "kj_warrig_cost_setting_multiplicator"},
 			{recipe = "kj_warrig_wagon", setting = "kj_warrig_cost_setting_multiplicator"},
 			{recipe = "kj_warrig_wagon_fluid", setting = "kj_warrig_cost_setting_multiplicator"},
-			{recipe = "kj_warrig_rails", setting = "kj_warrig_cost_setting_multiplicator"},
+		},
+	},
+
+	{modname = "kj_truck", entries = {
+			{recipe = "kj_truck_train", setting = "kj_truck_cost_setting_multiplicator"},
+			{recipe = "kj_truck_wagon", setting = "kj_truck_cost_setting_multiplicator"},
 		},
 	},
 
@@ -399,11 +432,15 @@ tables.categoriesUpdates = {
 
 	kj_aventador = 		{modname = "kj_aventador",		name = "kj_civils",         order = "a", group = "logistics", type = "item-subgroup"},
 	kj_bulldozer = 		{modname = "kj_bulldozer",		name = "kj_trucks",         order = "b", group = "logistics", type = "item-subgroup"},
+	kj_countach = 		{modname = "kj_countach",		name = "kj_civils",  		order = "a", group = "logistics", type = "item-subgroup"},
 	kj_cybertruck = 	{modname = "kj_cybertruck",		name = "kj_civils",  		order = "a", group = "logistics", type = "item-subgroup"},
 	kj_delorean = 		{modname = "kj_delorean",		name = "kj_civils",   		order = "a", group = "logistics", type = "item-subgroup"},
+	kj_dodge = 			{modname = "kj_dodge",			name = "kj_civils",     	order = "a", group = "logistics", type = "item-subgroup"},
 	kj_firetruck = 		{modname = "kj_firetruck",		name = "kj_trucks",     	order = "b", group = "logistics", type = "item-subgroup"},
-	kj_fordmustang = 	{modname = "kj_gigahorse",		name = "kj_trucks",     	order = "b", group = "logistics", type = "item-subgroup"},
-	kj_gigahorse = 		{modname = "kj_fordmustang",	name = "kj_civils",         order = "a", group = "logistics", type = "item-subgroup"},
+	kj_fordmustang = 	{modname = "kj_fordmustang",	name = "kj_civils",     	order = "a", group = "logistics", type = "item-subgroup"},
+	kj_gigahorse = 		{modname = "kj_gigahorse",		name = "kj_trucks",         order = "b", group = "logistics", type = "item-subgroup"},
+	kj_plymouth = 		{modname = "kj_plymouth",		name = "kj_civils",     	order = "a", group = "logistics", type = "item-subgroup"},
+	kj_truck = 			{modname = "kj_truck",			name = "kj_trucks",     	order = "b", group = "logistics", type = "item-subgroup"},
 	kj_utilitarian = 	{modname = "kj_utilitarian",	name = "kj_trucks",     	order = "b", group = "logistics", type = "item-subgroup"},
 	kj_warrig = 		{modname = "kj_warrig",			name = "kj_trucks",     	order = "b", group = "logistics", type = "item-subgroup"},
 
@@ -445,16 +482,21 @@ tables.items = {
 
 	kj_aventador = 		{},
 	kj_bulldozer = 		{},
+	kj_countach = 		{},
 	kj_cybertruck = 	{},
 	kj_delorean = 		{},
+	kj_dodge = 			{},
 	kj_firetruck = 		{},
 	kj_fordmustang = 	{},
 	kj_gigahorse = 		{},
+	kj_plymouth = 		{},
+	kj_truck = 			{weight = 2000, modname = "kj_truck",  name = "kj_truck_train", order = "1[civil]-x1", icon = "train"},
+	kj_truck2 = 		{weight = 2000, modname = "kj_truck",  name = "kj_truck_wagon", order = "1[civil]-x2", icon = "wagon"},
 	kj_utilitarian = 	{},
-	kj_warrig = 		{weight = 2000,				           							order = "1[civil]-i0"},
-	kj_warrig2 = 		{weight = 2000, modname = "kj_warrig", name = "kj_warrig_train", order = "1[civil]-i1", icon = "train"},
-	kj_warrig3 = 		{weight = 2000, modname = "kj_warrig", name = "kj_warrig_wagon", order = "1[civil]-i2", icon = "wagon"},
-	kj_warrig4 = 		{weight = 2000, modname = "kj_warrig", name = "kj_warrig_wagon_fluid", order = "1[civil]-i3", icon = "wagon_fluid"},
+	kj_warrig = 		{weight = 2000,				           							order = "1[civil]-y0"},
+	kj_warrig2 = 		{weight = 2000, modname = "kj_warrig", name = "kj_warrig_train", order = "1[civil]-y1", icon = "train"},
+	kj_warrig3 = 		{weight = 2000, modname = "kj_warrig", name = "kj_warrig_wagon", order = "1[civil]-y2", icon = "wagon"},
+	kj_warrig4 = 		{weight = 2000, modname = "kj_warrig", name = "kj_warrig_wagon_fluid", order = "1[civil]-y3", icon = "wagon_fluid"},
 
 	kj_40kbunker = 		{weight = 2000,					                    	order = "3[military-turrets]-n-2-1"},
 	kj_40kbunker2 =		{weight = 2000, modname = "kj_40kbunker", name = "kj_40kbunker_turret",order = "3[military-turrets]-n-2-2",	subgroup = "turret"},
@@ -745,6 +787,13 @@ tables.recipes = {
 		{type = "item", name = "iron-plate", 			amount = 10},
 		{type = "item", name = "steel-plate", 			amount = 40},
 	},
+	kj_countach = {
+		{type = "item", name = "advanced-circuit", 		amount = 15},
+		{type = "item", name = "engine-unit", 			amount = 30},
+		{type = "item", name = "iron-gear-wheel", 		amount = 30},
+		{type = "item", name = "plastic-bar", 			amount = 20},
+		{type = "item", name = "steel-plate", 			amount = 10},
+	},
 	kj_cybertruck = {
 		{type = "item", name = "advanced-circuit", 		amount = 10},
 		{type = "item", name = "electric-engine-unit", 	amount = 15},
@@ -756,6 +805,12 @@ tables.recipes = {
 		{type = "item", name = "engine-unit", 			amount = 10},
 		{type = "item", name = "iron-plate", 			amount = 20},
 		{type = "item", name = "steel-plate", 			amount = 5},
+	},
+	kj_dodge = {
+		{type = "item", name = "engine-unit", 			amount = 20},
+		{type = "item", name = "iron-gear-wheel", 		amount = 15},
+		{type = "item", name = "iron-plate", 			amount = 10},
+		{type = "item", name = "steel-plate", 			amount = 20},
 	},
 	kj_firetruck = {
 		{type = "item", name = "advanced-circuit", 		amount = 10},
@@ -775,6 +830,25 @@ tables.recipes = {
 		{type = "item", name = "iron-plate", 			amount = 20},
 		{type = "item", name = "iron-stick", 			amount = 5},
 		{type = "item", name = "steel-plate", 			amount = 15},
+	},
+	kj_plymouth = {
+		{type = "item", name = "engine-unit", 			amount = 15},
+		{type = "item", name = "iron-gear-wheel", 		amount = 10},
+		{type = "item", name = "iron-plate", 			amount = 20},
+		{type = "item", name = "steel-plate", 			amount = 25},
+	},
+	kj_truck = {
+		{type = "item", name = "engine-unit", 		amount = 20},
+		{type = "item", name = "iron-gear-wheel", 	amount = 30},
+		{type = "item", name = "iron-plate", 		amount = 30},
+		{type = "item", name = "iron-stick", 		amount = 10},
+		{type = "item", name = "steel-plate", 		amount = 10},
+	},
+	kj_truck_wagon = {
+		{type = "item", name = "iron-gear-wheel", 	amount = 20},
+		{type = "item", name = "iron-plate",		amount = 70},
+		{type = "item", name = "iron-stick", 		amount = 5},
+		{type = "item", name = "steel-plate", 		amount = 10},
 	},
 	kj_utilitarian = {
 		{type = "item", name = "advanced-circuit", 		amount = 10},
@@ -1226,11 +1300,15 @@ tables.entityData = {
 
 		kj_aventador = 	  1200,
 		kj_bulldozer = 	  2000,
+		kj_countach =     1200,
 		kj_cybertruck =   1200,
 		kj_delorean = 	   800,
+		kj_dodge =  	  1000,
 		kj_firetruck = 	  1000,
 		kj_fordmustang =  1000,
 		kj_gigahorse = 	  2000,
+		kj_plymouth =  	  1000,
+		kj_truck =  	  1500,
 		kj_utilitarian =  2000,
 		kj_warrig =  	  2000,
 
@@ -1269,11 +1347,15 @@ tables.entityData = {
 
 		kj_aventador = 		{false, false, 8},
 		kj_bulldozer = 		{true, true, 0.08},
+		kj_countach = 		{false, false, 8},
 		kj_cybertruck = 	{true, false, 5},
 		kj_delorean = 		{false, false, 5},
+		kj_dodge =			{false, false, 5},
 		kj_firetruck = 		{true, false, 5},
 		kj_fordmustang =	{false, false, 5},
 		kj_gigahorse = 		{true, false, 1},
+		kj_plymouth =		{false, false, 5},
+		kj_truck =			{true, true, 3.5},
 		kj_utilitarian =	{true, true, 3},
 		kj_warrig =			{true, true, 1},
 
@@ -1307,11 +1389,15 @@ tables.entityData = {
 
 		kj_aventador = 	  "2000kW",
 		kj_bulldozer = 	  "3000kW",
+		kj_countach =     "1800kW",
 		kj_cybertruck =   "1200kW",
 		kj_delorean = 	   "500kW",
+		kj_dodge =   	   "650kW",
 		kj_firetruck = 	  "1000kW",
 		kj_fordmustang =   "650kW",
 		kj_gigahorse = 	  "1000kW",
+		kj_plymouth =      "650kW",
+		kj_truck =   	  "1200kW",
 		kj_utilitarian =   "600kW",
 		kj_warrig =   	  "1500kW",
 
@@ -1345,11 +1431,15 @@ tables.entityData = {
 
 		kj_aventador = 	   "800kW",
 		kj_bulldozer = 	  "1600kW",
+		kj_countach =      "600kW",
 		kj_cybertruck =    "600kW",
 		kj_delorean = 	   "295kW",
+		kj_dodge =   	   "390kW",
 		kj_firetruck = 	  "1000kW",
 		kj_fordmustang =   "390kW",
 		kj_gigahorse = 	   "700kW",
+		kj_plymouth =      "300kW",
+		kj_truck =   	  "1000kW",
 		kj_utilitarian =   "600kW",
 		kj_warrig =   	  "1400kW",
 
@@ -1383,11 +1473,15 @@ tables.entityData = {
 
 		kj_aventador = 	     1600,
 		kj_bulldozer = 	    50000,
+		kj_countach =        1600,
 		kj_cybertruck =      3000,
 		kj_delorean = 	     1233,
+		kj_dodge =     		 1500,
 		kj_firetruck = 	    20000,
 		kj_fordmustang =     1500,
 		kj_gigahorse = 	     5000,
+		kj_plymouth =     	 2000,
+		kj_truck =    		 8000,
 		kj_utilitarian =    10000,
 		kj_warrig =    		13000,
 
@@ -1421,11 +1515,15 @@ tables.entityData = {
 
 		kj_aventador = 		{ 20, 0.015, 1},
 		kj_bulldozer = 		{ 20, 0.004, 1},
+		kj_countach = 		{ 20, 0.015, 1},
 		kj_cybertruck = 	{ 50, 0.01 , 1},
 		kj_delorean = 		{ 30, 0.015, 1},
+		kj_dodge =		    { 40, 0.013, 1},
 		kj_firetruck = 		{100, 0.01 , 1},
-		kj_fordmustang =	{ 40, 0.013, 5},
+		kj_fordmustang =	{ 40, 0.013, 1},
 		kj_gigahorse = 		{ 40, 0.008, 1},
+		kj_plymouth =	    { 40, 0.011, 1},
+		kj_truck =			{ 20, 0.008, 1},
 		kj_utilitarian =	{150, 0.01 , 1},
 		kj_warrig =			{ 70, 0.007, 1},
 
@@ -1459,11 +1557,15 @@ tables.entityData = {
 
 		kj_aventador = 		{{ 15, 80}, { 15, 40}, { 15, 70}, { 15, 30}, { 10, 30}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_bulldozer = 		{{ 15, 60}, { 15, 35}, { 50, 70}, { 15, 30}, { 10, 30}, {  5, 40}, {  5, 40}, {  5, 95}},
+		kj_countach = 		{{ 15, 80}, { 15, 40}, { 15, 70}, { 15, 30}, { 10, 30}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_cybertruck = 	{{ 15, 60}, { 15, 40}, { 50, 70}, { 15, 30}, {  5, 20}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_delorean = 		{{ 15, 50}, { 15, 20}, { 40, 60}, { 15, 15}, { 10, 20}, {  0,  0}, {  0,  0}, {  0,  0}},
+		kj_dodge =			{{ 15, 60}, { 15, 40}, { 50, 50}, { 15, 15}, {  5, 20}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_firetruck = 		{{ 15, 80}, { 15, 40}, { 50, 78}, { 15, 30}, { 10, 30}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_fordmustang =	{{ 15, 60}, { 15, 40}, { 50, 50}, { 15, 15}, {  5, 20}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_gigahorse = 		{{ 15, 55}, { 20, 40}, { 35, 35}, { 15, 25}, { 20, 25}, {  0,  0}, {  0,  0}, {  0,  0}},
+		kj_plymouth =		{{ 15, 60}, { 15, 40}, { 50, 50}, { 15, 15}, {  5, 20}, {  0,  0}, {  0,  0}, {  0,  0}},
+		kj_truck =			{{ 15, 50}, { 15, 45}, { 50, 70}, { 15, 30}, { 10, 30}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_utilitarian =	{{ 15, 80}, { 15, 40}, { 50, 70}, { 15, 30}, { 10, 30}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_warrig =			{{ 15, 60}, { 20, 50}, { 60, 80}, { 15, 30}, { 25, 30}, {  0,  0}, {  0,  0}, {  0,  0}},
 
@@ -1502,11 +1604,15 @@ tables.entityData = {
 
 		kj_aventador = 		{0.002,   1, 0.2, 1},
 		kj_bulldozer = 		{0.002, 0.2, 0.2, 1},
+		kj_countach = 		{0.002,   1, 0.2, 1},
 		kj_cybertruck = 	{0.002,   1, 0.2, 1},
 		kj_delorean = 		{0.002,   1, 0.2, 1},
+		kj_dodge =			{0.002,   1, 0.1, 1},
 		kj_firetruck = 		{0.002,   1, 0.1, 1},
 		kj_fordmustang =	{0.002,   1, 0.1, 1},
 		kj_gigahorse = 		{0.002,   1, 0.2, 1},
+		kj_plymouth =		{0.002,   1, 0.1, 1},
+		kj_truck =			{0.002, 0.1, 0.05,1},
 		kj_utilitarian =	{0.002,   1, 0.1, 1},
 		kj_warrig =			{0.002, 0.1, 0.05,1},
 

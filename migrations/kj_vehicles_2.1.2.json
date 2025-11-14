@@ -1,0 +1,21 @@
+{
+	"entity":
+	[
+		["kj_warrig_rail_curved_legacy", "kj_road_rail_curved_legacy"],
+		["kj_warrig_rail_curved_rail_a", "kj_road_rail_curved_rail_a"],
+		["kj_warrig_rail_curved_rail_b", "kj_road_rail_curved_rail_b"],
+		
+		["kj_warrig_rail_half_diagonal", "kj_road_rail_half_diagonal"],
+		
+		["kj_warrig_rail_straight", "kj_road_rail_straight"],
+		["kj_warrig_rail_straight_legacy", "kj_road_rail_straight_legacy"]
+	],
+	"item":
+	[
+		["kj_warrig_rails", "kj_road_rails"]
+	],
+	"recipe":
+	[
+		["kj_warrig_rails", "kj_road_rails"]
+	]
+}

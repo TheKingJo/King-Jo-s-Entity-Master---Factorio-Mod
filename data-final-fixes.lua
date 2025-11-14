@@ -159,6 +159,11 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 		data.raw["item-with-entity-data"]["kj_bulldozer"].subgroup = "kj_trucks"
 	end
 
+	if mods["kj_countach"] then
+		data.raw["item-subgroup"]["kj_civils"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_countach"].subgroup = "kj_civils"
+	end
+
 	if mods["kj_cybertruck"] then
 		data.raw["item-subgroup"]["kj_civils"].group = "kj_vehicles"
 		data.raw["item-with-entity-data"]["kj_cybertruck"].subgroup = "kj_civils"
@@ -176,6 +181,11 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 		data.raw["item-with-entity-data"]["kj_delorean"].subgroup = "kj_civils"
 	end
 
+	if mods["kj_dodge"] then
+		data.raw["item-subgroup"]["kj_civils"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_dodge"].subgroup = "kj_civils"
+	end
+
 	if mods["kj_firetruck"] then
 		data.raw["item-subgroup"]["kj_trucks"].group = "kj_vehicles"
 		data.raw["item-with-entity-data"]["kj_firetruck"].subgroup = "kj_trucks"
@@ -191,6 +201,18 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 		data.raw["item-with-entity-data"]["kj_gigahorse"].subgroup = "kj_trucks"
 	end
 
+	if mods["kj_plymouth"] then
+		data.raw["item-subgroup"]["kj_civils"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_plymouth"].subgroup = "kj_civils"
+	end
+
+	if mods["kj_truck"] then
+		data.raw["item-subgroup"]["kj_trucks"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_truck_train"].subgroup = "kj_trucks"
+		data.raw["item-with-entity-data"]["kj_truck_wagon"].subgroup = "kj_trucks"
+		data.raw["rail-planner"]["kj_road_rails"].subgroup = "kj_trucks"
+	end
+
 	if mods["kj_utilitarian"] then
 		data.raw["item-subgroup"]["kj_trucks"].group = "kj_vehicles"
 		data.raw["item-with-entity-data"]["kj_utilitarian"].subgroup = "kj_trucks"
@@ -202,7 +224,7 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 		data.raw["item-with-entity-data"]["kj_warrig_train"].subgroup = "kj_trucks"
 		data.raw["item-with-entity-data"]["kj_warrig_wagon"].subgroup = "kj_trucks"
 		data.raw["item-with-entity-data"]["kj_warrig_wagon_fluid"].subgroup = "kj_trucks"
-		data.raw["rail-planner"]["kj_warrig_rails"].subgroup = "kj_trucks"
+		data.raw["rail-planner"]["kj_road_rails"].subgroup = "kj_trucks"
 	end
 
 	if mods["kj_40kbunker"] then
@@ -559,7 +581,7 @@ if mods["kj_rex"] then
 	}
 end
 
-if mods["kj_warrig"] then
+if mods["kj_truck"] or mods["kj_warrig"] then
 	if  data.raw["straight-rail"]["straight-rail"].fast_replaceable_group == nil then
 		--Vanilla Rails
 		data.raw["straight-rail"]["straight-rail"].fast_replaceable_group = "straight-rail"
@@ -567,15 +589,15 @@ if mods["kj_warrig"] then
 		data.raw["curved-rail-a"]["curved-rail-a"].fast_replaceable_group = "curved-rail-a"
 		data.raw["curved-rail-b"]["curved-rail-b"].fast_replaceable_group = "curved-rail-b"
 		--Warrig Rails
-		data.raw["straight-rail"]["kj_warrig_rail_straight"].fast_replaceable_group = "straight-rail"
-		data.raw["half-diagonal-rail"]["kj_warrig_rail_half_diagonal"].fast_replaceable_group = "half-diagonal-rail"
-		data.raw["curved-rail-a"]["kj_warrig_rail_curved_rail_a"].fast_replaceable_group = "curved-rail-a"
-		data.raw["curved-rail-b"]["kj_warrig_rail_curved_rail_b"].fast_replaceable_group = "curved-rail-b"
+		data.raw["straight-rail"]["kj_road_rail_straight"].fast_replaceable_group = "straight-rail"
+		data.raw["half-diagonal-rail"]["kj_road_rail_half_diagonal"].fast_replaceable_group = "half-diagonal-rail"
+		data.raw["curved-rail-a"]["kj_road_rail_curved_rail_a"].fast_replaceable_group = "curved-rail-a"
+		data.raw["curved-rail-b"]["kj_road_rail_curved_rail_b"].fast_replaceable_group = "curved-rail-b"
 	else
-		data.raw["straight-rail"]["kj_warrig_rail_straight"].fast_replaceable_group 			= data.raw["straight-rail"]["straight-rail"].fast_replaceable_group
-		data.raw["half-diagonal-rail"]["kj_warrig_rail_half_diagonal"].fast_replaceable_group 	= data.raw["half-diagonal-rail"]["half-diagonal-rail"].fast_replaceable_group
-		data.raw["curved-rail-a"]["kj_warrig_rail_curved_rail_a"].fast_replaceable_group 		= data.raw["curved-rail-a"]["curved-rail-a"].fast_replaceable_group
-		data.raw["curved-rail-b"]["kj_warrig_rail_curved_rail_b"].fast_replaceable_group 		= data.raw["curved-rail-b"]["curved-rail-b"].fast_replaceable_group
+		data.raw["straight-rail"]["kj_road_rail_straight"].fast_replaceable_group 			= data.raw["straight-rail"]["straight-rail"].fast_replaceable_group
+		data.raw["half-diagonal-rail"]["kj_road_rail_half_diagonal"].fast_replaceable_group 	= data.raw["half-diagonal-rail"]["half-diagonal-rail"].fast_replaceable_group
+		data.raw["curved-rail-a"]["kj_road_rail_curved_rail_a"].fast_replaceable_group 		= data.raw["curved-rail-a"]["curved-rail-a"].fast_replaceable_group
+		data.raw["curved-rail-b"]["kj_road_rail_curved_rail_b"].fast_replaceable_group 		= data.raw["curved-rail-b"]["curved-rail-b"].fast_replaceable_group
 	end
 end
 

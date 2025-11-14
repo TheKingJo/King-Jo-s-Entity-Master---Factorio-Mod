@@ -1,17 +1,17 @@
 local utils = require("utils")
-local modname = "__kj_fordmustang__"
+local modname = "__kj_plymouth__"
 local main_sounds = table.deepcopy(data.raw["car"]["car"].working_sound.main_sounds)
-main_sounds[2].sound = {filename = "__kj_fordmustang__/sounds/engine.ogg", volume = 0.4}
+local setting = settings.startup["kj_plymouth_color"].value
+main_sounds[2].sound = {filename = "__kj_plymouth__/sounds/engine.ogg", volume = 0.4}
 main_sounds[2].activity_to_volume_modifiers.multiplier = 1
 main_sounds[2].activity_to_volume_modifiers.offset = 2
 
 data:extend({
   {
     type = "car",
-    name = "kj_fordmustang",
+    name = "kj_plymouth",
     corpse = "medium-remnants",
     dying_explosion = "medium-explosion",
-	  equipment_grid = "kj_fordmustang",
     collision_box = {{-1.1, -3}, {1.1, 3}},
     selection_box = {{-0.9, -2}, {0.9, 2}},
     stop_trigger = utils.brakes("car"),
@@ -46,27 +46,33 @@ data:extend({
     },
     light =
     {
-      utils.lights(3,   2, {x =-0.9, y =-2.5}),
-      utils.lights(3,   2, {x = 0.9, y =-2.5}),
-      utils.lights(3, 1.5, {x =-0.9, y = 2.5}, 0.2, 0.5, {r = 1, g = 0, b = 0}),
-      utils.lights(3, 1.5, {x = 0.9, y = 2.5}, 0.2, 0.5, {r = 1, g = 0, b = 0}),
+      utils.lights(3,   2, {x =-0.9, y =-2}, nil, nil, {r = 1, g = 211/255, b = 165/255}),
+      utils.lights(3,   2, {x = 0.9, y =-2}, nil, nil, {r = 1, g = 211/255, b = 165/255}),
+      utils.lights(3, 1.5, {x =-0.9, y = 2}, 0.2, 0.5, {r = 1, g = 0, b = 0}),
+      utils.lights(3, 1.5, {x = 0.9, y = 2}, 0.2, 0.5, {r = 1, g = 0, b = 0}),
     },
     light_animation = {
       layers = {
-        utils.layerMaker(modname, "", "mustang", 600, {1,2}, {8,8}, 2, 3),
+        utils.layerMaker(modname, "", "plymouth", 624, {1, 2}, {8, 8}, 2, 3), --light
       },
     },
     animation =  {
       layers = {
-        utils.layerMaker(modname, "", "mustang", 600, {2,1}, {2,8}, 16, 1),
-        utils.layerMaker(modname, "", "mustang", 600, {1,2}, {8,8}, 2, 2),
+        utils.layerMaker(modname, "", "plymouth", 624, {1, 2}, {8, 8}, 2, 1), --normal
+        utils.layerMaker(modname, "", "plymouth", 624, {1, 2}, {8, 8}, 2, 2), --shadow
+        utils.layerMaker(modname, "", "plymouth_wheel", 624, {2, 1}, {2, 8}, 16, 1), --wheel
       }
     },
     working_sound =
     {
       main_sounds = main_sounds,
-      activate_sound = {filename = "__kj_fordmustang__/sounds/engine-start.ogg", volume = 0.4},
-      deactivate_sound = {filename = "__kj_fordmustang__/sounds/engine-stop.ogg", volume = 0.4},
+      activate_sound = {filename = "__kj_plymouth__/sounds/engine-start.ogg", volume = 0.4},
+      deactivate_sound = {filename = "__kj_plymouth__/sounds/engine-stop.ogg", volume = 0.4},
     },
   },
 })
+
+if setting == true then
+    table.insert(data.raw["car"]["kj_plymouth"].animation.layers,
+      utils.layerMaker(modname, "", "plymouth_mask", 624, {1, 2}, {8, 8}, 2, 1,nil,nil,nil,nil,nil,true,true))
+end

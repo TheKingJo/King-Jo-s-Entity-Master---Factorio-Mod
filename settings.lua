@@ -22,6 +22,42 @@ if mods["kj_tower"] then
 	})
 end
 
+if mods["kj_countach"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "kj_countach_color",
+			setting_type = "startup",
+			default_value = true,
+			order = "kj_countach_color",
+		},
+	})
+end
+
+if mods["kj_plymouth"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "kj_plymouth_color",
+			setting_type = "startup",
+			default_value = true,
+			order = "kj_plymouth_color",
+		},
+	})
+end
+--[[
+if mods["kj_truck"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "kj_truck_luaRendering",
+			setting_type = "runtime-global",
+			default_value = true,
+			order = "kj_truck_luaRendering",
+		},
+	})
+end]]
+
 if mods["kj_swspeeder"] then
 	data:extend({
 		{

@@ -37,3 +37,8 @@ end
 if mods["kj_warrig"] then
 	require("prototypes.warrig")
 end
+
+--Additional Edits
+if mods["kj_truck"] then
+	require("prototypes.truck")
+end

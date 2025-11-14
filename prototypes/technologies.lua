@@ -92,7 +92,7 @@ local technologies = {
 		modname = "kj_aventador",
 		recipes = {"kj_aventador"},
 		prerequisites = {"automobilism", "kj_gasoline"},
-		unit = {120,20,1,1,0,1,0,0,0}
+		unit = {200,20,1,1,0,1,0,0,0}
 	},
 	{
 		modname = "kj_bulldozer",
@@ -100,6 +100,12 @@ local technologies = {
 		recipes = {"kj_bulldozer"},
 		prerequisites = {"automobilism", "kj_gasoline"},
 		unit = {200,20,1,1,0,1,0,0,0}
+	},
+	{
+		modname = "kj_countach",
+		recipes = {"kj_countach"},
+		prerequisites = {"automobilism", "kj_gasoline"},
+		unit = {150,20,1,1,0,1,0,0,0}
 	},
 	{
 		modname = "kj_cybertruck",
@@ -111,7 +117,13 @@ local technologies = {
 		modname = "kj_delorean",
 		recipes = {"kj_delorean"},
 		prerequisites = {"automobilism", "kj_gasoline"},
-		unit = {75,20,2,2,0,1,0,0,0}
+		unit = {60,20,2,2,0,1,0,0,0}
+	},
+	{
+		modname = "kj_dodge",
+		recipes = {"kj_dodge"},
+		prerequisites = {"automobilism", "kj_gasoline"},
+		unit = {65,20,2,2,0,1,0,0,0}
 	},
 	{
 		modname = "kj_firetruck",
@@ -123,7 +135,7 @@ local technologies = {
 		modname = "kj_fordmustang",
 		recipes = {"kj_fordmustang"},
 		prerequisites = {"automobilism", "kj_gasoline"},
-		unit = {90,20,2,2,0,1,0,0,0}
+		unit = {65,20,2,2,0,1,0,0,0}
 	},
 	{
 		modname = "kj_gigahorse",
@@ -132,14 +144,26 @@ local technologies = {
 		unit = {150,20,1,1,0,1,0,0,0}
 	},
 	{
+		modname = "kj_plymouth",
+		recipes = {"kj_plymouth"},
+		prerequisites = {"automobilism", "kj_gasoline"},
+		unit = {65,20,2,2,0,1,0,0,0}
+	},
+	{
 		modname = "kj_utilitarian",
 		recipes = {"kj_utilitarian"},
 		prerequisites = {"automobilism", "kj_gasoline"},
 		unit = {200,20,1,1,0,1,0,0,0}
 	},
 	{
+		modname = "kj_truck",
+		recipes = {"kj_truck_train", "kj_truck_wagon", "kj_road_rails"},
+		prerequisites = {"automobilism", "kj_gasoline", "railway"},
+		unit = {200,20,1,1,0,1,0,0,0}
+	},
+	{
 		modname = "kj_warrig",
-		recipes = {"kj_warrig", "kj_warrig_train", "kj_warrig_wagon", "kj_warrig_wagon_fluid", "kj_warrig_rails"},
+		recipes = {"kj_warrig", "kj_warrig_train", "kj_warrig_wagon", "kj_warrig_wagon_fluid", "kj_road_rails"},
 		prerequisites = {"automobilism", "kj_gasoline", "railway"},
 		unit = {250,20,1,1,0,1,0,0,0}
 	},
