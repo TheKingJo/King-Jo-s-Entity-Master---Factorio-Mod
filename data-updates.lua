@@ -4,6 +4,7 @@ local prerequisites_mod = ""
 local function establishAA()
 	local settingTM = settings.startup["kj_AA_target_mask"].value
 	local settingERM = settings.startup["kj_AA_ermAA"].value
+	local settingFlyer = settings.startup["kj_AA_flyerAA"].value
 
 	data:extend({
 		{
@@ -33,16 +34,16 @@ local function establishAA()
 				log("Name: "..name)
 				if string.sub(name,1,3) ~= "kj_" then
 					log("Mod foreign turret found.")
-					
+
 					if turret.attack_target_mask ~= nil then
 						if turret.attack_target_mask["air-unit"] ~= nil then
 							data.raw[turretType.."-turret"][name].attack_target_mask["air-unit"] = false
 						end
-						
+
 						if turret.attack_target_mask["flying"] ~= nil then
 							data.raw[turretType.."-turret"][name].attack_target_mask["flying"] = false
 						end
-						
+
 						log("Found a "..turretType.."-turret with air-unit/flying as attack_target_mask. Set to false.")
 					else
 						data.raw[turretType.."-turret"][name].attack_target_mask = types
@@ -77,6 +78,14 @@ local function establishAA()
 	"erm_marspeople/ufo/",
 	]]
 
+	local airUnitName = {
+		"behemoth-flyer",
+		"ultra-flyer",
+		"big-flyer",
+		"medium-flyer",
+		"small-flyer",
+	}
+
 	local subStringList = {
 		"erm_terran_exp/aeri",
 		"erm_terran_exp/scie",
@@ -94,6 +103,7 @@ local function establishAA()
 	for name, unit in pairs(data.raw["unit"]) do
 		local subgroup = unit.subgroup
 		local doIt = false
+		local erm = true
 
 		if subgroup == "erm-dropship-enemies" or subgroup == "erm-flying-enemies" then
 			doIt = true
@@ -110,8 +120,18 @@ local function establishAA()
 			end
 		end
 
+		if doIt == false then
+			for _, entry in ipairs(airUnitName) do
+				if entry == name then
+					doIt = true
+					erm = false
+					break
+				end
+			end
+		end
+
 		if doIt == true then
-			if settingERM == true then
+			if (erm == true and settingERM == true) or (erm == false and settingFlyer == true) then
 				unit.trigger_target_mask = {"air-unit"}
 				--log('"air-unit" trigger_target_mask set on unit "'..name..'"')
 			else

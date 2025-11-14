@@ -25,7 +25,7 @@ local techUpdates = {
 
     {
         modname = "kj_40kpredator",
-        modifiers = {0.9, 1.3, 1, 0.8, 1.5},
+        modifiers = {0.9, 1.3, 1, 0.5, 0.5},
         ammo_category = "kj_predator",
     },
 

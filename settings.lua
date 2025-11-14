@@ -179,6 +179,13 @@ if mods["kj_medieval_warfare"] or mods["kj_phalanx"] or mods["kj_vierling"] then
 			default_value = false,
 			order = "0-kj_AA_ermAA",
 		},
+		{
+			type = "bool-setting",
+			name = "kj_AA_flyerAA",
+			setting_type = "startup",
+			default_value = false,
+			order = "0-kj_AA_flyerAA",
+		},
 	})
 end
 
