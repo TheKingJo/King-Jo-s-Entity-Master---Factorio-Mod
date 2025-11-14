@@ -374,19 +374,6 @@ if mods["kj_2a6"] then
 			},
 			time = 30
 		}
-
-		data.raw["technology"]["kj_2a6_ammo"].unit =
-		{
-			count = 1000,
-			ingredients =
-			{
-				{"automation-science-pack", 1},
-				{"logistic-science-pack", 1},
-				{"chemical-science-pack", 1},
-				{"military-science-pack", 1},
-			},
-			time = 30
-		}
 	end
 end
 

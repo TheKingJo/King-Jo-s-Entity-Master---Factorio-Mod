@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.4
+Date: 08.10.2025
+  Changes:
+    - Lamborghini Countach now supports player color tinted underground light
+  Fixes:
+    - fixed error with space exploration and leopard 2a6
+---------------------------------------------------------------------------------------------------
 Version: 2.1.3
 Date: 18.09.2025
   Fixes:

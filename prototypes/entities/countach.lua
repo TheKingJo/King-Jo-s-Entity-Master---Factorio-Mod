@@ -55,7 +55,6 @@ data:extend({
     light_animation = {
       layers = {
         utils.layerMaker(modname, "", "countach", 600, {1, 2}, {8, 8}, 2, 3), --light
-        utils.layerMaker(modname, "", "countach_ground", 1000, {1, 2}, {8, 8}, 2, 3), --ground light
         --util.empty_animation(2)
       }
     },
@@ -78,14 +77,14 @@ data:extend({
 })
 
 if setting == true then
-  --table.insert(data.raw["car"]["kj_countach"].light_animation.layers,
-    --utils.layerMaker(modname, "", "countach_ground_mask", 1000, {1, 2}, {8, 8}, 2, 3,nil,nil,nil,nil,nil,true))
+  table.insert(data.raw["car"]["kj_countach"].light_animation.layers,
+    utils.layerMaker(modname, "", "countach_ground_mask", 1000, {1, 2}, {8, 8}, 2, 3,nil,nil,nil,nil,nil,true))
 
   table.insert(data.raw["car"]["kj_countach"].animation.layers,
     utils.layerMaker(modname, "", "countach_mask", 600, {1, 2}, {8, 8}, 2, 1,nil,nil,nil,nil,nil,true,true))
 else
-  --table.insert(data.raw["car"]["kj_countach"].light_animation.layers,
-    --utils.layerMaker(modname, "", "countach_ground", 1000, {1, 2}, {8, 8}, 2, 3))
+  table.insert(data.raw["car"]["kj_countach"].light_animation.layers,
+    utils.layerMaker(modname, "", "countach_ground", 1000, {1, 2}, {8, 8}, 2, 3))
 end
 
 log(serpent.block(data.raw["car"]["kj_countach"].light_animation.layers))
