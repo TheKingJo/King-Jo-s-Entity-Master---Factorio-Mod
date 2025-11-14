@@ -24,7 +24,11 @@ local function extendCategories(categs)
                     icon = "__"..category.modname.."__/graphics/ammo_category.png"
                 end
 
-                log("Icon: "..icon)
+                if categ == "bomb" then
+			        icon = "__kj_vehicles__/graphics/bomb_category.png"
+                end
+
+                --log("Icon: "..icon)
             end
 
             if category.type == "ammo-category" then

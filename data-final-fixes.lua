@@ -2,13 +2,42 @@ local tables = require("tables")
 local aaiTanks = {}
 local categoryTrigger = 20
 
+local ammos = {
+	"kj_plane_50",
+	"kj_plane_250",
+	"kj_plane_500",
+	"kj_plane_1000",
+	"kj_plane_atom",
+	"kj_plane_napalm",
+	"kj_plane_lcal",
+	"kj_plane_hcal",
+}
+local function checkAmmos()
+	local count = 0
+	for _, ammo in pairs(ammos) do
+		if data.raw["ammo"][ammo] ~= nil then
+			count = count + 1		
+		end
+	end
+	return count
+end
+
 local modsCount = 0
 for modname, mod in pairs(tables.supportedMods) do
 	if mods[modname] then
 		modsCount = modsCount + mod.weight
 	end
 end
-log("KJ Mod Count: "..modsCount)
+modsCount = modsCount + checkAmmos()
+log("KJ Mod Weight: "..modsCount)
+
+local function planeAmmo()
+	for _, ammo in pairs(ammos) do
+		if data.raw["ammo"][ammo] ~= nil then
+			data.raw["ammo"][ammo].subgroup = "kj_planes"
+		end
+	end
+end
 
 if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == true then
 	data:extend({
@@ -209,23 +238,87 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 			data.raw["item-with-entity-data"]["kj_vierling_nonAA"].subgroup = tables.categoriesUpdates["kj_vierling"].name
 		end
 	end
+
+	if mods["kj_747"] then
+		data.raw["item-subgroup"]["kj_planes"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_747"].subgroup = tables.categoriesUpdates["kj_747"].name
+	end
+
+	if mods["kj_b17"] then
+		data.raw["item-subgroup"]["kj_planes"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_b17"].subgroup = tables.categoriesUpdates["kj_b17"].name
+
+		planeAmmo()
+	end
+
+	if mods["kj_b2"] then
+		data.raw["item-subgroup"]["kj_planes"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_b2"].subgroup = tables.categoriesUpdates["kj_b2"].name
+		
+		planeAmmo()
+	end
+
+	if mods["kj_b29"] then
+		data.raw["item-subgroup"]["kj_planes"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_b29"].subgroup = tables.categoriesUpdates["kj_b29"].name
+
+		planeAmmo()
+	end
+
+	if mods["kj_bf109"] then
+		data.raw["item-subgroup"]["kj_planes"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_bf109"].subgroup = tables.categoriesUpdates["kj_bf109"].name
+
+		planeAmmo()
+	end
+
+	if mods["kj_ho229"] then
+		data.raw["item-subgroup"]["kj_planes"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_ho229"].subgroup = tables.categoriesUpdates["kj_ho229"].name
+
+		planeAmmo()
+	end
+
+	if mods["kj_ju52"] then
+		data.raw["item-subgroup"]["kj_planes"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_ju52"].subgroup = tables.categoriesUpdates["kj_ju52"].name
+	end
+
+	if mods["kj_ju87"] then
+		data.raw["item-subgroup"]["kj_planes"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_ju87"].subgroup = tables.categoriesUpdates["kj_ju87"].name
+
+		planeAmmo()
+	end
+
+	if mods["kj_jug38"] then
+		data.raw["item-subgroup"]["kj_planes"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_jug38"].subgroup = tables.categoriesUpdates["kj_jug38"].name
+	end
+
+	if mods["kj_xb35"] then
+		data.raw["item-subgroup"]["kj_planes"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_xb35"].subgroup = tables.categoriesUpdates["kj_xb35"].name
+
+		planeAmmo()
+	end
 end
 
 local function establishAA()
 	--Assigning Planes trigger_target_mask
-	for _, mod in ipairs(tables.airborneMods) do
-		if mods[mod] then
-			if data.raw["car"][mod] ~= nil then		--If plane exists
-				if data.raw["car"][mod].trigger_target_mask ~= nil then		--If masks not empty
-					table.insert(data.raw["car"][mod.."-airborne"].trigger_target_mask, "air-unit")
+	for name, _ in ipairs(tables.airborneMods) do
+		if mods[name] then
+			if data.raw["car"][name] ~= nil then		--If plane exists
+				if data.raw["car"][name].trigger_target_mask ~= nil then		--If masks not empty
+					table.insert(data.raw["car"][name.."-airborne"].trigger_target_mask, "air-unit")
 					log("Added trigger_target_mask to plane "..mod.."-airborne.")
 
 				else
-					data.raw["car"][mod.."-airborne"].trigger_target_mask = {"air-unit"}
-					log("Assigned trigger_target_mask to plane "..mod.."-airborne.")
+					data.raw["car"][name.."-airborne"].trigger_target_mask = {"air-unit"}
+					log("Assigned trigger_target_mask to plane "..name.."-airborne.")
 				end
 			else
-				log("Trying to assign trigger_target_mask to plane "..mod.." failed.")
+				log("Trying to assign trigger_target_mask to plane "..name.." failed.")
 			end
 		end
 	end
@@ -507,6 +600,44 @@ if mods["kj_phalanx"] then
 		data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].pick_sound = data.raw["item"]["gun-turret"].pick_sound
 		data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].drop_sound = data.raw["item"]["gun-turret"].drop_sound
 		data.raw["item-with-entity-data"]["kj_phalanx_nonAA"].inventory_move_sound = data.raw["item"]["gun-turret"].inventory_move_sound
+	end
+end
+
+if mods["Aircraft"] then
+	if mods["kj_747"] then
+		table.insert(data.raw["technology"]["kj_747"].prerequisites, "advanced-aerodynamics")
+	end
+
+	if mods["kj_b17"] then
+		table.insert(data.raw["technology"]["kj_b17"].prerequisites, "advanced-aerodynamics")
+	end
+
+	if mods["kj_b2"] then
+		table.insert(data.raw["technology"]["kj_b2"].prerequisites, "advanced-aerodynamics")
+	end
+
+	if mods["kj_bf109"] then
+		table.insert(data.raw["technology"]["kj_bf109"].prerequisites, "advanced-aerodynamics")
+	end
+
+	if mods["kj_ho229"] then
+		table.insert(data.raw["technology"]["kj_ho229"].prerequisites, "advanced-aerodynamics")
+	end
+
+	if mods["kj_ju52"] then
+		table.insert(data.raw["technology"]["kj_ju52"].prerequisites, "advanced-aerodynamics")
+	end
+
+	if mods["kj_ju87"] then
+		table.insert(data.raw["technology"]["kj_ju87"].prerequisites, "advanced-aerodynamics")
+	end
+
+	if mods["kj_jug38"] then
+		table.insert(data.raw["technology"]["kj_jug38"].prerequisites, "advanced-aerodynamics")
+	end
+
+	if mods["kj_xb35"] then
+		table.insert(data.raw["technology"]["kj_xb35"].prerequisites, "advanced-aerodynamics")
 	end
 end
 

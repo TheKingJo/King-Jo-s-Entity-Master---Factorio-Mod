@@ -28,6 +28,35 @@ tables.supportedMods = {
 	kj_phalanx = 		{name = "phalanx", 		car = false,	weight = 3,		order = "3[military-turrets]-aa-2"},
 	kj_tower = 			{name = "tower", 		car = false,	weight = 1,		order = "3[military-turrets]-n-1"},
 	kj_vierling = 		{name = "vierling", 	car = false,	weight = 3,		order = "3[military-turrets]-aa-1"},
+
+	kj_747 = 			{name = "747", 		car = true,		weight = 1,		order = "4[aviation]-t-3"},
+	kj_b17 = 			{name = "b17", 		car = true,		weight = 1,		order = "4[aviation]-b-2"},
+	kj_b2 = 			{name = "b2", 		car = true,		weight = 1,		order = "4[aviation]-b-5"},
+	kj_b29 = 			{name = "b29", 		car = true,		weight = 1,		order = "4[aviation]-b-3"},
+	kj_bf109 = 			{name = "bf109", 	car = true,		weight = 1,		order = "4[aviation]-f-1"},
+	kj_ho229 = 			{name = "ho229", 	car = true,		weight = 1,		order = "4[aviation]-f-2"},
+	kj_ju52 = 			{name = "ju52", 	car = true,		weight = 1,		order = "4[aviation]-t-1"},
+	kj_ju87 = 			{name = "ju87", 	car = true,		weight = 1,		order = "4[aviation]-b-1"},
+	kj_jug38 = 			{name = "jug38", 	car = true,		weight = 1,		order = "4[aviation]-t-2"},
+	kj_xb35 = 			{name = "xb35", 	car = true,		weight = 1,		order = "4[aviation]-b-4"},
+}
+
+tables.balancedModsRecipe = {
+	kj_warrig = true,
+
+	kj_phalanx = true,
+	kj_vierling = true,
+
+	kj_747 = true,
+	kj_b17 = true,
+	kj_b2 = true,
+	kj_b29 = true,
+	kj_bf109 = true,
+	kj_ho229 = true,
+	kj_ju52 = true,
+	kj_ju87 = true,
+	kj_jug38 = true,
+	kj_xb35 = true,
 }
 
 tables.balancedMods = {
@@ -58,15 +87,16 @@ tables.balancedMods = {
 						{name = "kj_warrig_wagon", type = "cargo-wagon"},
 						{name = "kj_warrig_wagon_fluid", type = "fluid-wagon"}},
 
+	kj_747 = 		true,
 	kj_b17 = 		true,
 	kj_b2 = 		true,
+	kj_b29 = 		true,
 	kj_bf109 = 		true,
 	kj_ho229 = 		true,
 	kj_ju52 = 		true,
 	kj_ju87 = 		true,
 	kj_jug38 = 		true,
 	kj_xb35 = 		true,
-	kj_747 = 		true,
 
 	kj_40kbunker = 	{{name = "kj_40kbunker"}, {name = "kj_40kbunker_turret"}},
 	kj_phalanx = 	{{name = "kj_phalanx"}, {name = "kj_phalanx_nonAA", setting = "kj_phalanx_nonAA"}},
@@ -75,14 +105,72 @@ tables.balancedMods = {
 }
 
 tables.airborneMods = {
-	"kj_b17",
-	"kj_b2",
-	"kj_bf109",
-	"kj_ho229",
-	"kj_ju52",
-	"kj_ju87",
-	"kj_jug38",
-	"kj_xb35"
+	          --50kg   250kg  500gk  1000   atom   LCal   HCal   napalm
+	kj_747   = {false, false, false, false, false, false, false, false},
+	kj_b17   = {true,  true,  true,  true,  false, true,  false, true},
+	kj_b2 	 = {true,  true,  true,  true,  true , false, false, true},
+	kj_b29   = {true,  true,  true,  true,  true , true,  false, true},
+	kj_bf109 = {false, false, false, false, false, true,  true , false},
+	kj_ho229 = {false, false, false, false, false, true, true , false},
+	kj_ju52  = {false, false, false, false, false, false, false, false},
+	kj_ju87  = {true,  true,  true,  true,  false, true,  false, false},
+	kj_jug38 = {false, false, false, false, false, false, false, false},
+	kj_xb35  = {true,  true,  true,  true,  true , false, false, true},
+}
+
+tables.techRequisites = {
+	kj_b29 = {
+		pres = {
+			"kj_b17"
+		},
+		multiplicator = 0.75,
+	},
+	kj_xb35 = {
+		pres = {
+			"kj_b29",
+			"kj_b17"
+		},
+		multiplicator = 0.75,
+		additional = {"kj_ho229"}
+	},
+	kj_b2 = {
+		pres = {
+			"kj_xb35",
+			"kj_b29",
+			"kj_b17"
+		},
+		multiplicator = 0.75,
+		additional = {"kj_ho229", "military-4"}
+	},
+
+	kj_ho229 = {
+		pres = {
+			"kj_bf109"
+		},
+		multiplicator = 0.75,
+	},
+
+	kj_ju52 = {
+		pres = {
+			"kj_ju87"
+		},
+		multiplicator = 0.75,
+	},
+	kj_jug38 = {
+		pres = {
+			"kj_ju52",
+			"kj_ju87"
+		},
+		multiplicator = 0.75,
+	},
+	kj_747 = {
+		pres = {
+			"kj_jug38",
+			"kj_ju52",
+			"kj_ju87"
+		},
+		multiplicator = 0.75,
+	},
 }
 
 tables.recipeChanges = {
@@ -170,7 +258,7 @@ tables.recipeChanges = {
 		}
 	},
 	
-	{modname = "kj_swspeeder", recipe = "kj_swspeeder", setting = "kj_swspeeder_cost_setting_multiplicator"},
+	{modname = "kj_swspeeder"},
 	
 	{modname = "kj_wirbelwind", entries = {
 			{recipe = "kj_wirbelwind", setting = "kj_wirbelwind_cost_setting_multiplicator"},
@@ -180,14 +268,14 @@ tables.recipeChanges = {
 		}
 	},
 	
-	{modname = "kj_aventador", recipe = "kj_aventador", setting = "kj_aventador_cost_setting_multiplicator"},
-	{modname = "kj_bulldozer", recipe = "kj_bulldozer", setting = "kj_bulldozer_cost_setting_multiplicator"},
-	{modname = "kj_cybertruck", recipe = "kj_cybertruck", setting = "kj_cybertruck_cost_setting_multiplicator"},
-	{modname = "kj_delorean", recipe = "kj_delorean", setting = "kj_delorean_cost_setting_multiplicator"},
-	{modname = "kj_firetruck", recipe = "kj_firetruck", setting = "kj_firetruck_cost_setting_multiplicator"},
-	{modname = "kj_fordmustang", recipe = "kj_fordmustang", setting = "kj_fordmustang_cost_setting_multiplicator"},
-	{modname = "kj_gigahorse", recipe = "kj_gigahorse", setting = "kj_gigahorse_cost_setting_multiplicator"},
-	{modname = "kj_utilitarian", recipe = "kj_utilitarian", setting = "kj_utilitarian_cost_setting_multiplicator"},
+	{modname = "kj_aventador"},
+	{modname = "kj_bulldozer"},
+	{modname = "kj_cybertruck"},
+	{modname = "kj_delorean"},
+	{modname = "kj_firetruck"},
+	{modname = "kj_fordmustang"},
+	{modname = "kj_gigahorse"},
+	{modname = "kj_utilitarian"},
 
 	{modname = "kj_40kbunker", entries = {
 			{recipe = "kj_40kbunker", setting = "kj_40kbunker_cost_setting_multiplicator"},
@@ -201,7 +289,7 @@ tables.recipeChanges = {
 		},
 	},
 
-	{modname = "kj_tower", recipe = "kj_tower", setting = "kj_tower_cost_setting_multiplicator"},
+	{modname = "kj_tower"},
 
 	{modname = "kj_vierling", entries = {
 			{recipe = "kj_vierling", setting = "kj_vierling_cost_setting_multiplicator"},
@@ -218,8 +306,16 @@ tables.recipeChanges = {
 		},
 	},
 
-
-
+	{modname = "kj_747"},
+	{modname = "kj_b17"},
+	{modname = "kj_b2"},
+	{modname = "kj_b29"},
+	{modname = "kj_bf109"},
+	{modname = "kj_ho229"},
+	{modname = "kj_ju52"},
+	{modname = "kj_ju87"},
+	{modname = "kj_jug38"},
+	{modname = "kj_xb35"},
 }
 
 tables.categories = {
@@ -244,8 +340,8 @@ tables.categories = {
 
 	{modname = "kj_bulldozer",                                       order = "kj-a",   		type = "ammo-category", hidden = true},
 
-	{modname = "kj_phalanx",     	name = "kj_apds_phalanx",		 order = "kj-t2",       type = "ammo-category", icon = "unique"},
-	{modname = "kj_vierling",     	name = "kj_2cmfv_vierling",		 order = "kj-t1",       type = "ammo-category", icon = "unique"},
+	{modname = "kj_phalanx",     	name = "kj_apds_phalanx",		order = "kj-t2",       type = "ammo-category", icon = "unique"},
+	{modname = "kj_vierling",     	name = "kj_2cmfv_vierling",		order = "kj-t1",       type = "ammo-category", icon = "unique"},
 }
 
 tables.categoriesUpdates = {
@@ -277,33 +373,44 @@ tables.categoriesUpdates = {
 	kj_phalanx = 		{modname = "kj_phalanx",		name = "kj_turrets",     	order = "g", group = "logistics", type = "item-subgroup"},
 	kj_tower = 			{modname = "kj_tower",			name = "kj_turrets",     	order = "g", group = "logistics", type = "item-subgroup"},
 	kj_vierling = 		{modname = "kj_vierling",		name = "kj_turrets",     	order = "g", group = "logistics", type = "item-subgroup"},
+
+	kj_747 = 			{modname = "kj_747",			name = "kj_planes",     	order = "h", group = "logistics", type = "item-subgroup"},
+	kj_b17 = 			{modname = "kj_b17",			name = "kj_planes",     	order = "h", group = "logistics", type = "item-subgroup"},
+	kj_b2 = 			{modname = "kj_b2",				name = "kj_planes",     	order = "h", group = "logistics", type = "item-subgroup"},
+	kj_b29 = 			{modname = "kj_b29",			name = "kj_planes",     	order = "h", group = "logistics", type = "item-subgroup"},
+	kj_bf109 = 			{modname = "kj_bf109",			name = "kj_planes",     	order = "h", group = "logistics", type = "item-subgroup"},
+	kj_ho229 = 			{modname = "kj_ho229",			name = "kj_planes",     	order = "h", group = "logistics", type = "item-subgroup"},
+	kj_ju52 = 			{modname = "kj_ju52",			name = "kj_planes",     	order = "h", group = "logistics", type = "item-subgroup"},
+	kj_ju87 = 			{modname = "kj_ju87",			name = "kj_planes",     	order = "h", group = "logistics", type = "item-subgroup"},
+	kj_jug38 = 			{modname = "kj_jug38",			name = "kj_planes",     	order = "h", group = "logistics", type = "item-subgroup"},
+	kj_xb35 = 			{modname = "kj_xb35",			name = "kj_planes",     	order = "h", group = "logistics", type = "item-subgroup"},
 }
 
 tables.items = {
-	kj_2a6 = 			{modname = "kj_2a6",								    order = "2[military]-p5"},
-	kj_40kbaneblade = 	{modname = "kj_40kbaneblade",	                        order = "2[military]-40k-3"},
-	kj_40kdreadnought = {modname = "kj_40kdreadnought",	                        order = "2[military]-40k-4"},
-	kj_40klemanruss = 	{modname = "kj_40klemanruss",	                        order = "2[military]-40k-2"},
-	kj_40kpredator = 	{modname = "kj_40kpredator",                            order = "2[military]-40k-1"},
-	kj_maustank = 		{modname = "kj_maustank",		                        order = "2[military]-p4"},
+	kj_2a6 = 			{modname = "kj_2a6"},
+	kj_40kbaneblade = 	{modname = "kj_40kbaneblade"},
+	kj_40kdreadnought = {modname = "kj_40kdreadnought"},
+	kj_40klemanruss = 	{modname = "kj_40klemanruss"},
+	kj_40kpredator = 	{modname = "kj_40kpredator"},
+	kj_maustank = 		{modname = "kj_maustank"},
 	kj_pak = 			{modname = "kj_pak",				                    order = "2[military]-p1a"},
 	kj_pak2 = 			{modname = "kj_pak", 			name = "kj_pak_turret", order = "2[military]-p1b"},
-	kj_panzer4 = 		{modname = "kj_panzer4",			                    order = "2[military]-p2"},
+	kj_panzer4 = 		{modname = "kj_panzer4"},
 	kj_rex = 			{modname = "kj_rex",				                    order = "2[military]-r"},
-	kj_rattetank = 		{modname = "kj_rattetank",		                        order = "2[military]-p6"},
+	kj_rattetank = 		{modname = "kj_rattetank"},
 	kj_ray = 			{modname = "kj_ray",				                    order = "2[military]-r-n[normal]"},
 	kj_ray2 = 			{modname = "kj_ray", 			name = "kj_ray_small",  order = "2[military]-r-s[small]",	icon = "icon_small"},
-	kj_swspeeder = 		{modname = "kj_swspeeder",		                        order = "2[military]-s"},
-	kj_wirbelwind = 	{modname = "kj_wirbelwind",		                        order = "2[military]-p3"},
+	kj_swspeeder = 		{modname = "kj_swspeeder"},
+	kj_wirbelwind = 	{modname = "kj_wirbelwind"},
 
-	kj_aventador = 		{modname = "kj_aventador",		                        order = "1[civil]-d"},
-	kj_bulldozer = 		{modname = "kj_bulldozer",		                        order = "1[civil]-f"},
-	kj_cybertruck = 	{modname = "kj_cybertruck",		                        order = "1[civil]-c0"},
-	kj_delorean = 		{modname = "kj_delorean",		                        order = "1[civil]-a"},
-	kj_firetruck = 		{modname = "kj_firetruck",		                        order = "1[civil]-g"},
-	kj_fordmustang = 	{modname = "kj_fordmustang",                            order = "1[civil]-b"},
-	kj_gigahorse = 		{modname = "kj_gigahorse",		                        order = "1[civil]-e"},
-	kj_utilitarian = 	{modname = "kj_utilitarian",		                    order = "1[civil]-h"},
+	kj_aventador = 		{modname = "kj_aventador"},
+	kj_bulldozer = 		{modname = "kj_bulldozer"},
+	kj_cybertruck = 	{modname = "kj_cybertruck"},
+	kj_delorean = 		{modname = "kj_delorean"},
+	kj_firetruck = 		{modname = "kj_firetruck"},
+	kj_fordmustang = 	{modname = "kj_fordmustang"},
+	kj_gigahorse = 		{modname = "kj_gigahorse"},
+	kj_utilitarian = 	{modname = "kj_utilitarian"},
 	kj_warrig = 		{modname = "kj_warrig",		                    		order = "1[civil]-i0"},
 	kj_warrig2 = 		{modname = "kj_warrig",		  name = "kj_warrig_train", order = "1[civil]-i1", icon = "train"},
 	kj_warrig3 = 		{modname = "kj_warrig",       name = "kj_warrig_wagon", order = "1[civil]-i2", icon = "wagon"},
@@ -314,6 +421,17 @@ tables.items = {
 	kj_phalanx = 		{modname = "kj_phalanx",		                    	order = "3[military-turrets]-aa-2"},
 	kj_tower = 			{modname = "kj_tower",		                    		order = "3[military-turrets]-n-1"},
 	kj_vierling = 		{modname = "kj_vierling",		                    	order = "3[military-turrets]-aa-1"},
+
+	kj_747 = 			{modname = "kj_747"},
+	kj_b17 = 			{modname = "kj_b17"},
+	kj_b2 = 			{modname = "kj_b2"},
+	kj_b29 = 			{modname = "kj_b29"},
+	kj_bf109 = 			{modname = "kj_bf109"},
+	kj_ho229 = 			{modname = "kj_ho229"},
+	kj_ju52 = 			{modname = "kj_ju52"},
+	kj_ju87 = 			{modname = "kj_ju87"},
+	kj_jug38 = 			{modname = "kj_jug38"},
+	kj_xb35 = 			{modname = "kj_xb35"},
 }
 
 tables.recipes = {
@@ -494,6 +612,83 @@ tables.recipes = {
 		{type = "item", name = "steel-plate", 		amount = 50},
 		{type = "item", name = "submachine-gun", 	amount = 4},
 	},
+	kj_747 = {
+		{type = "item", name = "advanced-circuit", 	amount = 40},
+		{type = "item", name = "engine-unit", 		amount = 20},
+		{type = "item", name = "iron-gear-wheel", 	amount = 160},
+		{type = "item", name = "low-density-structure", amount = 200},
+		{type = "item", name = "steel-plate", 		amount = 40},
+		{type = "item", name = "processing-unit", 	amount = 40},
+	},
+	kj_b17 = {
+		{type = "item", name = "advanced-circuit", 	amount = 50},
+		{type = "item", name = "engine-unit", 		amount = 40},
+		{type = "item", name = "iron-gear-wheel", 	amount = 160},
+		{type = "item", name = "iron-plate", 		amount = 20},
+		{type = "item", name = "low-density-structure", amount = 50},
+		{type = "item", name = "steel-plate", 		amount = 25},
+	},
+	kj_b2 = {
+		{type = "item", name = "engine-unit", 		amount = 32},
+		{type = "item", name = "iron-gear-wheel", 	amount = 30},
+		{type = "item", name = "low-density-structure", amount = 80},
+		{type = "item", name = "processing-unit", 	amount = 60},
+		{type = "item", name = "steel-plate", 		amount = 10},
+	},
+	kj_b29 = {
+		{type = "item", name = "advanced-circuit", 	amount = 60},
+		{type = "item", name = "engine-unit", 		amount = 40},
+		{type = "item", name = "iron-gear-wheel", 	amount = 160},
+		{type = "item", name = "low-density-structure", amount = 100},
+		{type = "item", name = "steel-plate", 		amount = 15},
+	},
+	kj_bf109 = {
+		{type = "item", name = "advanced-circuit", 	amount = 25},
+		{type = "item", name = "engine-unit", 		amount = 8},
+		{type = "item", name = "iron-gear-wheel", 	amount = 35},
+		{type = "item", name = "iron-plate", 		amount = 8},
+		{type = "item", name = "low-density-structure", amount = 20},
+		{type = "item", name = "steel-plate", 		amount = 5},
+	},
+	kj_ho229 = {
+		{type = "item", name = "advanced-circuit", 	amount = 35},
+		{type = "item", name = "engine-unit", 		amount = 16},
+		{type = "item", name = "iron-gear-wheel", 	amount = 20},
+		{type = "item", name = "iron-plate", 		amount = 3},
+		{type = "item", name = "low-density-structure", amount = 40},
+		{type = "item", name = "steel-plate", 		amount = 3},
+	},
+	kj_ju52 = {
+		{type = "item", name = "advanced-circuit", 	amount = 40},
+		{type = "item", name = "engine-unit", 		amount = 30},
+		{type = "item", name = "iron-gear-wheel", 	amount = 120},
+		{type = "item", name = "iron-plate", 		amount = 10},
+		{type = "item", name = "low-density-structure", amount = 60},
+		{type = "item", name = "steel-plate", 		amount = 5},
+	},
+	kj_ju87 = {
+		{type = "item", name = "advanced-circuit", 	amount = 30},
+		{type = "item", name = "engine-unit", 		amount = 10},
+		{type = "item", name = "iron-gear-wheel", 	amount = 40},
+		{type = "item", name = "iron-plate", 		amount = 10},
+		{type = "item", name = "low-density-structure", amount = 30},
+		{type = "item", name = "steel-plate", 		amount = 5},
+	},
+	kj_jug38 = {
+		{type = "item", name = "advanced-circuit", 	amount = 40},
+		{type = "item", name = "iron-plate",		amount = 20},
+		{type = "item", name = "steel-plate", 		amount = 10},
+		{type = "item", name = "engine-unit", 		amount = 40},
+		{type = "item", name = "low-density-structure", amount = 100},
+		{type = "item", name = "iron-gear-wheel", 	amount = 160},
+	},
+	kj_xb35 = {
+		{type = "item", name = "advanced-circuit", 	amount = 60},
+		{type = "item", name = "engine-unit", 		amount = 40},
+		{type = "item", name = "iron-gear-wheel", 	amount = 160},
+		{type = "item", name = "low-density-structure", amount = 150},
+		{type = "item", name = "steel-plate", 		amount = 10},
+	},
 }
 
 tables.ammoDmg = {
@@ -612,6 +807,42 @@ tables.ammoDmg = {
 		NP = 24,
 		NE = 30,
 	},
+
+	planes = {
+		--50kg bomb
+		AR = 4, --Explosion, Cliff Radius
+		ADP = 100,--90, --explosion dmg
+		ADE = 700,--600, --physical 
+
+		--250kg bomb
+		BR = 6.3,
+		BDP = 300,--450,
+		BDE = 2100,--3000,
+
+		--500kg bomb
+		CR = 8,
+		CDP = 500,--900,
+		CDE = 3500,--6000,
+
+		--1000kg bomb
+		DR = 10,
+		DDP = 800,--1800,
+		DDE = 5600,--12000,
+
+		--Low cal
+		EP = 25,
+		EF = 25,
+
+		--High cal
+		FP = 75,
+		FF = 75,
+
+		--Napalm bomb
+		GR = 5,
+		GP = 100,
+		GE = 100,
+		GF = 100,
+	},
 }
 
 tables.entityData = {
@@ -644,6 +875,17 @@ tables.entityData = {
 		kj_phalanx =  	1000,
 		kj_tower =  	2000,
 		kj_vierling =  	1000,
+
+		kj_747 =  	2000,
+		kj_b17 =  	3000,
+		kj_b2 =  	4000,
+		kj_b29 =  	3500,
+		kj_bf109 = 	 800,
+		kj_ho229 = 	1000,
+		kj_ju52 = 	1500,
+		kj_ju87 = 	1000,
+		kj_jug38 = 	2000,
+		kj_xb35 = 	2000,
 	},
 	impactInfos = {
 		kj_2a6 = 		 	{true, true, 0.1},
@@ -671,6 +913,17 @@ tables.entityData = {
 		kj_warrig =			{true, true, 1},
 
 		kj_40kbunker = 		{true, true, 0.04},
+
+		kj_747 = 		{false, false, 0.1},
+		kj_b17 = 		{false, false, 0.1},
+		kj_b2 = 		{false, false, 0.1},
+		kj_b29 = 		{false, false, 0.1},
+		kj_bf109 = 		{false, false, 0.1},
+		kj_ho229 = 		{false, false, 0.1},
+		kj_ju52 = 		{false, false, 0.1},
+		kj_ju87 = 		{false, false, 0.1},
+		kj_jug38 = 		{false, false, 0.1},
+		kj_xb35 = 		{false, false, 0.1},
 	},
 	braking_power = {
 		kj_2a6 = 		  "3000kW",
@@ -698,6 +951,17 @@ tables.entityData = {
 		kj_warrig =   	  "1500kW",
 
 		kj_40kbunker = 	  	"10kW",
+
+		kj_747 = 	  	"1000kW",
+		kj_b17 = 	  	"1000kW",
+		kj_b2 = 	  	"2000kW",
+		kj_b29 = 	  	"1000kW",
+		kj_bf109 = 	  	"1000kW",
+		kj_ho229 = 	  	"1200kW",
+		kj_ju52 = 	  	"1000kW",
+		kj_ju87 = 	  	 "500kW",
+		kj_jug38 = 	  	 "750kW",
+		kj_xb35 = 	  	 "750kW",
 	},
 	consumption = {
 		kj_2a6 = 		  "1600kW",
@@ -725,6 +989,17 @@ tables.entityData = {
 		kj_warrig =   	  "1400kW",
 
 		kj_40kbunker = 	  	"10kW",
+
+		kj_747 = 	  	"3000kW",
+		kj_b17 = 	  	"2500kW",
+		kj_b2 = 	  	"1500kW",
+		kj_b29 = 	  	"2500kW",
+		kj_bf109 = 	  	 "400kW",
+		kj_ho229 = 	  	"1000kW",
+		kj_ju52 = 	  	 "600kW",
+		kj_ju87 = 	  	 "600kW",
+		kj_jug38 = 	  	"1500kW",
+		kj_xb35 = 	  	"2500kW",
 	},
 	weight = {
 		kj_2a6 = 		    62000,
@@ -752,6 +1027,17 @@ tables.entityData = {
 		kj_warrig =    		13000,
 
 		kj_40kbunker = 	   230000,
+
+		kj_747 = 	    6000,
+		kj_b17 = 	   10000,
+		kj_b2 = 	   10000,
+		kj_b29 = 	   10000,
+		kj_bf109 = 	    2200,
+		kj_ho229 = 	    5000,
+		kj_ju52 = 	    5700,
+		kj_ju87 = 	    2750,
+		kj_jug38 = 	   16000,
+		kj_xb35 = 	   10000,
 	},
 	invRotTur = {
 		kj_2a6 = 		 	{20, 0.004 , 0.11 / 60},
@@ -779,6 +1065,17 @@ tables.entityData = {
 		kj_warrig =			{ 70, 0.007, 1},
 
 		kj_40kbunker = 		{ 10, 0.000, 1},
+
+		kj_747 = 		{540, 0.002, 1},
+		kj_b17 = 		{ 30, 0.002, 1},
+		kj_b2 = 		{  5, 0.003, 1},
+		kj_b29 = 		{ 40, 0.002, 1},
+		kj_bf109 = 		{  5, 0.009, 1},
+		kj_ho229 = 		{  1, 0.009, 1},
+		kj_ju52 = 		{100, 0.003, 1},
+		kj_ju87 = 		{ 10, 0.008, 1},
+		kj_jug38 = 		{150, 0.002, 1},
+		kj_xb35 = 		{ 10, 0.002, 1},
 	},
 	resistances = {         --  fire     physical    impact   explosion     acid     electric    laser      poison
 		kj_2a6 = 		 	{{ 60, 65}, { 40, 70}, { 30, 70}, { 50, 65}, { 20, 60}, {  0,  0}, {  0,  0}, {  0,  0}},
@@ -809,12 +1106,23 @@ tables.entityData = {
 		kj_phalanx =		{{ 20, 65}, { 15, 30}, { 10, 40}, {  0, 15}, {  5, 30}, {  5, 40}, {  5, 40}, {  5, 95}},
 		kj_tower =			{{ 50,100}, { 15, 75}, { 50, 50}, { 40, 20}, { 15, 30}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_vierling =		{{ 20, 70}, { 15, 30}, { 10, 50}, {  0, 20}, {  5, 30}, {  5, 40}, {  5, 40}, {  5, 95}},
+
+		kj_747 =			{{ 20, 70}, { 10, 50}, { 10, 50}, {  5, 55}, { 15, 60}, { 15, 40}, {  5, 50}, {  5, 95}},
+		kj_b17 =			{{ 20, 75}, {  5, 50}, { 10, 50}, {  5, 55}, { 15, 60}, {  5, 40}, {  5, 40}, {  5, 95}},
+		kj_b2 =				{{ 20, 80}, { 25, 60}, { 15, 50}, { 20, 65}, { 20, 60}, { 50, 60}, { 20, 60}, {  5, 95}},
+		kj_b29 =			{{ 20, 75}, { 10, 55}, { 12, 50}, { 10, 60}, { 15, 60}, { 20, 60}, { 10, 60}, {  5, 95}},
+		kj_bf109 =			{{ 20, 70}, {  5, 50}, { 10, 40}, {  5, 60}, { 15, 50}, {  5, 40}, {  5, 40}, {  5, 95}},
+		kj_ho229 =			{{ 20, 80}, {  8, 60}, { 15, 50}, { 10, 65}, { 20, 60}, { 20, 60}, { 20, 60}, {  5, 95}},
+		kj_ju52 =			{{ 20, 70}, {  5, 45}, { 10, 45}, {  5, 50}, { 15, 60}, {  5, 50}, {  5, 50}, {  5, 95}},
+		kj_ju87 =			{{ 20, 70}, {  5, 50}, { 10, 40}, {  5, 60}, { 15, 50}, {  5, 40}, {  5, 40}, {  5, 95}},
+		kj_jug38 =			{{ 20, 70}, {  5, 45}, { 12, 50}, { 10, 50}, { 15, 60}, {  5, 40}, {  5, 50}, {  5, 95}},
+		kj_xb35 =			{{ 20, 70}, {  5, 45}, { 12, 50}, { 10, 50}, { 15, 60}, {  5, 40}, {  5, 50}, {  5, 95}},
 	},
 	friTerSpdEff = {
 		kj_2a6 = 		 	{0.002, 0.2, 0.1, 1},
 		kj_40kbaneblade =	{0.002, 0.2, 0.1, 1},
 		kj_40kdreadnought =	{0.001, 0.1, 0.1, 1},
-		kj_40klemanruss =	{0.002, 0.2, 0.07, 1},
+		kj_40klemanruss =	{0.002, 0.2, 0.07,1},
 		kj_40kpredator = 	{0.002, 0.2, 0.1, 1},
 		kj_maustank = 		{0.002, 0.2, 0.1, 1},
 		kj_pak = 			{0.4  ,   1, 0.1, 1},
@@ -833,11 +1141,160 @@ tables.entityData = {
 		kj_fordmustang =	{0.002,   1, 0.1, 1},
 		kj_gigahorse = 		{0.002,   1, 0.2, 1},
 		kj_utilitarian =	{0.002,   1, 0.1, 1},
-		kj_warrig =			{0.002, 0.1, 0.05, 1},
+		kj_warrig =			{0.002, 0.1, 0.05,1},
 
 		kj_40kbunker = 		{1	  , 0.5, 0.1, 1},
+
+		kj_747 = 		{0.002, 1, 0.1, 1},
+		kj_b17 = 		{0.002, 1, 0.1, 1},
+		kj_b2 = 		{0.001, 1, 0.1, 1},
+		kj_b29 = 		{0.002, 1, 0.1, 1.2},
+		kj_bf109 = 		{0.001, 1, 0.1, 1},
+		kj_ho229 = 		{0.001, 1, 0.1, 1},
+		kj_ju52 = 		{0.002, 1, 0.1, 1},
+		kj_ju87 = 		{0.001, 1, 0.1, 1},
+		kj_jug38 = 		{0.002, 1, 0.1, 1},
+		kj_xb35 = 		{0.002, 1, 0.1, 1},
 	},
 }
+
+tables.planeData = {
+	speed = {
+		kj_747 = 	{takeoff = 300, landing = 200},
+		kj_b17 =	{takeoff = 200, landing = 150},
+		kj_b2 = 	{takeoff = 200, landing = 150},
+		kj_b29 = 	{takeoff = 200, landing = 150},
+		kj_bf109 =	{takeoff = 180, landing = 130},
+		kj_ho229 =	{takeoff = 180, landing = 130},
+		kj_ju52 =	{takeoff = 120, landing = 106},
+		kj_ju87 =	{takeoff = 180, landing = 130},
+		kj_jug38 =	{takeoff = 120, landing = 100},
+		kj_xb35 =	{takeoff = 200, landing = 150},
+	},
+	weight = {
+		kj_747 =  	nil,
+		kj_b2 =  	5000,
+		kj_b17 =  	nil,
+		kj_bf109 = 	nil,
+		kj_ho229 = 	2500,
+		kj_ju52 = 	nil,
+		kj_ju87 = 	nil,
+		kj_jug38 = 	24000,
+		kj_xb35 = 	nil,
+	},
+	braking_power = {
+		--kj_747 =  	"3000kW",
+		kj_b2 =  	"1000kW",
+		kj_b17 =  	"1500kW",
+		kj_b29 =  	"1500kW",
+		--kj_bf109 = 	"3000kW",
+		--kj_ho229 = 	"3000kW",
+		--kj_ju52 = 	"3000kW",
+		--kj_ju87 = 	"3000kW",
+		--kj_jug38 = 	"3000kW",
+		kj_xb35 = 	"1000kW",
+	},
+	rotation_speed = {
+		kj_747 =  	0.0016,
+		kj_b17 =  	0.0016,
+		kj_b2 =  	0.004,
+		kj_b29 =  	0.0016,
+		kj_bf109 = 	0.004,
+		kj_ho229 = 	0.004,
+		kj_ju52 = 	0.0019,
+		kj_ju87 = 	0.0035,
+		kj_jug38 = 	0.0016,
+		kj_xb35 = 	0.0016,
+	},
+	shadowSpeed = {
+		kj_747 =  	100,
+		kj_b17 =  	 60,
+		kj_b2 =  	120,
+		kj_b29 =  	 60,
+		kj_bf109 = 	 60,
+		kj_ho229 = 	140,
+		kj_ju52 = 	 60,
+		kj_ju87 = 	 60,
+		kj_jug38 = 	 50,
+		kj_xb35 = 	100,
+	},
+	friction = {
+		kj_b2 = 0.0001,
+		--kj_b17 = 0.001,
+		kj_ju87 = 0.0002,
+	},
+	maxSpeed = {
+		kj_747 =  	900,
+		kj_b17 =  	485,
+		kj_b2 =    1010,
+		kj_b29 =    576,
+		kj_bf109 = 	470,
+		kj_ho229 = 	950,
+		kj_ju52 = 	290,
+		kj_ju87 = 	390,
+		kj_jug38 = 	200,
+		kj_xb35 = 	629,
+	},
+	sound = {
+		kj_747 =  	{fadeIn = 120, 						volume = 0.7, 	offset = 0.2},
+		kj_b17 =  	{},
+		kj_b2 =     {fadeIn = 120, 						volume = 0.7},
+		kj_b29 =  	{},
+		kj_bf109 = 	{				speedMult = 0.85, 					offset = 0.2},
+		kj_ho229 = 	{fadeIn = 120, 	speedMult = 0.8,	volume = 0.7},
+		kj_ju52 = 	{				speedMult = 0.8},
+		kj_ju87 = 	{fadeIn = 90},
+		kj_jug38 = 	{				speedMult = 0.8},
+		kj_xb35 = 	{fadeIn = 90,	speedMult = 0.65},
+	},
+	airSound = {
+		kj_747 =  	true,
+		kj_b17 =  	true,
+		kj_b2 =     true,
+		kj_b29 =    true,
+		kj_bf109 = 	false,
+		kj_ho229 = 	true,
+		kj_ju52 = 	false,
+		kj_ju87 = 	false,
+		kj_jug38 = 	true,
+		kj_xb35 = 	true,
+	},
+	flyingSheet = {--{{delete layer in ground}, {delete layer in flying}}
+		kj_747 =  	{{}, {1}},
+		kj_b17 =  	{{},{}},
+		kj_b2 =  	{{2}, {1}},
+		kj_b29 =  	{{}, {1}},
+		kj_bf109 = 	{{},{}},
+		kj_ho229 = 	{{2, 3}, {1}},
+		kj_ju52 = 	{{},{}},
+		kj_ju87 = 	{{},{}},
+		kj_jug38 = 	{{},{}},
+		kj_xb35 = 	{{},{1}},
+	},
+	lights = {
+		kj_747 =  	{-5, -5, 4},
+		kj_b17 =  	{-5, -5, 5},
+		kj_b2 =  	{-5, -5},
+		kj_b29 =  	{-5, -5, 5},
+		kj_bf109 = 	{-5, 5},
+		kj_ho229 = 	{-5},
+		kj_ju52 = 	{-5, 5},
+		kj_ju87 = 	{-5, 5},
+		kj_jug38 = 	{-5, 5},
+		kj_xb35 = 	{-5, 5},
+	},
+}
+
+for name, mod in pairs(tables.items) do
+	if mod.order == nil then
+		if tables.supportedMods[name] ~= nil then
+			mod.order = tables.supportedMods[name].order
+		else
+			mod.order = ""
+		end
+	end
+end
+
 return tables
 
 --[[

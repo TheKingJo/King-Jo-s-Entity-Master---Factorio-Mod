@@ -81,8 +81,8 @@ data:extend({
 		working_sound =
 		{
 			main_sounds = main_sounds,
-			activate_sound = {filename = "__kj_warrig__/sounds/engine-start.ogg", volume = 0.6},
-			deactivate_sound = {filename = "__kj_warrig__/sounds/engine-stop.ogg", volume = 0.6},
+			activate_sound = {filename = "__kj_warrig__/sounds/engine-start.ogg", volume = 0.7},
+			deactivate_sound = {filename = "__kj_warrig__/sounds/engine-stop.ogg", volume = 0.7},
 		},
 		open_sound = data.raw["car"]["tank"].open_sound,
 	},

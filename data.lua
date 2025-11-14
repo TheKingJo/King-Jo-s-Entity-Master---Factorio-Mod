@@ -23,6 +23,7 @@ for modname, mod in pairs(tables.supportedMods) do
 end
 
 require("prototypes.entities")
+require("prototypes.planes")
 
 
 --Additional Edits

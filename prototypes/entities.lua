@@ -68,7 +68,8 @@ for name, mod in pairs(tables.supportedMods) do
             car.friction =                  tables.entityData.friTerSpdEff[name][1]
             car.terrain_friction_modifier = tables.entityData.friTerSpdEff[name][2]
             car.stop_trigger_speed        = tables.entityData.friTerSpdEff[name][3]
-            car.effectivity               = tables.entityData.friTerSpdEff[name][4]
+            car.effectivity               = 1
+            car.energy_source.effectivity = tables.entityData.friTerSpdEff[name][4]
 
             if car.sound_no_fuel == nil then
                 car.sound_no_fuel = {{filename = "__"..name.."__/sounds/engine-fail.ogg", volume = 0.5}}

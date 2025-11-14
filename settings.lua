@@ -1,4 +1,4 @@
-local modTable = require("tables").balancedMods
+local table = require("tables")
 
 data:extend({
 	{
@@ -9,6 +9,7 @@ data:extend({
 		order = "0-a",
 	},
 })
+
 
 if mods["kj_phalanx"] or mods["kj_vierling"] then
 	data:extend({
@@ -33,13 +34,6 @@ if mods["kj_phalanx"] then
 	data:extend({
 		{
 			type = "int-setting",
-			name = "kj_phalanx_cost_setting_multiplicator",
-			setting_type = "startup",
-			default_value = 1,
-			order = "kj_phalanx_cost_setting_multiplicator",
-		},
-		{
-			type = "int-setting",
 			name = "kj_phalanx_volume",
 			setting_type = "startup",
 			default_value = 100,
@@ -60,13 +54,6 @@ end
 if mods["kj_vierling"] then
 	data:extend({
 		{
-			type = "int-setting",
-			name = "kj_vierling_cost_setting_multiplicator",
-			setting_type = "startup",
-			default_value = 1,
-			order = "kj_vierling_cost_setting_multiplicator",
-		},
-		{
 			type = "bool-setting",
 			name = "kj_vierling_nonAA",
 			setting_type = "startup",
@@ -76,17 +63,49 @@ if mods["kj_vierling"] then
 	})
 end
 
-if mods["kj_warrig"] then
+
+if mods["kj_b2"] then
 	data:extend({
 		{
-			type = "int-setting",
-			name = "kj_warrig_cost_setting_multiplicator",
-			setting_type = "startup",
-			default_value = 1,
-			order = "kj_warrig_cost_setting_multiplicator",
-		},
+			type = "bool-setting",
+			name = "kj_b2_crash_boom",
+			setting_type = "runtime-global",
+			default_value = true  ,
+			order = "kj_b2_crash_boom",
+			localised_name = {"", {"item-name.kj_b2"}, {"mod-setting-name.crash_boom"}},
+			localised_description = {"", {"mod-setting-description.crash_boom"}},
+		}
 	})
 end
+
+if mods["kj_b29"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "kj_b29_crash_boom",
+			setting_type = "runtime-global",
+			default_value = true,
+			order = "kj_b29_crash_boom",
+			localised_name = {"", {"item-name.kj_b29"}, {"mod-setting-name.crash_boom"}},
+			localised_description = {"", {"mod-setting-description.crash_boom"}},
+		}
+	})
+end
+
+if mods["kj_xb35"] then
+	data:extend({
+		{
+			type = "bool-setting",
+			name = "kj_xb35_crash_boom",
+			setting_type = "runtime-global",
+			default_value = true  ,
+			order = "kj_xb35_crash_boom",
+			localised_name = {"", {"item-name.kj_xb35"}, {"mod-setting-name.crash_boom"}},
+			localised_description = {"", {"mod-setting-description.crash_boom"}},
+		}
+	})
+end
+
 
 local function settingMaker(name)
 	data:extend({
@@ -120,12 +139,105 @@ local function settingMaker(name)
 	--log("Resistance modifier for "..name.." added.")
 end
 
+for name, speed in pairs(table.planeData.speed) do
+	if mods[name] then
+		data:extend({
+			{
+				type = "double-setting",
+				name = "aircraft-takeoff-speed-"..name,
+				setting_type = "runtime-global",
+				minimum_value = 0,
+				default_value = speed.takeoff,
+				order = name.."_takeoff_speed",
+				localised_name = {"", {"item-name."..name}, {"mod-setting-name.takeoff_speed"}},
+				localised_description = {"", {"mod-setting-description.takeoff_speed"}},
+			},
+			{
+				type = "double-setting",
+				name = "aircraft-landing-speed-"..name,
+				setting_type = "runtime-global",
+				minimum_value = 0,
+				default_value = speed.landing,
+				order = name.."_landing_speed",
+				hidden = true,
+				localised_name = {"", {"item-name."..name}, {"mod-setting-name.landing_speed"}},
+				localised_description = {"", {"mod-setting-description.landing_speed"}},
+			},
+		})
+	end
+end
 
-for name, mod in pairs(modTable) do
+
+for name, _ in pairs(table.airborneMods) do
+	if mods[name] then
+		data:extend({
+			{
+				type = "bool-setting",
+				name = name.."no_melee_damage",
+				setting_type = "startup",
+				default_value = true,
+				order = "1-"..name,
+				localised_name = {"", {"item-name."..name}, {"mod-setting-name.no_melee"}},
+				localised_description = {"", {"mod-setting-description.kj_plane_no_melee"}},
+			}
+		})
+	end
+end
+
+for name, _ in pairs(table.airborneMods) do
+	if mods[name] then
+		data:extend({
+			{
+				type = "int-setting",
+				name = "kj_plane_ammo_cost_setting_multiplicator",
+				setting_type = "startup",
+				order = "2-0",
+				default_value = 1,
+			},
+		})
+		break
+	end
+end
+
+for name, mod in pairs(table.balancedModsRecipe) do
+	if mods[name] then
+		if mod == true then
+			data:extend({
+				{
+					type = "int-setting",
+					name = name.."_cost_setting_multiplicator",
+					setting_type = "startup",
+					default_value = 1,
+					order = name.."_cost_setting_multiplicator",
+					localised_name = {"", {"item-name."..name}, {"mod-setting-name.cost_setting"}},
+				},
+			})
+		else
+			data:extend({
+				{
+					type = "int-setting",
+					name = name.."_cost_setting_multiplicator",
+					setting_type = "startup",
+					default_value = 1,
+					order = name.."_cost_setting_multiplicator",
+					localised_name = {"", {"item-name."..name}, {"mod-setting-name.cost_setting"}},
+				},
+				{
+					type = "int-setting",
+					name = name.."ammo_cost_setting_multiplicator",
+					setting_type = "startup",
+					default_value = 1,
+					order = name.."ammo_cost_setting_multiplicator",
+					localised_name = {"", {"item-name."..name}, {"mod-setting-name.ammo_cost_setting"}},
+				},
+			})
+		end
+	end
+end
+
+for name, mod in pairs(table.balancedMods) do
 	if mods[name] then
 		log(name.." exists")
-		--log("mod: "..serpent.block(mod))
-
 		if mod ~= nil then
 			settingMaker(name)
 		end

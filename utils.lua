@@ -58,11 +58,57 @@ function functions.lights(size, scale, position, intensity, rotation, color)
     }
 end
 
-function functions.layerMaker(modname, folder, name, size, counts, frameSizes, amount, mode, shift, speed, tint, runmode, scale)
+function functions.spriteMaker(modname, folder, name, size, index, frameSizes, mode, shift, tint, scale)
     assert(type(modname) == "string", "Missing modname!")
     assert(type(folder) == "string", "Missing folder!")
     assert(type(name) == "string", "Missing name!")
     assert(type(size) == "number", "Missing size!")
+    assert(type(frameSizes[1]) == "number", "Missing framewidth!")
+    assert(type(frameSizes[2]) == "number", "Missing frameheight!")
+    assert(type(mode) == "number", "Missing mode!")
+
+    local shadow = false
+    local folderPrefix = folder.."/"
+    local glw = "normal"
+    local glow = false
+    local position = {0, 0}
+    local suffix = {"", "_shadow", "_light", "_tower", "_tower_shadow"}
+
+    if folder == "" then
+        folderPrefix = ""
+    end
+
+    if mode == 3 then
+        glw = "additive"
+        glow = true
+    elseif mode == 2 or mode == 5 then
+        shadow = true
+    end
+
+    local elementsPerSheet = frameSizes[1] * frameSizes[2]
+    local sheetIndex = math.floor(index / elementsPerSheet)
+    local local_index = index % elementsPerSheet
+    position[2] = math.floor(local_index / frameSizes[1]) * size
+    position[1] = local_index % frameSizes[1] * size
+
+    return {
+        filename = modname.."/graphics/entity/"..folderPrefix..name..suffix[mode].."_"..sheetIndex..".png",
+        size = size,
+        position = position,
+        draw_as_shadow = shadow,
+        draw_as_glow = glow,
+        blend_mode = glw,
+        tint = tint,
+        shift = shift or {0, 0.5},
+        scale = scale or 0.5,
+    }
+end
+
+function functions.layerMaker(modname, folder, name, size, counts, frameSizes, amount, mode, shift, speed, tint, runmode, scale)
+    assert(type(modname) == "string", "Missing modname!")
+    assert(type(folder) == "string", "Missing folder!")
+    assert(type(name) == "string", "Missing name!")
+    assert(type(size) == "table" or type(size) == "number", "Missing size!")
     assert(type(counts) == "table", "Missing counts!")
     assert(type(counts[1]) == "number", "Missing frame_count!")
     assert(type(counts[2]) == "number", "Missing repeat_count!")
@@ -70,6 +116,10 @@ function functions.layerMaker(modname, folder, name, size, counts, frameSizes, a
     assert(type(frameSizes[2]) == "number", "Missing frameheight!")
     assert(type(amount) == "number", "Missing count!")
     assert(type(mode) == "number", "Missing mode!")
+    if type(size) == "table" then
+        assert(type(size[1]) == "number", "Missing width!")
+        assert(type(size[2]) == "number", "Missing height!")
+    end
 
     local shadow = false
     local folderPrefix = folder.."/"
@@ -78,6 +128,12 @@ function functions.layerMaker(modname, folder, name, size, counts, frameSizes, a
     local direction_count = counts[3] or 128
     local suffix = {"", "_shadow", "_light", "_tower", "_tower_shadow"}
     local stripe = {}
+    local width = size
+    local height = size
+    if type(size) == "table" then
+        width = size[1]
+        height = size[2]
+    end
 
     if folder == "" then
         folderPrefix = ""
@@ -109,8 +165,8 @@ function functions.layerMaker(modname, folder, name, size, counts, frameSizes, a
     end
 
     return {
-        width = size,
-        height = size,
+        width = width,
+        height = height,
         frame_count = counts[1],
         repeat_count = counts[2],
 		run_mode = runmode or "forward",
@@ -121,6 +177,7 @@ function functions.layerMaker(modname, folder, name, size, counts, frameSizes, a
         tint = tint,
         shift = shift or {0, 0.5},
         animation_speed = speed or 2,
+		max_advance = 1,
         scale = scale or 0.5,
         stripes = stripe,
     }

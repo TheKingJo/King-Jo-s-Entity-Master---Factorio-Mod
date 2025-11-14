@@ -3,7 +3,7 @@ if not data.raw["ammo"]["kj_bolt"] then
 		{
 			type = "ammo-category",
 			name = "kj_bolter",
-			icon = "__kj_vehicles__/graphics/bolt_category.png",
+			icon = "__kj_vehicles__/graphics/category_bolt.png",
 			icon_size = 128,
 			order = "kj-40k-0",
 			subgroup = "ammo-category",

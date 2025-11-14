@@ -133,7 +133,15 @@ local wagon = {
 	--wheels = standard_train_wheels,
 	--drive_over_tie_trigger = drive_over_tie(),
 	--tie_distance = 50,
-	working_sound = nil,
+	working_sound =
+	{
+		sound =
+		{
+			filename = "__base__/sound/train-wheels.ogg",
+			volume = 0.3
+		},
+		match_volume_to_activity = true
+	},
 	open_sound = sounds.cargo_wagon_open,
 	close_sound = sounds.cargo_wagon_close,
 	sound_minimum_speed = 1,
@@ -932,7 +940,25 @@ data:extend({
 		--drive_over_tie_trigger = drive_over_tie(),
 		--tie_distance = 50,
     	impact_category = "metal-large",
-		working_sound = data.raw["car"]["kj_warrig"].working_sound,
+		working_sound =
+		{
+			sound =
+			{
+				filename = "__kj_warrig__/sounds/engine.ogg",
+				volume = 0.7
+			},
+			activate_sound =
+			{
+				filename = "__kj_warrig__/sounds/engine-start.ogg",
+				volume = 0.7
+			},
+			deactivate_sound =
+			{
+				filename = "__kj_warrig__/sounds/engine-stop.ogg",
+				volume = 0.5
+			},
+			match_speed_to_activity = true,
+		},
 		open_sound = data.raw["car"]["tank"].open_sound,
 		close_sound = { filename = "__kj_warrig__/sounds/door-close.ogg", volume = 0.43},
 	}

@@ -431,7 +431,7 @@ data:extend({
 		},
 		picture =
 		{
-		  filename = "__base__/graphics/entity/artillery-projectile/hr-shell.png",
+		  filename = "__base__/graphics/entity/artillery-projectile/shell.png",
 		  draw_as_glow = true,
 		  width = 64,
 		  height = 64,

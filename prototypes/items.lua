@@ -1,4 +1,5 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
+local trivial_smoke = require("__base__/prototypes/entity/smoke-animations.lua").trivial_smoke
 local sounds = require ("__base__/prototypes/entity/sounds.lua")
 local tables = require("tables")
 
@@ -13,7 +14,7 @@ for _, item in pairs(tables.items) do
                 icon = "__"..item.modname.."__/graphics/"..(item.icon or "icon")..".png",
                 icon_size = 128,
                 subgroup = item.subgroup or "transport",
-                order = item.order,
+                order = item.order or tables.supportedMods[item.modname].order,
                 inventory_move_sound = item_sounds.vehicle_inventory_move,
                 pick_sound = item_sounds.vehicle_inventory_pickup,
                 drop_sound = item_sounds.vehicle_inventory_move,
@@ -1932,8 +1933,6 @@ if mods["kj_cybertruck"] then
 end
 
 if mods["kj_gigahorse"] then
-    local trivial_smoke = require("__base__/prototypes/entity/smoke-animations.lua").trivial_smoke
-
     data:extend({
         trivial_smoke {
             name = "kj_gigahorse_smoke",
@@ -1948,8 +1947,6 @@ if mods["kj_gigahorse"] then
 end
 
 if mods["kj_warrig"] then
-    local trivial_smoke = require("__base__/prototypes/entity/smoke-animations.lua").trivial_smoke
-
     data:extend({
         trivial_smoke {
             name = "kj_warrig_smoke",
@@ -2004,6 +2001,433 @@ if mods["kj_40kbunker"] then
                 sound = sounds.heavy_gunshot,
             },
             stack_size = 5
+        },
+    })
+end
+
+if mods["kj_b2"] then
+    data:extend({
+        trivial_smoke
+        {
+            name = "kj_b2_smoke",
+            color = {r = 0.01, g = 0.01, b = 0.01, a = 1},
+            duration = 10,
+            spread_duration = 10,
+            fade_away_duration = 10,
+            start_scale = 0.1,
+            end_scale = 0.5
+        },
+        
+        {
+            type = "gun",
+            name = "kj_b2_bombs",
+            icon = "__kj_vehicles__/graphics/bomb.png",
+            icon_size = 128,
+            hidden = true,
+            subgroup = "gun",
+            order = "b[b2]-b[bombs]",
+            attack_parameters =
+            {
+                type = "projectile",
+                ammo_categories = {"kj_plane_50", "kj_plane_250", "kj_plane_500", "kj_plane_1000", "kj_plane_napalm", "kj_plane_atom"},
+                cooldown = 0,
+                health_penalty = -10,
+                projectile_creation_distance = 0,
+                projectile_center = {0, 0},
+                damage_modifier = 2,
+                range = 20,
+                sound = {
+                    filename = "__base__/sound/artillery-open.ogg",
+                    volume = 0.6,
+                },
+            },
+            stack_size = 1
+        },
+    })
+end
+
+if mods["kj_b17"] then
+    data:extend({
+        trivial_smoke
+        {
+            name = "kj_b17_smoke",
+            color = {r = 0.01, g = 0.01, b = 0.01, a = 1},
+            duration = 10,
+            spread_duration = 10,
+            fade_away_duration = 10,
+            start_scale = 0.1,
+            end_scale = 0.5,
+        },
+
+        {
+            type = "gun",
+            name = "kj_b17_machinegun",
+            icon = "__base__/graphics/icons/submachine-gun.png",
+            icon_size = 64,
+            hidden = true,
+            subgroup = "gun",
+            order = "e[b17machinegun]",
+            attack_parameters =
+            {
+                type = "projectile",
+                ammo_category = "kj_plane_lcal",
+                cooldown = 9,
+                movement_slow_down_factor = 0.5,
+                shell_particle = data.raw["gun"]["tank-machine-gun"].attack_parameters.shell_particle,
+                range = 20,
+                sound = data.raw["gun"]["tank-machine-gun"].attack_parameters.sound
+            },
+            stack_size = 1
+        },
+        {
+            type = "gun",
+            name = "kj_b17_bombs",
+            icon = "__kj_vehicles__/graphics/bomb.png",
+            icon_size = 128,
+            hidden = true,
+            subgroup = "gun",
+            order = "b[b17]-b[bombs]",
+            attack_parameters =
+            {
+                type = "projectile",
+                ammo_categories = {"kj_plane_50", "kj_plane_250", "kj_plane_500", "kj_plane_1000", "kj_plane_napalm"},
+                cooldown = 0,
+                health_penalty = -10,
+                projectile_creation_distance = 0,
+                projectile_center = {0, 0},
+                range = 20,
+                sound = {
+                    filename = "__base__/sound/artillery-open.ogg",
+                    volume = 0.6,
+                } ,
+            },
+            stack_size = 1
+        },
+    })
+end
+
+if mods["kj_b29"] then
+    data:extend({
+        trivial_smoke
+        {
+            name = "kj_b29_smoke",
+            color = {r = 0.01, g = 0.01, b = 0.01, a = 1},
+            duration = 10,
+            spread_duration = 10,
+            fade_away_duration = 10,
+            start_scale = 0.1,
+            end_scale = 0.5,
+        },
+
+        {
+            type = "gun",
+            name = "kj_b29_machinegun",
+            icon = "__base__/graphics/icons/submachine-gun.png",
+            icon_size = 64,
+            hidden = true,
+            subgroup = "gun",
+            order = "e[b29machinegun]",
+            attack_parameters =
+            {
+                type = "projectile",
+                ammo_category = "kj_plane_lcal",
+                cooldown = 9,
+                movement_slow_down_factor = 0.5,
+                shell_particle = data.raw["gun"]["tank-machine-gun"].attack_parameters.shell_particle,
+                range = 20,
+                sound = data.raw["gun"]["tank-machine-gun"].attack_parameters.sound
+            },
+            stack_size = 1
+        },
+        {
+            type = "gun",
+            name = "kj_b29_bombs",
+            icon = "__kj_vehicles__/graphics/bomb.png",
+            icon_size = 128,
+            hidden = true,
+            subgroup = "gun",
+            order = "b[b29]-b[bombs]",
+            attack_parameters =
+            {
+                type = "projectile",
+                ammo_categories = {"kj_plane_50", "kj_plane_250", "kj_plane_500", "kj_plane_1000", "kj_plane_atom",  "kj_plane_napalm"},
+                cooldown = 0,
+                health_penalty = -10,
+                projectile_creation_distance = 0,
+                projectile_center = {0, 0},
+                range = 20,
+                sound = {
+                    filename = "__base__/sound/artillery-open.ogg",
+                    volume = 0.6,
+                } ,
+            },
+            stack_size = 1
+        },
+    })
+end
+
+if mods["kj_bf109"] then
+    data:extend({
+        trivial_smoke
+        {
+            name = "kj_bf109_smoke",
+            color = {r = 0.01, g = 0.01, b = 0.01, a = 1},
+            duration = 10,
+            spread_duration = 10,
+            fade_away_duration = 10,
+            start_scale = 0.1,
+            end_scale = 0.5
+        },
+
+        {
+            type = "gun",
+            name = "kj_bf109_machinegun",
+            icon = "__base__/graphics/icons/submachine-gun.png",
+            icon_size = 64,
+            hidden = true,
+            subgroup = "gun",
+            order = "e[bf109machinegun]",
+            attack_parameters =
+            {
+                type = "projectile",
+                ammo_category = "kj_plane_lcal",
+                cooldown = 5,
+                movement_slow_down_factor = 0.5,
+                shell_particle = data.raw["gun"]["tank-machine-gun"].attack_parameters.shell_particle,
+                range = 20,
+                sound = data.raw["gun"]["tank-machine-gun"].attack_parameters.sound
+            },
+            stack_size = 1
+        },
+        {
+            type = "gun",
+            name = "kj_bf109_machinecannon",
+            icon = "__base__/graphics/icons/submachine-gun.png",
+            icon_size = 64,
+            hidden = true,
+            subgroup = "gun",
+            order = "f[bf109machinecannon]",
+            attack_parameters =
+            {
+                type = "projectile",
+                ammo_category = "kj_plane_hcal",
+                cooldown = 8,
+                movement_slow_down_factor = 0.5,
+                shell_particle = data.raw["gun"]["tank-machine-gun"].attack_parameters.shell_particle,
+                range = 20,
+                sound =
+                {
+                    {
+                        filename = "__kj_bf109__/sounds/machinecannon-1.ogg",
+                        volume = 0.6
+                    },
+                    {
+                        filename = "__kj_bf109__/sounds/machinecannon-2.ogg",
+                        volume = 0.6
+                    },
+                    {
+                        filename = "__kj_bf109__/sounds/machinecannon-3.ogg",
+                        volume = 0.6
+                    },
+                },
+            },
+            stack_size = 1
+        },
+    })
+end
+
+if mods["kj_ho229"] then
+    data:extend({
+        trivial_smoke
+        {
+            name = "kj_ho229_smoke",
+            color = {r = 0.01, g = 0.01, b = 0.01, a = 1},
+            duration = 10,
+            spread_duration = 10,
+            fade_away_duration = 10,
+            start_scale = 0.1,
+            end_scale = 0.5
+        },
+
+        {
+            type = "gun",
+            name = "kj_ho229_machinegun",
+            icon = "__base__/graphics/icons/submachine-gun.png",
+            icon_size = 64,
+            hidden = true,
+            subgroup = "gun",
+            order = "e[ho229machinegun]",
+            attack_parameters =
+            {
+                type = "projectile",
+                ammo_category = "kj_plane_hcal",
+                cooldown = 8,
+                movement_slow_down_factor = 0.5,
+                shell_particle = data.raw["gun"]["tank-machine-gun"].attack_parameters.shell_particle,
+                range = 30,
+                sound =
+                {
+                    {
+                        filename = "__kj_ho229__/sounds/machinecannon-1.ogg",
+                        volume = 0.6
+                    },
+                    {
+                        filename = "__kj_ho229__/sounds/machinecannon-2.ogg",
+                        volume = 0.6
+                    },
+                    {
+                        filename = "__kj_ho229__/sounds/machinecannon-3.ogg",
+                        volume = 0.6
+                    },
+                },
+            },
+            stack_size = 1
+        },
+    })
+end
+
+if mods["kj_ju52"] then
+    data:extend({
+        trivial_smoke
+        {
+            name = "kj_ju52_smoke",
+            color = {r = 0.01, g = 0.01, b = 0.01, a = 1},
+            duration = 10,
+            spread_duration = 10,
+            fade_away_duration = 10,
+            start_scale = 0.1,
+            end_scale = 0.5
+        },
+    })
+end
+
+if mods["kj_ju87"] then
+    data:extend({
+        trivial_smoke
+        {
+            name = "kj_ju87_smoke",
+            color = {r = 0.01, g = 0.01, b = 0.01, a = 1},
+            duration = 10,
+            spread_duration = 10,
+            fade_away_duration = 10,
+            start_scale = 0.1,
+            end_scale = 0.5
+        },
+
+        {
+            type = "gun",
+            name = "kj_ju87_machinegun",
+            icon = "__base__/graphics/icons/submachine-gun.png",
+            icon_size = 64,
+            hidden = true,
+            subgroup = "gun",
+            order = "e[ju87machinegun]",
+            attack_parameters =
+            {
+                type = "projectile",
+                ammo_category = "kj_plane_lcal",
+                cooldown = 4,
+                movement_slow_down_factor = 0.5,
+                shell_particle = data.raw["gun"]["tank-machine-gun"].attack_parameters.shell_particle,
+                range = 10,
+                sound = data.raw["gun"]["tank-machine-gun"].attack_parameters.sound
+            },
+            stack_size = 1
+        },
+
+        {
+            type = "gun",
+            name = "kj_ju87_small_bomb",
+            icon = "__kj_vehicles__/graphics/bomb.png",
+            icon_size = 128,
+            hidden = true,
+            subgroup = "gun",
+            order = "j[ju87]-a[small bomb]",
+            attack_parameters =
+            {
+                type = "projectile",
+                ammo_categories = {"kj_plane_50"},
+                cooldown = 0,
+                health_penalty = -10,
+                projectile_creation_distance = 0,
+                projectile_center = {0, 0},
+                range = 10,
+                sound = {
+                    filename = "__base__/sound/metallic-chest-open.ogg",
+                    volume = 0.6,
+                },
+            },
+            stack_size = 1
+        },
+
+        {
+            type = "gun",
+            name = "kj_ju87_big_bomb",
+            icon = "__kj_vehicles__/graphics/bomb.png",
+            icon_size = 128,
+            hidden = true,
+            subgroup = "gun",
+            order = "j[ju87]-b[big bomb]",
+            attack_parameters =
+            {
+                type = "projectile",
+                ammo_categories = {"kj_plane_50", "kj_plane_250", "kj_plane_500"},
+                cooldown = 0,
+                health_penalty = -10,
+                projectile_creation_distance = 0,
+                projectile_center = {0, 0},
+                range = 10,
+                sound = {
+                    filename = "__base__/sound/artillery-open.ogg",
+                    volume = 0.6,
+                },
+            },
+            stack_size = 1
+        },
+    })
+end
+
+if mods["kj_jug38"] then
+    data:extend({
+        trivial_smoke
+        {
+            name = "kj_jug38_smoke",
+            color = {r = 0.01, g = 0.01, b = 0.01, a = 1},
+            duration = 10,
+            spread_duration = 10,
+            fade_away_duration = 10,
+            start_scale = 0.1,
+            end_scale = 0.5
+        },
+    })
+end
+
+if mods["kj_xb35"] then
+    data:extend({
+        {
+            type = "gun",
+            name = "kj_xb35_bombs",
+            icon = "__kj_vehicles__/graphics/bomb.png",
+            icon_size = 128,
+            hidden = true,
+            subgroup = "gun",
+            order = "xb35[xb35]-b[bombs]",
+            attack_parameters =
+            {
+                type = "projectile",
+                ammo_categories = {"kj_plane_50", "kj_plane_250", "kj_plane_500", "kj_plane_1000", "kj_plane_napalm", "kj_plane_atom"},
+                cooldown = 0,
+                health_penalty = -10,
+                projectile_creation_distance = 0,
+                projectile_center = {0, 0},
+                range = 30,
+                sound =
+                    {
+                        filename = "__base__/sound/artillery-open.ogg",
+                        volume = 0.6,
+                    },
+            },
+            stack_size = 1
         },
     })
 end

@@ -268,6 +268,24 @@ if mods["kj_phalanx"] then
 	data.raw["ammo-turret"]["kj_phalanx"].attack_target_mask = {"air-unit", "flying"}
 end
 
+for name, entry in pairs(tables.techRequisites) do
+	if mods[name] then
+		for _, nameReq in pairs(entry.pres) do
+			if mods[nameReq] then
+				data.raw["technology"][name].prerequisites = {nameReq}
+				data.raw["technology"][name].unit.count = entry.multiplicator * data.raw["technology"][name].unit.count
+
+				if entry.additional ~= nil then
+					for _, add in pairs(entry.additional) do
+						table.insert(data.raw["technology"][name].prerequisites, add)
+					end
+				end
+				break
+			end
+		end
+	end
+end
+
 local function changeRecipe(recipe, setting)
 	if data.raw["recipe"][recipe] ~= nil then
 		for _, ingredient in ipairs(data.raw["recipe"][recipe].ingredients) do
@@ -287,7 +305,18 @@ for _, change in pairs(tables.recipeChanges) do
 				changeRecipe(entry.recipe, entry.setting)
 			end
 		else
-			changeRecipe(change.recipe, change.setting)
+			--log("Recipe: "..change.recipe)
+			local name = change.modname
+			local setting = change.modname.."_cost_setting_multiplicator"
+			
+			if change.recipe ~= nil then
+				name = change.recipe
+			end
+			if change.setting ~= nil then
+				setting = change.setting
+			end
+
+			changeRecipe(name, setting)
 		end
 	end
 end

@@ -201,6 +201,75 @@ local technologies = {
 		unit = {200,30,1,1,1,1,0,0,0}
 	},
 
+	{
+		modname = "kj_747",
+		recipes = {"kj_747"},
+		prerequisites = {"kj_gasoline", "low-density-structure"},
+		unit = {1000,30,1,1,1,1,0,0,0}
+	},
+
+	{
+		modname = "kj_b17",
+		recipes = {"kj_b17", "kj_plane_50", "kj_plane_250", "kj_plane_500", "kj_plane_1000", "kj_plane_napalm", "kj_plane_lcal"},
+		prerequisites = {"military-3", "kj_gasoline", "low-density-structure"},
+		unit = {650,40,1,1,1,1,0,0,0}
+	},
+
+	{
+		modname = "kj_b29",
+		recipes = {"kj_b29", "kj_plane_50", "kj_plane_250", "kj_plane_500", "kj_plane_1000", "kj_plane_atom", "kj_plane_napalm", "kj_plane_lcal"},
+		prerequisites = {"military-3", "kj_gasoline", "low-density-structure"},
+		unit = {900,40,1,1,1,1,0,0,0}
+	},
+
+	{
+		modname = "kj_b2",
+		recipes = {"kj_b2", "kj_plane_50", "kj_plane_250", "kj_plane_500", "kj_plane_1000", "kj_plane_napalm", "kj_plane_atom"},
+		prerequisites = {"military-4", "kj_gasoline", "low-density-structure"},
+		unit = {1500,50,1,1,1,1,0,1,0}
+	},
+
+	{
+		modname = "kj_bf109",
+		recipes = {"kj_bf109", "kj_plane_lcal", "kj_plane_hcal"},
+		prerequisites = {"military-3", "kj_gasoline", "low-density-structure"},
+		unit = {350,30,1,1,1,1,0,0,0}
+	},
+
+	{
+		modname = "kj_ho229",
+		recipes = {"kj_ho229", "kj_plane_lcal", "kj_plane_hcal"},
+		prerequisites = {"military-3", "kj_gasoline", "low-density-structure"},
+		unit = {500,30,1,1,1,1,0,0,0}
+	},
+
+	{
+		modname = "kj_ju52",
+		recipes = {"kj_ju52"},
+		prerequisites = {"lubricant", "kj_gasoline", "low-density-structure"},
+		unit = {350,20,1,1,1,1,0,0,0}
+	},
+
+	{
+		modname = "kj_ju87",
+		recipes = {"kj_ju87", "kj_plane_50", "kj_plane_250", "kj_plane_500", "kj_plane_1000", "kj_plane_lcal"},
+		prerequisites = {"military-3", "kj_gasoline", "low-density-structure"},
+		unit = {500,30,1,1,1,1,0,0,0}
+	},
+
+	{
+		modname = "kj_jug38",
+		recipes = {"kj_jug38"},
+		prerequisites = {"military-3", "kj_gasoline", "low-density-structure"},
+		unit = {600,20,1,1,1,1,0,0,0}
+	},
+
+	{
+		modname = "kj_xb35",
+		recipes = {"kj_xb35", "kj_plane_50", "kj_plane_250", "kj_plane_500", "kj_plane_1000", "kj_plane_napalm", "kj_plane_atom"},
+		prerequisites = {"military-3", "kj_gasoline", "low-density-structure"},
+		unit = {1000,50,1,1,1,1,0,0,0}
+	},
 }
 
 local sciencePacks = {
