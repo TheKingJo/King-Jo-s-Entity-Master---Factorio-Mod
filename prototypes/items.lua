@@ -1205,30 +1205,6 @@ if mods["kj_panzer4"] then
 end
 
 if mods["kj_rex"] then
-    local boltersounds =
-    {
-        {
-            filename = "__kj_rex__/sounds/bolter1.ogg",
-            volume = 0.57
-        },
-        {
-            filename = "__kj_rex__/sounds/bolter2.ogg",
-            volume = 0.57
-        },
-        {
-            filename = "__kj_rex__/sounds/bolter3.ogg",
-            volume = 0.57
-        },
-        {
-            filename = "__kj_rex__/sounds/bolter4.ogg",
-            volume = 0.57
-        },
-        {
-            filename = "__kj_rex__/sounds//bolter5.ogg",
-            volume = 0.57
-        }
-    }
-
     local shoot_shiftings_cannon = {
         {0.0000, util.by_pixel(251.0 ,-644.0)},
         {0.0078, util.by_pixel(270.0 ,-640.0)},
@@ -1664,10 +1640,11 @@ if mods["kj_ray"] then
         },
     })
 
-    local highestNumber = "0"
+    local highestNumber = 0
     for _,layer in pairs(data.raw["collision-layer"]) do
         if layer.order ~= nil then
-            highestNumber = math.max(highestNumber, layer.order)
+            log(highestNumber.." - Ray Col Layer  "..layer.name.."  order: "..layer.order)
+            highestNumber = math.max(highestNumber, tonumber(layer.order))
         end
     end
     data:extend({
@@ -1677,8 +1654,6 @@ if mods["kj_ray"] then
 end
 
 if mods["kj_swspeeder"] then
-    local sounds = require("__base__/prototypes/entity/sounds.lua")
-    local hit_effects = require ("__base__/prototypes/entity/hit-effects.lua")
     local blasterStrength = settings.startup["kj_swspeeder_blaster_strength"].value
 
     data:extend({
