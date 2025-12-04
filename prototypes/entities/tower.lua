@@ -100,7 +100,7 @@ data:extend({
 			type = "projectile",
 			ammo_category = "bullet",
 			cooldown = 8,
-			turn_range = 0.24,
+			turn_range = 0.23,
 			movement_slow_down_factor = 0.7,
 			projectile_creation_distance = 1.5,
 			projectile_center = {0, -6},

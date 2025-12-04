@@ -111,6 +111,7 @@ data:extend({
 		alert_when_attacking = true,
 		open_sound = {filename = "__base__/sound/artillery-open.ogg", volume = 0.7},
 		close_sound = {filename = "__base__/sound/artillery-close.ogg", volume = 0.7},
+
 		graphics_set =
 		{
 			base_visualisation =
@@ -131,7 +132,7 @@ data:extend({
 			type = "projectile",
 			ammo_category = "bullet",
 			cooldown = 4,
-			turn_range = 1/4,
+			turn_range = 0.23,
 			movement_slow_down_factor = 0.7,
 			projectile_creation_distance = 4.4,
 			projectile_center = {0, 0},
