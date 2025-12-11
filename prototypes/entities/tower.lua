@@ -80,11 +80,30 @@ data:extend({
 			{
 				animation =
 				{
-					layers =
-					{
-						utils.layerMaker(modname, "", "tower", 1800, {1,1,4}, {1,1}, 4, 1),
-						utils.layerMaker(modname, "", "tower", 1800, {1,1,4}, {1,1}, 4, 2),
-					}
+					north = {
+						layers = {
+							utils.spriteMaker(modname, "", "tower", 1800, 0, {1,1,4}, 1),
+							utils.spriteMaker(modname, "", "tower", 1800, 0, {1,1,4}, 2),
+						},
+					},
+					east = {
+						layers = {
+							utils.spriteMaker(modname, "", "tower", 1800, 1, {1,1,4}, 1),
+							utils.spriteMaker(modname, "", "tower", 1800, 1, {1,1,4}, 2),
+						},
+					},
+					south = {
+						layers = {
+							utils.spriteMaker(modname, "", "tower", 1800, 2, {1,1,4}, 1),
+							utils.spriteMaker(modname, "", "tower", 1800, 2, {1,1,4}, 2),
+						},
+					},
+					west = {
+						layers = {
+							utils.spriteMaker(modname, "", "tower", 1800, 3, {1,1,4}, 1),
+							utils.spriteMaker(modname, "", "tower", 1800, 3, {1,1,4}, 2),
+						},
+					},
 				},
 			},
 		},
@@ -100,7 +119,7 @@ data:extend({
 			type = "projectile",
 			ammo_category = "bullet",
 			cooldown = 8,
-			turn_range = 0.24,
+			turn_range = 0.25,
 			movement_slow_down_factor = 0.7,
 			projectile_creation_distance = 1.5,
 			projectile_center = {0, -6},

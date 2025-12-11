@@ -798,3 +798,8 @@ if mods["aai-programmable-vehicles"] then
 		end	
 	end
 end
+
+if mods["Krastorio2"] or mods["Krastorio2-spaced-out"] then
+	log("Krastorio2 detected. Loading modules.")
+	require("prototypes._compat_krastorio2_equipment")
+end

@@ -111,19 +111,45 @@ data:extend({
 		alert_when_attacking = true,
 		open_sound = {filename = "__base__/sound/artillery-open.ogg", volume = 0.7},
 		close_sound = {filename = "__base__/sound/artillery-close.ogg", volume = 0.7},
+
 		graphics_set =
 		{
 			base_visualisation =
 			{
-				animation = util.empty_animation(1)
+				animation =
+				{
+					north = {
+						layers = {
+							utils.spriteMaker(modname, "", "bunker", 1200, 0, {1,1,4}, 1),
+							utils.spriteMaker(modname, "", "bunker", 1200, 0, {1,1,4}, 2),
+						},
+					},
+					east = {
+						layers = {
+							utils.spriteMaker(modname, "", "bunker", 1200, 1, {1,1,4}, 1),
+							utils.spriteMaker(modname, "", "bunker", 1200, 1, {1,1,4}, 2),
+						},
+					},
+					south = {
+						layers = {
+							utils.spriteMaker(modname, "", "bunker", 1200, 2, {1,1,4}, 1),
+							utils.spriteMaker(modname, "", "bunker", 1200, 2, {1,1,4}, 2),
+						},
+					},
+					west = {
+						layers = {
+							utils.spriteMaker(modname, "", "bunker", 1200, 3, {1,1,4}, 1),
+							utils.spriteMaker(modname, "", "bunker", 1200, 3, {1,1,4}, 2),
+						},
+					},
+				},
 			},
 		},
 		folded_animation =
 		{
 			layers =
 			{
-				utils.layerMaker(modname, "", "bunker", 1200, {1,1,4}, {1,1}, 4, 1),
-				utils.layerMaker(modname, "", "bunker", 1200, {1,1,4}, {1,1}, 4, 2),
+				util.empty_animation(1),
 			},
 		},
 		attack_parameters =
@@ -131,7 +157,7 @@ data:extend({
 			type = "projectile",
 			ammo_category = "bullet",
 			cooldown = 4,
-			turn_range = 1/4,
+			turn_range = 0.25,
 			movement_slow_down_factor = 0.7,
 			projectile_creation_distance = 4.4,
 			projectile_center = {0, 0},
