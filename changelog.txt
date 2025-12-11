@@ -1,14 +1,23 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.5
+Date: 12.12.2025
+  Changes:
+    - Added Krastorio2 (Spaced Out) support for equipment grid categories
+    - cars item tab category icon changed
+  Bugfixes:
+    - wrong B29 locale
+    - bunker and tower sprite flickering when shooting enemies at the edges
+---------------------------------------------------------------------------------------------------
 Version: 2.1.4
 Date: 08.10.2025
   Changes:
     - Lamborghini Countach now supports player color tinted underground light
-  Fixes:
+  Bugfixes:
     - fixed error with space exploration and leopard 2a6
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.3
 Date: 18.09.2025
-  Fixes:
+  Bugfixes:
     - truck shadow position adjusted
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.2
@@ -18,12 +27,12 @@ Date: 18.09.2025
     - hid cybertruck battery recharge recipes in hand crafting
     - changed some vehicle tech costs
     - moved road graphics from war rig to this mod
-  Fixes:
+  Bugfixes:
     - Ford Mustang has idle sound again
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.1
 Date: 15.08.2025
-  Fixes:
+  Bugfixes:
     - laser cannon now only works when power is on
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.0
@@ -36,7 +45,7 @@ Version: 2.0.28
 Date: 28.06.2025
   Changes:
     - added min range to watchtower
-  Fixes:
+  Bugfixes:
     - watchtower not changing direction in edge cases anymore
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.27
@@ -48,12 +57,12 @@ Version: 2.0.26
 Date: 02.04.2025
   Changes:
     - removed some log messages
-  Fixes:
+  Bugfixes:
     - error related to 40k bunker and turret version referencing to same ingredients and other mods making concrete a fluid
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.25
 Date: 22.03.2025
-  Fixes:
+  Bugfixes:
     - fixed typo that led to crash when having rail adding mods installed
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.24
@@ -75,12 +84,12 @@ Version: 2.0.22
 Date: 21.02.2025
   Changes:
     - first step for reworked ammo recipes and damages
-  Fixes:
+  Bugfixes:
     - error related to not having ho 229 mod enabled but tech requisiting it
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.21
 Date: 20.02.2025
-  Fixes:
+  Bugfixes:
     - changed fresnel recipe to be actually craftable
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.20
@@ -96,7 +105,7 @@ Date: 09.02.2025
     - changed weight and stack size of some entitie items and ammmos
     - changed speeder recipe
     - changed pak and bunker energy source to void
-  Fixes:
+  Bugfixes:
     - rex railgun animation is now glow
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.18
@@ -106,7 +115,7 @@ Date: 04.02.2025
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.17
 Date: 31.01.2025
-  Fixes:
+  Bugfixes:
     - error that came with having only ratte / ray / rex enabled and the mod category option on
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.16
@@ -116,17 +125,17 @@ Date: 21.01.2025
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.15
 Date: 18.01.2025
-  Fixes:
+  Bugfixes:
     - still the same error
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.14
 Date: 18.01.2025
-  Fixes:
+  Bugfixes:
     - an error in connection with the metal gear ray
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.13
 Date: 18.01.2025
-  Fixes:
+  Bugfixes:
     - an error in connection with the war rig
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.12
@@ -134,19 +143,19 @@ Date: 17.01.2025
   Changes:
     - modname and thumbnail
     - established AAI compatibility again
-  Fixes:
+  Bugfixes:
     - some errors in connection with AAI and the wh40k bunker
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.11
 Date: 12.01.2025
-  Fixes:
+  Bugfixes:
     - typo
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.10
 Date: 12.01.2025
   Changes:
     - added support for pre industrial warfare
-  Fixes:
+  Bugfixes:
     - B-29 rotor animation now in right direction
     - planes now receive trigger_target_mask to be targetable by AA guns
     - character is no longer air unit or flying since cars can be targeted by default now
@@ -174,7 +183,7 @@ Date: 26.11.2024
     - transferred the settings of vierling and phalanx to this mod
     - locale adjustments
     - unique ammo category icon added for vierling and phalanx
-  Fixes:
+  Bugfixes:
     - (re)added dreadnought german locale
     - Leopard 2A6 ammo getting tech upgrades again
 ---------------------------------------------------------------------------------------------------
@@ -182,7 +191,7 @@ Version: 2.0.5
 Date: 24.11.2024
   Changes:
     - added support for vierling, phalanx, watchtower, bunker
-  Fixes:
+  Bugfixes:
     - dreadnought using correct damages now
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.4
@@ -190,23 +199,23 @@ Date: 21.11.2024
   Changes:
     - bolter ammo now sorted in wh40k category
     - Dreadnought updated to 2.0
-  Fixes:
+  Bugfixes:
     - fixed Ray water variant animation speed
     - bolter recipe now gives only 1 result
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.3
 Date: 21.11.2024
-  Fixes:
+  Bugfixes:
     - minor spelling mistake that led to error
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.2
 Date: 21.11.2024
-  Fixes:
+  Bugfixes:
     - added an error message for non existing recipes
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.1
 Date: 20.11.2024
-  Fixes:
+  Bugfixes:
     - minor logic error
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.0
