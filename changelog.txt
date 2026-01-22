@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.6
+Date: 22.01.2026
+  Changes:
+    - The following turrets can't be placed in space anymore: Warhammer 40K Bunker, PaK, Tower, Vierling Flak, Ballista, Phalanx AA variant
+---------------------------------------------------------------------------------------------------
 Version: 2.1.5
 Date: 12.12.2025
   Changes:

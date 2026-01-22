@@ -78,7 +78,7 @@ data:extend({
     open_sound = {filename = "__base__/sound/artillery-open.ogg", volume = 0.7 },
     close_sound = {filename = "__base__/sound/artillery-close.ogg", volume = 0.7 },
   },
-  
+
   {
 	type = "ammo-turret",
     name = "kj_pak_turret",

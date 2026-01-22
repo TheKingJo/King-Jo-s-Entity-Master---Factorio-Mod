@@ -165,6 +165,13 @@ end
 
 if mods["kj_40kbunker"] then
 	data.raw["car"]["kj_40kbunker"].sound_no_fuel = nil
+
+	data.raw["ammo-turret"]["kj_40kbunker_turret"].surface_conditions = {
+		{
+			property = "gravity",
+			min = 0.1,
+		}
+	}
 end
 
 if mods["kj_40kbaneblade"] then
@@ -240,6 +247,15 @@ if mods["kj_maustank"] then
 	table.insert(data.raw["technology"]["kj_maustank"].prerequisites, prerequisites_mod)
 end
 
+if mods["kj_pak"] then
+	data.raw["ammo-turret"]["kj_pak_turret"].surface_conditions = {
+		{
+			property = "gravity",
+			min = 0.1,
+		}
+	}
+end
+
 if mods["kj_rattetank"] then
 	if mods["kj_maustank"] then
 		prerequisites_mod = "kj_maustank"
@@ -247,6 +263,15 @@ if mods["kj_rattetank"] then
 		prerequisites_mod = "tank"
 	end
 	table.insert(data.raw["technology"]["kj_rattetank"].prerequisites, prerequisites_mod)
+end
+
+if mods["kj_tower"] then
+	data.raw["ammo-turret"]["kj_tower"].surface_conditions = {
+		{
+			property = "gravity",
+			min = 0.1,
+		}
+	}
 end
 
 if mods["kj_utilitarian"] then
@@ -277,6 +302,13 @@ if mods["kj_vierling"] then
 			end
 		end
 	end
+
+	data.raw["ammo-turret"]["kj_vierling"].surface_conditions = {
+		{
+			property = "gravity",
+			min = 0.1,
+		}
+	}
 end
 
 if mods["kj_medieval_warfare"] then
@@ -336,6 +368,12 @@ if mods["kj_medieval_warfare"] then
 		end
 	end
 	data.raw["ammo-turret"]["kj_ballista"].attack_target_mask = {"air-unit", "flying"}
+	data.raw["ammo-turret"]["kj_ballista"].surface_conditions = {
+		{
+			property = "gravity",
+			min = 0.1,
+		}
+	}
 end
 
 if mods["kj_phalanx"] then
@@ -346,6 +384,12 @@ if mods["kj_phalanx"] then
 	end
 
 	data.raw["ammo-turret"]["kj_phalanx"].attack_target_mask = {"air-unit", "flying"}
+	data.raw["ammo-turret"]["kj_phalanx"].surface_conditions = {
+		{
+			property = "gravity",
+			min = 0.1,
+		}
+	}
 end
 
 for name, entry in pairs(tables.techRequisites) do
