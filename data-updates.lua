@@ -28,6 +28,36 @@ local function establishAA()
 	})
 
 	if settingTM == true then
+		if mods["space-exploration"] then
+			local types = {"small", "medium", "large"}
+
+			data:extend({
+				{
+					type = "trigger-target-type",
+					name = "asteroid",
+				},
+			})
+
+			for _, type in ipairs(types) do
+				table.insert(data.raw["car"]["se-spaceship-obstacle-"..type.."-vehicle"].trigger_target_mask, "asteroid")
+				table.insert(data.raw["car"]["se-spaceship-obstacle-debris-"..type.."-vehicle"].trigger_target_mask, "asteroid")
+
+				for i = 0, 50, 1 do
+					local name = "se-spaceship-obstacle-"..type.."-static-"..i
+					if data.raw["simple-entity"][name] ~= nil then
+
+						if data.raw["simple-entity"][name].trigger_target_mask == nil then
+							data.raw["simple-entity"][name].trigger_target_mask = {"asteroid"}
+						else
+							table.insert(data.raw["simple-entity"][name].trigger_target_mask, "asteroid")
+						end
+					else
+						log(name.." does not exist!")
+					end
+				end
+			end
+		end
+
 		types = {}
 		for name, _ in pairs(data.raw["trigger-target-type"]) do
 			if name ~= "air-unit" and name ~= "flying" then
