@@ -31,6 +31,17 @@ if mods["kj_40kdreadnought"] then
         },
     })
 end
+if mods["kj_bradley"] then
+    data:extend({
+        {
+            type = "equipment-grid",
+            name = "kj_bradley",
+            width = 6,
+            height = 4,
+            equipment_categories = {"armor"}
+        },
+    })
+end
 if mods["kj_cybertruck"] then
     data:extend({
         {

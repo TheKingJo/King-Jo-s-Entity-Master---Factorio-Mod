@@ -73,7 +73,7 @@ data:extend({
         volume = 0.4
       }
     },
-    open_sound = { filename = "__base__/sound/fight/tank-door-open.ogg", volume=0.48 },
-    close_sound = { filename = "__base__/sound/fight/tank-door-close.ogg", volume = 0.43 },
+    open_sound = {filename = "__base__/sound/fight/tank-door-open.ogg", volume = 0.48},
+    close_sound = {filename = "__base__/sound/fight/tank-door-close.ogg", volume = 0.43},
   },
 })

@@ -90,6 +90,12 @@ if modsCount > categoryTrigger or settings.startup["kj_modCategory"].value == tr
 		data.raw["ammo"]["kj_predator_normal"].subgroup = tables.categoriesUpdates["kj_40kpredator"].name
 	end
 
+	if mods["kj_bradley"] then
+		data.raw["item-subgroup"]["kj_tanks"].group = "kj_vehicles"
+		data.raw["item-with-entity-data"]["kj_bradley"].subgroup = tables.categoriesUpdates["kj_bradley"].name
+		data.raw["ammo"]["kj_m242_he"].subgroup = tables.categoriesUpdates["kj_bradley"].name
+	end
+
 	if mods["kj_maustank"] then
 		data.raw["item-subgroup"]["kj_tanks"].group = "kj_vehicles"
 		data.raw["item-with-entity-data"]["kj_maustank"].subgroup = tables.categoriesUpdates["kj_maustank"].name
@@ -485,6 +491,23 @@ if mods["kj_40kpredator"] then
 			time = 30
 		}
 		data.raw["technology"]["kj_40kpredator"].prerequisites = {"tank", "kj_gasoline"}	
+	end
+end
+
+if mods["kj_bradley"] then
+	if mods["space-exploration"] then
+		data.raw["technology"]["kj_bradley"].unit =
+		{
+			count = 900,
+			ingredients =
+			{
+				{"automation-science-pack", 1},
+				{"logistic-science-pack", 1},
+				{"chemical-science-pack", 1},
+				{"military-science-pack", 1},
+			},
+			time = 30
+		}
 	end
 end
 

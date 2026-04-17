@@ -28,7 +28,7 @@ local function establishAA()
 	})
 
 	if settingTM == true then
-		if mods["space-exploration"] then
+		--[[if mods["space-exploration"] then
 			local types = {"small", "medium", "large"}
 
 			data:extend({
@@ -56,7 +56,7 @@ local function establishAA()
 					end
 				end
 			end
-		end
+		end]]
 
 		types = {}
 		for name, _ in pairs(data.raw["trigger-target-type"]) do

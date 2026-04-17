@@ -36,6 +36,13 @@ local technologies = {
 	},
 
 	{
+		modname = "kj_bradley",
+		recipes = {"kj_bradley", "kj_m242_he"},
+		prerequisites = {"kj_gasoline", "tank"},
+		unit = {900,30,1,1,1,1,0,0,0}
+	},
+
+	{
 		modname = "kj_maustank",
 		recipes = {"kj_maustank", "kj_120kwk_ap", "kj_120kwk_he", "kj_120kwk_aphe", "kj_mg42_hand"},
 		prerequisites = {"kj_gasoline"},

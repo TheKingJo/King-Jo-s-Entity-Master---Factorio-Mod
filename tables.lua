@@ -5,11 +5,12 @@ tables.supportedMods = {
 	kj_40kdreadnought =	{name = "dreadnought", 	car = true,		weight = 2,		order = "2[military]-40k-4"},
 	kj_40klemanruss = 	{name = "lemanruss", 	car = true,		weight = 2,		order = "2[military]-40k-2"},
 	kj_40kpredator = 	{name = "predator", 	car = true,		weight = 2,		order = "2[military]-40k-1"},
+	kj_bradley =		{name = "bradley", 		car = true,		weight = 2,		order = "2[military]-p6"},
 	kj_maustank = 		{name = "maus", 		car = true,		weight = 4,		order = "2[military]-p4"},
 	kj_pak = 			{name = "pak", 			car = true,		weight = 5,		order = "2[military]-p1"},
 	kj_panzer4 = 		{name = "panzer4", 		car = true,		weight = 4,		order = "2[military]-p2"},
 	kj_rex = 			{name = "rex", 			car = true,		weight = 2,		order = "2[military]-ra"},
-	kj_rattetank = 		{name = "ratte", 		car = true,		weight = 4,		order = "2[military]-p6"},
+	kj_rattetank = 		{name = "ratte", 		car = true,		weight = 4,		order = "2[military]-p7"},
 	kj_ray = 			{name = "ray", 			car = true,		weight = 4,		order = "2[military]-re"},
 	kj_swspeeder = 		{name = "swspeeder", 	car = true,		weight = 1,		order = "2[military]-s"},
 	kj_wirbelwind = 	{name = "wirbelwind", 	car = true,		weight = 2,		order = "2[military]-p3"},
@@ -55,6 +56,7 @@ tables.balancedModsRecipe = {
 	kj_40kpredator = {true, true},
 	kj_aventador = true,
 	kj_bulldozer = true,
+	kj_bradley = {true, true},
 	kj_countach = true,
 	kj_cybertruck = true,
 	kj_delorean = true,
@@ -100,6 +102,7 @@ tables.balancedMods = {
 	kj_40kdreadnought = true,
 	kj_40klemanruss = 	true,
 	kj_40kpredator = 	true,
+	kj_bradley = 		true,
 	kj_maustank = 		true,
 	kj_pak = 			{{name = "kj_pak"}, {name = "kj_pak_turret"}},
 	kj_panzer4 = 		true,
@@ -266,6 +269,12 @@ tables.recipeChanges = {
 		}
 	},
 
+	{modname = "kj_bradley", entries = {
+			{recipe = "kj_bradley", setting = "kj_bradley_cost_setting_multiplicator"},
+			{recipe = "kj_m242_he", setting = "kj_bradleyammo_cost_setting_multiplicator"},
+		}
+	},
+
 	{modname = "kj_maustank", entries = {
 			{recipe = "kj_maustank", setting = "kj_maustank_cost_setting_multiplicator"},
 			{recipe = "kj_120kwk_ap", setting = "kj_maustankammo_cost_setting_multiplicator"},
@@ -396,6 +405,7 @@ tables.categories = {
 	{modname = "kj_40kdreadnought", name = "kj_dreadnought_cannon",  order = "kj-40k-4",    type = "ammo-category", icon = "cannon"},
 	{modname = "kj_40klemanruss",   name = "kj_lemanruss",           order = "kj-40k-2",    type = "ammo-category", icon = "cannon"},
 	{modname = "kj_40kpredator",    name = "kj_predator",            order = "kj-40k-1",    type = "ammo-category", icon = "cannon"},
+	{modname = "kj_bradley",        name = "kj_m242",                order = "kj-p8",       type = "ammo-category", icon = "cannon"},
 	{modname = "kj_maustank",       name = "kj_128kwk",              order = "kj-p6",       type = "ammo-category", icon = "cannon"},
 	{modname = "kj_pak",                                             order = "kj-p1",       type = "ammo-category", icon = "cannon"},
 	{modname = "kj_panzer4",        name = "kj_75kwk40",             order = "kj-p2",       type = "ammo-category", icon = "cannon"},
@@ -421,6 +431,7 @@ tables.categoriesUpdates = {
 	kj_40kdreadnought = {modname = "kj_40kdreadnought", name = "kj_wh40k",			order = "e", group = "logistics", type = "item-subgroup"},
 	kj_40klemanruss = 	{modname = "kj_40klemanruss",   name = "kj_wh40k",			order = "e", group = "logistics", type = "item-subgroup"},
 	kj_40kpredator = 	{modname = "kj_40kpredator",    name = "kj_wh40k",			order = "e", group = "logistics", type = "item-subgroup"},
+	kj_bradley = 		{modname = "kj_bradley",		name = "kj_tanks",			order = "d", group = "logistics", type = "item-subgroup"},
 	kj_maustank = 		{modname = "kj_maustank",       name = "kj_tanks",			order = "d", group = "logistics", type = "item-subgroup"},
 	kj_pak = 			{modname = "kj_pak",            name = "kj_tanks",			order = "d", group = "logistics", type = "item-subgroup"},
 	kj_panzer4 = 		{modname = "kj_panzer4",        name = "kj_tanks",			order = "d", group = "logistics", type = "item-subgroup"},
@@ -469,6 +480,7 @@ tables.items = {
 	kj_40kdreadnought = {weight = 2000},
 	kj_40klemanruss = 	{weight = 2000},
 	kj_40kpredator = 	{weight = 2000},
+	kj_bradley = 		{weight = 1000},
 	kj_maustank = 		{weight = 2000},
 	kj_pak = 			{														order = "2[military]-p1a"},
 	kj_pak2 = 			{modname = "kj_pak", 			name = "kj_pak_turret", order = "2[military]-p1b",		subgroup = "turret"},
@@ -546,6 +558,8 @@ tables.ammoRecipe = {
 
 		kj_lemanruss_normal = 15,
 
+		kj_m242_he = 5,
+
 		kj_pak_ap = 10,
 		kj_pak_he = 9,
 		kj_pak_inc = 9,
@@ -571,6 +585,8 @@ tables.ammoRecipe = {
 		kj_40kdreadnought_normal = 4,
 
 		kj_lemanruss_normal = 6,
+
+		kj_m242_he = 2,
 
 		kj_120kwk_ap = 4,
 		kj_120kwk_he = 4,
@@ -612,6 +628,8 @@ tables.ammoRecipe = {
 
 		kj_lemanruss_normal = 6,
 
+		kj_m242_he = 1,
+
 		kj_120kwk_ap = 4,
 		kj_120kwk_he = 4,
 		kj_120kwk_aphe = 4,
@@ -649,6 +667,8 @@ tables.ammoRecipe = {
 		kj_40kdreadnought_normal = 4,
 
 		kj_lemanruss_normal = 4,
+
+		kj_m242_he = 1,
 
 		kj_120kwk_ap = 3,
 		kj_120kwk_he = 4,
@@ -722,6 +742,12 @@ tables.recipes = {
 		{type = "item", name = "engine-unit", 			amount = 100},
 		{type = "item", name = "iron-gear-wheel", 		amount = 100},
 		{type = "item", name = "steel-plate", 			amount = 225},
+	},
+	kj_bradley = {
+		{type = "item", name = "advanced-circuit", 		amount = 30},
+		{type = "item", name = "engine-unit", 			amount = 50},
+		{type = "item", name = "iron-gear-wheel", 		amount = 50},
+		{type = "item", name = "steel-plate", 			amount = 100},
 	},
 	kj_maustank = {
 		{type = "item", name = "advanced-circuit", 		amount = 50},
@@ -1003,6 +1029,8 @@ tables.ammos = {
 
 		kj_lemanruss_normal = 50,
 
+		kj_m242_he = 200,
+
 		kj_120kwk_ap = 50,
 		kj_120kwk_he = 50,
 		kj_120kwk_aphe = 50,
@@ -1051,6 +1079,8 @@ tables.ammos = {
 
 		kj_lemanruss_normal = 20,
 
+		kj_m242_he = 20,
+
 		kj_120kwk_ap = 40,
 		kj_120kwk_he = 40,
 		kj_120kwk_aphe = 50,
@@ -1089,6 +1119,8 @@ tables.ammos = {
 
 		kj_ballista_normal = 64,
 
+		kj_m242_he = 80,
+
 		kj_apds_normal = 128,
 
 		kj_2cmfv_normal_vierling = 80,
@@ -1101,6 +1133,8 @@ tables.ammos = {
 
 		kj_ballista_normal = 5,
 
+		kj_m242_he = 5,
+
 		kj_apds_normal = 1500,
 
 		kj_2cmfv_normal_vierling = 5,
@@ -1108,6 +1142,7 @@ tables.ammos = {
 	},
 	category = {
 		kj_baneblade_artillery = "artillery",
+		kj_m242_he = "unique",
 		kj_apds_normal_single = "bullet",
 		kj_2cmfv_normal_vierling = "bullet",
 		kj_2cmfv_normal = "bullet",
@@ -1154,6 +1189,11 @@ tables.ammoData = {
 		HEDW = 225,
 		HEAP = 300,
 		HEHE = 500,
+	},
+	kj_bradley = {
+		HEDW = 100,
+		HEAP = 100,
+		HEHE = 100,
 	},
 	kj_maustank = {
 		APDW = 2250,
@@ -1289,6 +1329,7 @@ tables.entityData = {
 		kj_40kdreadnought = 9000,
 		kj_40klemanruss =   8000,
 		kj_40kpredator =    9000,
+		kj_bradley = 	    2000,
 		kj_maustank = 	   10000,
 		kj_pak = 		    1000,
 		kj_panzer4 = 	    5000,
@@ -1336,6 +1377,7 @@ tables.entityData = {
 		kj_40kdreadnought =	{true, true, 0.1},
 		kj_40klemanruss =	{true, true, 0.2},
 		kj_40kpredator = 	{true, true, 0.2},
+		kj_bradley = 	 	{true, false,0.3},
 		kj_maustank = 		{true, true, 0.2},
 		kj_pak = 			{true, false, 0.04},
 		kj_panzer4 = 		{true, true, 0.1},
@@ -1378,6 +1420,7 @@ tables.entityData = {
 		kj_40kdreadnought="5000kW",
 		kj_40klemanruss =  "400kW",
 		kj_40kpredator =  "1000kW",
+		kj_bradley = 	  "1500kW",
 		kj_maustank = 	  "1200kW",
 		kj_pak = 		   "600kW",
 		kj_panzer4 = 	   "500kW",
@@ -1420,6 +1463,7 @@ tables.entityData = {
 		kj_40kdreadnought ="200kW",
 		kj_40klemanruss =  "800kW",
 		kj_40kpredator =  "2000kW",
+		kj_bradley = 	   "600kW",
 		kj_maustank = 	  "1200kW",
 		kj_pak = 		   "250kW",
 		kj_panzer4 = 	   "500kW",
@@ -1462,6 +1506,7 @@ tables.entityData = {
 		kj_40kdreadnought = 50000,
 		kj_40klemanruss =   60000,
 		kj_40kpredator =    44000,
+		kj_bradley =        32000,
 		kj_maustank = 	   100000,
 		kj_pak = 		     3000,
 		kj_panzer4 = 	    25000,
@@ -1504,6 +1549,7 @@ tables.entityData = {
 		kj_40kdreadnought =	{20, 0.005 , 0.2  / 60},
 		kj_40klemanruss =	{30, 0.0035, 0.12 / 60},
 		kj_40kpredator = 	{30, 0.0035, 0.12 / 60},
+		kj_bradley = 		{30, 0.004 , 0.2  / 60},
 		kj_maustank = 		{30, 0.0035, 0.09 / 60},
 		kj_pak = 			{ 5, 0.0025, 0.08 / 60},
 		kj_panzer4 = 		{80, 0.0035, 0.17 / 60},
@@ -1546,6 +1592,7 @@ tables.entityData = {
 		kj_40kdreadnought =	{{ 20, 90}, { 20, 75}, { 20, 70}, { 15, 70}, { 20, 50}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_40klemanruss =	{{ 20, 80}, { 30, 75}, { 20, 70}, { 15, 70}, { 15, 50}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_40kpredator = 	{{ 20, 80}, { 30, 75}, { 20, 70}, { 15, 70}, { 15, 50}, {  0,  0}, {  0,  0}, {  0,  0}},
+		kj_bradley = 	 	{{ 50, 60}, { 30, 60}, { 30, 65}, { 30, 65}, { 20, 60}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_maustank = 		{{ 20, 80}, { 30, 75}, { 20, 70}, { 15, 70}, {  8, 30}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_pak = 			{{ 20, 90}, { 30, 75}, { 20, 60}, { 20, 50}, { 15, 50}, {  0,  0}, {  0,  0}, {  0,  0}},
 		kj_panzer4 = 		{{ 25, 70}, { 20, 60}, { 50, 80}, { 30, 70}, { 10, 40}, {  0,  0}, {  0,  0}, {  0,  0}},
@@ -1593,6 +1640,7 @@ tables.entityData = {
 		kj_40kdreadnought =	{0.001, 0.1, 0.1, 1},
 		kj_40klemanruss =	{0.002, 0.2, 0.07,1},
 		kj_40kpredator = 	{0.002, 0.2, 0.1, 1},
+		kj_bradley = 	 	{0.002, 0.2, 0.1, 1},
 		kj_maustank = 		{0.002, 0.2, 0.1, 1},
 		kj_pak = 			{0.4  ,   1, 0.1, 1},
 		kj_panzer4 = 		{0.002, 0.2, 0.1, 0.9},

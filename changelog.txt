@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.8
+Date: 17.04.2026
+  Bugfixes:
+    - added support for M2 Bradley
+    - Bf-109 and Ho-229 now have their correct recipe lol (it was Leopard 2A6's before - WHY DID NOONE NOTICE)
+---------------------------------------------------------------------------------------------------
 Version: 2.1.7
 Date: 23.01.2026
   Bugfixes:

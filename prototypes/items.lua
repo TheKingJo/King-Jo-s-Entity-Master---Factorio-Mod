@@ -417,7 +417,7 @@ if mods["kj_40kdreadnought"] then
                 {0.9922, util.by_pixel(-105  ,-94   )},
             }
     end
-    
+
     function shoot_shiftings_cannon()
         return
             {
@@ -551,7 +551,7 @@ if mods["kj_40kdreadnought"] then
                 {0.9922, util.by_pixel(57.0  ,-170.5)},
             }
     end
-    
+
     data:extend({
         {
             type = "gun",
@@ -679,9 +679,9 @@ if mods["kj_40kdreadnought"] then
             category = "environment",
             volume = settings.startup["kj_40kdreadnought_walking_volume"].value / 100
         },
-        
-        
-        
+
+
+
         {
             type = "sound",
             name = "kj_40kdreadnought_voiceline_1",
@@ -724,8 +724,8 @@ if mods["kj_40kdreadnought"] then
             category = "environment",
             volume = settings.startup["kj_40kdreadnought_voiceline_volume"].value / 100
         },
-        
-        
+
+
         {
             type = "sound",
             name = "kj_40kdreadnought_getIn",
@@ -919,6 +919,52 @@ if mods["kj_40kpredator"] then
             stack_size = 5
         },
    })
+end
+
+if mods["kj_bradley"] then
+    local m240 = table.deepcopy(data.raw["gun"]["tank-machine-gun"])
+    m240.name = "kj_m240"
+    m240.attack_parameters.projectile_creation_distance = 2
+    --m240.attack_parameters.projectile_center = {0,-1}
+    m240.attack_parameters.cooldown = 5
+    m240.attack_parameters.range = 30
+    m240.order = "[basic-clips]-d[m240]"
+    m240.flags = {}
+    data:extend({m240})
+
+    local tow = table.deepcopy(data.raw["gun"]["rocket-launcher"])
+    tow.name = "kj_tow"
+    tow.attack_parameters.projectile_creation_distance = 2
+    tow.attack_parameters.projectile_center = {0,-1}
+    --tow.attack_parameters.projectile_orientation_offset = 0.75
+    tow.attack_parameters.cooldown = 120
+    tow.attack_parameters.range = 50
+    data:extend({tow})
+
+    data:extend({
+        {
+            type = "gun",
+            name = "kj_m242",
+            icon = "__kj_bradley__/graphics/tower.png",
+            icon_size = 128,
+            hidden = true,
+            subgroup = "gun",
+            order = "z[bradley]-a[cannon]",
+            attack_parameters =
+            {
+                type = "projectile",
+                ammo_category = "kj_m242",
+                cooldown = 20,
+                health_penalty = -5,
+                rotate_penalty = 5,
+                projectile_creation_distance = 3,
+                projectile_center = {0,0},
+                range = 50,
+                sound = data.raw["gun"]["tank-cannon"].attack_parameters.sound,
+            },
+            stack_size = 5
+        }
+    })
 end
 
 if mods["kj_maustank"] then
