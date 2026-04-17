@@ -214,4 +214,76 @@ function functions.layerMaker(modname, folder, name, size, counts, frameSizes, a
     }
 end
 
+functions.car_main_sounds = {
+    {
+        sound = {filename = "__base__/sound/car-engine-driving.ogg", volume = 0.67, modifiers = volume_multiplier("main-menu", 2.2)},
+        match_volume_to_activity = true,
+        activity_to_volume_modifiers =
+        {
+            multiplier = 1.8,
+            offset = 0.95,
+        },
+        match_speed_to_activity = true,
+        activity_to_speed_modifiers =
+        {
+            multiplier = 0.8,
+            minimum = 1.0,
+            maximum = 1.4,
+            offset = 0.1,
+        }
+    },
+    {
+        sound = {filename = "__base__/sound/car-engine.ogg", volume = 0.67},
+        match_volume_to_activity = true,
+        fade_in_ticks = 22,
+        activity_to_volume_modifiers =
+        {
+            multiplier = 2.4,
+            offset = 1.5,
+            inverted = true
+        }
+    },
+}
+
+functions.tank_main_sounds = {
+    {
+        sound = {filename = "__base__/sound/fight/tank-engine-driving.ogg", volume = 0.35, modifiers = volume_multiplier("main-menu", 1.3)},
+        match_volume_to_activity = true,
+        activity_to_volume_modifiers =
+        {
+            multiplier = 4.5,
+            offset = 1.0,
+        },
+        match_speed_to_activity = true,
+        activity_to_speed_modifiers =
+        {
+            multiplier = 3.0,
+            minimum = 1.0,
+            maximum = 1.2,
+            offset = 0.8
+        }
+    },
+    {
+        sound = {filename = "__base__/sound/fight/tank-tracks.ogg", volume = 0.35, modifiers = volume_multiplier("main-menu", 1.3)},
+        match_volume_to_activity = true,
+        activity_to_volume_modifiers =
+        {
+            multiplier = 4.5,
+            offset = 1.0,
+        },
+    },
+    {
+        sound = {filename = "__base__/sound/fight/tank-engine.ogg", volume = 0.67},
+        match_volume_to_activity = true,
+        fade_in_ticks = 22,
+        fade_out_ticks = 4,
+        activity_to_volume_modifiers =
+        {
+            multiplier = 1.75,
+            offset = 1.3,
+            inverted = true
+        }
+    },
+}
+
 return functions

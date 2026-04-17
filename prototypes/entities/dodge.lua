@@ -1,6 +1,6 @@
 local utils = require("utils")
 local modname = "__kj_dodge__"
-local main_sounds = table.deepcopy(data.raw["car"]["car"].working_sound.main_sounds)
+local main_sounds = table.deepcopy(utils.car_main_sounds)
 main_sounds[2].sound = {filename = "__kj_dodge__/sounds/engine.ogg", volume = 0.4}
 main_sounds[2].activity_to_volume_modifiers.multiplier = 1
 main_sounds[2].activity_to_volume_modifiers.offset = 2

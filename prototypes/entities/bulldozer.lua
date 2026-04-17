@@ -1,6 +1,6 @@
 local utils = require("utils")
 local modname = "__kj_bulldozer__"
-local main_sounds = table.deepcopy(data.raw["car"]["tank"].working_sound.main_sounds)
+local main_sounds = table.deepcopy(utils.tank_main_sounds)
 main_sounds[3].sound = {filename = "__kj_bulldozer__/sounds/engine.ogg", volume = 0.7}
 main_sounds[3].fade_in_ticks = 90
 main_sounds[3].fade_out_ticks = 0

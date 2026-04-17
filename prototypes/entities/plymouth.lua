@@ -1,6 +1,6 @@
 local utils = require("utils")
 local modname = "__kj_plymouth__"
-local main_sounds = table.deepcopy(data.raw["car"]["car"].working_sound.main_sounds)
+local main_sounds = table.deepcopy(utils.car_main_sounds)
 local setting = settings.startup["kj_plymouth_color"].value
 main_sounds[2].sound = {filename = "__kj_plymouth__/sounds/engine.ogg", volume = 0.4}
 main_sounds[2].activity_to_volume_modifiers.multiplier = 1

@@ -1,6 +1,6 @@
 local utils = require("utils")
 local modname = "__kj_wirbelwind__"
-local main_sounds = table.deepcopy(data.raw["car"]["tank"].working_sound.main_sounds)
+local main_sounds = table.deepcopy(utils.tank_main_sounds)
 main_sounds[2].activity_to_volume_modifiers.multiplier = 6
 
 data:extend({

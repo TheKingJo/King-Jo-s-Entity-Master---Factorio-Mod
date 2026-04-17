@@ -1,6 +1,6 @@
 local utils = require("utils")
 local modname = "__kj_utilitarian__"
-local main_sounds = table.deepcopy(data.raw["car"]["car"].working_sound.main_sounds)
+local main_sounds = table.deepcopy(utils.car_main_sounds)
 main_sounds[2].sound = {filename = "__kj_utilitarian__/sounds/engine.ogg", volume = 0.4}
 
 data:extend({
