@@ -16,7 +16,7 @@ local function checkAmmos()
 	local count = 0
 	for _, ammo in pairs(ammos) do
 		if data.raw["ammo"][ammo] ~= nil then
-			count = count + 1		
+			count = count + 1
 		end
 	end
 	return count

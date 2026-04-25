@@ -1,7 +1,26 @@
+require("sound-util")
+tables = require("tables").airborneMods
 local functions = {}
 --utils.layerMaker(Modname, Folder, Name, Size, {fc, rc, dc}, {frameWidth, frameHeight}, amount, mode, shift)
 local function mathSign(x)
     return x > 0 and 1 or x < 0 and -1 or 0
+end
+
+functions.wideCars = {
+    "kj_40kbunker",
+    "kj_tower",
+    "kj_747",
+    "kj_b17",
+    "kj_b2",
+    "kj_b29",
+    "kj_ho229",
+    "kj_ju52",
+    "kj_jug38",
+    "kj_xb35",
+}
+
+for name, _ in pairs(tables) do
+    table.insert(functions.wideCars, name.."-airborne")
 end
 
 function functions.ammoRecipe(name)

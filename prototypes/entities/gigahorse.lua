@@ -66,9 +66,8 @@ data:extend({
     {
       layers =
       {
-        utils.layerMaker(modname, "", "gigahorse_axis", 1000, {2,1}, {2,8}, 16, 1), --axis
-        utils.layerMaker(modname, "", "gigahorse", 1000, {1,2}, {8,8}, 2, 1), --base
-        utils.layerMaker(modname, "", "gigahorse", 1000, {2,1}, {2,8}, 16, 2), --shadow
+        utils.layerMaker(modname, "", "gigahorse", 1000, {2,1}, {2,8}, 16, 1), --base
+        utils.layerMaker(modname, "", "gigahorse", 1000, {1,2}, {8,8}, 2, 2), --shadow
       }
     },
     stop_trigger = utils.brakes("tank"),

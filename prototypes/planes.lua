@@ -1025,7 +1025,7 @@ local function ammo(order)
 	)
 
 	::endof::
-	if order == 7 then
+	if order == 8 then
 		return true
 	else
 		return false
