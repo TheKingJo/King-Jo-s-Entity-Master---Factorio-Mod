@@ -918,14 +918,14 @@ local function ammoMG(order)
 end
 
 local function ammo(order)
-	if order == 4 then
+	if order == 4 then --1000 kg ammo
 		bigBoom()
 	end
-	if order == 6 or order == 7 then
+	if order == 6 or order == 7 then --Lcal/HCal ammo
 		ammoMG(order)
 		goto endof
 	end
-	if order == 8 then
+	if order == 8 then --Napalm ammo
 		napalm()
 	end
 
@@ -1025,31 +1025,23 @@ local function ammo(order)
 	)
 
 	::endof::
-	if order == 8 then
-		return true
-	else
-		return false
-	end
 end
 
-local done = false
 --50, 250, 500, 1000, Atom, Low Caliber MG, High Caliber MG, Napalm
-local ammoCategories = {false, false, false, false, false, false, false, false}
-for name, mod in pairs(tables.airborneMods) do
-	if done == true then
-		goto done
-	end
+local ammoCategories = {}
+for _,_ in ipairs(tables.airborneMods.kj_747) do
+	table.insert(ammoCategories, false)
+end
 
+for name, mod in pairs(tables.airborneMods) do
 	if mods[name] then
-		for i, value in pairs(mod) do
+		for i, value in ipairs(mod) do
 			if value == true and ammoCategories[i] == false then
-				done = ammo(i)
+				ammo(i)
 				ammoCategories[i] = true
 			end
 		end
 	end
-
-	::done::
 end
 
 for _, datas in pairs(ammoData) do
