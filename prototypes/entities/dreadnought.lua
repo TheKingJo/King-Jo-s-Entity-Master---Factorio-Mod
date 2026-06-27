@@ -20,6 +20,7 @@ data:extend({
 		is_military_target = true,
 		allow_remote_driving = true,
 		healing_per_tick = 40,
+		driving_sound_volume_modifier = 0,
 		minimap_representation = {
 			filename = "__kj_40kdreadnought__/graphics/equipment/map.png",
 			flags = {"icon"},

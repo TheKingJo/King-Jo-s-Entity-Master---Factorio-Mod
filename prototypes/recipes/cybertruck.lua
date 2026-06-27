@@ -39,7 +39,7 @@ data:extend({
 			{type = "item", name = "kj_el_charge_used", amount = 1},
 		},
 		results = {{type = "item", name = "kj_el_charge", amount = 1}},
-		category = "assembling-machine-one",
+		categories = {"assembling-machine-one"},
 	},
 
 	{
@@ -56,7 +56,7 @@ data:extend({
 			{type = "item", name = "kj_el_charge_used", amount = 1},
 		},
 		results = {{type = "item", name = "kj_el_charge", amount = 1}},
-		category = "assembling-machine-two",
+		categories = {"assembling-machine-two"},
 	},
 
 	{
@@ -73,6 +73,6 @@ data:extend({
 			{type = "item", name = "kj_el_charge_used", amount = 1},
 		},
 		results = {{type = "item", name = "kj_el_charge", amount = 1}},
-		category = "assembling-machine-three",
+		categories = {"assembling-machine-three"},
 	},
 })

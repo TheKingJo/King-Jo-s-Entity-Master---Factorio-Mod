@@ -176,7 +176,7 @@ data:extend({
 			{type = "item", name = "concrete", amount = 3},
 			{type = "fluid", name = "water", amount = 100}
 		},
-		category = "crafting-with-fluid",
+		categories = {"crafting-with-fluid"},
 		results = {{type = "item", name = "kj_road_rails", amount = 1}},
 	},
 	{

@@ -17,6 +17,7 @@ data:extend({
 		turret_return_timeout = 60,
 		has_belt_immunity = true,
 		guns = {"kj_rex_cannon", "kj_rex_mg", "kj_rex_rocket"},
+    	driving_sound_volume_modifier = 0,
 
 		energy_source =
 		{

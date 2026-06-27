@@ -62,10 +62,10 @@ for name, mod in pairs(tables.supportedMods) do
                     percent  = tables.entityData.resistances[name][8][2]
                 },
             }
-            car.braking_power = tables.entityData.braking_power[name]
+            car.braking_force = (tables.entityData.braking_force[name] * 1000) / 60
             car.consumption = tables.entityData.consumption[name]
 
-            car.friction =                  tables.entityData.friTerSpdEff[name][1]
+            car.friction_force            = tables.entityData.friTerSpdEff[name][1]
             car.terrain_friction_modifier = tables.entityData.friTerSpdEff[name][2]
             car.stop_trigger_speed        = tables.entityData.friTerSpdEff[name][3]
             car.effectivity               = 1

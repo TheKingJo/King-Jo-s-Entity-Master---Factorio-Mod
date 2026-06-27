@@ -18,6 +18,8 @@ data:extend({
     is_military_target = true,
     allow_remote_driving = false,
 
+    driving_sound_volume_modifier = 0,
+
 	  energy_source =
     {
       type = "burner",

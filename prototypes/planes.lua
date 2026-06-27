@@ -1134,12 +1134,13 @@ for plane, _ in pairs(tables.airborneMods) do
 		car_airborne.localised_name = {"", {"entity-name."..plane}}
 		car_airborne.localised_description = {"", {"entity-description."..plane}}
 		car_airborne.rotation_speed = tables.planeData.rotation_speed[plane]
-		car_airborne.friction = tables.planeData.friction[plane] or 0.0002
+		car_airborne.friction_force = tables.planeData.friction_force[plane] or 0.0002
 		car_airborne.terrain_friction_modifier = 1
 		car_airborne.collision_mask = {layers = {}}
 		car_airborne.deliver_category = nil
 		car_airborne.hidden = true
 		car_airborne.hidden_in_factoriopedia = true
+		car_airborne.driving_sound_volume_modifier = 0
 
 		if tables.planeData.airSound[plane] == true then
 			car_airborne.working_sound.main_sounds[1].sound.filename = 
@@ -1149,8 +1150,8 @@ for plane, _ in pairs(tables.airborneMods) do
 				--modifier.offset = 0.5
 				modifier.multiplier = 0.5 * modifier.multiplier
 		end
-		if tables.planeData.braking_power[plane] ~= nil then
-			car_airborne.braking_power = tables.planeData.braking_power[plane]
+		if tables.planeData.braking_force[plane] ~= nil then
+			car_airborne.braking_force = (tables.planeData.braking_force[plane] * 1000) / 60
 		end
 		if tables.planeData.weight[plane] ~= nil then
 			car_airborne.weight = tables.planeData.weight[plane]
