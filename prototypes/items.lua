@@ -1941,7 +1941,7 @@ if mods["kj_cybertruck"] then
             burnt_result = "kj_el_charge_used",
             fuel_value = "100MJ",
             fuel_acceleration_multiplier = 1.9,
-            fuel_category = "kj_el_car_fuel",
+            fuel_categories = {"kj_el_car_fuel"},
             weight = 100 * 1000,
         },
         {
